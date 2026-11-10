@@ -1,0 +1,18 @@
+{
+  "schema":1,"id":"w5-integrated-adaptive-v1","stage":"M3-requires-M2-and-Q2-decision",
+  "source_lock":"locks/sources.json","dependency_lock":"locks/requirements.txt",
+  "decoder_settings":"q2-v1.json", "max_depth":4,"population":128,"microbatch":32,
+  "inputs":4,"outputs":2,"environment":"Gymnax-CartPole-v1",
+  "episodes_per_candidate":8,"horizon":500,"generations":100,"seeds":[0,1,2,3,4],
+  "initialization":"q2-v1.json:cppn", "discovery":"q2-v1.json:discovery",
+  "recurrence":"q2-v1.json:recurrence", "runtime_profile":"persistent-layered-K1",
+  "upstream_settling_steps":17,"persistent_updates_per_observation":1,
+  "sample_count_semantics":"sequential-environment-transitions-no-independent-64-sample-proxy",
+  "champion_protocol":"m1-acceptance-v1.json", "memory_protocol":"memory-v1.json",
+  "fixed_evaluation_budget_candidate_episodes":102400,
+  "fixed_wall_time_budget_seconds_per_seed":7200,
+  "includes":["startup","cold-compilation","discovery","planning","rollout","reduction","tell","checkpoints","validation","heldout","report"],
+  "pilot_required":true,"budget_status":"not-measured",
+  "comparisons":["system-profiles-labelled","encoding-isolating-layered-matched-shape"],
+  "tuning_configurations_per_method":8
+}

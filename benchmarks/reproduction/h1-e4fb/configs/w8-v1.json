@@ -1,0 +1,12 @@
+{
+  "schema": 1, "id": "w8-sequence-v1", "stage": "M2-not-run", "horizon": 10000,
+  "reward_bounds": [-1,1], "epsilon": 0.01, "minimum_count": 32,
+  "variance": "population-M2/n", "algorithm": "Welford-online-Chan-merge",
+  "empty_merge": "identity", "singleton_variance": 0,
+  "zero_variance_score": "mean/epsilon", "negative_M2": "reject-below-minus-1e-12-otherwise-clamp-zero",
+  "count_type": "int32-overflow-rejected", "accumulator_type": "float32",
+  "tolerances": {"mean_atol": 0.00001, "std_atol": 0.00001, "std_rtol": 0.001,
+                 "score_atol": 0.001, "score_rtol": 0.001},
+  "fixtures": ["zero", "constant-positive", "constant-negative", "near-constant-FP32", "full-range"],
+  "partitions": [[10000], [2500,2500,2500,2500], [1,31,997,8971], [9999,1]]
+}

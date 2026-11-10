@@ -1,0 +1,233 @@
+{
+  "schema": 1,
+  "method": "fixed-topology-weight-only",
+  "cells": {
+    "cpu": {
+      "cartpole": {
+        "status": "measured",
+        "config_sha256": "34e7365a6d009c4a23685b7bd03594f8117add671924fe602b29db186b62aa30",
+        "image_digest": "sha256:adb5659fed40c81f17c6ae5392a1fc9572ea944b63717dbb08c3786171f80321",
+        "engine_sha256": "90ec21d50ecf68fef4e0c13e526bde8a469262fde40b32fd6c2d4e8b7cb934be",
+        "pilot_passes": true,
+        "pilot_warm_generation_seconds": 0.2251626960005524,
+        "pilot_allowable_generations": 28753.61328990626,
+        "generations": 100,
+        "population": 128,
+        "heldout_score": {
+          "median": 500.0,
+          "range": [
+            500.0,
+            500.0
+          ]
+        },
+        "passed_seeds": 5,
+        "wall_seconds_per_seed": {
+          "median": 29.64435330299966,
+          "range": [
+            28.603458738998597,
+            40.738347638998675
+          ]
+        },
+        "portable_replay": "pass",
+        "peak_process_rss_bytes": 692039680,
+        "peak_cgroup_bytes": 565215232,
+        "max_cgroup_swap_bytes": 0,
+        "peak_device_allocator_bytes": null,
+        "max_rollout_signatures": 3,
+        "max_tell_signatures": 1
+      },
+      "memory": {
+        "status": "measured",
+        "config_sha256": "c2323e5904454859dd6202357d7dc60f60fb301d7875295c435a395038541164",
+        "image_digest": "sha256:adb5659fed40c81f17c6ae5392a1fc9572ea944b63717dbb08c3786171f80321",
+        "engine_sha256": "90ec21d50ecf68fef4e0c13e526bde8a469262fde40b32fd6c2d4e8b7cb934be",
+        "pilot_passes": true,
+        "pilot_warm_generation_seconds": 0.11686915699829115,
+        "pilot_allowable_generations": 55414.806481318934,
+        "generations": 250,
+        "population": 128,
+        "heldout_score": {
+          "median": 1.0,
+          "range": [
+            1.0,
+            1.0
+          ]
+        },
+        "passed_seeds": 5,
+        "wall_seconds_per_seed": {
+          "median": 31.274727087002248,
+          "range": [
+            31.02705548800077,
+            31.548724294996646
+          ]
+        },
+        "portable_replay": "pass",
+        "peak_process_rss_bytes": 632008704,
+        "peak_cgroup_bytes": 529051648,
+        "max_cgroup_swap_bytes": 0,
+        "peak_device_allocator_bytes": null,
+        "max_rollout_signatures": 3,
+        "max_tell_signatures": 1,
+        "generalization_score": {
+          "median": 1.0,
+          "range": [
+            1.0,
+            1.0
+          ]
+        }
+      }
+    },
+    "rtx3070": {
+      "cartpole": {
+        "status": "measured",
+        "config_sha256": "34e7365a6d009c4a23685b7bd03594f8117add671924fe602b29db186b62aa30",
+        "image_digest": "sha256:adb5659fed40c81f17c6ae5392a1fc9572ea944b63717dbb08c3786171f80321",
+        "engine_sha256": "90ec21d50ecf68fef4e0c13e526bde8a469262fde40b32fd6c2d4e8b7cb934be",
+        "pilot_passes": true,
+        "pilot_warm_generation_seconds": 0.1651081570016686,
+        "pilot_allowable_generations": 39197.74706264519,
+        "generations": 100,
+        "population": 128,
+        "heldout_score": {
+          "median": 500.0,
+          "range": [
+            500.0,
+            500.0
+          ]
+        },
+        "passed_seeds": 5,
+        "wall_seconds_per_seed": {
+          "median": 22.94970161600213,
+          "range": [
+            22.762286327000766,
+            23.96180766299949
+          ]
+        },
+        "portable_replay": "pass",
+        "peak_process_rss_bytes": 1011044352,
+        "peak_cgroup_bytes": 960475136,
+        "max_cgroup_swap_bytes": 0,
+        "peak_device_allocator_bytes": 389120,
+        "max_rollout_signatures": 3,
+        "max_tell_signatures": 1
+      },
+      "memory": {
+        "status": "measured",
+        "config_sha256": "c2323e5904454859dd6202357d7dc60f60fb301d7875295c435a395038541164",
+        "image_digest": "sha256:adb5659fed40c81f17c6ae5392a1fc9572ea944b63717dbb08c3786171f80321",
+        "engine_sha256": "90ec21d50ecf68fef4e0c13e526bde8a469262fde40b32fd6c2d4e8b7cb934be",
+        "pilot_passes": true,
+        "pilot_warm_generation_seconds": 0.19489148600041517,
+        "pilot_allowable_generations": 33205.57381854493,
+        "generations": 250,
+        "population": 128,
+        "heldout_score": {
+          "median": 1.0,
+          "range": [
+            1.0,
+            1.0
+          ]
+        },
+        "passed_seeds": 5,
+        "wall_seconds_per_seed": {
+          "median": 58.98735877400031,
+          "range": [
+            58.48677851500179,
+            59.17890545300179
+          ]
+        },
+        "portable_replay": "pass",
+        "peak_process_rss_bytes": 942891008,
+        "peak_cgroup_bytes": 916389888,
+        "max_cgroup_swap_bytes": 0,
+        "peak_device_allocator_bytes": 1086976,
+        "max_rollout_signatures": 3,
+        "max_tell_signatures": 1,
+        "generalization_score": {
+          "median": 1.0,
+          "range": [
+            1.0,
+            1.0
+          ]
+        }
+      }
+    },
+    "rtx3060": {
+      "cartpole": {
+        "status": "measured",
+        "config_sha256": "34e7365a6d009c4a23685b7bd03594f8117add671924fe602b29db186b62aa30",
+        "image_digest": "sha256:adb5659fed40c81f17c6ae5392a1fc9572ea944b63717dbb08c3786171f80321",
+        "engine_sha256": "90ec21d50ecf68fef4e0c13e526bde8a469262fde40b32fd6c2d4e8b7cb934be",
+        "pilot_passes": true,
+        "pilot_warm_generation_seconds": 0.16121944050064485,
+        "pilot_allowable_generations": 40142.10666685462,
+        "generations": 100,
+        "population": 128,
+        "heldout_score": {
+          "median": 500.0,
+          "range": [
+            500.0,
+            500.0
+          ]
+        },
+        "passed_seeds": 5,
+        "wall_seconds_per_seed": {
+          "median": 23.408065118001105,
+          "range": [
+            23.27462621900122,
+            23.457231330998184
+          ]
+        },
+        "portable_replay": "pass",
+        "peak_process_rss_bytes": 1011146752,
+        "peak_cgroup_bytes": 960290816,
+        "max_cgroup_swap_bytes": 0,
+        "peak_device_allocator_bytes": 389120,
+        "max_rollout_signatures": 3,
+        "max_tell_signatures": 1
+      },
+      "memory": {
+        "status": "measured",
+        "config_sha256": "c2323e5904454859dd6202357d7dc60f60fb301d7875295c435a395038541164",
+        "image_digest": "sha256:adb5659fed40c81f17c6ae5392a1fc9572ea944b63717dbb08c3786171f80321",
+        "engine_sha256": "90ec21d50ecf68fef4e0c13e526bde8a469262fde40b32fd6c2d4e8b7cb934be",
+        "pilot_passes": true,
+        "pilot_warm_generation_seconds": 0.19030936949820898,
+        "pilot_allowable_generations": 34006.88136316216,
+        "generations": 250,
+        "population": 128,
+        "heldout_score": {
+          "median": 1.0,
+          "range": [
+            1.0,
+            1.0
+          ]
+        },
+        "passed_seeds": 5,
+        "wall_seconds_per_seed": {
+          "median": 59.64914272199894,
+          "range": [
+            59.463979341002414,
+            60.15142744200057
+          ]
+        },
+        "portable_replay": "pass",
+        "peak_process_rss_bytes": 943017984,
+        "peak_cgroup_bytes": 916570112,
+        "max_cgroup_swap_bytes": 0,
+        "peak_device_allocator_bytes": 1086976,
+        "max_rollout_signatures": 3,
+        "max_tell_signatures": 1,
+        "generalization_score": {
+          "median": 1.0,
+          "range": [
+            1.0,
+            1.0
+          ]
+        }
+      }
+    }
+  },
+  "all_six_cells_measured": true,
+  "all_learning_targets_met": true
+}

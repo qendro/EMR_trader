@@ -1,0 +1,205 @@
+{
+  "status": "pass",
+  "datasets": [
+    {
+      "path": "q2-complete/rtx3070-feedforward-700/dataset.npz",
+      "arrays_sha256": "868623502d1287b022c09b6b4998966b3e0336a08f82dc987462fdc520fb68c3"
+    },
+    {
+      "path": "q2-complete/rtx3070-feedforward-701/dataset.npz",
+      "arrays_sha256": "868623502d1287b022c09b6b4998966b3e0336a08f82dc987462fdc520fb68c3"
+    },
+    {
+      "path": "q2-complete/rtx3070-feedforward-702/dataset.npz",
+      "arrays_sha256": "868623502d1287b022c09b6b4998966b3e0336a08f82dc987462fdc520fb68c3"
+    },
+    {
+      "path": "q2-complete/rtx3070-recurrent-700/dataset.npz",
+      "arrays_sha256": "868623502d1287b022c09b6b4998966b3e0336a08f82dc987462fdc520fb68c3"
+    },
+    {
+      "path": "q2-complete/rtx3070-recurrent-701/dataset.npz",
+      "arrays_sha256": "868623502d1287b022c09b6b4998966b3e0336a08f82dc987462fdc520fb68c3"
+    },
+    {
+      "path": "q2-complete/rtx3070-recurrent-702/dataset.npz",
+      "arrays_sha256": "868623502d1287b022c09b6b4998966b3e0336a08f82dc987462fdc520fb68c3"
+    },
+    {
+      "path": "q2-native-v1/cpu-direct-700/dataset.npz",
+      "arrays_sha256": "868623502d1287b022c09b6b4998966b3e0336a08f82dc987462fdc520fb68c3"
+    },
+    {
+      "path": "q2-native-v1/cpu-direct-701/dataset.npz",
+      "arrays_sha256": "868623502d1287b022c09b6b4998966b3e0336a08f82dc987462fdc520fb68c3"
+    },
+    {
+      "path": "q2-native-v1/cpu-direct-702/dataset.npz",
+      "arrays_sha256": "868623502d1287b022c09b6b4998966b3e0336a08f82dc987462fdc520fb68c3"
+    },
+    {
+      "path": "q2-native-v1/cpu-fixed-700/dataset.npz",
+      "arrays_sha256": "868623502d1287b022c09b6b4998966b3e0336a08f82dc987462fdc520fb68c3"
+    },
+    {
+      "path": "q2-native-v1/cpu-fixed-701/dataset.npz",
+      "arrays_sha256": "868623502d1287b022c09b6b4998966b3e0336a08f82dc987462fdc520fb68c3"
+    },
+    {
+      "path": "q2-native-v1/cpu-fixed-702/dataset.npz",
+      "arrays_sha256": "868623502d1287b022c09b6b4998966b3e0336a08f82dc987462fdc520fb68c3"
+    },
+    {
+      "path": "q2-native-v1/rtx3060-direct-700/dataset.npz",
+      "arrays_sha256": "868623502d1287b022c09b6b4998966b3e0336a08f82dc987462fdc520fb68c3"
+    },
+    {
+      "path": "q2-native-v1/rtx3060-direct-701/dataset.npz",
+      "arrays_sha256": "868623502d1287b022c09b6b4998966b3e0336a08f82dc987462fdc520fb68c3"
+    },
+    {
+      "path": "q2-native-v1/rtx3060-direct-702/dataset.npz",
+      "arrays_sha256": "868623502d1287b022c09b6b4998966b3e0336a08f82dc987462fdc520fb68c3"
+    },
+    {
+      "path": "q2-native-v1/rtx3060-fixed-700/dataset.npz",
+      "arrays_sha256": "868623502d1287b022c09b6b4998966b3e0336a08f82dc987462fdc520fb68c3"
+    },
+    {
+      "path": "q2-native-v1/rtx3060-fixed-701/dataset.npz",
+      "arrays_sha256": "868623502d1287b022c09b6b4998966b3e0336a08f82dc987462fdc520fb68c3"
+    },
+    {
+      "path": "q2-native-v1/rtx3060-fixed-702/dataset.npz",
+      "arrays_sha256": "868623502d1287b022c09b6b4998966b3e0336a08f82dc987462fdc520fb68c3"
+    },
+    {
+      "path": "q2-native-v1/rtx3070-direct-700/dataset.npz",
+      "arrays_sha256": "868623502d1287b022c09b6b4998966b3e0336a08f82dc987462fdc520fb68c3"
+    },
+    {
+      "path": "q2-native-v1/rtx3070-direct-701/dataset.npz",
+      "arrays_sha256": "868623502d1287b022c09b6b4998966b3e0336a08f82dc987462fdc520fb68c3"
+    },
+    {
+      "path": "q2-native-v1/rtx3070-direct-702/dataset.npz",
+      "arrays_sha256": "868623502d1287b022c09b6b4998966b3e0336a08f82dc987462fdc520fb68c3"
+    },
+    {
+      "path": "q2-native-v1/rtx3070-fixed-700/dataset.npz",
+      "arrays_sha256": "868623502d1287b022c09b6b4998966b3e0336a08f82dc987462fdc520fb68c3"
+    },
+    {
+      "path": "q2-native-v1/rtx3070-fixed-701/dataset.npz",
+      "arrays_sha256": "868623502d1287b022c09b6b4998966b3e0336a08f82dc987462fdc520fb68c3"
+    },
+    {
+      "path": "q2-native-v1/rtx3070-fixed-702/dataset.npz",
+      "arrays_sha256": "868623502d1287b022c09b6b4998966b3e0336a08f82dc987462fdc520fb68c3"
+    },
+    {
+      "path": "q2-native-v2/cpu-direct-700/dataset.npz",
+      "arrays_sha256": "868623502d1287b022c09b6b4998966b3e0336a08f82dc987462fdc520fb68c3"
+    },
+    {
+      "path": "q2-native-v2/cpu-direct-701/dataset.npz",
+      "arrays_sha256": "868623502d1287b022c09b6b4998966b3e0336a08f82dc987462fdc520fb68c3"
+    },
+    {
+      "path": "q2-native-v2/cpu-direct-702/dataset.npz",
+      "arrays_sha256": "868623502d1287b022c09b6b4998966b3e0336a08f82dc987462fdc520fb68c3"
+    },
+    {
+      "path": "q2-native-v2/cpu-fixed-700/dataset.npz",
+      "arrays_sha256": "868623502d1287b022c09b6b4998966b3e0336a08f82dc987462fdc520fb68c3"
+    },
+    {
+      "path": "q2-native-v2/cpu-fixed-701/dataset.npz",
+      "arrays_sha256": "868623502d1287b022c09b6b4998966b3e0336a08f82dc987462fdc520fb68c3"
+    },
+    {
+      "path": "q2-native-v2/cpu-fixed-702/dataset.npz",
+      "arrays_sha256": "868623502d1287b022c09b6b4998966b3e0336a08f82dc987462fdc520fb68c3"
+    },
+    {
+      "path": "q2-native-v2/rtx3060-direct-700/dataset.npz",
+      "arrays_sha256": "868623502d1287b022c09b6b4998966b3e0336a08f82dc987462fdc520fb68c3"
+    },
+    {
+      "path": "q2-native-v2/rtx3060-direct-701/dataset.npz",
+      "arrays_sha256": "868623502d1287b022c09b6b4998966b3e0336a08f82dc987462fdc520fb68c3"
+    },
+    {
+      "path": "q2-native-v2/rtx3060-direct-702/dataset.npz",
+      "arrays_sha256": "868623502d1287b022c09b6b4998966b3e0336a08f82dc987462fdc520fb68c3"
+    },
+    {
+      "path": "q2-native-v2/rtx3060-fixed-700/dataset.npz",
+      "arrays_sha256": "868623502d1287b022c09b6b4998966b3e0336a08f82dc987462fdc520fb68c3"
+    },
+    {
+      "path": "q2-native-v2/rtx3060-fixed-701/dataset.npz",
+      "arrays_sha256": "868623502d1287b022c09b6b4998966b3e0336a08f82dc987462fdc520fb68c3"
+    },
+    {
+      "path": "q2-native-v2/rtx3060-fixed-702/dataset.npz",
+      "arrays_sha256": "868623502d1287b022c09b6b4998966b3e0336a08f82dc987462fdc520fb68c3"
+    },
+    {
+      "path": "q2-native-v2/rtx3070-direct-700/dataset.npz",
+      "arrays_sha256": "868623502d1287b022c09b6b4998966b3e0336a08f82dc987462fdc520fb68c3"
+    },
+    {
+      "path": "q2-native-v2/rtx3070-direct-701/dataset.npz",
+      "arrays_sha256": "868623502d1287b022c09b6b4998966b3e0336a08f82dc987462fdc520fb68c3"
+    },
+    {
+      "path": "q2-native-v2/rtx3070-direct-702/dataset.npz",
+      "arrays_sha256": "868623502d1287b022c09b6b4998966b3e0336a08f82dc987462fdc520fb68c3"
+    },
+    {
+      "path": "q2-native-v2/rtx3070-fixed-700/dataset.npz",
+      "arrays_sha256": "868623502d1287b022c09b6b4998966b3e0336a08f82dc987462fdc520fb68c3"
+    },
+    {
+      "path": "q2-native-v2/rtx3070-fixed-701/dataset.npz",
+      "arrays_sha256": "868623502d1287b022c09b6b4998966b3e0336a08f82dc987462fdc520fb68c3"
+    },
+    {
+      "path": "q2-native-v2/rtx3070-fixed-702/dataset.npz",
+      "arrays_sha256": "868623502d1287b022c09b6b4998966b3e0336a08f82dc987462fdc520fb68c3"
+    },
+    {
+      "path": "q2-v2/rtx3060-feedforward-700/dataset.npz",
+      "arrays_sha256": "868623502d1287b022c09b6b4998966b3e0336a08f82dc987462fdc520fb68c3"
+    },
+    {
+      "path": "q2-v2/rtx3060-feedforward-701/dataset.npz",
+      "arrays_sha256": "868623502d1287b022c09b6b4998966b3e0336a08f82dc987462fdc520fb68c3"
+    },
+    {
+      "path": "q2-v2/rtx3060-feedforward-702/dataset.npz",
+      "arrays_sha256": "868623502d1287b022c09b6b4998966b3e0336a08f82dc987462fdc520fb68c3"
+    },
+    {
+      "path": "q2-v2/rtx3060-recurrent-700/dataset.npz",
+      "arrays_sha256": "868623502d1287b022c09b6b4998966b3e0336a08f82dc987462fdc520fb68c3"
+    },
+    {
+      "path": "q2-v2/rtx3060-recurrent-701/dataset.npz",
+      "arrays_sha256": "868623502d1287b022c09b6b4998966b3e0336a08f82dc987462fdc520fb68c3"
+    },
+    {
+      "path": "q2-v2/rtx3060-recurrent-702/dataset.npz",
+      "arrays_sha256": "868623502d1287b022c09b6b4998966b3e0336a08f82dc987462fdc520fb68c3"
+    },
+    {
+      "path": "q2-v2/rtx3070-rnn-700/dataset.npz",
+      "arrays_sha256": "868623502d1287b022c09b6b4998966b3e0336a08f82dc987462fdc520fb68c3"
+    }
+  ],
+  "native_v2_cells": 18,
+  "native_v2_script_sha256": "c8fb35cbff62ae2bc609b5c5214f57c241c4e7d1258318ab164e72bdab997e49",
+  "native_v2_protocol_sha256": "b0c85fa49d159f99a5f7c86d1ee7060f2387917fde4bf58df491d715bd271fa6",
+  "native_v2_histories_and_cache_policy": "pass"
+}

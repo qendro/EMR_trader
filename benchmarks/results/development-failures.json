@@ -1,0 +1,30 @@
+{
+  "date":"2026-11-10",
+  "experiments":[
+    {"id":"q2-native-v1-direct-nonfinite-fitness","status":"failed",
+     "cause":"raw native direct genomes produced NaN outputs/fitness; strict JSON refused a nonfinite best-fitness metric",
+     "resolution":"retain v1 failure cells and partial histories; freeze separate q2-native-v2 invalid-output score/count/all-invalid policy before fresh runs; M1 engine unchanged"},
+    {"id":"q2-recurrent-702-both-cards","status":"failed","type":"SparseCapExceeded",
+     "cause":"13,424 discovered connections exceed frozen max_sparse_conns 10,000; both cards independently refused at generation 5",
+     "resolution":"failure artifacts retained; q2-capacity-v2 declares 32,768 slots without pruning, frozen but not run"},
+    {"id":"preactivation-overflow-audit","status":"correctness-bug-fixed",
+     "cause":"saturating tanh could conceal infinite FP32 pre-activation",
+     "resolution":"mark nonfinite pre-activation invalid; regression fixtures added; 44 tests and fresh numerical/pilot/five-seed acceptance repeated on CPU and each GPU"},
+    {"id":"q2-local-image-reference","status":"setup-failed-before-execution",
+     "cause":"untagged local image could not be resolved by repository digest after release tag moved",
+     "resolution":"verified the image by its local SHA and retained it as neuroevo:q2-lane; rerun with --pull=never"},
+    {"id":"q2-recurrent-parser-smoke","status":"failed-before-initialization",
+     "cause":"upstream EMRConfig dataclass contains multi_hop_chunk_size, but create_config refuses that key",
+     "resolution":"retain the internal null setting as metadata and omit it from the parser input; recurrent smoke rerun completed"},
+    {"id":"q2-first-full-invocation","status":"aborted-before-first-generation-completed",
+     "cause":"results volume was omitted from the Docker invocation",
+     "resolution":"copied the partial manifest/dataset to q2-aborted-unmounted, stopped the container, and reran with a persistent mount; no aborted timing result accepted"},
+    {"id":"initial-container-tests","status":"failed","tests_passed":20,"tests_failed":13,
+     "cause":"planner padded topological order using active node count instead of sequence length",
+     "resolution":"pad by actual sequence length; rerun full suite"},
+    {"id":"gymnax-import-and-cartpole-smoke","status":"failed","cause":"Gymnax 0.0.9 imports six without declaring it; pip check alone did not detect this",
+     "resolution":"pin six 1.17.0 with wheel hash in compatibility lock; rebuild and rerun"},
+    {"id":"initial-Docker-access","status":"failed","cause":"Docker Desktop Linux daemon stopped; sandbox WSL query denied",
+     "resolution":"Docker Desktop started; host inventory and passthrough successful"}
+  ]
+}

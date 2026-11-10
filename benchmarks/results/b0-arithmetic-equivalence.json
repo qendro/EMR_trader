@@ -1,0 +1,45 @@
+{
+  "status": "pass",
+  "current_engine_sha256": "90ec21d50ecf68fef4e0c13e526bde8a469262fde40b32fd6c2d4e8b7cb934be",
+  "previous_engine_sha256": "e4fbdd7588fd6008455fc109d12996fa21097bd40d07849f83149d2493b113b6",
+  "runtime_evaluator_dependencies_identical": true,
+  "files": [
+    {
+      "path": "runtime.py",
+      "sha256": "e790e2917e611b2e2a7540cde19d8f7fab1534f5a05e68652f746afcb1a4c4b0"
+    },
+    {
+      "path": "substrate.py",
+      "sha256": "0662c72accf1f5813bef26d7a891e130ac34c9ee717d0e47603634f09a8a49f6"
+    },
+    {
+      "path": "contracts.py",
+      "sha256": "d559f53406d61d76e1311517ffde39568575fa468b4c05adc529775dc32fbbb2"
+    },
+    {
+      "path": "planning.py",
+      "sha256": "6ce937a6d291d6277d65135090bb990be0989b0301cbfbd11ce6aeebc3943b43"
+    },
+    {
+      "path": "reference.py",
+      "sha256": "36561781ad0412d075177ed1f86199c9e925fc14bc460e2b89b2c1e955b96f5c"
+    },
+    {
+      "path": "evaluation.py",
+      "sha256": "e92d88a1d8a29bef7c730de4d4e0e9aad8d25383824af9a657f26533893bc626"
+    },
+    {
+      "path": "environments.py",
+      "sha256": "5b348e2997a04db6a11cf7975e231db8077a5bc2d502538f4104fa61e8e03f91"
+    },
+    {
+      "path": "statistics.py",
+      "sha256": "6af9de2ef0435628490ffe1054e6e3d4d47c21003febecef9540916a37295b08"
+    },
+    {
+      "path": "randomness.py",
+      "sha256": "858cf85755b9664a22380a27275ebcabdba11a6cd27cc30ca51cd4c5e6e5bddc"
+    }
+  ],
+  "interpretation": "B0 adds evolution/controller support; qualified H1 arithmetic and evaluator files unchanged; no new large-size qualification claim"
+}

@@ -1,6 +1,6 @@
 # First development milestone: stateful neuroevolution vertical slice
 
-This is the first implementation milestone after the minimal M0 dependency/backend gate. It delivers a working standalone engine and proves temporal state semantics before complex substrate discovery. Q2’s bounded upstream EMR assessment can proceed alongside it and must finish before major EMR integration.
+This is the first implementation milestone after the minimal M0 dependency/backend gate. It delivers a working standalone engine and proves temporal state semantics before complex substrate discovery. Q2’s bounded upstream EMR assessment can proceed alongside it and must finish before major EMR integration. The [implementation record](implementation.md) distinguishes implemented features from completed acceptance gates; the requirements below are unchanged.
 
 ## 1. Exact scope
 
@@ -119,7 +119,7 @@ Use the tolerances in [benchmarks.md](benchmarks.md). Do not require identical l
 
 ## 6. Exact demonstration outputs
 
-The future implementation should offer one documented run entry point, one benchmark entry point and one replay entry point. These are interface requirements, not implementation code in this delivery.
+The implementation offers `python -m neuroevo run`, `benchmark` and `replay` inside Docker. The requirements below define the run artifacts; the implementation record links actual evidence.
 
 The run directory must contain:
 
@@ -138,4 +138,4 @@ Record only bounded summaries in normal runs; full trajectories are opt-in for a
 
 M1 is functionally complete when A/B/C and all relevant correctness tests pass, including the declared learning target, from a clean pinned Docker image, and the D diagnostics have been run and reported. M1 closes, and M2 may start, when it is functionally complete and G1–G4 pass on the gating card. The second card runs G1–G3; its remaining gates stay listed as open and close no later than M5. G5 is measured on W3 and reported, because 32-node graphs are not expected to show useful acceleration. Replace the container and demonstrate checkpoint continuation from its persistent mount. Host prerequisites are documented separately from container dependencies.
 
-The milestone ends with a measured feasible p/B setting, frozen baseline metrics, an explicit list of supported semantics and functions, and a clear handoff to H0 fixed-substrate decoding. No arbitrary throughput number is claimed before Q2/V5 measurements. No package installation or implementation work has been performed as part of this planning document.
+The milestone ends with a measured feasible p/B setting, frozen baseline metrics, an explicit list of supported semantics and functions, and a clear handoff to H0 fixed-substrate decoding. No arbitrary throughput number is claimed before Q2/V5 measurements. This document defines requirements; see the implementation record for completed work and remaining gates.

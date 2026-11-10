@@ -1,6 +1,10 @@
 # Standalone neuroevolution platform
 
-This repository currently contains the development blueprint only. No engine implementation or performance qualification has been completed.
+The first stateful implementation is in `src/neuroevo`, with a pinned Linux Docker environment, contract/differential tests, a TensorNEAT adapter, memory and CartPole evaluation, checkpoints and portable inference. Milestone acceptance remains separate from implementation. See the [implementation record](docs/implementation.md) for measured results and open gates.
+
+M1's required gates passed on its retained source: 44 tests on CPU and each GPU, five of five CartPole seeds at 500/500 on every profile, exact native CPU resume, and portable replay. The [M1 benchmark report](benchmarks/REPORT.md) retains failures and timing variation.
+
+H0/H1 add fixed-coordinate CPPN development, persistent layered inference and portable role-shaped blocks. Their connected 256/1,024-node execution fixtures passed on CPU and each GPU; see the [H1 report](benchmarks/H1-REPORT.md). B0 adds a fixed-topology weight baseline. All 67 current tests pass on each profile, and B0's five CartPole and five memory seeds per profile meet their held-out targets with matching G9 pilots; see the [B0 report](benchmarks/B0-REPORT.md). M2 remains open for H2 learning/comparisons, W8 and integrated performance acceptance. Q2's capacity/resource work and M3–M5 remain open.
 
 The project will develop a general-purpose, accelerator-oriented neuroevolution platform, progressing from TensorNEAT to fixed-substrate HyperNEAT and adaptive EMR-HyperNEAT. Persistent temporal memory is part of the first working milestone. Financial trading is a later application, outside the standalone platform.
 
@@ -20,11 +24,26 @@ Read the documents in this order:
 
 The deployment targets are NVIDIA RTX 3060 and RTX 3070 GPUs on Windows. All project execution runs in Linux Docker containers through Docker Desktop’s WSL 2 backend. NVIDIA GPU passthrough is available on that backend. [Docker GPU support](https://docs.docker.com/desktop/features/gpu/)
 
-Qualify each GPU independently using the same pinned image and workload definitions. Record actual GPU variants, VRAM, host RAM, driver and WSL versions during setup; these machines have not been inspected or benchmarked. Start with one GPU per run. Combined multi-GPU execution is a later extension, not a requirement for either card to work. One card is named the gating card at Q0 and decides when the next milestone may start; the second card still passes the full gate set before the platform is accepted.
+Both cards have been inventoried and qualified independently on this host: RTX 3060 12 GiB and RTX 3070 8 GiB, driver 591.74. The RTX 3070 gates progression. Each container selects exactly one verified card before importing JAX. Combined multi-GPU execution remains a later extension. See the [measured report](benchmarks/REPORT.md) and [machine-readable status](benchmarks/status.json) for learning results and open gates.
 
-## First action when implementation is authorized
+## Run the implementation
 
-Execute tasks Q0–Q2 in the [task breakdown](docs/tasks.md): define the pinned Docker image and Compose run profiles, verify GPU passthrough and JAX execution, and benchmark bounded upstream TensorNEAT/EMR workloads on both cards. Then implement the stateful vertical slice described in [Milestone 1](docs/milestone-1.md). This remains a documentation-only delivery; no container build, dependency installation or training has been performed.
+```powershell
+docker compose build cpu
+$env:NEUROEVO_IMAGE_DIGEST=(docker image inspect neuroevo:release --format '{{.Id}}').Trim()
+docker compose run --rm cpu test -q
+docker compose run --rm rtx3070 qualify --output /results/q1/rtx3070.json
+docker compose run --rm cpu oracle --output /results/oracle/cpu.json
+docker compose run --rm cpu run --config configs/m1-smoke-v1.json --output /results/smoke
+```
+
+Results and checkpoints persist in the `neuroevo-results` Docker volume. The RTX 3070 (8 GiB) is the gating card; the RTX 3060 (12 GiB) is validated independently. [Commands, source pins, design decisions and acceptance procedure](docs/implementation.md). Smoke results never substitute for the five-seed acceptance protocol. M2–M5 remain gated on the preceding milestone.
+
+For the H0/H1 wiring demo, build the current source as `neuroevo:h1` and run `configs/h1-fixed-cartpole-smoke-v1.json` or `configs/h1-fixed-memory-smoke-v1.json` through the same `run` entry point. `scripts/h1_verify.ps1` runs the frozen arithmetic and large-fixture checks plus both wiring demos/replays on all profiles. Those demos are explicitly smoke evidence, not M2 learning acceptance.
+
+For the measured B0 baseline, use `scripts/b0_runs.ps1 -Image neuroevo:b0 -Profile rtx3070 -RunRoot /results/b0-reproduction` after building that image from this source. The script runs a matching G9 pilot, five acceptance seeds and portable replay for both tasks. `-Task memory` selects one task. The [H2 preparation record](benchmarks/H2-PREP.md) contains the fixed-HyperNEAT G9 pilots and comparison manifests; its acceptance results are still open.
+
+For the full procedure, `scripts/qualify.ps1`, `scripts/acceptance.ps1`, `scripts/resume.ps1` and `scripts/performance.ps1` launch bounded containers and record the selected image digest. Pass `-Image neuroevo:release` after building with Compose. Curated measurements, failed cells, checkpoints and portable champions are in [benchmarks/results/evidence](benchmarks/results/evidence); their byte hashes are indexed there. The original Q2 recurrent screen overflowed its frozen connection cap on both cards; its proposed capacity promotion has not run.
 
 ## Revision history
 

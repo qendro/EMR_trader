@@ -1,0 +1,99 @@
+{
+  "schema": 1,
+  "status": "pass",
+  "engine_sha256": "8d3aba6552b6872ab47ddca1c1992ee839ce5339c9f48ba221ba780525fddebb",
+  "config_sha256": "bd1835e185320f6a327326005d573ef2535a3bff16e95aabf95f7f2521cc1146",
+  "runs": [
+    {
+      "profile": "cpu",
+      "seed": 0,
+      "heldout_score": 500.0,
+      "history_generations": 100
+    },
+    {
+      "profile": "cpu",
+      "seed": 1,
+      "heldout_score": 500.0,
+      "history_generations": 100
+    },
+    {
+      "profile": "cpu",
+      "seed": 2,
+      "heldout_score": 500.0,
+      "history_generations": 100
+    },
+    {
+      "profile": "cpu",
+      "seed": 3,
+      "heldout_score": 500.0,
+      "history_generations": 100
+    },
+    {
+      "profile": "cpu",
+      "seed": 4,
+      "heldout_score": 500.0,
+      "history_generations": 100
+    },
+    {
+      "profile": "rtx3070",
+      "seed": 0,
+      "heldout_score": 500.0,
+      "history_generations": 100
+    },
+    {
+      "profile": "rtx3070",
+      "seed": 1,
+      "heldout_score": 500.0,
+      "history_generations": 100
+    },
+    {
+      "profile": "rtx3070",
+      "seed": 2,
+      "heldout_score": 500.0,
+      "history_generations": 100
+    },
+    {
+      "profile": "rtx3070",
+      "seed": 3,
+      "heldout_score": 500.0,
+      "history_generations": 100
+    },
+    {
+      "profile": "rtx3070",
+      "seed": 4,
+      "heldout_score": 500.0,
+      "history_generations": 100
+    },
+    {
+      "profile": "rtx3060",
+      "seed": 0,
+      "heldout_score": 500.0,
+      "history_generations": 100
+    },
+    {
+      "profile": "rtx3060",
+      "seed": 1,
+      "heldout_score": 500.0,
+      "history_generations": 100
+    },
+    {
+      "profile": "rtx3060",
+      "seed": 2,
+      "heldout_score": 500.0,
+      "history_generations": 100
+    },
+    {
+      "profile": "rtx3060",
+      "seed": 3,
+      "heldout_score": 500.0,
+      "history_generations": 100
+    },
+    {
+      "profile": "rtx3060",
+      "seed": 4,
+      "heldout_score": 500.0,
+      "history_generations": 100
+    }
+  ],
+  "checks": "raw manifests, pilots, tests, sequential histories, validation association, artifacts and resume/replay"
+}

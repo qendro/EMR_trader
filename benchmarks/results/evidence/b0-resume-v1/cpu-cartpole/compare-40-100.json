@@ -1,0 +1,22 @@
+{
+  "comparison": "bitwise-all-native-state-leaves-and-evaluated-archive",
+  "generations": 100,
+  "hardware": {
+    "allocator_fraction": 0.0,
+    "backend": "cpu",
+    "development_mount": false,
+    "devices": [
+      "TFRT_CPU_0"
+    ],
+    "gpu": null,
+    "image_digest": "sha256:adb5659fed40c81f17c6ae5392a1fc9572ea944b63717dbb08c3786171f80321",
+    "kernel": "6.6.87.2-microsoft-standard-WSL2",
+    "preallocate": false,
+    "precision": "float32",
+    "python": "3.11.14"
+  },
+  "history_quality_fields": "exact",
+  "split": 40,
+  "status": "pass",
+  "timing_fields": "excluded"
+}

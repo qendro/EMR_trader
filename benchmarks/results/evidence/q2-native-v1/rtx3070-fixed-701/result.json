@@ -1,0 +1,44 @@
+{
+  "hardware": {
+    "allocator_fraction": 0.6,
+    "backend": "gpu",
+    "development_mount": false,
+    "devices": [
+      "cuda:0"
+    ],
+    "gpu": [
+      "GPU-84389f80-a576-d373-ecb0-92e972e72dfd",
+      "NVIDIA GeForce RTX 3070",
+      "8192",
+      "591.74"
+    ],
+    "image_digest": "sha256:7172c6d3749ceef15f01283145f0049e622f26202a36d88957b7486ec31a2a80",
+    "kernel": "6.6.87.2-microsoft-standard-WSL2",
+    "preallocate": false,
+    "precision": "float32",
+    "python": "3.11.14"
+  },
+  "interpretation": "upstream-system-baseline-not-encoding-isolating-or-persistent-rollout",
+  "memory": {
+    "cgroup_current_bytes": 1115590656,
+    "cgroup_peak_bytes": 1192312832,
+    "cgroup_swap_bytes": 0,
+    "device_allocator": {
+      "bytes_in_use": 987136,
+      "bytes_limit": 5153646387,
+      "bytes_reserved": 0,
+      "largest_alloc_size": 8388608,
+      "largest_free_block_bytes": 0,
+      "num_allocs": 610,
+      "peak_bytes_in_use": 9815296,
+      "peak_bytes_reserved": 0,
+      "peak_pool_bytes": 10485760,
+      "pool_bytes": 10485760
+    },
+    "process_peak_rss_bytes": 1424560128
+  },
+  "mode": "fixed",
+  "status": "measured",
+  "wall_seconds": 41.755644931999996,
+  "warm_median_seconds": 0.0203999940003996
+}

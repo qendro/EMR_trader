@@ -1,0 +1,163 @@
+[
+  {
+    "best_fitness": -0.05039988458156586,
+    "generation": 0,
+    "genotype_edges": {
+      "max": 8,
+      "median": 8.0,
+      "min": 8
+    },
+    "genotype_nodes": {
+      "max": 6,
+      "median": 6.0,
+      "min": 6
+    },
+    "memory": {
+      "cgroup_current_bytes": 618790912,
+      "cgroup_peak_bytes": 619139072,
+      "cgroup_swap_bytes": 0,
+      "device_allocator": null,
+      "process_peak_rss_bytes": 901931008
+    },
+    "phase": "cold",
+    "seconds": 10.455682410000009
+  },
+  {
+    "best_fitness": -0.030371040105819702,
+    "generation": 1,
+    "genotype_edges": {
+      "max": 9,
+      "median": 8.0,
+      "min": 7
+    },
+    "genotype_nodes": {
+      "max": 7,
+      "median": 6.0,
+      "min": 6
+    },
+    "memory": {
+      "cgroup_current_bytes": 742408192,
+      "cgroup_peak_bytes": 743014400,
+      "cgroup_swap_bytes": 0,
+      "device_allocator": null,
+      "process_peak_rss_bytes": 1024643072
+    },
+    "phase": "cold",
+    "seconds": 9.339950155001134
+  },
+  {
+    "best_fitness": -0.01867758110165596,
+    "generation": 2,
+    "genotype_edges": {
+      "max": 10,
+      "median": 8.0,
+      "min": 7
+    },
+    "genotype_nodes": {
+      "max": 7,
+      "median": 6.0,
+      "min": 6
+    },
+    "memory": {
+      "cgroup_current_bytes": 744841216,
+      "cgroup_peak_bytes": 744841216,
+      "cgroup_swap_bytes": 0,
+      "device_allocator": null,
+      "process_peak_rss_bytes": 1024786432
+    },
+    "phase": "warm",
+    "seconds": 0.030431297000177437
+  },
+  {
+    "best_fitness": -0.008505357429385185,
+    "generation": 3,
+    "genotype_edges": {
+      "max": 9,
+      "median": 8.0,
+      "min": 6
+    },
+    "genotype_nodes": {
+      "max": 7,
+      "median": 6.0,
+      "min": 6
+    },
+    "memory": {
+      "cgroup_current_bytes": 745398272,
+      "cgroup_peak_bytes": 745398272,
+      "cgroup_swap_bytes": 0,
+      "device_allocator": null,
+      "process_peak_rss_bytes": 1025703936
+    },
+    "phase": "warm",
+    "seconds": 0.028766415000063716
+  },
+  {
+    "best_fitness": -0.005523825995624065,
+    "generation": 4,
+    "genotype_edges": {
+      "max": 10,
+      "median": 7.0,
+      "min": 6
+    },
+    "genotype_nodes": {
+      "max": 7,
+      "median": 6.0,
+      "min": 6
+    },
+    "memory": {
+      "cgroup_current_bytes": 745308160,
+      "cgroup_peak_bytes": 745398272,
+      "cgroup_swap_bytes": 0,
+      "device_allocator": null,
+      "process_peak_rss_bytes": 1025835008
+    },
+    "phase": "warm",
+    "seconds": 0.029208836998805054
+  },
+  {
+    "best_fitness": -0.003631013911217451,
+    "generation": 5,
+    "genotype_edges": {
+      "max": 9,
+      "median": 7.0,
+      "min": 5
+    },
+    "genotype_nodes": {
+      "max": 7,
+      "median": 6.0,
+      "min": 6
+    },
+    "memory": {
+      "cgroup_current_bytes": 745558016,
+      "cgroup_peak_bytes": 745566208,
+      "cgroup_swap_bytes": 0,
+      "device_allocator": null,
+      "process_peak_rss_bytes": 1025835008
+    },
+    "phase": "warm",
+    "seconds": 0.03472670900009689
+  },
+  {
+    "best_fitness": -0.0016079200431704521,
+    "generation": 6,
+    "genotype_edges": {
+      "max": 9,
+      "median": 6.0,
+      "min": 4
+    },
+    "genotype_nodes": {
+      "max": 8,
+      "median": 6.0,
+      "min": 6
+    },
+    "memory": {
+      "cgroup_current_bytes": 745553920,
+      "cgroup_peak_bytes": 745566208,
+      "cgroup_swap_bytes": 0,
+      "device_allocator": null,
+      "process_peak_rss_bytes": 1025835008
+    },
+    "phase": "warm",
+    "seconds": 0.03400057199905859
+  }
+]

@@ -1,0 +1,172 @@
+{
+  "complete_protocol": true,
+  "config": {
+    "action": "argmax-first-tie",
+    "adapter": {
+      "edges": 128,
+      "inputs": 4,
+      "mutation": {
+        "conn_add": 0.2,
+        "conn_delete": 0.2,
+        "node_add": 0.1,
+        "node_delete": 0.1
+      },
+      "nodes": 32,
+      "outputs": 1,
+      "population": 8,
+      "profile": "dag",
+      "species": {
+        "compatibility_threshold": 2.0,
+        "genome_elitism": 1,
+        "max_stagnation": 15,
+        "min_species_size": 1,
+        "spawn_number_change_rate": 0.5,
+        "species_elitism": 1,
+        "species_number_calculate_by": "rank",
+        "species_size": 2,
+        "survival_threshold": 0.25
+      }
+    },
+    "budget_seconds_per_seed": 7200,
+    "budget_status": "wiring-only-not-H2-acceptance",
+    "checkpoint_every": 2,
+    "decoder": {
+      "hidden": 8,
+      "inputs": 4,
+      "kind": "fixed-coordinate-v1",
+      "max_weight": 5.0,
+      "outputs": 2,
+      "query_slab": 64,
+      "recurrent": true,
+      "schema": 1,
+      "threshold": 0.3
+    },
+    "episodes": 2,
+    "finalists": 4,
+    "generations": 4,
+    "heldout_episodes": 4,
+    "horizon": 64,
+    "id": "h1-fixed-cartpole-smoke-v1",
+    "kind": "smoke",
+    "microbatch": 4,
+    "required_seeds": 1,
+    "scenario_policy": "generation-specific",
+    "schema": 1,
+    "seeds": [
+      900
+    ],
+    "target": 450,
+    "task": "cartpole",
+    "validation_episodes": 4,
+    "workload": "W3-smoke"
+  },
+  "passed_seeds": 0,
+  "runs": [
+    {
+      "config_sha256": "5258f5f254242ad0e62bd1f0b7c8479a1f37657c60fadbc163297f634f1dcc39",
+      "generations": 4,
+      "hardware": {
+        "allocator_fraction": 0.6,
+        "backend": "gpu",
+        "development_mount": false,
+        "devices": [
+          "cuda:0"
+        ],
+        "gpu": [
+          "GPU-84389f80-a576-d373-ecb0-92e972e72dfd",
+          "NVIDIA GeForce RTX 3070",
+          "8192",
+          "591.74"
+        ],
+        "image_digest": "sha256:5c567eb307576b52543497c16f7a6fdaedb333272067b4d774b508dbcc29fd46",
+        "kernel": "6.6.87.2-microsoft-standard-WSL2",
+        "preallocate": false,
+        "precision": "float32",
+        "python": "3.11.14"
+      },
+      "kind": "smoke",
+      "memory": {
+        "cgroup_current_bytes": 839778304,
+        "cgroup_peak_bytes": 855834624,
+        "cgroup_swap_bytes": 0,
+        "device_allocator": {
+          "bytes_in_use": 32000,
+          "bytes_limit": 5153646387,
+          "bytes_reserved": 0,
+          "largest_alloc_size": 151040,
+          "largest_free_block_bytes": 0,
+          "num_allocs": 1874,
+          "peak_bytes_in_use": 212736,
+          "peak_bytes_reserved": 0,
+          "peak_pool_bytes": 2097152,
+          "pool_bytes": 2097152
+        },
+        "process_peak_rss_bytes": 1172180992
+      },
+      "provenance": {
+        "compatibility_lock_sha256": "a11a7696492404e642f411a817893b984511a7f0da0131318d44173b2741c4d9",
+        "engine_sha256": "e4fbdd7588fd6008455fc109d12996fa21097bd40d07849f83149d2493b113b6",
+        "lock_sha256": "df89b8faeaefc2cf0a8ad1e723e7b000cbf48496a00b1e2ef0a3bac6fb33bdae",
+        "packages": {
+          "emr-hyperneat": "0.3.0",
+          "gymnax": "0.0.9",
+          "jax": "0.6.1",
+          "jaxlib": "0.6.1",
+          "numpy": "1.26.4",
+          "tensorneat": "0.1.0"
+        },
+        "sources": {
+          "base_image": "python:3.11.14-slim-bookworm@sha256:65a93d69fa75478d554f4ad27c85c1e69fa184956261b4301ebaf6dbb0a3543d",
+          "emr": {
+            "archive_sha256": "2e4e7ec552fd2fb6ebd59e44b8ea89057f9980ef296d4451e22ccb7915bfb59d",
+            "license": "GPL-3.0-or-later (bundled LICENSE)",
+            "sha": "306eb4e67687390bb88131ead6af8bebffa8cee9",
+            "url": "https://github.com/RomainClaret/emr-hyperneat.git"
+          },
+          "schema": 1,
+          "tensorneat": {
+            "archive_sha256": "6776462f279bc6fa2ff9c0bf4adc405732d25681424346c8f5d6f9d7469cda3f",
+            "license": "GPL-3.0-or-later (bundled LICENSE)",
+            "sha": "49c193d546447d5fe2cb4b26f60758d23fc24cb0",
+            "url": "https://github.com/RomainClaret/tensorneat.git"
+          }
+        }
+      },
+      "seed": 900,
+      "selection": {
+        "candidate_id": "seed-900:3:0",
+        "episode_scores": [
+          45.0,
+          31.0,
+          32.0,
+          34.0
+        ],
+        "finalist_ids": [
+          "seed-900:3:0",
+          "seed-900:3:2",
+          "seed-900:3:3",
+          "seed-900:3:5"
+        ],
+        "finalist_training_scores": [
+          38.5,
+          38.5,
+          38.5,
+          38.5
+        ],
+        "finalist_validation_scores": [
+          42.0,
+          42.0,
+          42.0,
+          42.0
+        ],
+        "heldout_score": 35.5,
+        "heldout_valid": true,
+        "kind": "smoke",
+        "passes_learning": false,
+        "validation_score": 42.0
+      },
+      "structural_mutation_observed": true,
+      "wall_seconds": 15.210934231001374
+    }
+  ]
+}

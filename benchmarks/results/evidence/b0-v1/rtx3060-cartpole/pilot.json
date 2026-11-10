@@ -1,0 +1,80 @@
+{
+  "allowable_generations": 40142.10666685462,
+  "config_sha256": "34e7365a6d009c4a23685b7bd03594f8117add671924fe602b29db186b62aa30",
+  "fixed_overhead_seconds": 9.23558072499145,
+  "generations": 12,
+  "hardware": {
+    "allocator_fraction": 0.6,
+    "backend": "gpu",
+    "development_mount": false,
+    "devices": [
+      "cuda:0"
+    ],
+    "gpu": [
+      "GPU-d7c4073b-c643-21ed-3d64-35a73d3d7a72",
+      "NVIDIA GeForce RTX 3060",
+      "12288",
+      "591.74"
+    ],
+    "image_digest": "sha256:adb5659fed40c81f17c6ae5392a1fc9572ea944b63717dbb08c3786171f80321",
+    "kernel": "6.6.87.2-microsoft-standard-WSL2",
+    "preallocate": false,
+    "precision": "float32",
+    "python": "3.11.14"
+  },
+  "kind": "acceptance",
+  "label": "G9-pilot-not-learning-acceptance",
+  "memory": {
+    "cgroup_current_bytes": 670126080,
+    "cgroup_peak_bytes": 685887488,
+    "cgroup_swap_bytes": 0,
+    "device_allocator": {
+      "bytes_in_use": 70144,
+      "bytes_limit": 7730548223,
+      "bytes_reserved": 0,
+      "largest_alloc_size": 174080,
+      "largest_free_block_bytes": 0,
+      "num_allocs": 3339,
+      "peak_bytes_in_use": 389120,
+      "peak_bytes_reserved": 0,
+      "peak_pool_bytes": 2097152,
+      "pool_bytes": 2097152
+    },
+    "process_peak_rss_bytes": 1012039680
+  },
+  "passes": true,
+  "pilot_seed": 900,
+  "provenance": {
+    "compatibility_lock_sha256": "a11a7696492404e642f411a817893b984511a7f0da0131318d44173b2741c4d9",
+    "engine_sha256": "90ec21d50ecf68fef4e0c13e526bde8a469262fde40b32fd6c2d4e8b7cb934be",
+    "lock_sha256": "df89b8faeaefc2cf0a8ad1e723e7b000cbf48496a00b1e2ef0a3bac6fb33bdae",
+    "packages": {
+      "emr-hyperneat": "0.3.0",
+      "gymnax": "0.0.9",
+      "jax": "0.6.1",
+      "jaxlib": "0.6.1",
+      "numpy": "1.26.4",
+      "tensorneat": "0.1.0"
+    },
+    "sources": {
+      "base_image": "python:3.11.14-slim-bookworm@sha256:65a93d69fa75478d554f4ad27c85c1e69fa184956261b4301ebaf6dbb0a3543d",
+      "emr": {
+        "archive_sha256": "2e4e7ec552fd2fb6ebd59e44b8ea89057f9980ef296d4451e22ccb7915bfb59d",
+        "license": "GPL-3.0-or-later (bundled LICENSE)",
+        "sha": "306eb4e67687390bb88131ead6af8bebffa8cee9",
+        "url": "https://github.com/RomainClaret/emr-hyperneat.git"
+      },
+      "schema": 1,
+      "tensorneat": {
+        "archive_sha256": "6776462f279bc6fa2ff9c0bf4adc405732d25681424346c8f5d6f9d7469cda3f",
+        "license": "GPL-3.0-or-later (bundled LICENSE)",
+        "sha": "49c193d546447d5fe2cb4b26f60758d23fc24cb0",
+        "url": "https://github.com/RomainClaret/tensorneat.git"
+      }
+    }
+  },
+  "seed": 900,
+  "structural_mutation_observed": false,
+  "wall_seconds": 10.847775129997899,
+  "warm_generation_seconds": 0.16121944050064485
+}

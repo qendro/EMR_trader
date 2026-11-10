@@ -1,0 +1,30 @@
+{
+  "hardware": {
+    "allocator_fraction": 0.0,
+    "backend": "cpu",
+    "development_mount": false,
+    "devices": [
+      "TFRT_CPU_0"
+    ],
+    "gpu": null,
+    "image_digest": "sha256:7172c6d3749ceef15f01283145f0049e622f26202a36d88957b7486ec31a2a80",
+    "kernel": "6.6.87.2-microsoft-standard-WSL2",
+    "preallocate": false,
+    "precision": "float32",
+    "python": "3.11.14"
+  },
+  "interpretation": "upstream-system-baseline-not-encoding-isolating-or-persistent-rollout",
+  "invalid_candidate_evaluations": 26,
+  "manifest_id": "q2-native-direct-fixed-v2",
+  "memory": {
+    "cgroup_current_bytes": 783527936,
+    "cgroup_peak_bytes": 783970304,
+    "cgroup_swap_bytes": 0,
+    "device_allocator": null,
+    "process_peak_rss_bytes": 1064837120
+  },
+  "mode": "direct",
+  "status": "measured",
+  "wall_seconds": 24.315866777998963,
+  "warm_median_seconds": 0.035771909500908805
+}

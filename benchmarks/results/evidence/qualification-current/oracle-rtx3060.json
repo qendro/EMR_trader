@@ -1,0 +1,33 @@
+{
+  "delays": [
+    1,
+    2,
+    4,
+    8,
+    16
+  ],
+  "episodes": 10,
+  "hardware": {
+    "allocator_fraction": 0.6,
+    "backend": "gpu",
+    "development_mount": false,
+    "devices": [
+      "cuda:0"
+    ],
+    "gpu": [
+      "GPU-d7c4073b-c643-21ed-3d64-35a73d3d7a72",
+      "NVIDIA GeForce RTX 3060",
+      "12288",
+      "591.74"
+    ],
+    "image_digest": "sha256:7172c6d3749ceef15f01283145f0049e622f26202a36d88957b7486ec31a2a80",
+    "kernel": "6.6.87.2-microsoft-standard-WSL2",
+    "preallocate": false,
+    "precision": "float32",
+    "python": "3.11.14"
+  },
+  "label": "runtime-correctness-only",
+  "oracle_accuracy": 1.0,
+  "reset_accuracy": 0.5,
+  "status": "pass"
+}

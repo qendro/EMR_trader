@@ -1,0 +1,4341 @@
+{
+  "schema": 1,
+  "packages": [
+    "H0",
+    "H1"
+  ],
+  "coefficient": {
+    "schema": 1,
+    "id": "h1-fanin-coefficient-v2",
+    "precision": "float32-HIGHEST",
+    "fixture_sha256": "294d033f3e5deb175987f324d0d94041b1e8b5331bde7bcf4b1d3fec099da6e3",
+    "calibration_script_sha256": "6d23274520d51af838d197738b95ae04c57e669f29aefedfe3fa2dc027917fdc",
+    "coefficient": 456,
+    "observed_maximum_error_over_uS": 227.51225998725607,
+    "rule": "max(1,ceil(2*max(error/(2^-24*S)))) from CPU and RTX3070 only",
+    "provenance": {
+      "compatibility_lock_sha256": "a11a7696492404e642f411a817893b984511a7f0da0131318d44173b2741c4d9",
+      "engine_sha256": "e4fbdd7588fd6008455fc109d12996fa21097bd40d07849f83149d2493b113b6",
+      "lock_sha256": "df89b8faeaefc2cf0a8ad1e723e7b000cbf48496a00b1e2ef0a3bac6fb33bdae",
+      "packages": {
+        "emr-hyperneat": "0.3.0",
+        "gymnax": "0.0.9",
+        "jax": "0.6.1",
+        "jaxlib": "0.6.1",
+        "numpy": "1.26.4",
+        "tensorneat": "0.1.0"
+      },
+      "sources": {
+        "base_image": "python:3.11.14-slim-bookworm@sha256:65a93d69fa75478d554f4ad27c85c1e69fa184956261b4301ebaf6dbb0a3543d",
+        "emr": {
+          "archive_sha256": "2e4e7ec552fd2fb6ebd59e44b8ea89057f9980ef296d4451e22ccb7915bfb59d",
+          "license": "GPL-3.0-or-later (bundled LICENSE)",
+          "sha": "306eb4e67687390bb88131ead6af8bebffa8cee9",
+          "url": "https://github.com/RomainClaret/emr-hyperneat.git"
+        },
+        "schema": 1,
+        "tensorneat": {
+          "archive_sha256": "6776462f279bc6fa2ff9c0bf4adc405732d25681424346c8f5d6f9d7469cda3f",
+          "license": "GPL-3.0-or-later (bundled LICENSE)",
+          "sha": "49c193d546447d5fe2cb4b26f60758d23fc24cb0",
+          "url": "https://github.com/RomainClaret/tensorneat.git"
+        }
+      }
+    },
+    "calibration_hardware": [
+      {
+        "allocator_fraction": 0.0,
+        "backend": "cpu",
+        "development_mount": false,
+        "devices": [
+          "TFRT_CPU_0"
+        ],
+        "gpu": null,
+        "image_digest": "sha256:5c567eb307576b52543497c16f7a6fdaedb333272067b4d774b508dbcc29fd46",
+        "kernel": "6.6.87.2-microsoft-standard-WSL2",
+        "preallocate": false,
+        "precision": "float32",
+        "python": "3.11.14"
+      },
+      {
+        "allocator_fraction": 0.6,
+        "backend": "gpu",
+        "development_mount": false,
+        "devices": [
+          "cuda:0"
+        ],
+        "gpu": [
+          "GPU-84389f80-a576-d373-ecb0-92e972e72dfd",
+          "NVIDIA GeForce RTX 3070",
+          "8192",
+          "591.74"
+        ],
+        "image_digest": "sha256:5c567eb307576b52543497c16f7a6fdaedb333272067b4d774b508dbcc29fd46",
+        "kernel": "6.6.87.2-microsoft-standard-WSL2",
+        "preallocate": false,
+        "precision": "float32",
+        "python": "3.11.14"
+      }
+    ],
+    "second_card": "RTX3060 validation only; cannot change coefficient"
+  },
+  "profiles": {
+    "cpu": {
+      "tests": {
+        "tests": 54,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      "large": {
+        "calibration_fixture_sha256": "294d033f3e5deb175987f324d0d94041b1e8b5331bde7bcf4b1d3fec099da6e3",
+        "coefficient": 456,
+        "fixtures": [
+          {
+            "B": 1,
+            "decode": {
+              "bias_queries": 250,
+              "encoding": "role-blocks-v1",
+              "expressed_biases": 250,
+              "expressed_edges": 64000,
+              "host_array_bytes": 322312,
+              "phenotype_nodes": 256,
+              "queries": 64250,
+              "query_slab": 4096
+            },
+            "decode_seconds": 0.16599214100097015,
+            "decoded_carry_vs_reset_output_difference": 6.0428466796875,
+            "decoded_output_preactivation_error_to_threshold_ratio": 0.027476021208214886,
+            "decoded_trajectory_error_max": 0.0008413003157556886,
+            "first_compiled_scan_seconds": 0.10795519200109993,
+            "hidden": 250,
+            "kind": "synthetic-not-H2-learning-or-G5",
+            "nodes": 256,
+            "p": 1,
+            "preactivation_error_to_frozen_threshold_ratio": 0.025621038278904665,
+            "query_signatures": 1,
+            "steps": 128,
+            "trajectory_error_max": 9.876261028440858e-08,
+            "trajectory_signatures": 1
+          },
+          {
+            "B": 1,
+            "decode": {
+              "bias_queries": 1018,
+              "encoding": "role-blocks-v1",
+              "expressed_biases": 1018,
+              "expressed_edges": 1042432,
+              "host_array_bytes": 5221384,
+              "phenotype_nodes": 1024,
+              "queries": 1043450,
+              "query_slab": 4096
+            },
+            "decode_seconds": 0.23609634500098764,
+            "decoded_carry_vs_reset_output_difference": 38.78759765625,
+            "decoded_output_preactivation_error_to_threshold_ratio": 0.2270441805337988,
+            "decoded_trajectory_error_max": 0.018856242155379732,
+            "first_compiled_scan_seconds": 0.11855712899887294,
+            "hidden": 1018,
+            "kind": "synthetic-not-H2-learning-or-G5",
+            "nodes": 1024,
+            "p": 1,
+            "preactivation_error_to_frozen_threshold_ratio": 0.05833046084583471,
+            "query_signatures": 1,
+            "steps": 128,
+            "trajectory_error_max": 2.2237200451163952e-07,
+            "trajectory_signatures": 2
+          }
+        ],
+        "hardware": {
+          "allocator_fraction": 0.0,
+          "backend": "cpu",
+          "development_mount": false,
+          "devices": [
+            "TFRT_CPU_0"
+          ],
+          "gpu": null,
+          "image_digest": "sha256:5c567eb307576b52543497c16f7a6fdaedb333272067b4d774b508dbcc29fd46",
+          "kernel": "6.6.87.2-microsoft-standard-WSL2",
+          "preallocate": false,
+          "precision": "float32",
+          "python": "3.11.14"
+        },
+        "memory": {
+          "cgroup_current_bytes": 468938752,
+          "cgroup_peak_bytes": 476483584,
+          "cgroup_swap_bytes": 0,
+          "device_allocator": null,
+          "process_peak_rss_bytes": 760164352
+        },
+        "not_qualified": [
+          "H2 learning",
+          "B0",
+          "M2 G2/G4/G5",
+          "W8 sequence environment"
+        ],
+        "provenance": {
+          "compatibility_lock_sha256": "a11a7696492404e642f411a817893b984511a7f0da0131318d44173b2741c4d9",
+          "engine_sha256": "e4fbdd7588fd6008455fc109d12996fa21097bd40d07849f83149d2493b113b6",
+          "lock_sha256": "df89b8faeaefc2cf0a8ad1e723e7b000cbf48496a00b1e2ef0a3bac6fb33bdae",
+          "packages": {
+            "emr-hyperneat": "0.3.0",
+            "gymnax": "0.0.9",
+            "jax": "0.6.1",
+            "jaxlib": "0.6.1",
+            "numpy": "1.26.4",
+            "tensorneat": "0.1.0"
+          },
+          "sources": {
+            "base_image": "python:3.11.14-slim-bookworm@sha256:65a93d69fa75478d554f4ad27c85c1e69fa184956261b4301ebaf6dbb0a3543d",
+            "emr": {
+              "archive_sha256": "2e4e7ec552fd2fb6ebd59e44b8ea89057f9980ef296d4451e22ccb7915bfb59d",
+              "license": "GPL-3.0-or-later (bundled LICENSE)",
+              "sha": "306eb4e67687390bb88131ead6af8bebffa8cee9",
+              "url": "https://github.com/RomainClaret/emr-hyperneat.git"
+            },
+            "schema": 1,
+            "tensorneat": {
+              "archive_sha256": "6776462f279bc6fa2ff9c0bf4adc405732d25681424346c8f5d6f9d7469cda3f",
+              "license": "GPL-3.0-or-later (bundled LICENSE)",
+              "sha": "49c193d546447d5fe2cb4b26f60758d23fc24cb0",
+              "url": "https://github.com/RomainClaret/tensorneat.git"
+            }
+          }
+        },
+        "schema": 1,
+        "script_sha256": "66a3308c2f4c39fbba2104a751c551f3dc08653e4869e3697bf400b416278fcd",
+        "status": "pass"
+      },
+      "calibration": {
+        "coefficient": 456,
+        "fixture_sha256": "294d033f3e5deb175987f324d0d94041b1e8b5331bde7bcf4b1d3fec099da6e3",
+        "fixtures": [
+          {
+            "fanin": 64,
+            "max_error": 5.7785861262704685e-08,
+            "max_error_over_uS": 5.929193960522999,
+            "pattern": "positive",
+            "seed": 8100
+          },
+          {
+            "fanin": 64,
+            "max_error": 2.6060642588365823e-08,
+            "max_error_over_uS": 3.3313650819055347,
+            "pattern": "positive-single",
+            "seed": 8100
+          },
+          {
+            "fanin": 64,
+            "max_error": 1.5150047792678034e-08,
+            "max_error_over_uS": 2.08907016873201,
+            "pattern": "mixed",
+            "seed": 8100
+          },
+          {
+            "fanin": 64,
+            "max_error": 1.5150047792678034e-08,
+            "max_error_over_uS": 2.08907016873201,
+            "pattern": "mixed-single",
+            "seed": 8100
+          },
+          {
+            "fanin": 64,
+            "max_error": 1.666395577082369e-09,
+            "max_error_over_uS": 0.180084749614581,
+            "pattern": "cancellation",
+            "seed": 8100
+          },
+          {
+            "fanin": 64,
+            "max_error": 1.383980707814203e-09,
+            "max_error_over_uS": 0.17868398263600074,
+            "pattern": "cancellation-single",
+            "seed": 8100
+          },
+          {
+            "fanin": 60,
+            "max_error": 2.60770320892334e-07,
+            "max_error_over_uS": 7.291666829648121,
+            "pattern": "constant-output-single",
+            "seed": 8100,
+            "weight": 0.009999999776482582
+          },
+          {
+            "fanin": 64,
+            "max_error": 6.472264713064391e-08,
+            "max_error_over_uS": 6.786287178709436,
+            "pattern": "positive",
+            "seed": 8101
+          },
+          {
+            "fanin": 64,
+            "max_error": 3.904395173837116e-08,
+            "max_error_over_uS": 4.778269731360026,
+            "pattern": "positive-single",
+            "seed": 8101
+          },
+          {
+            "fanin": 64,
+            "max_error": 1.959257805300707e-08,
+            "max_error_over_uS": 2.535592157030184,
+            "pattern": "mixed",
+            "seed": 8101
+          },
+          {
+            "fanin": 64,
+            "max_error": 1.1823015697541572e-08,
+            "max_error_over_uS": 1.402155208925502,
+            "pattern": "mixed-single",
+            "seed": 8101
+          },
+          {
+            "fanin": 64,
+            "max_error": 1.5703909284070505e-09,
+            "max_error_over_uS": 0.1659443767947822,
+            "pattern": "cancellation",
+            "seed": 8101
+          },
+          {
+            "fanin": 64,
+            "max_error": 1.62423086091934e-09,
+            "max_error_over_uS": 0.14307529599287797,
+            "pattern": "cancellation-single",
+            "seed": 8101
+          },
+          {
+            "fanin": 60,
+            "max_error": 3.427267074584961e-06,
+            "max_error_over_uS": 9.58333319053054,
+            "pattern": "constant-output-single",
+            "seed": 8101,
+            "weight": 0.10000000149011612
+          },
+          {
+            "fanin": 64,
+            "max_error": 5.854245310743522e-08,
+            "max_error_over_uS": 5.725820907836872,
+            "pattern": "positive",
+            "seed": 8102
+          },
+          {
+            "fanin": 64,
+            "max_error": 4.271226106133952e-08,
+            "max_error_over_uS": 4.804985961857245,
+            "pattern": "positive-single",
+            "seed": 8102
+          },
+          {
+            "fanin": 64,
+            "max_error": 1.896285945282572e-08,
+            "max_error_over_uS": 2.290051520459658,
+            "pattern": "mixed",
+            "seed": 8102
+          },
+          {
+            "fanin": 64,
+            "max_error": 9.41081419736367e-09,
+            "max_error_over_uS": 1.1610933547452127,
+            "pattern": "mixed-single",
+            "seed": 8102
+          },
+          {
+            "fanin": 64,
+            "max_error": 1.6992451890018856e-09,
+            "max_error_over_uS": 0.1907734959657325,
+            "pattern": "cancellation",
+            "seed": 8102
+          },
+          {
+            "fanin": 64,
+            "max_error": 1.19145582289093e-09,
+            "max_error_over_uS": 0.1866494667724758,
+            "pattern": "cancellation-single",
+            "seed": 8102
+          },
+          {
+            "fanin": 60,
+            "max_error": 6.854534149169922e-06,
+            "max_error_over_uS": 9.58333319053054,
+            "pattern": "constant-output-single",
+            "seed": 8102,
+            "weight": 0.20000000298023224
+          },
+          {
+            "fanin": 64,
+            "max_error": 5.682864695488732e-08,
+            "max_error_over_uS": 6.660250994790706,
+            "pattern": "positive",
+            "seed": 8103
+          },
+          {
+            "fanin": 64,
+            "max_error": 5.353795765050684e-08,
+            "max_error_over_uS": 6.344379013552346,
+            "pattern": "positive-single",
+            "seed": 8103
+          },
+          {
+            "fanin": 64,
+            "max_error": 2.6636191925721864e-08,
+            "max_error_over_uS": 3.061305898820806,
+            "pattern": "mixed",
+            "seed": 8103
+          },
+          {
+            "fanin": 64,
+            "max_error": 8.567239237478042e-09,
+            "max_error_over_uS": 1.282980429374137,
+            "pattern": "mixed-single",
+            "seed": 8103
+          },
+          {
+            "fanin": 64,
+            "max_error": 1.9437187415149992e-09,
+            "max_error_over_uS": 0.17691791783585656,
+            "pattern": "cancellation",
+            "seed": 8103
+          },
+          {
+            "fanin": 64,
+            "max_error": 1.127979598614104e-09,
+            "max_error_over_uS": 0.12451060997362823,
+            "pattern": "cancellation-single",
+            "seed": 8103
+          },
+          {
+            "fanin": 60,
+            "max_error": 1.1920928955078125e-06,
+            "max_error_over_uS": 1.111111066959524,
+            "pattern": "constant-output-single",
+            "seed": 8103,
+            "weight": 0.30000001192092896
+          },
+          {
+            "fanin": 64,
+            "max_error": 6.312250980244904e-08,
+            "max_error_over_uS": 5.770769989615722,
+            "pattern": "positive",
+            "seed": 8104
+          },
+          {
+            "fanin": 64,
+            "max_error": 6.312250980244904e-08,
+            "max_error_over_uS": 5.770769989615722,
+            "pattern": "positive-single",
+            "seed": 8104
+          },
+          {
+            "fanin": 64,
+            "max_error": 1.3882879748572385e-08,
+            "max_error_over_uS": 1.932693274269175,
+            "pattern": "mixed",
+            "seed": 8104
+          },
+          {
+            "fanin": 64,
+            "max_error": 1.3770011117464342e-08,
+            "max_error_over_uS": 1.504162778784607,
+            "pattern": "mixed-single",
+            "seed": 8104
+          },
+          {
+            "fanin": 64,
+            "max_error": 1.6984323947255575e-09,
+            "max_error_over_uS": 0.21186494198951136,
+            "pattern": "cancellation",
+            "seed": 8104
+          },
+          {
+            "fanin": 64,
+            "max_error": 1.4272149018168534e-09,
+            "max_error_over_uS": 0.13970725987129848,
+            "pattern": "cancellation-single",
+            "seed": 8104
+          },
+          {
+            "fanin": 60,
+            "max_error": 2.3603439331054688e-05,
+            "max_error_over_uS": 9.428571589139045,
+            "pattern": "constant-output-single",
+            "seed": 8104,
+            "weight": 0.699999988079071
+          },
+          {
+            "fanin": 64,
+            "max_error": 6.234157801099371e-08,
+            "max_error_over_uS": 6.065235083069532,
+            "pattern": "positive",
+            "seed": 8105
+          },
+          {
+            "fanin": 64,
+            "max_error": 3.707167073319084e-08,
+            "max_error_over_uS": 4.261338009285438,
+            "pattern": "positive-single",
+            "seed": 8105
+          },
+          {
+            "fanin": 64,
+            "max_error": 1.7323388182277633e-08,
+            "max_error_over_uS": 2.0939337856283347,
+            "pattern": "mixed",
+            "seed": 8105
+          },
+          {
+            "fanin": 64,
+            "max_error": 1.3710786520015894e-08,
+            "max_error_over_uS": 1.762618770257392,
+            "pattern": "mixed-single",
+            "seed": 8105
+          },
+          {
+            "fanin": 64,
+            "max_error": 2.0247297172204526e-09,
+            "max_error_over_uS": 0.19127787074688046,
+            "pattern": "cancellation",
+            "seed": 8105
+          },
+          {
+            "fanin": 64,
+            "max_error": 1.2984240349567244e-09,
+            "max_error_over_uS": 0.14838192140070564,
+            "pattern": "cancellation-single",
+            "seed": 8105
+          },
+          {
+            "fanin": 60,
+            "max_error": 3.9577484130859375e-05,
+            "max_error_over_uS": 10.060605842548302,
+            "pattern": "constant-output-single",
+            "seed": 8105,
+            "weight": 1.100000023841858
+          },
+          {
+            "fanin": 64,
+            "max_error": 5.0206194424085027e-08,
+            "max_error_over_uS": 5.967590965612008,
+            "pattern": "positive",
+            "seed": 8106
+          },
+          {
+            "fanin": 64,
+            "max_error": 3.436507337029049e-08,
+            "max_error_over_uS": 4.322164756743149,
+            "pattern": "positive-single",
+            "seed": 8106
+          },
+          {
+            "fanin": 64,
+            "max_error": 1.9411012394665583e-08,
+            "max_error_over_uS": 2.0711982672383287,
+            "pattern": "mixed",
+            "seed": 8106
+          },
+          {
+            "fanin": 64,
+            "max_error": 1.4448556170942872e-08,
+            "max_error_over_uS": 1.715836966904243,
+            "pattern": "mixed-single",
+            "seed": 8106
+          },
+          {
+            "fanin": 64,
+            "max_error": 1.5682850573739415e-09,
+            "max_error_over_uS": 0.2239201744984545,
+            "pattern": "cancellation",
+            "seed": 8106
+          },
+          {
+            "fanin": 64,
+            "max_error": 1.1568530577932279e-09,
+            "max_error_over_uS": 0.13736524839853576,
+            "pattern": "cancellation-single",
+            "seed": 8106
+          },
+          {
+            "fanin": 60,
+            "max_error": 7.915496826171875e-05,
+            "max_error_over_uS": 10.060605842548302,
+            "pattern": "constant-output-single",
+            "seed": 8106,
+            "weight": 2.200000047683716
+          },
+          {
+            "fanin": 64,
+            "max_error": 5.63815479304175e-08,
+            "max_error_over_uS": 6.074897834352704,
+            "pattern": "positive",
+            "seed": 8107
+          },
+          {
+            "fanin": 64,
+            "max_error": 3.708478119035519e-08,
+            "max_error_over_uS": 6.074897834352704,
+            "pattern": "positive-single",
+            "seed": 8107
+          },
+          {
+            "fanin": 64,
+            "max_error": 1.5229552119411238e-08,
+            "max_error_over_uS": 1.9210208545833884,
+            "pattern": "mixed",
+            "seed": 8107
+          },
+          {
+            "fanin": 64,
+            "max_error": 1.3180749134505954e-08,
+            "max_error_over_uS": 1.7419716897225632,
+            "pattern": "mixed-single",
+            "seed": 8107
+          },
+          {
+            "fanin": 64,
+            "max_error": 1.6482180065224838e-09,
+            "max_error_over_uS": 0.19537365546629953,
+            "pattern": "cancellation",
+            "seed": 8107
+          },
+          {
+            "fanin": 64,
+            "max_error": 1.3002798837646878e-09,
+            "max_error_over_uS": 0.16214036127910159,
+            "pattern": "cancellation-single",
+            "seed": 8107
+          },
+          {
+            "fanin": 60,
+            "max_error": 0.0001888275146484375,
+            "max_error_over_uS": 10.775509994360672,
+            "pattern": "constant-output-single",
+            "seed": 8107,
+            "weight": 4.900000095367432
+          },
+          {
+            "fanin": 256,
+            "max_error": 1.164626388938661e-07,
+            "max_error_over_uS": 14.398787437351247,
+            "pattern": "positive",
+            "seed": 8100
+          },
+          {
+            "fanin": 256,
+            "max_error": 8.238544919880741e-08,
+            "max_error_over_uS": 12.44446676625652,
+            "pattern": "positive-single",
+            "seed": 8100
+          },
+          {
+            "fanin": 256,
+            "max_error": 2.6096698017841202e-08,
+            "max_error_over_uS": 3.4631980788193655,
+            "pattern": "mixed",
+            "seed": 8100
+          },
+          {
+            "fanin": 256,
+            "max_error": 3.354727861476503e-08,
+            "max_error_over_uS": 4.451937588764844,
+            "pattern": "mixed-single",
+            "seed": 8100
+          },
+          {
+            "fanin": 256,
+            "max_error": 8.475861124068729e-10,
+            "max_error_over_uS": 0.10166706318954376,
+            "pattern": "cancellation",
+            "seed": 8100
+          },
+          {
+            "fanin": 256,
+            "max_error": 7.747953389980466e-10,
+            "max_error_over_uS": 0.08408786534779913,
+            "pattern": "cancellation-single",
+            "seed": 8100
+          },
+          {
+            "fanin": 252,
+            "max_error": 1.8700957298278809e-06,
+            "max_error_over_uS": 12.450397103684887,
+            "pattern": "constant-output-single",
+            "seed": 8100,
+            "weight": 0.009999999776482582
+          },
+          {
+            "fanin": 256,
+            "max_error": 1.3067197873750658e-07,
+            "max_error_over_uS": 14.270750258379808,
+            "pattern": "positive",
+            "seed": 8101
+          },
+          {
+            "fanin": 256,
+            "max_error": 8.91402341940406e-08,
+            "max_error_over_uS": 10.0318867108654,
+            "pattern": "positive-single",
+            "seed": 8101
+          },
+          {
+            "fanin": 256,
+            "max_error": 2.3966868815950004e-08,
+            "max_error_over_uS": 3.112533602293498,
+            "pattern": "mixed",
+            "seed": 8101
+          },
+          {
+            "fanin": 256,
+            "max_error": 1.7231696208819258e-08,
+            "max_error_over_uS": 1.8238625079673023,
+            "pattern": "mixed-single",
+            "seed": 8101
+          },
+          {
+            "fanin": 256,
+            "max_error": 8.361271675028092e-10,
+            "max_error_over_uS": 0.1037674836466126,
+            "pattern": "cancellation",
+            "seed": 8101
+          },
+          {
+            "fanin": 256,
+            "max_error": 7.741620677848005e-10,
+            "max_error_over_uS": 0.09140038804009876,
+            "pattern": "cancellation-single",
+            "seed": 8101
+          },
+          {
+            "fanin": 252,
+            "max_error": 5.951523780822754e-05,
+            "max_error_over_uS": 39.623015282586934,
+            "pattern": "constant-output-single",
+            "seed": 8101,
+            "weight": 0.10000000149011612
+          },
+          {
+            "fanin": 256,
+            "max_error": 1.1415897088751237e-07,
+            "max_error_over_uS": 13.157408513405539,
+            "pattern": "positive",
+            "seed": 8102
+          },
+          {
+            "fanin": 256,
+            "max_error": 1.0984184670159713e-07,
+            "max_error_over_uS": 12.485138698404594,
+            "pattern": "positive-single",
+            "seed": 8102
+          },
+          {
+            "fanin": 256,
+            "max_error": 2.2820304604320718e-08,
+            "max_error_over_uS": 2.997251917028483,
+            "pattern": "mixed",
+            "seed": 8102
+          },
+          {
+            "fanin": 256,
+            "max_error": 1.441505938920562e-08,
+            "max_error_over_uS": 1.7586672386253082,
+            "pattern": "mixed-single",
+            "seed": 8102
+          },
+          {
+            "fanin": 256,
+            "max_error": 8.178140387116173e-10,
+            "max_error_over_uS": 0.10171364067129204,
+            "pattern": "cancellation",
+            "seed": 8102
+          },
+          {
+            "fanin": 256,
+            "max_error": 6.357981918725386e-10,
+            "max_error_over_uS": 0.09182632860919572,
+            "pattern": "cancellation-single",
+            "seed": 8102
+          },
+          {
+            "fanin": 252,
+            "max_error": 0.00011903047561645508,
+            "max_error_over_uS": 39.623015282586934,
+            "pattern": "constant-output-single",
+            "seed": 8102,
+            "weight": 0.20000000298023224
+          },
+          {
+            "fanin": 256,
+            "max_error": 1.0827864499463047e-07,
+            "max_error_over_uS": 12.97039563641522,
+            "pattern": "positive",
+            "seed": 8103
+          },
+          {
+            "fanin": 256,
+            "max_error": 8.915505869677709e-08,
+            "max_error_over_uS": 11.112996277401844,
+            "pattern": "positive-single",
+            "seed": 8103
+          },
+          {
+            "fanin": 256,
+            "max_error": 1.8778452751111452e-08,
+            "max_error_over_uS": 2.434093390059784,
+            "pattern": "mixed",
+            "seed": 8103
+          },
+          {
+            "fanin": 256,
+            "max_error": 1.969705802629118e-08,
+            "max_error_over_uS": 2.4505443722578573,
+            "pattern": "mixed-single",
+            "seed": 8103
+          },
+          {
+            "fanin": 256,
+            "max_error": 7.733351736760596e-10,
+            "max_error_over_uS": 0.10058326889639031,
+            "pattern": "cancellation",
+            "seed": 8103
+          },
+          {
+            "fanin": 256,
+            "max_error": 7.319622685741933e-10,
+            "max_error_over_uS": 0.08724378495130901,
+            "pattern": "cancellation-single",
+            "seed": 8103
+          },
+          {
+            "fanin": 252,
+            "max_error": 3.0994415283203125e-06,
+            "max_error_over_uS": 0.6878306604987531,
+            "pattern": "constant-output-single",
+            "seed": 8103,
+            "weight": 0.30000001192092896
+          },
+          {
+            "fanin": 256,
+            "max_error": 1.0723898780096164e-07,
+            "max_error_over_uS": 12.865398882445126,
+            "pattern": "positive",
+            "seed": 8104
+          },
+          {
+            "fanin": 256,
+            "max_error": 8.881857518905356e-08,
+            "max_error_over_uS": 11.017058448347505,
+            "pattern": "positive-single",
+            "seed": 8104
+          },
+          {
+            "fanin": 256,
+            "max_error": 2.0082567074586333e-08,
+            "max_error_over_uS": 2.437432625828543,
+            "pattern": "mixed",
+            "seed": 8104
+          },
+          {
+            "fanin": 256,
+            "max_error": 1.5286690566163053e-08,
+            "max_error_over_uS": 2.044146368598188,
+            "pattern": "mixed-single",
+            "seed": 8104
+          },
+          {
+            "fanin": 256,
+            "max_error": 8.244899207809908e-10,
+            "max_error_over_uS": 0.10769437844263259,
+            "pattern": "cancellation",
+            "seed": 8104
+          },
+          {
+            "fanin": 256,
+            "max_error": 8.583790900296151e-10,
+            "max_error_over_uS": 0.09317706432011279,
+            "pattern": "cancellation-single",
+            "seed": 8104
+          },
+          {
+            "fanin": 252,
+            "max_error": 0.0004303455352783203,
+            "max_error_over_uS": 40.92970591244824,
+            "pattern": "constant-output-single",
+            "seed": 8104,
+            "weight": 0.699999988079071
+          },
+          {
+            "fanin": 256,
+            "max_error": 1.0128234911865874e-07,
+            "max_error_over_uS": 13.593075852269054,
+            "pattern": "positive",
+            "seed": 8105
+          },
+          {
+            "fanin": 256,
+            "max_error": 8.15328616565747e-08,
+            "max_error_over_uS": 9.898140203020985,
+            "pattern": "positive-single",
+            "seed": 8105
+          },
+          {
+            "fanin": 256,
+            "max_error": 1.9176465727854808e-08,
+            "max_error_over_uS": 2.309011684259099,
+            "pattern": "mixed",
+            "seed": 8105
+          },
+          {
+            "fanin": 256,
+            "max_error": 1.4433302018834748e-08,
+            "max_error_over_uS": 1.6847102071377615,
+            "pattern": "mixed-single",
+            "seed": 8105
+          },
+          {
+            "fanin": 256,
+            "max_error": 9.807590295451973e-10,
+            "max_error_over_uS": 0.11402587804852737,
+            "pattern": "cancellation",
+            "seed": 8105
+          },
+          {
+            "fanin": 256,
+            "max_error": 5.850191997502918e-10,
+            "max_error_over_uS": 0.08332478014506037,
+            "pattern": "cancellation-single",
+            "seed": 8105
+          },
+          {
+            "fanin": 252,
+            "max_error": 0.0006775856018066406,
+            "max_error_over_uS": 41.01010012123103,
+            "pattern": "constant-output-single",
+            "seed": 8105,
+            "weight": 1.100000023841858
+          },
+          {
+            "fanin": 256,
+            "max_error": 1.0988742654705064e-07,
+            "max_error_over_uS": 14.507280926783146,
+            "pattern": "positive",
+            "seed": 8106
+          },
+          {
+            "fanin": 256,
+            "max_error": 1.0503617026147438e-07,
+            "max_error_over_uS": 13.018789877422261,
+            "pattern": "positive-single",
+            "seed": 8106
+          },
+          {
+            "fanin": 256,
+            "max_error": 2.3598341853531268e-08,
+            "max_error_over_uS": 2.887127676580893,
+            "pattern": "mixed",
+            "seed": 8106
+          },
+          {
+            "fanin": 256,
+            "max_error": 1.602012068835368e-08,
+            "max_error_over_uS": 1.638505509202139,
+            "pattern": "mixed-single",
+            "seed": 8106
+          },
+          {
+            "fanin": 256,
+            "max_error": 8.232222126203226e-10,
+            "max_error_over_uS": 0.1043596837780489,
+            "pattern": "cancellation",
+            "seed": 8106
+          },
+          {
+            "fanin": 256,
+            "max_error": 6.92666424217947e-10,
+            "max_error_over_uS": 0.08405997281466117,
+            "pattern": "cancellation-single",
+            "seed": 8106
+          },
+          {
+            "fanin": 252,
+            "max_error": 0.0013551712036132812,
+            "max_error_over_uS": 41.01010012123103,
+            "pattern": "constant-output-single",
+            "seed": 8106,
+            "weight": 2.200000047683716
+          },
+          {
+            "fanin": 256,
+            "max_error": 1.0085288193462105e-07,
+            "max_error_over_uS": 12.024399002343506,
+            "pattern": "positive",
+            "seed": 8107
+          },
+          {
+            "fanin": 256,
+            "max_error": 8.82686556902268e-08,
+            "max_error_over_uS": 10.321592693958358,
+            "pattern": "positive-single",
+            "seed": 8107
+          },
+          {
+            "fanin": 256,
+            "max_error": 2.1070480117624246e-08,
+            "max_error_over_uS": 2.76744645384859,
+            "pattern": "mixed",
+            "seed": 8107
+          },
+          {
+            "fanin": 256,
+            "max_error": 1.5493833806223822e-08,
+            "max_error_over_uS": 1.9602216426428554,
+            "pattern": "mixed-single",
+            "seed": 8107
+          },
+          {
+            "fanin": 256,
+            "max_error": 9.666658584706056e-10,
+            "max_error_over_uS": 0.11252427834115779,
+            "pattern": "cancellation",
+            "seed": 8107
+          },
+          {
+            "fanin": 256,
+            "max_error": 6.818998699031908e-10,
+            "max_error_over_uS": 0.08007986149706423,
+            "pattern": "cancellation-single",
+            "seed": 8107
+          },
+          {
+            "fanin": 252,
+            "max_error": 0.0030765533447265625,
+            "max_error_over_uS": 41.80110057937413,
+            "pattern": "constant-output-single",
+            "seed": 8107,
+            "weight": 4.900000095367432
+          },
+          {
+            "fanin": 1024,
+            "max_error": 6.33754474732573e-08,
+            "max_error_over_uS": 7.809103914082877,
+            "pattern": "positive",
+            "seed": 8100
+          },
+          {
+            "fanin": 1024,
+            "max_error": 1.7219074238683518e-07,
+            "max_error_over_uS": 22.44492653076138,
+            "pattern": "positive-single",
+            "seed": 8100
+          },
+          {
+            "fanin": 1024,
+            "max_error": 1.3482168451095511e-08,
+            "max_error_over_uS": 1.5352768345556878,
+            "pattern": "mixed",
+            "seed": 8100
+          },
+          {
+            "fanin": 1024,
+            "max_error": 1.9032115824296758e-08,
+            "max_error_over_uS": 2.23629193346474,
+            "pattern": "mixed-single",
+            "seed": 8100
+          },
+          {
+            "fanin": 1024,
+            "max_error": 4.6109466245169983e-10,
+            "max_error_over_uS": 0.05851640442927281,
+            "pattern": "cancellation",
+            "seed": 8100
+          },
+          {
+            "fanin": 1024,
+            "max_error": 4.0443104420972986e-10,
+            "max_error_over_uS": 0.052070175730941255,
+            "pattern": "cancellation-single",
+            "seed": 8100
+          },
+          {
+            "fanin": 1020,
+            "max_error": 0.00013832002878189087,
+            "max_error_over_uS": 227.51225998725607,
+            "pattern": "constant-output-single",
+            "seed": 8100,
+            "weight": 0.009999999776482582
+          },
+          {
+            "fanin": 1024,
+            "max_error": 6.870810295711571e-08,
+            "max_error_over_uS": 7.812068105537346,
+            "pattern": "positive",
+            "seed": 8101
+          },
+          {
+            "fanin": 1024,
+            "max_error": 1.8210090563242076e-07,
+            "max_error_over_uS": 22.443213432289646,
+            "pattern": "positive-single",
+            "seed": 8101
+          },
+          {
+            "fanin": 1024,
+            "max_error": 1.1309139163334647e-08,
+            "max_error_over_uS": 1.3251986044652213,
+            "pattern": "mixed",
+            "seed": 8101
+          },
+          {
+            "fanin": 1024,
+            "max_error": 1.8851755254067903e-08,
+            "max_error_over_uS": 2.440177593946415,
+            "pattern": "mixed-single",
+            "seed": 8101
+          },
+          {
+            "fanin": 1024,
+            "max_error": 5.024986537982556e-10,
+            "max_error_over_uS": 0.0659613275398756,
+            "pattern": "cancellation",
+            "seed": 8101
+          },
+          {
+            "fanin": 1024,
+            "max_error": 3.3665781273839457e-10,
+            "max_error_over_uS": 0.04680297576898773,
+            "pattern": "cancellation-single",
+            "seed": 8101
+          },
+          {
+            "fanin": 1020,
+            "max_error": 0.0009857118129730225,
+            "max_error_over_uS": 162.13235052521617,
+            "pattern": "constant-output-single",
+            "seed": 8101,
+            "weight": 0.10000000149011612
+          },
+          {
+            "fanin": 1024,
+            "max_error": 7.029298632055259e-08,
+            "max_error_over_uS": 8.635488365471087,
+            "pattern": "positive",
+            "seed": 8102
+          },
+          {
+            "fanin": 1024,
+            "max_error": 1.9463061803892678e-07,
+            "max_error_over_uS": 21.94797938870523,
+            "pattern": "positive-single",
+            "seed": 8102
+          },
+          {
+            "fanin": 1024,
+            "max_error": 8.815053069433088e-09,
+            "max_error_over_uS": 1.0796075403657346,
+            "pattern": "mixed",
+            "seed": 8102
+          },
+          {
+            "fanin": 1024,
+            "max_error": 2.8885685135482397e-08,
+            "max_error_over_uS": 3.322893114264907,
+            "pattern": "mixed-single",
+            "seed": 8102
+          },
+          {
+            "fanin": 1024,
+            "max_error": 4.92109797356477e-10,
+            "max_error_over_uS": 0.06203455949023315,
+            "pattern": "cancellation",
+            "seed": 8102
+          },
+          {
+            "fanin": 1024,
+            "max_error": 3.993729791318401e-10,
+            "max_error_over_uS": 0.05264537108959437,
+            "pattern": "cancellation-single",
+            "seed": 8102
+          },
+          {
+            "fanin": 1020,
+            "max_error": 0.001971423625946045,
+            "max_error_over_uS": 162.13235052521617,
+            "pattern": "constant-output-single",
+            "seed": 8102,
+            "weight": 0.20000000298023224
+          },
+          {
+            "fanin": 1024,
+            "max_error": 6.843146310719916e-08,
+            "max_error_over_uS": 8.71099489207831,
+            "pattern": "positive",
+            "seed": 8103
+          },
+          {
+            "fanin": 1024,
+            "max_error": 1.5807177619620028e-07,
+            "max_error_over_uS": 20.529729665726705,
+            "pattern": "positive-single",
+            "seed": 8103
+          },
+          {
+            "fanin": 1024,
+            "max_error": 1.0119988720289075e-08,
+            "max_error_over_uS": 1.2880141172927972,
+            "pattern": "mixed",
+            "seed": 8103
+          },
+          {
+            "fanin": 1024,
+            "max_error": 1.6480337610216833e-08,
+            "max_error_over_uS": 2.1348000209358875,
+            "pattern": "mixed-single",
+            "seed": 8103
+          },
+          {
+            "fanin": 1024,
+            "max_error": 4.930198471697622e-10,
+            "max_error_over_uS": 0.05735758100577766,
+            "pattern": "cancellation",
+            "seed": 8103
+          },
+          {
+            "fanin": 1024,
+            "max_error": 3.366583956054825e-10,
+            "max_error_over_uS": 0.04342908756215785,
+            "pattern": "cancellation-single",
+            "seed": 8103
+          },
+          {
+            "fanin": 1020,
+            "max_error": 0.0001952648162841797,
+            "max_error_over_uS": 10.70588192752765,
+            "pattern": "constant-output-single",
+            "seed": 8103,
+            "weight": 0.30000001192092896
+          },
+          {
+            "fanin": 1024,
+            "max_error": 6.609835334625558e-08,
+            "max_error_over_uS": 8.051228024672033,
+            "pattern": "positive",
+            "seed": 8104
+          },
+          {
+            "fanin": 1024,
+            "max_error": 1.621162439291446e-07,
+            "max_error_over_uS": 21.58627825733623,
+            "pattern": "positive-single",
+            "seed": 8104
+          },
+          {
+            "fanin": 1024,
+            "max_error": 1.087617484789305e-08,
+            "max_error_over_uS": 1.4694744676266187,
+            "pattern": "mixed",
+            "seed": 8104
+          },
+          {
+            "fanin": 1024,
+            "max_error": 2.0499431454407135e-08,
+            "max_error_over_uS": 2.473182372073755,
+            "pattern": "mixed-single",
+            "seed": 8104
+          },
+          {
+            "fanin": 1024,
+            "max_error": 5.170527894726717e-10,
+            "max_error_over_uS": 0.06788427935608898,
+            "pattern": "cancellation",
+            "seed": 8104
+          },
+          {
+            "fanin": 1024,
+            "max_error": 3.9626574244167045e-10,
+            "max_error_over_uS": 0.055315792969859175,
+            "pattern": "cancellation-single",
+            "seed": 8104
+          },
+          {
+            "fanin": 1020,
+            "max_error": 0.00721430778503418,
+            "max_error_over_uS": 169.51821016979108,
+            "pattern": "constant-output-single",
+            "seed": 8104,
+            "weight": 0.699999988079071
+          },
+          {
+            "fanin": 1024,
+            "max_error": 6.4900091967246e-08,
+            "max_error_over_uS": 8.110991796974051,
+            "pattern": "positive",
+            "seed": 8105
+          },
+          {
+            "fanin": 1024,
+            "max_error": 1.6252082521428513e-07,
+            "max_error_over_uS": 19.94401440727606,
+            "pattern": "positive-single",
+            "seed": 8105
+          },
+          {
+            "fanin": 1024,
+            "max_error": 1.052989146918537e-08,
+            "max_error_over_uS": 1.1507930231648817,
+            "pattern": "mixed",
+            "seed": 8105
+          },
+          {
+            "fanin": 1024,
+            "max_error": 1.4491156108409342e-08,
+            "max_error_over_uS": 1.8687682856866394,
+            "pattern": "mixed-single",
+            "seed": 8105
+          },
+          {
+            "fanin": 1024,
+            "max_error": 4.313505941322404e-10,
+            "max_error_over_uS": 0.05497860579692862,
+            "pattern": "cancellation",
+            "seed": 8105
+          },
+          {
+            "fanin": 1024,
+            "max_error": 4.010270171495023e-10,
+            "max_error_over_uS": 0.05279157711480941,
+            "pattern": "cancellation-single",
+            "seed": 8105
+          },
+          {
+            "fanin": 1020,
+            "max_error": 0.01149892807006836,
+            "max_error_over_uS": 171.94295527501933,
+            "pattern": "constant-output-single",
+            "seed": 8105,
+            "weight": 1.100000023841858
+          },
+          {
+            "fanin": 1024,
+            "max_error": 6.06763186916659e-08,
+            "max_error_over_uS": 7.688605443515514,
+            "pattern": "positive",
+            "seed": 8106
+          },
+          {
+            "fanin": 1024,
+            "max_error": 1.7814737438004435e-07,
+            "max_error_over_uS": 21.432397846269158,
+            "pattern": "positive-single",
+            "seed": 8106
+          },
+          {
+            "fanin": 1024,
+            "max_error": 1.1372279696067467e-08,
+            "max_error_over_uS": 1.4938420078994479,
+            "pattern": "mixed",
+            "seed": 8106
+          },
+          {
+            "fanin": 1024,
+            "max_error": 3.508967352794379e-08,
+            "max_error_over_uS": 4.057149374026114,
+            "pattern": "mixed-single",
+            "seed": 8106
+          },
+          {
+            "fanin": 1024,
+            "max_error": 4.69513872225491e-10,
+            "max_error_over_uS": 0.06101907998937351,
+            "pattern": "cancellation",
+            "seed": 8106
+          },
+          {
+            "fanin": 1024,
+            "max_error": 3.6767142108651285e-10,
+            "max_error_over_uS": 0.04369556033301443,
+            "pattern": "cancellation-single",
+            "seed": 8106
+          },
+          {
+            "fanin": 1020,
+            "max_error": 0.02299785614013672,
+            "max_error_over_uS": 171.94295527501933,
+            "pattern": "constant-output-single",
+            "seed": 8106,
+            "weight": 2.200000047683716
+          },
+          {
+            "fanin": 1024,
+            "max_error": 6.613359110341221e-08,
+            "max_error_over_uS": 8.359458158341313,
+            "pattern": "positive",
+            "seed": 8107
+          },
+          {
+            "fanin": 1024,
+            "max_error": 1.9827139871586574e-07,
+            "max_error_over_uS": 24.104495407964986,
+            "pattern": "positive-single",
+            "seed": 8107
+          },
+          {
+            "fanin": 1024,
+            "max_error": 1.0430732649141516e-08,
+            "max_error_over_uS": 1.2665511428714324,
+            "pattern": "mixed",
+            "seed": 8107
+          },
+          {
+            "fanin": 1024,
+            "max_error": 2.0215812465002037e-08,
+            "max_error_over_uS": 2.6517683263598837,
+            "pattern": "mixed-single",
+            "seed": 8107
+          },
+          {
+            "fanin": 1024,
+            "max_error": 4.1775938264265733e-10,
+            "max_error_over_uS": 0.0570335830366996,
+            "pattern": "cancellation",
+            "seed": 8107
+          },
+          {
+            "fanin": 1024,
+            "max_error": 3.550774951843749e-10,
+            "max_error_over_uS": 0.04767448126591727,
+            "pattern": "cancellation-single",
+            "seed": 8107
+          },
+          {
+            "fanin": 1020,
+            "max_error": 0.05185508728027344,
+            "max_error_over_uS": 174.0664231828185,
+            "pattern": "constant-output-single",
+            "seed": 8107,
+            "weight": 4.900000095367432
+          }
+        ],
+        "hardware": {
+          "allocator_fraction": 0.0,
+          "backend": "cpu",
+          "development_mount": false,
+          "devices": [
+            "TFRT_CPU_0"
+          ],
+          "gpu": null,
+          "image_digest": "sha256:5c567eb307576b52543497c16f7a6fdaedb333272067b4d774b508dbcc29fd46",
+          "kernel": "6.6.87.2-microsoft-standard-WSL2",
+          "preallocate": false,
+          "precision": "float32",
+          "python": "3.11.14"
+        },
+        "maximum_error_over_uS": 227.51225998725607,
+        "precision": "float32-HIGHEST",
+        "protocol_id": "h0-h1-contract-v2",
+        "provenance": {
+          "compatibility_lock_sha256": "a11a7696492404e642f411a817893b984511a7f0da0131318d44173b2741c4d9",
+          "engine_sha256": "e4fbdd7588fd6008455fc109d12996fa21097bd40d07849f83149d2493b113b6",
+          "lock_sha256": "df89b8faeaefc2cf0a8ad1e723e7b000cbf48496a00b1e2ef0a3bac6fb33bdae",
+          "packages": {
+            "emr-hyperneat": "0.3.0",
+            "gymnax": "0.0.9",
+            "jax": "0.6.1",
+            "jaxlib": "0.6.1",
+            "numpy": "1.26.4",
+            "tensorneat": "0.1.0"
+          },
+          "sources": {
+            "base_image": "python:3.11.14-slim-bookworm@sha256:65a93d69fa75478d554f4ad27c85c1e69fa184956261b4301ebaf6dbb0a3543d",
+            "emr": {
+              "archive_sha256": "2e4e7ec552fd2fb6ebd59e44b8ea89057f9980ef296d4451e22ccb7915bfb59d",
+              "license": "GPL-3.0-or-later (bundled LICENSE)",
+              "sha": "306eb4e67687390bb88131ead6af8bebffa8cee9",
+              "url": "https://github.com/RomainClaret/emr-hyperneat.git"
+            },
+            "schema": 1,
+            "tensorneat": {
+              "archive_sha256": "6776462f279bc6fa2ff9c0bf4adc405732d25681424346c8f5d6f9d7469cda3f",
+              "license": "GPL-3.0-or-later (bundled LICENSE)",
+              "sha": "49c193d546447d5fe2cb4b26f60758d23fc24cb0",
+              "url": "https://github.com/RomainClaret/tensorneat.git"
+            }
+          }
+        },
+        "schema": 1,
+        "script_sha256": "6d23274520d51af838d197738b95ae04c57e669f29aefedfe3fa2dc027917fdc",
+        "signatures": {
+          "batched_hidden": 3,
+          "single_hidden": 3,
+          "single_output": 3
+        },
+        "status": "validation-pass"
+      },
+      "smoke": {
+        "cartpole": {
+          "heldout": 35.5,
+          "generalization": null,
+          "replay": "pass",
+          "kind": "smoke-not-M2-acceptance",
+          "generations": 4
+        },
+        "memory": {
+          "heldout": 1.0,
+          "generalization": 1.0,
+          "replay": "pass",
+          "kind": "smoke-not-M2-acceptance",
+          "generations": 4
+        }
+      },
+      "H0_H1_checks_pass": true
+    },
+    "rtx3070": {
+      "tests": {
+        "tests": 54,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      "large": {
+        "calibration_fixture_sha256": "294d033f3e5deb175987f324d0d94041b1e8b5331bde7bcf4b1d3fec099da6e3",
+        "coefficient": 456,
+        "fixtures": [
+          {
+            "B": 1,
+            "decode": {
+              "bias_queries": 250,
+              "encoding": "role-blocks-v1",
+              "expressed_biases": 250,
+              "expressed_edges": 64000,
+              "host_array_bytes": 322312,
+              "phenotype_nodes": 256,
+              "queries": 64250,
+              "query_slab": 4096
+            },
+            "decode_seconds": 0.27041898099923856,
+            "decoded_carry_vs_reset_output_difference": 6.0428466796875,
+            "decoded_output_preactivation_error_to_threshold_ratio": 0.027476021208214886,
+            "decoded_trajectory_error_max": 0.0008413003157556886,
+            "first_compiled_scan_seconds": 0.39898769600040396,
+            "hidden": 250,
+            "kind": "synthetic-not-H2-learning-or-G5",
+            "nodes": 256,
+            "p": 1,
+            "preactivation_error_to_frozen_threshold_ratio": 0.0026742289778126996,
+            "query_signatures": 1,
+            "steps": 128,
+            "trajectory_error_max": 2.4342623861084434e-08,
+            "trajectory_signatures": 1
+          },
+          {
+            "B": 1,
+            "decode": {
+              "bias_queries": 1018,
+              "encoding": "role-blocks-v1",
+              "expressed_biases": 1018,
+              "expressed_edges": 1042432,
+              "host_array_bytes": 5221384,
+              "phenotype_nodes": 1024,
+              "queries": 1043450,
+              "query_slab": 4096
+            },
+            "decode_seconds": 0.6193105470010778,
+            "decoded_carry_vs_reset_output_difference": 38.78759765625,
+            "decoded_output_preactivation_error_to_threshold_ratio": 0.0005710083531543237,
+            "decoded_trajectory_error_max": 5.741403037973214e-05,
+            "first_compiled_scan_seconds": 0.3031375509999634,
+            "hidden": 1018,
+            "kind": "synthetic-not-H2-learning-or-G5",
+            "nodes": 1024,
+            "p": 1,
+            "preactivation_error_to_frozen_threshold_ratio": 0.0040722480792903274,
+            "query_signatures": 1,
+            "steps": 128,
+            "trajectory_error_max": 2.6703364255920015e-08,
+            "trajectory_signatures": 2
+          }
+        ],
+        "hardware": {
+          "allocator_fraction": 0.6,
+          "backend": "gpu",
+          "development_mount": false,
+          "devices": [
+            "cuda:0"
+          ],
+          "gpu": [
+            "GPU-84389f80-a576-d373-ecb0-92e972e72dfd",
+            "NVIDIA GeForce RTX 3070",
+            "8192",
+            "591.74"
+          ],
+          "image_digest": "sha256:5c567eb307576b52543497c16f7a6fdaedb333272067b4d774b508dbcc29fd46",
+          "kernel": "6.6.87.2-microsoft-standard-WSL2",
+          "preallocate": false,
+          "precision": "float32",
+          "python": "3.11.14"
+        },
+        "memory": {
+          "cgroup_current_bytes": 674344960,
+          "cgroup_peak_bytes": 674344960,
+          "cgroup_swap_bytes": 0,
+          "device_allocator": {
+            "bytes_in_use": 256,
+            "bytes_limit": 5153646387,
+            "bytes_reserved": 0,
+            "largest_alloc_size": 4194304,
+            "largest_free_block_bytes": 0,
+            "num_allocs": 3719,
+            "peak_bytes_in_use": 10415104,
+            "peak_bytes_reserved": 0,
+            "peak_pool_bytes": 14680064,
+            "pool_bytes": 14680064
+          },
+          "process_peak_rss_bytes": 983793664
+        },
+        "not_qualified": [
+          "H2 learning",
+          "B0",
+          "M2 G2/G4/G5",
+          "W8 sequence environment"
+        ],
+        "provenance": {
+          "compatibility_lock_sha256": "a11a7696492404e642f411a817893b984511a7f0da0131318d44173b2741c4d9",
+          "engine_sha256": "e4fbdd7588fd6008455fc109d12996fa21097bd40d07849f83149d2493b113b6",
+          "lock_sha256": "df89b8faeaefc2cf0a8ad1e723e7b000cbf48496a00b1e2ef0a3bac6fb33bdae",
+          "packages": {
+            "emr-hyperneat": "0.3.0",
+            "gymnax": "0.0.9",
+            "jax": "0.6.1",
+            "jaxlib": "0.6.1",
+            "numpy": "1.26.4",
+            "tensorneat": "0.1.0"
+          },
+          "sources": {
+            "base_image": "python:3.11.14-slim-bookworm@sha256:65a93d69fa75478d554f4ad27c85c1e69fa184956261b4301ebaf6dbb0a3543d",
+            "emr": {
+              "archive_sha256": "2e4e7ec552fd2fb6ebd59e44b8ea89057f9980ef296d4451e22ccb7915bfb59d",
+              "license": "GPL-3.0-or-later (bundled LICENSE)",
+              "sha": "306eb4e67687390bb88131ead6af8bebffa8cee9",
+              "url": "https://github.com/RomainClaret/emr-hyperneat.git"
+            },
+            "schema": 1,
+            "tensorneat": {
+              "archive_sha256": "6776462f279bc6fa2ff9c0bf4adc405732d25681424346c8f5d6f9d7469cda3f",
+              "license": "GPL-3.0-or-later (bundled LICENSE)",
+              "sha": "49c193d546447d5fe2cb4b26f60758d23fc24cb0",
+              "url": "https://github.com/RomainClaret/tensorneat.git"
+            }
+          }
+        },
+        "schema": 1,
+        "script_sha256": "66a3308c2f4c39fbba2104a751c551f3dc08653e4869e3697bf400b416278fcd",
+        "status": "pass"
+      },
+      "calibration": {
+        "coefficient": 456,
+        "fixture_sha256": "294d033f3e5deb175987f324d0d94041b1e8b5331bde7bcf4b1d3fec099da6e3",
+        "fixtures": [
+          {
+            "fanin": 64,
+            "max_error": 2.6748457671033066e-08,
+            "max_error_over_uS": 3.2302812098781626,
+            "pattern": "positive",
+            "seed": 8100
+          },
+          {
+            "fanin": 64,
+            "max_error": 1.6085886733741006e-08,
+            "max_error_over_uS": 2.1790940934669822,
+            "pattern": "positive-single",
+            "seed": 8100
+          },
+          {
+            "fanin": 64,
+            "max_error": 8.880707544345334e-09,
+            "max_error_over_uS": 1.2343844428578956,
+            "pattern": "mixed",
+            "seed": 8100
+          },
+          {
+            "fanin": 64,
+            "max_error": 5.870803003460434e-09,
+            "max_error_over_uS": 0.8907973431331091,
+            "pattern": "mixed-single",
+            "seed": 8100
+          },
+          {
+            "fanin": 64,
+            "max_error": 1.862645149230957e-09,
+            "max_error_over_uS": 0.2107578943194592,
+            "pattern": "cancellation",
+            "seed": 8100
+          },
+          {
+            "fanin": 64,
+            "max_error": 0.0,
+            "max_error_over_uS": 0.0,
+            "pattern": "cancellation-single",
+            "seed": 8100
+          },
+          {
+            "fanin": 60,
+            "max_error": 2.60770320892334e-07,
+            "max_error_over_uS": 7.291666829648121,
+            "pattern": "constant-output-single",
+            "seed": 8100,
+            "weight": 0.009999999776482582
+          },
+          {
+            "fanin": 64,
+            "max_error": 2.4526231268140464e-08,
+            "max_error_over_uS": 2.911370010979124,
+            "pattern": "positive",
+            "seed": 8101
+          },
+          {
+            "fanin": 64,
+            "max_error": 1.7728826018359456e-08,
+            "max_error_over_uS": 2.092033798215162,
+            "pattern": "positive-single",
+            "seed": 8101
+          },
+          {
+            "fanin": 64,
+            "max_error": 8.437677126438281e-09,
+            "max_error_over_uS": 1.0567413458777823,
+            "pattern": "mixed",
+            "seed": 8101
+          },
+          {
+            "fanin": 64,
+            "max_error": 6.373621797006734e-09,
+            "max_error_over_uS": 0.8484197837326891,
+            "pattern": "mixed-single",
+            "seed": 8101
+          },
+          {
+            "fanin": 64,
+            "max_error": 2.7939677238464355e-09,
+            "max_error_over_uS": 0.3514052317668134,
+            "pattern": "cancellation",
+            "seed": 8101
+          },
+          {
+            "fanin": 64,
+            "max_error": 0.0,
+            "max_error_over_uS": 0.0,
+            "pattern": "cancellation-single",
+            "seed": 8101
+          },
+          {
+            "fanin": 60,
+            "max_error": 3.427267074584961e-06,
+            "max_error_over_uS": 9.58333319053054,
+            "pattern": "constant-output-single",
+            "seed": 8101,
+            "weight": 0.10000000149011612
+          },
+          {
+            "fanin": 64,
+            "max_error": 2.7210315556303044e-08,
+            "max_error_over_uS": 3.107670922348537,
+            "pattern": "positive",
+            "seed": 8102
+          },
+          {
+            "fanin": 64,
+            "max_error": 1.2641018648507085e-08,
+            "max_error_over_uS": 1.5843875500546276,
+            "pattern": "positive-single",
+            "seed": 8102
+          },
+          {
+            "fanin": 64,
+            "max_error": 1.174754388211241e-08,
+            "max_error_over_uS": 1.3354901122773126,
+            "pattern": "mixed",
+            "seed": 8102
+          },
+          {
+            "fanin": 64,
+            "max_error": 4.933898456460639e-09,
+            "max_error_over_uS": 0.651317884755315,
+            "pattern": "mixed-single",
+            "seed": 8102
+          },
+          {
+            "fanin": 64,
+            "max_error": 2.3283064365386963e-09,
+            "max_error_over_uS": 0.263227083281701,
+            "pattern": "cancellation",
+            "seed": 8102
+          },
+          {
+            "fanin": 64,
+            "max_error": 0.0,
+            "max_error_over_uS": 0.0,
+            "pattern": "cancellation-single",
+            "seed": 8102
+          },
+          {
+            "fanin": 60,
+            "max_error": 6.854534149169922e-06,
+            "max_error_over_uS": 9.58333319053054,
+            "pattern": "constant-output-single",
+            "seed": 8102,
+            "weight": 0.20000000298023224
+          },
+          {
+            "fanin": 64,
+            "max_error": 3.444248092288049e-08,
+            "max_error_over_uS": 3.484257916780162,
+            "pattern": "positive",
+            "seed": 8103
+          },
+          {
+            "fanin": 64,
+            "max_error": 1.4999459480025124e-08,
+            "max_error_over_uS": 1.7268459231792475,
+            "pattern": "positive-single",
+            "seed": 8103
+          },
+          {
+            "fanin": 64,
+            "max_error": 8.801479982334381e-09,
+            "max_error_over_uS": 1.0096580551927732,
+            "pattern": "mixed",
+            "seed": 8103
+          },
+          {
+            "fanin": 64,
+            "max_error": 6.7992286523210765e-09,
+            "max_error_over_uS": 0.6912337584778272,
+            "pattern": "mixed-single",
+            "seed": 8103
+          },
+          {
+            "fanin": 64,
+            "max_error": 1.862645149230957e-09,
+            "max_error_over_uS": 0.21758678218866184,
+            "pattern": "cancellation",
+            "seed": 8103
+          },
+          {
+            "fanin": 64,
+            "max_error": 0.0,
+            "max_error_over_uS": 0.0,
+            "pattern": "cancellation-single",
+            "seed": 8103
+          },
+          {
+            "fanin": 60,
+            "max_error": 1.1920928955078125e-06,
+            "max_error_over_uS": 1.111111066959524,
+            "pattern": "constant-output-single",
+            "seed": 8103,
+            "weight": 0.30000001192092896
+          },
+          {
+            "fanin": 64,
+            "max_error": 2.7368771471358855e-08,
+            "max_error_over_uS": 2.9666849825334234,
+            "pattern": "positive",
+            "seed": 8104
+          },
+          {
+            "fanin": 64,
+            "max_error": 1.5573540596003355e-08,
+            "max_error_over_uS": 1.8586963413032171,
+            "pattern": "positive-single",
+            "seed": 8104
+          },
+          {
+            "fanin": 64,
+            "max_error": 8.72614894231738e-09,
+            "max_error_over_uS": 1.0825088084484225,
+            "pattern": "mixed",
+            "seed": 8104
+          },
+          {
+            "fanin": 64,
+            "max_error": 8.834937489932138e-09,
+            "max_error_over_uS": 0.9142183217952529,
+            "pattern": "mixed-single",
+            "seed": 8104
+          },
+          {
+            "fanin": 64,
+            "max_error": 2.7939677238464355e-09,
+            "max_error_over_uS": 0.27173002318018097,
+            "pattern": "cancellation",
+            "seed": 8104
+          },
+          {
+            "fanin": 64,
+            "max_error": 0.0,
+            "max_error_over_uS": 0.0,
+            "pattern": "cancellation-single",
+            "seed": 8104
+          },
+          {
+            "fanin": 60,
+            "max_error": 2.3603439331054688e-05,
+            "max_error_over_uS": 9.428571589139045,
+            "pattern": "constant-output-single",
+            "seed": 8104,
+            "weight": 0.699999988079071
+          },
+          {
+            "fanin": 64,
+            "max_error": 3.147476557163742e-08,
+            "max_error_over_uS": 3.129444680936518,
+            "pattern": "positive",
+            "seed": 8105
+          },
+          {
+            "fanin": 64,
+            "max_error": 2.3572885005096467e-08,
+            "max_error_over_uS": 2.7791706620713765,
+            "pattern": "positive-single",
+            "seed": 8105
+          },
+          {
+            "fanin": 64,
+            "max_error": 9.007056177290362e-09,
+            "max_error_over_uS": 1.1961652426201599,
+            "pattern": "mixed",
+            "seed": 8105
+          },
+          {
+            "fanin": 64,
+            "max_error": 5.279036041638818e-09,
+            "max_error_over_uS": 0.6423083905192655,
+            "pattern": "mixed-single",
+            "seed": 8105
+          },
+          {
+            "fanin": 64,
+            "max_error": 1.6298145055770874e-09,
+            "max_error_over_uS": 0.26593467138220805,
+            "pattern": "cancellation",
+            "seed": 8105
+          },
+          {
+            "fanin": 64,
+            "max_error": 0.0,
+            "max_error_over_uS": 0.0,
+            "pattern": "cancellation-single",
+            "seed": 8105
+          },
+          {
+            "fanin": 60,
+            "max_error": 3.9577484130859375e-05,
+            "max_error_over_uS": 10.060605842548302,
+            "pattern": "constant-output-single",
+            "seed": 8105,
+            "weight": 1.100000023841858
+          },
+          {
+            "fanin": 64,
+            "max_error": 2.7787181666738547e-08,
+            "max_error_over_uS": 3.0163872370036047,
+            "pattern": "positive",
+            "seed": 8106
+          },
+          {
+            "fanin": 64,
+            "max_error": 1.5757847970920835e-08,
+            "max_error_over_uS": 1.877779049510219,
+            "pattern": "positive-single",
+            "seed": 8106
+          },
+          {
+            "fanin": 64,
+            "max_error": 1.4142298720987156e-08,
+            "max_error_over_uS": 1.5911818065806642,
+            "pattern": "mixed",
+            "seed": 8106
+          },
+          {
+            "fanin": 64,
+            "max_error": 4.332988544353267e-09,
+            "max_error_over_uS": 0.5376970732093852,
+            "pattern": "mixed-single",
+            "seed": 8106
+          },
+          {
+            "fanin": 64,
+            "max_error": 1.862645149230957e-09,
+            "max_error_over_uS": 0.29250128619980403,
+            "pattern": "cancellation",
+            "seed": 8106
+          },
+          {
+            "fanin": 64,
+            "max_error": 0.0,
+            "max_error_over_uS": 0.0,
+            "pattern": "cancellation-single",
+            "seed": 8106
+          },
+          {
+            "fanin": 60,
+            "max_error": 7.915496826171875e-05,
+            "max_error_over_uS": 10.060605842548302,
+            "pattern": "constant-output-single",
+            "seed": 8106,
+            "weight": 2.200000047683716
+          },
+          {
+            "fanin": 64,
+            "max_error": 2.8116929784438582e-08,
+            "max_error_over_uS": 3.0832432794817377,
+            "pattern": "positive",
+            "seed": 8107
+          },
+          {
+            "fanin": 64,
+            "max_error": 2.0582978266237006e-08,
+            "max_error_over_uS": 2.3223822360595197,
+            "pattern": "positive-single",
+            "seed": 8107
+          },
+          {
+            "fanin": 64,
+            "max_error": 9.580108879803095e-09,
+            "max_error_over_uS": 1.253910545509178,
+            "pattern": "mixed",
+            "seed": 8107
+          },
+          {
+            "fanin": 64,
+            "max_error": 4.74074374895439e-09,
+            "max_error_over_uS": 0.6008614583372875,
+            "pattern": "mixed-single",
+            "seed": 8107
+          },
+          {
+            "fanin": 64,
+            "max_error": 1.979060471057892e-09,
+            "max_error_over_uS": 0.2758049049322638,
+            "pattern": "cancellation",
+            "seed": 8107
+          },
+          {
+            "fanin": 64,
+            "max_error": 0.0,
+            "max_error_over_uS": 0.0,
+            "pattern": "cancellation-single",
+            "seed": 8107
+          },
+          {
+            "fanin": 60,
+            "max_error": 0.0001888275146484375,
+            "max_error_over_uS": 10.775509994360672,
+            "pattern": "constant-output-single",
+            "seed": 8107,
+            "weight": 4.900000095367432
+          },
+          {
+            "fanin": 256,
+            "max_error": 4.148861865171938e-08,
+            "max_error_over_uS": 4.843797878155699,
+            "pattern": "positive",
+            "seed": 8100
+          },
+          {
+            "fanin": 256,
+            "max_error": 1.6356836662900776e-08,
+            "max_error_over_uS": 2.177148686667885,
+            "pattern": "positive-single",
+            "seed": 8100
+          },
+          {
+            "fanin": 256,
+            "max_error": 1.0721114943740284e-08,
+            "max_error_over_uS": 1.3827104354600328,
+            "pattern": "mixed",
+            "seed": 8100
+          },
+          {
+            "fanin": 256,
+            "max_error": 5.54404088609628e-09,
+            "max_error_over_uS": 0.7418840839812177,
+            "pattern": "mixed-single",
+            "seed": 8100
+          },
+          {
+            "fanin": 256,
+            "max_error": 1.0477378964424133e-09,
+            "max_error_over_uS": 0.12312842594817161,
+            "pattern": "cancellation",
+            "seed": 8100
+          },
+          {
+            "fanin": 256,
+            "max_error": 0.0,
+            "max_error_over_uS": 0.0,
+            "pattern": "cancellation-single",
+            "seed": 8100
+          },
+          {
+            "fanin": 252,
+            "max_error": 1.8700957298278809e-06,
+            "max_error_over_uS": 12.450397103684887,
+            "pattern": "constant-output-single",
+            "seed": 8100,
+            "weight": 0.009999999776482582
+          },
+          {
+            "fanin": 256,
+            "max_error": 3.912519305759865e-08,
+            "max_error_over_uS": 4.447860561050168,
+            "pattern": "positive",
+            "seed": 8101
+          },
+          {
+            "fanin": 256,
+            "max_error": 2.6227219535046586e-08,
+            "max_error_over_uS": 2.9827023717059067,
+            "pattern": "positive-single",
+            "seed": 8101
+          },
+          {
+            "fanin": 256,
+            "max_error": 9.485171308110107e-09,
+            "max_error_over_uS": 1.1288098934830442,
+            "pattern": "mixed",
+            "seed": 8101
+          },
+          {
+            "fanin": 256,
+            "max_error": 4.6784869173199795e-09,
+            "max_error_over_uS": 0.4714188143805406,
+            "pattern": "mixed-single",
+            "seed": 8101
+          },
+          {
+            "fanin": 256,
+            "max_error": 1.1641532182693481e-09,
+            "max_error_over_uS": 0.1374316622135441,
+            "pattern": "cancellation",
+            "seed": 8101
+          },
+          {
+            "fanin": 256,
+            "max_error": 0.0,
+            "max_error_over_uS": 0.0,
+            "pattern": "cancellation-single",
+            "seed": 8101
+          },
+          {
+            "fanin": 252,
+            "max_error": 5.951523780822754e-05,
+            "max_error_over_uS": 39.623015282586934,
+            "pattern": "constant-output-single",
+            "seed": 8101,
+            "weight": 0.10000000149011612
+          },
+          {
+            "fanin": 256,
+            "max_error": 3.677038365457186e-08,
+            "max_error_over_uS": 4.3319921092086835,
+            "pattern": "positive",
+            "seed": 8102
+          },
+          {
+            "fanin": 256,
+            "max_error": 2.6947763465123842e-08,
+            "max_error_over_uS": 3.1354874748013706,
+            "pattern": "positive-single",
+            "seed": 8102
+          },
+          {
+            "fanin": 256,
+            "max_error": 9.330842189181343e-09,
+            "max_error_over_uS": 1.1601135411153796,
+            "pattern": "mixed",
+            "seed": 8102
+          },
+          {
+            "fanin": 256,
+            "max_error": 3.795283441687669e-09,
+            "max_error_over_uS": 0.4440628469523646,
+            "pattern": "mixed-single",
+            "seed": 8102
+          },
+          {
+            "fanin": 256,
+            "max_error": 1.280568540096283e-09,
+            "max_error_over_uS": 0.16054201190398026,
+            "pattern": "cancellation",
+            "seed": 8102
+          },
+          {
+            "fanin": 256,
+            "max_error": 0.0,
+            "max_error_over_uS": 0.0,
+            "pattern": "cancellation-single",
+            "seed": 8102
+          },
+          {
+            "fanin": 252,
+            "max_error": 0.00011903047561645508,
+            "max_error_over_uS": 39.623015282586934,
+            "pattern": "constant-output-single",
+            "seed": 8102,
+            "weight": 0.20000000298023224
+          },
+          {
+            "fanin": 256,
+            "max_error": 3.80810930566966e-08,
+            "max_error_over_uS": 4.439249431276502,
+            "pattern": "positive",
+            "seed": 8103
+          },
+          {
+            "fanin": 256,
+            "max_error": 2.3378496777359814e-08,
+            "max_error_over_uS": 2.7461546652143918,
+            "pattern": "positive-single",
+            "seed": 8103
+          },
+          {
+            "fanin": 256,
+            "max_error": 8.207564638346154e-09,
+            "max_error_over_uS": 1.1642020866498999,
+            "pattern": "mixed",
+            "seed": 8103
+          },
+          {
+            "fanin": 256,
+            "max_error": 4.3311762232267625e-09,
+            "max_error_over_uS": 0.5123576917141527,
+            "pattern": "mixed-single",
+            "seed": 8103
+          },
+          {
+            "fanin": 256,
+            "max_error": 1.076841726899147e-09,
+            "max_error_over_uS": 0.13844680392506767,
+            "pattern": "cancellation",
+            "seed": 8103
+          },
+          {
+            "fanin": 256,
+            "max_error": 0.0,
+            "max_error_over_uS": 0.0,
+            "pattern": "cancellation-single",
+            "seed": 8103
+          },
+          {
+            "fanin": 252,
+            "max_error": 3.0994415283203125e-06,
+            "max_error_over_uS": 0.6878306604987531,
+            "pattern": "constant-output-single",
+            "seed": 8103,
+            "weight": 0.30000001192092896
+          },
+          {
+            "fanin": 256,
+            "max_error": 4.0321916972008154e-08,
+            "max_error_over_uS": 4.782009360188713,
+            "pattern": "positive",
+            "seed": 8104
+          },
+          {
+            "fanin": 256,
+            "max_error": 2.0858969634884872e-08,
+            "max_error_over_uS": 2.552328014091015,
+            "pattern": "positive-single",
+            "seed": 8104
+          },
+          {
+            "fanin": 256,
+            "max_error": 9.161073601104963e-09,
+            "max_error_over_uS": 1.11977591730532,
+            "pattern": "mixed",
+            "seed": 8104
+          },
+          {
+            "fanin": 256,
+            "max_error": 4.11081967077731e-09,
+            "max_error_over_uS": 0.5497015240552889,
+            "pattern": "mixed-single",
+            "seed": 8104
+          },
+          {
+            "fanin": 256,
+            "max_error": 1.0477378964424133e-09,
+            "max_error_over_uS": 0.1297747388145379,
+            "pattern": "cancellation",
+            "seed": 8104
+          },
+          {
+            "fanin": 256,
+            "max_error": 0.0,
+            "max_error_over_uS": 0.0,
+            "pattern": "cancellation-single",
+            "seed": 8104
+          },
+          {
+            "fanin": 252,
+            "max_error": 0.0004303455352783203,
+            "max_error_over_uS": 40.92970591244824,
+            "pattern": "constant-output-single",
+            "seed": 8104,
+            "weight": 0.699999988079071
+          },
+          {
+            "fanin": 256,
+            "max_error": 3.8453505130098264e-08,
+            "max_error_over_uS": 4.38125804030478,
+            "pattern": "positive",
+            "seed": 8105
+          },
+          {
+            "fanin": 256,
+            "max_error": 2.22286100359792e-08,
+            "max_error_over_uS": 2.707716496246941,
+            "pattern": "positive-single",
+            "seed": 8105
+          },
+          {
+            "fanin": 256,
+            "max_error": 1.040723707212976e-08,
+            "max_error_over_uS": 1.1677347855933193,
+            "pattern": "mixed",
+            "seed": 8105
+          },
+          {
+            "fanin": 256,
+            "max_error": 4.483653552600497e-09,
+            "max_error_over_uS": 0.5478702402391478,
+            "pattern": "mixed-single",
+            "seed": 8105
+          },
+          {
+            "fanin": 256,
+            "max_error": 1.0477378964424133e-09,
+            "max_error_over_uS": 0.1386984708488432,
+            "pattern": "cancellation",
+            "seed": 8105
+          },
+          {
+            "fanin": 256,
+            "max_error": 0.0,
+            "max_error_over_uS": 0.0,
+            "pattern": "cancellation-single",
+            "seed": 8105
+          },
+          {
+            "fanin": 252,
+            "max_error": 0.0006775856018066406,
+            "max_error_over_uS": 41.01010012123103,
+            "pattern": "constant-output-single",
+            "seed": 8105,
+            "weight": 1.100000023841858
+          },
+          {
+            "fanin": 256,
+            "max_error": 4.5030647488619735e-08,
+            "max_error_over_uS": 4.856652951881477,
+            "pattern": "positive",
+            "seed": 8106
+          },
+          {
+            "fanin": 256,
+            "max_error": 2.4143287369327027e-08,
+            "max_error_over_uS": 2.834920086033546,
+            "pattern": "positive-single",
+            "seed": 8106
+          },
+          {
+            "fanin": 256,
+            "max_error": 9.645335315167092e-09,
+            "max_error_over_uS": 1.052986503345574,
+            "pattern": "mixed",
+            "seed": 8106
+          },
+          {
+            "fanin": 256,
+            "max_error": 3.652251119590222e-09,
+            "max_error_over_uS": 0.42620017736057875,
+            "pattern": "mixed-single",
+            "seed": 8106
+          },
+          {
+            "fanin": 256,
+            "max_error": 1.6298145055770874e-09,
+            "max_error_over_uS": 0.2175825465361427,
+            "pattern": "cancellation",
+            "seed": 8106
+          },
+          {
+            "fanin": 256,
+            "max_error": 0.0,
+            "max_error_over_uS": 0.0,
+            "pattern": "cancellation-single",
+            "seed": 8106
+          },
+          {
+            "fanin": 252,
+            "max_error": 0.0013551712036132812,
+            "max_error_over_uS": 41.01010012123103,
+            "pattern": "constant-output-single",
+            "seed": 8106,
+            "weight": 2.200000047683716
+          },
+          {
+            "fanin": 256,
+            "max_error": 3.708341933528203e-08,
+            "max_error_over_uS": 4.473931723487762,
+            "pattern": "positive",
+            "seed": 8107
+          },
+          {
+            "fanin": 256,
+            "max_error": 1.8000147178343084e-08,
+            "max_error_over_uS": 2.1803258751475645,
+            "pattern": "positive-single",
+            "seed": 8107
+          },
+          {
+            "fanin": 256,
+            "max_error": 1.0692976587511893e-08,
+            "max_error_over_uS": 1.1708150789394527,
+            "pattern": "mixed",
+            "seed": 8107
+          },
+          {
+            "fanin": 256,
+            "max_error": 3.614695785747468e-09,
+            "max_error_over_uS": 0.44473879907949604,
+            "pattern": "mixed-single",
+            "seed": 8107
+          },
+          {
+            "fanin": 256,
+            "max_error": 1.1641532182693481e-09,
+            "max_error_over_uS": 0.15030905619278195,
+            "pattern": "cancellation",
+            "seed": 8107
+          },
+          {
+            "fanin": 256,
+            "max_error": 0.0,
+            "max_error_over_uS": 0.0,
+            "pattern": "cancellation-single",
+            "seed": 8107
+          },
+          {
+            "fanin": 252,
+            "max_error": 0.0030765533447265625,
+            "max_error_over_uS": 41.80110057937413,
+            "pattern": "constant-output-single",
+            "seed": 8107,
+            "weight": 4.900000095367432
+          },
+          {
+            "fanin": 1024,
+            "max_error": 4.385292645681105e-08,
+            "max_error_over_uS": 5.463358700906996,
+            "pattern": "positive",
+            "seed": 8100
+          },
+          {
+            "fanin": 1024,
+            "max_error": 2.683227029454116e-08,
+            "max_error_over_uS": 3.324603085740584,
+            "pattern": "positive-single",
+            "seed": 8100
+          },
+          {
+            "fanin": 1024,
+            "max_error": 6.147516334528702e-09,
+            "max_error_over_uS": 0.7409374640874884,
+            "pattern": "mixed",
+            "seed": 8100
+          },
+          {
+            "fanin": 1024,
+            "max_error": 3.535032676305061e-09,
+            "max_error_over_uS": 0.44801125736302305,
+            "pattern": "mixed-single",
+            "seed": 8100
+          },
+          {
+            "fanin": 1024,
+            "max_error": 6.803020369261503e-10,
+            "max_error_over_uS": 0.08492857661059657,
+            "pattern": "cancellation",
+            "seed": 8100
+          },
+          {
+            "fanin": 1024,
+            "max_error": 0.0,
+            "max_error_over_uS": 0.0,
+            "pattern": "cancellation-single",
+            "seed": 8100
+          },
+          {
+            "fanin": 1020,
+            "max_error": 9.164214134216309e-07,
+            "max_error_over_uS": 1.5073529748684351,
+            "pattern": "constant-output-single",
+            "seed": 8100,
+            "weight": 0.009999999776482582
+          },
+          {
+            "fanin": 1024,
+            "max_error": 4.198028202839765e-08,
+            "max_error_over_uS": 4.8966030052278375,
+            "pattern": "positive",
+            "seed": 8101
+          },
+          {
+            "fanin": 1024,
+            "max_error": 2.287014633228779e-08,
+            "max_error_over_uS": 2.8730745657845214,
+            "pattern": "positive-single",
+            "seed": 8101
+          },
+          {
+            "fanin": 1024,
+            "max_error": 6.400109435478196e-09,
+            "max_error_over_uS": 0.7986733694135437,
+            "pattern": "mixed",
+            "seed": 8101
+          },
+          {
+            "fanin": 1024,
+            "max_error": 3.800122203023726e-09,
+            "max_error_over_uS": 0.4549815945049676,
+            "pattern": "mixed-single",
+            "seed": 8101
+          },
+          {
+            "fanin": 1024,
+            "max_error": 5.820766091346741e-10,
+            "max_error_over_uS": 0.07805413917991909,
+            "pattern": "cancellation",
+            "seed": 8101
+          },
+          {
+            "fanin": 1024,
+            "max_error": 0.0,
+            "max_error_over_uS": 0.0,
+            "pattern": "cancellation-single",
+            "seed": 8101
+          },
+          {
+            "fanin": 1020,
+            "max_error": 3.203749656677246e-05,
+            "max_error_over_uS": 5.26960776461398,
+            "pattern": "constant-output-single",
+            "seed": 8101,
+            "weight": 0.10000000149011612
+          },
+          {
+            "fanin": 1024,
+            "max_error": 4.449347085211386e-08,
+            "max_error_over_uS": 5.318259449389182,
+            "pattern": "positive",
+            "seed": 8102
+          },
+          {
+            "fanin": 1024,
+            "max_error": 2.476244131965899e-08,
+            "max_error_over_uS": 3.13099251640047,
+            "pattern": "positive-single",
+            "seed": 8102
+          },
+          {
+            "fanin": 1024,
+            "max_error": 6.737128764588984e-09,
+            "max_error_over_uS": 0.7827050499475078,
+            "pattern": "mixed",
+            "seed": 8102
+          },
+          {
+            "fanin": 1024,
+            "max_error": 3.17533423513372e-09,
+            "max_error_over_uS": 0.3947618451330148,
+            "pattern": "mixed-single",
+            "seed": 8102
+          },
+          {
+            "fanin": 1024,
+            "max_error": 6.83940015733242e-10,
+            "max_error_over_uS": 0.09395452298606659,
+            "pattern": "cancellation",
+            "seed": 8102
+          },
+          {
+            "fanin": 1024,
+            "max_error": 0.0,
+            "max_error_over_uS": 0.0,
+            "pattern": "cancellation-single",
+            "seed": 8102
+          },
+          {
+            "fanin": 1020,
+            "max_error": 6.407499313354492e-05,
+            "max_error_over_uS": 5.26960776461398,
+            "pattern": "constant-output-single",
+            "seed": 8102,
+            "weight": 0.20000000298023224
+          },
+          {
+            "fanin": 1024,
+            "max_error": 4.2746630651846473e-08,
+            "max_error_over_uS": 5.2398088554613045,
+            "pattern": "positive",
+            "seed": 8103
+          },
+          {
+            "fanin": 1024,
+            "max_error": 2.5208024723166744e-08,
+            "max_error_over_uS": 3.147343191210985,
+            "pattern": "positive-single",
+            "seed": 8103
+          },
+          {
+            "fanin": 1024,
+            "max_error": 7.334127628128018e-09,
+            "max_error_over_uS": 1.059212665797838,
+            "pattern": "mixed",
+            "seed": 8103
+          },
+          {
+            "fanin": 1024,
+            "max_error": 3.6088373296661036e-09,
+            "max_error_over_uS": 0.5211971214853343,
+            "pattern": "mixed-single",
+            "seed": 8103
+          },
+          {
+            "fanin": 1024,
+            "max_error": 8.731149137020111e-10,
+            "max_error_over_uS": 0.10966761104068337,
+            "pattern": "cancellation",
+            "seed": 8103
+          },
+          {
+            "fanin": 1024,
+            "max_error": 0.0,
+            "max_error_over_uS": 0.0,
+            "pattern": "cancellation-single",
+            "seed": 8103
+          },
+          {
+            "fanin": 1020,
+            "max_error": 0.00010991096496582031,
+            "max_error_over_uS": 6.026143551392242,
+            "pattern": "constant-output-single",
+            "seed": 8103,
+            "weight": 0.30000001192092896
+          },
+          {
+            "fanin": 1024,
+            "max_error": 4.140161449783797e-08,
+            "max_error_over_uS": 5.240290326435372,
+            "pattern": "positive",
+            "seed": 8104
+          },
+          {
+            "fanin": 1024,
+            "max_error": 2.8413543462502133e-08,
+            "max_error_over_uS": 3.189041461507507,
+            "pattern": "positive-single",
+            "seed": 8104
+          },
+          {
+            "fanin": 1024,
+            "max_error": 6.7317203374106516e-09,
+            "max_error_over_uS": 0.8675463534060095,
+            "pattern": "mixed",
+            "seed": 8104
+          },
+          {
+            "fanin": 1024,
+            "max_error": 3.808136181393529e-09,
+            "max_error_over_uS": 0.434961236204914,
+            "pattern": "mixed-single",
+            "seed": 8104
+          },
+          {
+            "fanin": 1024,
+            "max_error": 6.984919309616089e-10,
+            "max_error_over_uS": 0.09117683092821928,
+            "pattern": "cancellation",
+            "seed": 8104
+          },
+          {
+            "fanin": 1024,
+            "max_error": 0.0,
+            "max_error_over_uS": 0.0,
+            "pattern": "cancellation-single",
+            "seed": 8104
+          },
+          {
+            "fanin": 1020,
+            "max_error": 0.0001342296600341797,
+            "max_error_over_uS": 3.15406167836321,
+            "pattern": "constant-output-single",
+            "seed": 8104,
+            "weight": 0.699999988079071
+          },
+          {
+            "fanin": 1024,
+            "max_error": 4.395423003344945e-08,
+            "max_error_over_uS": 5.249683591976618,
+            "pattern": "positive",
+            "seed": 8105
+          },
+          {
+            "fanin": 1024,
+            "max_error": 3.067315779148316e-08,
+            "max_error_over_uS": 3.7153571149609346,
+            "pattern": "positive-single",
+            "seed": 8105
+          },
+          {
+            "fanin": 1024,
+            "max_error": 8.020935942341934e-09,
+            "max_error_over_uS": 1.0269203678186163,
+            "pattern": "mixed",
+            "seed": 8105
+          },
+          {
+            "fanin": 1024,
+            "max_error": 2.6095901030365187e-09,
+            "max_error_over_uS": 0.3397721386764465,
+            "pattern": "mixed-single",
+            "seed": 8105
+          },
+          {
+            "fanin": 1024,
+            "max_error": 5.820766091346741e-10,
+            "max_error_over_uS": 0.07471117502841863,
+            "pattern": "cancellation",
+            "seed": 8105
+          },
+          {
+            "fanin": 1024,
+            "max_error": 0.0,
+            "max_error_over_uS": 0.0,
+            "pattern": "cancellation-single",
+            "seed": 8105
+          },
+          {
+            "fanin": 1020,
+            "max_error": 9.775161743164062e-05,
+            "max_error_over_uS": 1.4616755476416738,
+            "pattern": "constant-output-single",
+            "seed": 8105,
+            "weight": 1.100000023841858
+          },
+          {
+            "fanin": 1024,
+            "max_error": 4.300124209488665e-08,
+            "max_error_over_uS": 4.983673269113646,
+            "pattern": "positive",
+            "seed": 8106
+          },
+          {
+            "fanin": 1024,
+            "max_error": 2.7209437702957473e-08,
+            "max_error_over_uS": 3.4854685110217125,
+            "pattern": "positive-single",
+            "seed": 8106
+          },
+          {
+            "fanin": 1024,
+            "max_error": 5.917104965724729e-09,
+            "max_error_over_uS": 0.7686090371134394,
+            "pattern": "mixed",
+            "seed": 8106
+          },
+          {
+            "fanin": 1024,
+            "max_error": 3.974055723388048e-09,
+            "max_error_over_uS": 0.4469957627945084,
+            "pattern": "mixed-single",
+            "seed": 8106
+          },
+          {
+            "fanin": 1024,
+            "max_error": 6.402842700481415e-10,
+            "max_error_over_uS": 0.08179309026351925,
+            "pattern": "cancellation",
+            "seed": 8106
+          },
+          {
+            "fanin": 1024,
+            "max_error": 0.0,
+            "max_error_over_uS": 0.0,
+            "pattern": "cancellation-single",
+            "seed": 8106
+          },
+          {
+            "fanin": 1020,
+            "max_error": 0.00019550323486328125,
+            "max_error_over_uS": 1.4616755476416738,
+            "pattern": "constant-output-single",
+            "seed": 8106,
+            "weight": 2.200000047683716
+          },
+          {
+            "fanin": 1024,
+            "max_error": 4.604208383995889e-08,
+            "max_error_over_uS": 5.366179847066933,
+            "pattern": "positive",
+            "seed": 8107
+          },
+          {
+            "fanin": 1024,
+            "max_error": 3.056693478886707e-08,
+            "max_error_over_uS": 3.7775193174135886,
+            "pattern": "positive-single",
+            "seed": 8107
+          },
+          {
+            "fanin": 1024,
+            "max_error": 7.16021970187386e-09,
+            "max_error_over_uS": 0.9249847607035022,
+            "pattern": "mixed",
+            "seed": 8107
+          },
+          {
+            "fanin": 1024,
+            "max_error": 3.2147068999843764e-09,
+            "max_error_over_uS": 0.36430901442069996,
+            "pattern": "mixed-single",
+            "seed": 8107
+          },
+          {
+            "fanin": 1024,
+            "max_error": 8.476490620523691e-10,
+            "max_error_over_uS": 0.10014614329176114,
+            "pattern": "cancellation",
+            "seed": 8107
+          },
+          {
+            "fanin": 1024,
+            "max_error": 0.0,
+            "max_error_over_uS": 0.0,
+            "pattern": "cancellation-single",
+            "seed": 8107
+          },
+          {
+            "fanin": 1020,
+            "max_error": 0.0005855560302734375,
+            "max_error_over_uS": 1.9655861962381023,
+            "pattern": "constant-output-single",
+            "seed": 8107,
+            "weight": 4.900000095367432
+          }
+        ],
+        "hardware": {
+          "allocator_fraction": 0.6,
+          "backend": "gpu",
+          "development_mount": false,
+          "devices": [
+            "cuda:0"
+          ],
+          "gpu": [
+            "GPU-84389f80-a576-d373-ecb0-92e972e72dfd",
+            "NVIDIA GeForce RTX 3070",
+            "8192",
+            "591.74"
+          ],
+          "image_digest": "sha256:5c567eb307576b52543497c16f7a6fdaedb333272067b4d774b508dbcc29fd46",
+          "kernel": "6.6.87.2-microsoft-standard-WSL2",
+          "preallocate": false,
+          "precision": "float32",
+          "python": "3.11.14"
+        },
+        "maximum_error_over_uS": 41.80110057937413,
+        "precision": "float32-HIGHEST",
+        "protocol_id": "h0-h1-contract-v2",
+        "provenance": {
+          "compatibility_lock_sha256": "a11a7696492404e642f411a817893b984511a7f0da0131318d44173b2741c4d9",
+          "engine_sha256": "e4fbdd7588fd6008455fc109d12996fa21097bd40d07849f83149d2493b113b6",
+          "lock_sha256": "df89b8faeaefc2cf0a8ad1e723e7b000cbf48496a00b1e2ef0a3bac6fb33bdae",
+          "packages": {
+            "emr-hyperneat": "0.3.0",
+            "gymnax": "0.0.9",
+            "jax": "0.6.1",
+            "jaxlib": "0.6.1",
+            "numpy": "1.26.4",
+            "tensorneat": "0.1.0"
+          },
+          "sources": {
+            "base_image": "python:3.11.14-slim-bookworm@sha256:65a93d69fa75478d554f4ad27c85c1e69fa184956261b4301ebaf6dbb0a3543d",
+            "emr": {
+              "archive_sha256": "2e4e7ec552fd2fb6ebd59e44b8ea89057f9980ef296d4451e22ccb7915bfb59d",
+              "license": "GPL-3.0-or-later (bundled LICENSE)",
+              "sha": "306eb4e67687390bb88131ead6af8bebffa8cee9",
+              "url": "https://github.com/RomainClaret/emr-hyperneat.git"
+            },
+            "schema": 1,
+            "tensorneat": {
+              "archive_sha256": "6776462f279bc6fa2ff9c0bf4adc405732d25681424346c8f5d6f9d7469cda3f",
+              "license": "GPL-3.0-or-later (bundled LICENSE)",
+              "sha": "49c193d546447d5fe2cb4b26f60758d23fc24cb0",
+              "url": "https://github.com/RomainClaret/tensorneat.git"
+            }
+          }
+        },
+        "schema": 1,
+        "script_sha256": "6d23274520d51af838d197738b95ae04c57e669f29aefedfe3fa2dc027917fdc",
+        "signatures": {
+          "batched_hidden": 3,
+          "single_hidden": 3,
+          "single_output": 3
+        },
+        "status": "validation-pass"
+      },
+      "smoke": {
+        "cartpole": {
+          "heldout": 35.5,
+          "generalization": null,
+          "replay": "pass",
+          "kind": "smoke-not-M2-acceptance",
+          "generations": 4
+        },
+        "memory": {
+          "heldout": 1.0,
+          "generalization": 1.0,
+          "replay": "pass",
+          "kind": "smoke-not-M2-acceptance",
+          "generations": 4
+        }
+      },
+      "H0_H1_checks_pass": true
+    },
+    "rtx3060": {
+      "tests": {
+        "tests": 54,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      "large": {
+        "calibration_fixture_sha256": "294d033f3e5deb175987f324d0d94041b1e8b5331bde7bcf4b1d3fec099da6e3",
+        "coefficient": 456,
+        "fixtures": [
+          {
+            "B": 1,
+            "decode": {
+              "bias_queries": 250,
+              "encoding": "role-blocks-v1",
+              "expressed_biases": 250,
+              "expressed_edges": 64000,
+              "host_array_bytes": 322312,
+              "phenotype_nodes": 256,
+              "queries": 64250,
+              "query_slab": 4096
+            },
+            "decode_seconds": 0.267782418999559,
+            "decoded_carry_vs_reset_output_difference": 6.0428466796875,
+            "decoded_output_preactivation_error_to_threshold_ratio": 0.027476021208214886,
+            "decoded_trajectory_error_max": 0.0008413003157556886,
+            "first_compiled_scan_seconds": 0.4004387519999,
+            "hidden": 250,
+            "kind": "synthetic-not-H2-learning-or-G5",
+            "nodes": 256,
+            "p": 1,
+            "preactivation_error_to_frozen_threshold_ratio": 0.0026742289778126996,
+            "query_signatures": 1,
+            "steps": 128,
+            "trajectory_error_max": 2.4342623861084434e-08,
+            "trajectory_signatures": 1
+          },
+          {
+            "B": 1,
+            "decode": {
+              "bias_queries": 1018,
+              "encoding": "role-blocks-v1",
+              "expressed_biases": 1018,
+              "expressed_edges": 1042432,
+              "host_array_bytes": 5221384,
+              "phenotype_nodes": 1024,
+              "queries": 1043450,
+              "query_slab": 4096
+            },
+            "decode_seconds": 0.6043540779992327,
+            "decoded_carry_vs_reset_output_difference": 38.78759765625,
+            "decoded_output_preactivation_error_to_threshold_ratio": 0.0005710083531543237,
+            "decoded_trajectory_error_max": 5.741403037973214e-05,
+            "first_compiled_scan_seconds": 0.2784364799990726,
+            "hidden": 1018,
+            "kind": "synthetic-not-H2-learning-or-G5",
+            "nodes": 1024,
+            "p": 1,
+            "preactivation_error_to_frozen_threshold_ratio": 0.0040722480792903274,
+            "query_signatures": 1,
+            "steps": 128,
+            "trajectory_error_max": 2.6703364255920015e-08,
+            "trajectory_signatures": 2
+          }
+        ],
+        "hardware": {
+          "allocator_fraction": 0.6,
+          "backend": "gpu",
+          "development_mount": false,
+          "devices": [
+            "cuda:0"
+          ],
+          "gpu": [
+            "GPU-d7c4073b-c643-21ed-3d64-35a73d3d7a72",
+            "NVIDIA GeForce RTX 3060",
+            "12288",
+            "591.74"
+          ],
+          "image_digest": "sha256:5c567eb307576b52543497c16f7a6fdaedb333272067b4d774b508dbcc29fd46",
+          "kernel": "6.6.87.2-microsoft-standard-WSL2",
+          "preallocate": false,
+          "precision": "float32",
+          "python": "3.11.14"
+        },
+        "memory": {
+          "cgroup_current_bytes": 666361856,
+          "cgroup_peak_bytes": 674832384,
+          "cgroup_swap_bytes": 0,
+          "device_allocator": {
+            "bytes_in_use": 256,
+            "bytes_limit": 7730548223,
+            "bytes_reserved": 0,
+            "largest_alloc_size": 4194304,
+            "largest_free_block_bytes": 0,
+            "num_allocs": 3719,
+            "peak_bytes_in_use": 10415104,
+            "peak_bytes_reserved": 0,
+            "peak_pool_bytes": 14680064,
+            "pool_bytes": 14680064
+          },
+          "process_peak_rss_bytes": 984539136
+        },
+        "not_qualified": [
+          "H2 learning",
+          "B0",
+          "M2 G2/G4/G5",
+          "W8 sequence environment"
+        ],
+        "provenance": {
+          "compatibility_lock_sha256": "a11a7696492404e642f411a817893b984511a7f0da0131318d44173b2741c4d9",
+          "engine_sha256": "e4fbdd7588fd6008455fc109d12996fa21097bd40d07849f83149d2493b113b6",
+          "lock_sha256": "df89b8faeaefc2cf0a8ad1e723e7b000cbf48496a00b1e2ef0a3bac6fb33bdae",
+          "packages": {
+            "emr-hyperneat": "0.3.0",
+            "gymnax": "0.0.9",
+            "jax": "0.6.1",
+            "jaxlib": "0.6.1",
+            "numpy": "1.26.4",
+            "tensorneat": "0.1.0"
+          },
+          "sources": {
+            "base_image": "python:3.11.14-slim-bookworm@sha256:65a93d69fa75478d554f4ad27c85c1e69fa184956261b4301ebaf6dbb0a3543d",
+            "emr": {
+              "archive_sha256": "2e4e7ec552fd2fb6ebd59e44b8ea89057f9980ef296d4451e22ccb7915bfb59d",
+              "license": "GPL-3.0-or-later (bundled LICENSE)",
+              "sha": "306eb4e67687390bb88131ead6af8bebffa8cee9",
+              "url": "https://github.com/RomainClaret/emr-hyperneat.git"
+            },
+            "schema": 1,
+            "tensorneat": {
+              "archive_sha256": "6776462f279bc6fa2ff9c0bf4adc405732d25681424346c8f5d6f9d7469cda3f",
+              "license": "GPL-3.0-or-later (bundled LICENSE)",
+              "sha": "49c193d546447d5fe2cb4b26f60758d23fc24cb0",
+              "url": "https://github.com/RomainClaret/tensorneat.git"
+            }
+          }
+        },
+        "schema": 1,
+        "script_sha256": "66a3308c2f4c39fbba2104a751c551f3dc08653e4869e3697bf400b416278fcd",
+        "status": "pass"
+      },
+      "calibration": {
+        "coefficient": 456,
+        "fixture_sha256": "294d033f3e5deb175987f324d0d94041b1e8b5331bde7bcf4b1d3fec099da6e3",
+        "fixtures": [
+          {
+            "fanin": 64,
+            "max_error": 2.6748457671033066e-08,
+            "max_error_over_uS": 3.2302812098781626,
+            "pattern": "positive",
+            "seed": 8100
+          },
+          {
+            "fanin": 64,
+            "max_error": 1.6085886733741006e-08,
+            "max_error_over_uS": 2.1790940934669822,
+            "pattern": "positive-single",
+            "seed": 8100
+          },
+          {
+            "fanin": 64,
+            "max_error": 8.880707544345334e-09,
+            "max_error_over_uS": 1.2343844428578956,
+            "pattern": "mixed",
+            "seed": 8100
+          },
+          {
+            "fanin": 64,
+            "max_error": 5.870803003460434e-09,
+            "max_error_over_uS": 0.8907973431331091,
+            "pattern": "mixed-single",
+            "seed": 8100
+          },
+          {
+            "fanin": 64,
+            "max_error": 1.862645149230957e-09,
+            "max_error_over_uS": 0.2107578943194592,
+            "pattern": "cancellation",
+            "seed": 8100
+          },
+          {
+            "fanin": 64,
+            "max_error": 0.0,
+            "max_error_over_uS": 0.0,
+            "pattern": "cancellation-single",
+            "seed": 8100
+          },
+          {
+            "fanin": 60,
+            "max_error": 2.60770320892334e-07,
+            "max_error_over_uS": 7.291666829648121,
+            "pattern": "constant-output-single",
+            "seed": 8100,
+            "weight": 0.009999999776482582
+          },
+          {
+            "fanin": 64,
+            "max_error": 2.4526231268140464e-08,
+            "max_error_over_uS": 2.911370010979124,
+            "pattern": "positive",
+            "seed": 8101
+          },
+          {
+            "fanin": 64,
+            "max_error": 1.7728826018359456e-08,
+            "max_error_over_uS": 2.092033798215162,
+            "pattern": "positive-single",
+            "seed": 8101
+          },
+          {
+            "fanin": 64,
+            "max_error": 8.437677126438281e-09,
+            "max_error_over_uS": 1.0567413458777823,
+            "pattern": "mixed",
+            "seed": 8101
+          },
+          {
+            "fanin": 64,
+            "max_error": 6.373621797006734e-09,
+            "max_error_over_uS": 0.8484197837326891,
+            "pattern": "mixed-single",
+            "seed": 8101
+          },
+          {
+            "fanin": 64,
+            "max_error": 2.7939677238464355e-09,
+            "max_error_over_uS": 0.3514052317668134,
+            "pattern": "cancellation",
+            "seed": 8101
+          },
+          {
+            "fanin": 64,
+            "max_error": 0.0,
+            "max_error_over_uS": 0.0,
+            "pattern": "cancellation-single",
+            "seed": 8101
+          },
+          {
+            "fanin": 60,
+            "max_error": 3.427267074584961e-06,
+            "max_error_over_uS": 9.58333319053054,
+            "pattern": "constant-output-single",
+            "seed": 8101,
+            "weight": 0.10000000149011612
+          },
+          {
+            "fanin": 64,
+            "max_error": 2.7210315556303044e-08,
+            "max_error_over_uS": 3.107670922348537,
+            "pattern": "positive",
+            "seed": 8102
+          },
+          {
+            "fanin": 64,
+            "max_error": 1.2641018648507085e-08,
+            "max_error_over_uS": 1.5843875500546276,
+            "pattern": "positive-single",
+            "seed": 8102
+          },
+          {
+            "fanin": 64,
+            "max_error": 1.174754388211241e-08,
+            "max_error_over_uS": 1.3354901122773126,
+            "pattern": "mixed",
+            "seed": 8102
+          },
+          {
+            "fanin": 64,
+            "max_error": 4.933898456460639e-09,
+            "max_error_over_uS": 0.651317884755315,
+            "pattern": "mixed-single",
+            "seed": 8102
+          },
+          {
+            "fanin": 64,
+            "max_error": 2.3283064365386963e-09,
+            "max_error_over_uS": 0.263227083281701,
+            "pattern": "cancellation",
+            "seed": 8102
+          },
+          {
+            "fanin": 64,
+            "max_error": 0.0,
+            "max_error_over_uS": 0.0,
+            "pattern": "cancellation-single",
+            "seed": 8102
+          },
+          {
+            "fanin": 60,
+            "max_error": 6.854534149169922e-06,
+            "max_error_over_uS": 9.58333319053054,
+            "pattern": "constant-output-single",
+            "seed": 8102,
+            "weight": 0.20000000298023224
+          },
+          {
+            "fanin": 64,
+            "max_error": 3.444248092288049e-08,
+            "max_error_over_uS": 3.484257916780162,
+            "pattern": "positive",
+            "seed": 8103
+          },
+          {
+            "fanin": 64,
+            "max_error": 1.4999459480025124e-08,
+            "max_error_over_uS": 1.7268459231792475,
+            "pattern": "positive-single",
+            "seed": 8103
+          },
+          {
+            "fanin": 64,
+            "max_error": 8.801479982334381e-09,
+            "max_error_over_uS": 1.0096580551927732,
+            "pattern": "mixed",
+            "seed": 8103
+          },
+          {
+            "fanin": 64,
+            "max_error": 6.7992286523210765e-09,
+            "max_error_over_uS": 0.6912337584778272,
+            "pattern": "mixed-single",
+            "seed": 8103
+          },
+          {
+            "fanin": 64,
+            "max_error": 1.862645149230957e-09,
+            "max_error_over_uS": 0.21758678218866184,
+            "pattern": "cancellation",
+            "seed": 8103
+          },
+          {
+            "fanin": 64,
+            "max_error": 0.0,
+            "max_error_over_uS": 0.0,
+            "pattern": "cancellation-single",
+            "seed": 8103
+          },
+          {
+            "fanin": 60,
+            "max_error": 1.1920928955078125e-06,
+            "max_error_over_uS": 1.111111066959524,
+            "pattern": "constant-output-single",
+            "seed": 8103,
+            "weight": 0.30000001192092896
+          },
+          {
+            "fanin": 64,
+            "max_error": 2.7368771471358855e-08,
+            "max_error_over_uS": 2.9666849825334234,
+            "pattern": "positive",
+            "seed": 8104
+          },
+          {
+            "fanin": 64,
+            "max_error": 1.5573540596003355e-08,
+            "max_error_over_uS": 1.8586963413032171,
+            "pattern": "positive-single",
+            "seed": 8104
+          },
+          {
+            "fanin": 64,
+            "max_error": 8.72614894231738e-09,
+            "max_error_over_uS": 1.0825088084484225,
+            "pattern": "mixed",
+            "seed": 8104
+          },
+          {
+            "fanin": 64,
+            "max_error": 8.834937489932138e-09,
+            "max_error_over_uS": 0.9142183217952529,
+            "pattern": "mixed-single",
+            "seed": 8104
+          },
+          {
+            "fanin": 64,
+            "max_error": 2.7939677238464355e-09,
+            "max_error_over_uS": 0.27173002318018097,
+            "pattern": "cancellation",
+            "seed": 8104
+          },
+          {
+            "fanin": 64,
+            "max_error": 0.0,
+            "max_error_over_uS": 0.0,
+            "pattern": "cancellation-single",
+            "seed": 8104
+          },
+          {
+            "fanin": 60,
+            "max_error": 2.3603439331054688e-05,
+            "max_error_over_uS": 9.428571589139045,
+            "pattern": "constant-output-single",
+            "seed": 8104,
+            "weight": 0.699999988079071
+          },
+          {
+            "fanin": 64,
+            "max_error": 3.147476557163742e-08,
+            "max_error_over_uS": 3.129444680936518,
+            "pattern": "positive",
+            "seed": 8105
+          },
+          {
+            "fanin": 64,
+            "max_error": 2.3572885005096467e-08,
+            "max_error_over_uS": 2.7791706620713765,
+            "pattern": "positive-single",
+            "seed": 8105
+          },
+          {
+            "fanin": 64,
+            "max_error": 9.007056177290362e-09,
+            "max_error_over_uS": 1.1961652426201599,
+            "pattern": "mixed",
+            "seed": 8105
+          },
+          {
+            "fanin": 64,
+            "max_error": 5.279036041638818e-09,
+            "max_error_over_uS": 0.6423083905192655,
+            "pattern": "mixed-single",
+            "seed": 8105
+          },
+          {
+            "fanin": 64,
+            "max_error": 1.6298145055770874e-09,
+            "max_error_over_uS": 0.26593467138220805,
+            "pattern": "cancellation",
+            "seed": 8105
+          },
+          {
+            "fanin": 64,
+            "max_error": 0.0,
+            "max_error_over_uS": 0.0,
+            "pattern": "cancellation-single",
+            "seed": 8105
+          },
+          {
+            "fanin": 60,
+            "max_error": 3.9577484130859375e-05,
+            "max_error_over_uS": 10.060605842548302,
+            "pattern": "constant-output-single",
+            "seed": 8105,
+            "weight": 1.100000023841858
+          },
+          {
+            "fanin": 64,
+            "max_error": 2.7787181666738547e-08,
+            "max_error_over_uS": 3.0163872370036047,
+            "pattern": "positive",
+            "seed": 8106
+          },
+          {
+            "fanin": 64,
+            "max_error": 1.5757847970920835e-08,
+            "max_error_over_uS": 1.877779049510219,
+            "pattern": "positive-single",
+            "seed": 8106
+          },
+          {
+            "fanin": 64,
+            "max_error": 1.4142298720987156e-08,
+            "max_error_over_uS": 1.5911818065806642,
+            "pattern": "mixed",
+            "seed": 8106
+          },
+          {
+            "fanin": 64,
+            "max_error": 4.332988544353267e-09,
+            "max_error_over_uS": 0.5376970732093852,
+            "pattern": "mixed-single",
+            "seed": 8106
+          },
+          {
+            "fanin": 64,
+            "max_error": 1.862645149230957e-09,
+            "max_error_over_uS": 0.29250128619980403,
+            "pattern": "cancellation",
+            "seed": 8106
+          },
+          {
+            "fanin": 64,
+            "max_error": 0.0,
+            "max_error_over_uS": 0.0,
+            "pattern": "cancellation-single",
+            "seed": 8106
+          },
+          {
+            "fanin": 60,
+            "max_error": 7.915496826171875e-05,
+            "max_error_over_uS": 10.060605842548302,
+            "pattern": "constant-output-single",
+            "seed": 8106,
+            "weight": 2.200000047683716
+          },
+          {
+            "fanin": 64,
+            "max_error": 2.8116929784438582e-08,
+            "max_error_over_uS": 3.0832432794817377,
+            "pattern": "positive",
+            "seed": 8107
+          },
+          {
+            "fanin": 64,
+            "max_error": 2.0582978266237006e-08,
+            "max_error_over_uS": 2.3223822360595197,
+            "pattern": "positive-single",
+            "seed": 8107
+          },
+          {
+            "fanin": 64,
+            "max_error": 9.580108879803095e-09,
+            "max_error_over_uS": 1.253910545509178,
+            "pattern": "mixed",
+            "seed": 8107
+          },
+          {
+            "fanin": 64,
+            "max_error": 4.74074374895439e-09,
+            "max_error_over_uS": 0.6008614583372875,
+            "pattern": "mixed-single",
+            "seed": 8107
+          },
+          {
+            "fanin": 64,
+            "max_error": 1.979060471057892e-09,
+            "max_error_over_uS": 0.2758049049322638,
+            "pattern": "cancellation",
+            "seed": 8107
+          },
+          {
+            "fanin": 64,
+            "max_error": 0.0,
+            "max_error_over_uS": 0.0,
+            "pattern": "cancellation-single",
+            "seed": 8107
+          },
+          {
+            "fanin": 60,
+            "max_error": 0.0001888275146484375,
+            "max_error_over_uS": 10.775509994360672,
+            "pattern": "constant-output-single",
+            "seed": 8107,
+            "weight": 4.900000095367432
+          },
+          {
+            "fanin": 256,
+            "max_error": 4.148861865171938e-08,
+            "max_error_over_uS": 4.843797878155699,
+            "pattern": "positive",
+            "seed": 8100
+          },
+          {
+            "fanin": 256,
+            "max_error": 1.6356836662900776e-08,
+            "max_error_over_uS": 2.177148686667885,
+            "pattern": "positive-single",
+            "seed": 8100
+          },
+          {
+            "fanin": 256,
+            "max_error": 1.0721114943740284e-08,
+            "max_error_over_uS": 1.3827104354600328,
+            "pattern": "mixed",
+            "seed": 8100
+          },
+          {
+            "fanin": 256,
+            "max_error": 5.54404088609628e-09,
+            "max_error_over_uS": 0.7418840839812177,
+            "pattern": "mixed-single",
+            "seed": 8100
+          },
+          {
+            "fanin": 256,
+            "max_error": 1.0477378964424133e-09,
+            "max_error_over_uS": 0.12312842594817161,
+            "pattern": "cancellation",
+            "seed": 8100
+          },
+          {
+            "fanin": 256,
+            "max_error": 0.0,
+            "max_error_over_uS": 0.0,
+            "pattern": "cancellation-single",
+            "seed": 8100
+          },
+          {
+            "fanin": 252,
+            "max_error": 1.8700957298278809e-06,
+            "max_error_over_uS": 12.450397103684887,
+            "pattern": "constant-output-single",
+            "seed": 8100,
+            "weight": 0.009999999776482582
+          },
+          {
+            "fanin": 256,
+            "max_error": 3.912519305759865e-08,
+            "max_error_over_uS": 4.447860561050168,
+            "pattern": "positive",
+            "seed": 8101
+          },
+          {
+            "fanin": 256,
+            "max_error": 2.6227219535046586e-08,
+            "max_error_over_uS": 2.9827023717059067,
+            "pattern": "positive-single",
+            "seed": 8101
+          },
+          {
+            "fanin": 256,
+            "max_error": 9.485171308110107e-09,
+            "max_error_over_uS": 1.1288098934830442,
+            "pattern": "mixed",
+            "seed": 8101
+          },
+          {
+            "fanin": 256,
+            "max_error": 4.6784869173199795e-09,
+            "max_error_over_uS": 0.4714188143805406,
+            "pattern": "mixed-single",
+            "seed": 8101
+          },
+          {
+            "fanin": 256,
+            "max_error": 1.1641532182693481e-09,
+            "max_error_over_uS": 0.1374316622135441,
+            "pattern": "cancellation",
+            "seed": 8101
+          },
+          {
+            "fanin": 256,
+            "max_error": 0.0,
+            "max_error_over_uS": 0.0,
+            "pattern": "cancellation-single",
+            "seed": 8101
+          },
+          {
+            "fanin": 252,
+            "max_error": 5.951523780822754e-05,
+            "max_error_over_uS": 39.623015282586934,
+            "pattern": "constant-output-single",
+            "seed": 8101,
+            "weight": 0.10000000149011612
+          },
+          {
+            "fanin": 256,
+            "max_error": 3.677038365457186e-08,
+            "max_error_over_uS": 4.3319921092086835,
+            "pattern": "positive",
+            "seed": 8102
+          },
+          {
+            "fanin": 256,
+            "max_error": 2.6947763465123842e-08,
+            "max_error_over_uS": 3.1354874748013706,
+            "pattern": "positive-single",
+            "seed": 8102
+          },
+          {
+            "fanin": 256,
+            "max_error": 9.330842189181343e-09,
+            "max_error_over_uS": 1.1601135411153796,
+            "pattern": "mixed",
+            "seed": 8102
+          },
+          {
+            "fanin": 256,
+            "max_error": 3.795283441687669e-09,
+            "max_error_over_uS": 0.4440628469523646,
+            "pattern": "mixed-single",
+            "seed": 8102
+          },
+          {
+            "fanin": 256,
+            "max_error": 1.280568540096283e-09,
+            "max_error_over_uS": 0.16054201190398026,
+            "pattern": "cancellation",
+            "seed": 8102
+          },
+          {
+            "fanin": 256,
+            "max_error": 0.0,
+            "max_error_over_uS": 0.0,
+            "pattern": "cancellation-single",
+            "seed": 8102
+          },
+          {
+            "fanin": 252,
+            "max_error": 0.00011903047561645508,
+            "max_error_over_uS": 39.623015282586934,
+            "pattern": "constant-output-single",
+            "seed": 8102,
+            "weight": 0.20000000298023224
+          },
+          {
+            "fanin": 256,
+            "max_error": 3.80810930566966e-08,
+            "max_error_over_uS": 4.439249431276502,
+            "pattern": "positive",
+            "seed": 8103
+          },
+          {
+            "fanin": 256,
+            "max_error": 2.3378496777359814e-08,
+            "max_error_over_uS": 2.7461546652143918,
+            "pattern": "positive-single",
+            "seed": 8103
+          },
+          {
+            "fanin": 256,
+            "max_error": 8.207564638346154e-09,
+            "max_error_over_uS": 1.1642020866498999,
+            "pattern": "mixed",
+            "seed": 8103
+          },
+          {
+            "fanin": 256,
+            "max_error": 4.3311762232267625e-09,
+            "max_error_over_uS": 0.5123576917141527,
+            "pattern": "mixed-single",
+            "seed": 8103
+          },
+          {
+            "fanin": 256,
+            "max_error": 1.076841726899147e-09,
+            "max_error_over_uS": 0.13844680392506767,
+            "pattern": "cancellation",
+            "seed": 8103
+          },
+          {
+            "fanin": 256,
+            "max_error": 0.0,
+            "max_error_over_uS": 0.0,
+            "pattern": "cancellation-single",
+            "seed": 8103
+          },
+          {
+            "fanin": 252,
+            "max_error": 3.0994415283203125e-06,
+            "max_error_over_uS": 0.6878306604987531,
+            "pattern": "constant-output-single",
+            "seed": 8103,
+            "weight": 0.30000001192092896
+          },
+          {
+            "fanin": 256,
+            "max_error": 4.0321916972008154e-08,
+            "max_error_over_uS": 4.782009360188713,
+            "pattern": "positive",
+            "seed": 8104
+          },
+          {
+            "fanin": 256,
+            "max_error": 2.0858969634884872e-08,
+            "max_error_over_uS": 2.552328014091015,
+            "pattern": "positive-single",
+            "seed": 8104
+          },
+          {
+            "fanin": 256,
+            "max_error": 9.161073601104963e-09,
+            "max_error_over_uS": 1.11977591730532,
+            "pattern": "mixed",
+            "seed": 8104
+          },
+          {
+            "fanin": 256,
+            "max_error": 4.11081967077731e-09,
+            "max_error_over_uS": 0.5497015240552889,
+            "pattern": "mixed-single",
+            "seed": 8104
+          },
+          {
+            "fanin": 256,
+            "max_error": 1.0477378964424133e-09,
+            "max_error_over_uS": 0.1297747388145379,
+            "pattern": "cancellation",
+            "seed": 8104
+          },
+          {
+            "fanin": 256,
+            "max_error": 0.0,
+            "max_error_over_uS": 0.0,
+            "pattern": "cancellation-single",
+            "seed": 8104
+          },
+          {
+            "fanin": 252,
+            "max_error": 0.0004303455352783203,
+            "max_error_over_uS": 40.92970591244824,
+            "pattern": "constant-output-single",
+            "seed": 8104,
+            "weight": 0.699999988079071
+          },
+          {
+            "fanin": 256,
+            "max_error": 3.8453505130098264e-08,
+            "max_error_over_uS": 4.38125804030478,
+            "pattern": "positive",
+            "seed": 8105
+          },
+          {
+            "fanin": 256,
+            "max_error": 2.22286100359792e-08,
+            "max_error_over_uS": 2.707716496246941,
+            "pattern": "positive-single",
+            "seed": 8105
+          },
+          {
+            "fanin": 256,
+            "max_error": 1.040723707212976e-08,
+            "max_error_over_uS": 1.1677347855933193,
+            "pattern": "mixed",
+            "seed": 8105
+          },
+          {
+            "fanin": 256,
+            "max_error": 4.483653552600497e-09,
+            "max_error_over_uS": 0.5478702402391478,
+            "pattern": "mixed-single",
+            "seed": 8105
+          },
+          {
+            "fanin": 256,
+            "max_error": 1.0477378964424133e-09,
+            "max_error_over_uS": 0.1386984708488432,
+            "pattern": "cancellation",
+            "seed": 8105
+          },
+          {
+            "fanin": 256,
+            "max_error": 0.0,
+            "max_error_over_uS": 0.0,
+            "pattern": "cancellation-single",
+            "seed": 8105
+          },
+          {
+            "fanin": 252,
+            "max_error": 0.0006775856018066406,
+            "max_error_over_uS": 41.01010012123103,
+            "pattern": "constant-output-single",
+            "seed": 8105,
+            "weight": 1.100000023841858
+          },
+          {
+            "fanin": 256,
+            "max_error": 4.5030647488619735e-08,
+            "max_error_over_uS": 4.856652951881477,
+            "pattern": "positive",
+            "seed": 8106
+          },
+          {
+            "fanin": 256,
+            "max_error": 2.4143287369327027e-08,
+            "max_error_over_uS": 2.834920086033546,
+            "pattern": "positive-single",
+            "seed": 8106
+          },
+          {
+            "fanin": 256,
+            "max_error": 9.645335315167092e-09,
+            "max_error_over_uS": 1.052986503345574,
+            "pattern": "mixed",
+            "seed": 8106
+          },
+          {
+            "fanin": 256,
+            "max_error": 3.652251119590222e-09,
+            "max_error_over_uS": 0.42620017736057875,
+            "pattern": "mixed-single",
+            "seed": 8106
+          },
+          {
+            "fanin": 256,
+            "max_error": 1.6298145055770874e-09,
+            "max_error_over_uS": 0.2175825465361427,
+            "pattern": "cancellation",
+            "seed": 8106
+          },
+          {
+            "fanin": 256,
+            "max_error": 0.0,
+            "max_error_over_uS": 0.0,
+            "pattern": "cancellation-single",
+            "seed": 8106
+          },
+          {
+            "fanin": 252,
+            "max_error": 0.0013551712036132812,
+            "max_error_over_uS": 41.01010012123103,
+            "pattern": "constant-output-single",
+            "seed": 8106,
+            "weight": 2.200000047683716
+          },
+          {
+            "fanin": 256,
+            "max_error": 3.708341933528203e-08,
+            "max_error_over_uS": 4.473931723487762,
+            "pattern": "positive",
+            "seed": 8107
+          },
+          {
+            "fanin": 256,
+            "max_error": 1.8000147178343084e-08,
+            "max_error_over_uS": 2.1803258751475645,
+            "pattern": "positive-single",
+            "seed": 8107
+          },
+          {
+            "fanin": 256,
+            "max_error": 1.0692976587511893e-08,
+            "max_error_over_uS": 1.1708150789394527,
+            "pattern": "mixed",
+            "seed": 8107
+          },
+          {
+            "fanin": 256,
+            "max_error": 3.614695785747468e-09,
+            "max_error_over_uS": 0.44473879907949604,
+            "pattern": "mixed-single",
+            "seed": 8107
+          },
+          {
+            "fanin": 256,
+            "max_error": 1.1641532182693481e-09,
+            "max_error_over_uS": 0.15030905619278195,
+            "pattern": "cancellation",
+            "seed": 8107
+          },
+          {
+            "fanin": 256,
+            "max_error": 0.0,
+            "max_error_over_uS": 0.0,
+            "pattern": "cancellation-single",
+            "seed": 8107
+          },
+          {
+            "fanin": 252,
+            "max_error": 0.0030765533447265625,
+            "max_error_over_uS": 41.80110057937413,
+            "pattern": "constant-output-single",
+            "seed": 8107,
+            "weight": 4.900000095367432
+          },
+          {
+            "fanin": 1024,
+            "max_error": 4.385292645681105e-08,
+            "max_error_over_uS": 5.463358700906996,
+            "pattern": "positive",
+            "seed": 8100
+          },
+          {
+            "fanin": 1024,
+            "max_error": 2.683227029454116e-08,
+            "max_error_over_uS": 3.324603085740584,
+            "pattern": "positive-single",
+            "seed": 8100
+          },
+          {
+            "fanin": 1024,
+            "max_error": 6.147516334528702e-09,
+            "max_error_over_uS": 0.7409374640874884,
+            "pattern": "mixed",
+            "seed": 8100
+          },
+          {
+            "fanin": 1024,
+            "max_error": 3.535032676305061e-09,
+            "max_error_over_uS": 0.44801125736302305,
+            "pattern": "mixed-single",
+            "seed": 8100
+          },
+          {
+            "fanin": 1024,
+            "max_error": 6.803020369261503e-10,
+            "max_error_over_uS": 0.08492857661059657,
+            "pattern": "cancellation",
+            "seed": 8100
+          },
+          {
+            "fanin": 1024,
+            "max_error": 0.0,
+            "max_error_over_uS": 0.0,
+            "pattern": "cancellation-single",
+            "seed": 8100
+          },
+          {
+            "fanin": 1020,
+            "max_error": 9.164214134216309e-07,
+            "max_error_over_uS": 1.5073529748684351,
+            "pattern": "constant-output-single",
+            "seed": 8100,
+            "weight": 0.009999999776482582
+          },
+          {
+            "fanin": 1024,
+            "max_error": 4.198028202839765e-08,
+            "max_error_over_uS": 4.8966030052278375,
+            "pattern": "positive",
+            "seed": 8101
+          },
+          {
+            "fanin": 1024,
+            "max_error": 2.287014633228779e-08,
+            "max_error_over_uS": 2.8730745657845214,
+            "pattern": "positive-single",
+            "seed": 8101
+          },
+          {
+            "fanin": 1024,
+            "max_error": 6.400109435478196e-09,
+            "max_error_over_uS": 0.7986733694135437,
+            "pattern": "mixed",
+            "seed": 8101
+          },
+          {
+            "fanin": 1024,
+            "max_error": 3.800122203023726e-09,
+            "max_error_over_uS": 0.4549815945049676,
+            "pattern": "mixed-single",
+            "seed": 8101
+          },
+          {
+            "fanin": 1024,
+            "max_error": 5.820766091346741e-10,
+            "max_error_over_uS": 0.07805413917991909,
+            "pattern": "cancellation",
+            "seed": 8101
+          },
+          {
+            "fanin": 1024,
+            "max_error": 0.0,
+            "max_error_over_uS": 0.0,
+            "pattern": "cancellation-single",
+            "seed": 8101
+          },
+          {
+            "fanin": 1020,
+            "max_error": 3.203749656677246e-05,
+            "max_error_over_uS": 5.26960776461398,
+            "pattern": "constant-output-single",
+            "seed": 8101,
+            "weight": 0.10000000149011612
+          },
+          {
+            "fanin": 1024,
+            "max_error": 4.449347085211386e-08,
+            "max_error_over_uS": 5.318259449389182,
+            "pattern": "positive",
+            "seed": 8102
+          },
+          {
+            "fanin": 1024,
+            "max_error": 2.476244131965899e-08,
+            "max_error_over_uS": 3.13099251640047,
+            "pattern": "positive-single",
+            "seed": 8102
+          },
+          {
+            "fanin": 1024,
+            "max_error": 6.737128764588984e-09,
+            "max_error_over_uS": 0.7827050499475078,
+            "pattern": "mixed",
+            "seed": 8102
+          },
+          {
+            "fanin": 1024,
+            "max_error": 3.17533423513372e-09,
+            "max_error_over_uS": 0.3947618451330148,
+            "pattern": "mixed-single",
+            "seed": 8102
+          },
+          {
+            "fanin": 1024,
+            "max_error": 6.83940015733242e-10,
+            "max_error_over_uS": 0.09395452298606659,
+            "pattern": "cancellation",
+            "seed": 8102
+          },
+          {
+            "fanin": 1024,
+            "max_error": 0.0,
+            "max_error_over_uS": 0.0,
+            "pattern": "cancellation-single",
+            "seed": 8102
+          },
+          {
+            "fanin": 1020,
+            "max_error": 6.407499313354492e-05,
+            "max_error_over_uS": 5.26960776461398,
+            "pattern": "constant-output-single",
+            "seed": 8102,
+            "weight": 0.20000000298023224
+          },
+          {
+            "fanin": 1024,
+            "max_error": 4.2746630651846473e-08,
+            "max_error_over_uS": 5.2398088554613045,
+            "pattern": "positive",
+            "seed": 8103
+          },
+          {
+            "fanin": 1024,
+            "max_error": 2.5208024723166744e-08,
+            "max_error_over_uS": 3.147343191210985,
+            "pattern": "positive-single",
+            "seed": 8103
+          },
+          {
+            "fanin": 1024,
+            "max_error": 7.334127628128018e-09,
+            "max_error_over_uS": 1.059212665797838,
+            "pattern": "mixed",
+            "seed": 8103
+          },
+          {
+            "fanin": 1024,
+            "max_error": 3.6088373296661036e-09,
+            "max_error_over_uS": 0.5211971214853343,
+            "pattern": "mixed-single",
+            "seed": 8103
+          },
+          {
+            "fanin": 1024,
+            "max_error": 8.731149137020111e-10,
+            "max_error_over_uS": 0.10966761104068337,
+            "pattern": "cancellation",
+            "seed": 8103
+          },
+          {
+            "fanin": 1024,
+            "max_error": 0.0,
+            "max_error_over_uS": 0.0,
+            "pattern": "cancellation-single",
+            "seed": 8103
+          },
+          {
+            "fanin": 1020,
+            "max_error": 0.00010991096496582031,
+            "max_error_over_uS": 6.026143551392242,
+            "pattern": "constant-output-single",
+            "seed": 8103,
+            "weight": 0.30000001192092896
+          },
+          {
+            "fanin": 1024,
+            "max_error": 4.140161449783797e-08,
+            "max_error_over_uS": 5.240290326435372,
+            "pattern": "positive",
+            "seed": 8104
+          },
+          {
+            "fanin": 1024,
+            "max_error": 2.8413543462502133e-08,
+            "max_error_over_uS": 3.189041461507507,
+            "pattern": "positive-single",
+            "seed": 8104
+          },
+          {
+            "fanin": 1024,
+            "max_error": 6.7317203374106516e-09,
+            "max_error_over_uS": 0.8675463534060095,
+            "pattern": "mixed",
+            "seed": 8104
+          },
+          {
+            "fanin": 1024,
+            "max_error": 3.808136181393529e-09,
+            "max_error_over_uS": 0.434961236204914,
+            "pattern": "mixed-single",
+            "seed": 8104
+          },
+          {
+            "fanin": 1024,
+            "max_error": 6.984919309616089e-10,
+            "max_error_over_uS": 0.09117683092821928,
+            "pattern": "cancellation",
+            "seed": 8104
+          },
+          {
+            "fanin": 1024,
+            "max_error": 0.0,
+            "max_error_over_uS": 0.0,
+            "pattern": "cancellation-single",
+            "seed": 8104
+          },
+          {
+            "fanin": 1020,
+            "max_error": 0.0001342296600341797,
+            "max_error_over_uS": 3.15406167836321,
+            "pattern": "constant-output-single",
+            "seed": 8104,
+            "weight": 0.699999988079071
+          },
+          {
+            "fanin": 1024,
+            "max_error": 4.395423003344945e-08,
+            "max_error_over_uS": 5.249683591976618,
+            "pattern": "positive",
+            "seed": 8105
+          },
+          {
+            "fanin": 1024,
+            "max_error": 3.067315779148316e-08,
+            "max_error_over_uS": 3.7153571149609346,
+            "pattern": "positive-single",
+            "seed": 8105
+          },
+          {
+            "fanin": 1024,
+            "max_error": 8.020935942341934e-09,
+            "max_error_over_uS": 1.0269203678186163,
+            "pattern": "mixed",
+            "seed": 8105
+          },
+          {
+            "fanin": 1024,
+            "max_error": 2.6095901030365187e-09,
+            "max_error_over_uS": 0.3397721386764465,
+            "pattern": "mixed-single",
+            "seed": 8105
+          },
+          {
+            "fanin": 1024,
+            "max_error": 5.820766091346741e-10,
+            "max_error_over_uS": 0.07471117502841863,
+            "pattern": "cancellation",
+            "seed": 8105
+          },
+          {
+            "fanin": 1024,
+            "max_error": 0.0,
+            "max_error_over_uS": 0.0,
+            "pattern": "cancellation-single",
+            "seed": 8105
+          },
+          {
+            "fanin": 1020,
+            "max_error": 9.775161743164062e-05,
+            "max_error_over_uS": 1.4616755476416738,
+            "pattern": "constant-output-single",
+            "seed": 8105,
+            "weight": 1.100000023841858
+          },
+          {
+            "fanin": 1024,
+            "max_error": 4.300124209488665e-08,
+            "max_error_over_uS": 4.983673269113646,
+            "pattern": "positive",
+            "seed": 8106
+          },
+          {
+            "fanin": 1024,
+            "max_error": 2.7209437702957473e-08,
+            "max_error_over_uS": 3.4854685110217125,
+            "pattern": "positive-single",
+            "seed": 8106
+          },
+          {
+            "fanin": 1024,
+            "max_error": 5.917104965724729e-09,
+            "max_error_over_uS": 0.7686090371134394,
+            "pattern": "mixed",
+            "seed": 8106
+          },
+          {
+            "fanin": 1024,
+            "max_error": 3.974055723388048e-09,
+            "max_error_over_uS": 0.4469957627945084,
+            "pattern": "mixed-single",
+            "seed": 8106
+          },
+          {
+            "fanin": 1024,
+            "max_error": 6.402842700481415e-10,
+            "max_error_over_uS": 0.08179309026351925,
+            "pattern": "cancellation",
+            "seed": 8106
+          },
+          {
+            "fanin": 1024,
+            "max_error": 0.0,
+            "max_error_over_uS": 0.0,
+            "pattern": "cancellation-single",
+            "seed": 8106
+          },
+          {
+            "fanin": 1020,
+            "max_error": 0.00019550323486328125,
+            "max_error_over_uS": 1.4616755476416738,
+            "pattern": "constant-output-single",
+            "seed": 8106,
+            "weight": 2.200000047683716
+          },
+          {
+            "fanin": 1024,
+            "max_error": 4.604208383995889e-08,
+            "max_error_over_uS": 5.366179847066933,
+            "pattern": "positive",
+            "seed": 8107
+          },
+          {
+            "fanin": 1024,
+            "max_error": 3.056693478886707e-08,
+            "max_error_over_uS": 3.7775193174135886,
+            "pattern": "positive-single",
+            "seed": 8107
+          },
+          {
+            "fanin": 1024,
+            "max_error": 7.16021970187386e-09,
+            "max_error_over_uS": 0.9249847607035022,
+            "pattern": "mixed",
+            "seed": 8107
+          },
+          {
+            "fanin": 1024,
+            "max_error": 3.2147068999843764e-09,
+            "max_error_over_uS": 0.36430901442069996,
+            "pattern": "mixed-single",
+            "seed": 8107
+          },
+          {
+            "fanin": 1024,
+            "max_error": 8.476490620523691e-10,
+            "max_error_over_uS": 0.10014614329176114,
+            "pattern": "cancellation",
+            "seed": 8107
+          },
+          {
+            "fanin": 1024,
+            "max_error": 0.0,
+            "max_error_over_uS": 0.0,
+            "pattern": "cancellation-single",
+            "seed": 8107
+          },
+          {
+            "fanin": 1020,
+            "max_error": 0.0005855560302734375,
+            "max_error_over_uS": 1.9655861962381023,
+            "pattern": "constant-output-single",
+            "seed": 8107,
+            "weight": 4.900000095367432
+          }
+        ],
+        "hardware": {
+          "allocator_fraction": 0.6,
+          "backend": "gpu",
+          "development_mount": false,
+          "devices": [
+            "cuda:0"
+          ],
+          "gpu": [
+            "GPU-d7c4073b-c643-21ed-3d64-35a73d3d7a72",
+            "NVIDIA GeForce RTX 3060",
+            "12288",
+            "591.74"
+          ],
+          "image_digest": "sha256:5c567eb307576b52543497c16f7a6fdaedb333272067b4d774b508dbcc29fd46",
+          "kernel": "6.6.87.2-microsoft-standard-WSL2",
+          "preallocate": false,
+          "precision": "float32",
+          "python": "3.11.14"
+        },
+        "maximum_error_over_uS": 41.80110057937413,
+        "precision": "float32-HIGHEST",
+        "protocol_id": "h0-h1-contract-v2",
+        "provenance": {
+          "compatibility_lock_sha256": "a11a7696492404e642f411a817893b984511a7f0da0131318d44173b2741c4d9",
+          "engine_sha256": "e4fbdd7588fd6008455fc109d12996fa21097bd40d07849f83149d2493b113b6",
+          "lock_sha256": "df89b8faeaefc2cf0a8ad1e723e7b000cbf48496a00b1e2ef0a3bac6fb33bdae",
+          "packages": {
+            "emr-hyperneat": "0.3.0",
+            "gymnax": "0.0.9",
+            "jax": "0.6.1",
+            "jaxlib": "0.6.1",
+            "numpy": "1.26.4",
+            "tensorneat": "0.1.0"
+          },
+          "sources": {
+            "base_image": "python:3.11.14-slim-bookworm@sha256:65a93d69fa75478d554f4ad27c85c1e69fa184956261b4301ebaf6dbb0a3543d",
+            "emr": {
+              "archive_sha256": "2e4e7ec552fd2fb6ebd59e44b8ea89057f9980ef296d4451e22ccb7915bfb59d",
+              "license": "GPL-3.0-or-later (bundled LICENSE)",
+              "sha": "306eb4e67687390bb88131ead6af8bebffa8cee9",
+              "url": "https://github.com/RomainClaret/emr-hyperneat.git"
+            },
+            "schema": 1,
+            "tensorneat": {
+              "archive_sha256": "6776462f279bc6fa2ff9c0bf4adc405732d25681424346c8f5d6f9d7469cda3f",
+              "license": "GPL-3.0-or-later (bundled LICENSE)",
+              "sha": "49c193d546447d5fe2cb4b26f60758d23fc24cb0",
+              "url": "https://github.com/RomainClaret/tensorneat.git"
+            }
+          }
+        },
+        "schema": 1,
+        "script_sha256": "6d23274520d51af838d197738b95ae04c57e669f29aefedfe3fa2dc027917fdc",
+        "signatures": {
+          "batched_hidden": 3,
+          "single_hidden": 3,
+          "single_output": 3
+        },
+        "status": "validation-pass"
+      },
+      "smoke": {
+        "cartpole": {
+          "heldout": 35.5,
+          "generalization": null,
+          "replay": "pass",
+          "kind": "smoke-not-M2-acceptance",
+          "generations": 4
+        },
+        "memory": {
+          "heldout": 1.0,
+          "generalization": 1.0,
+          "replay": "pass",
+          "kind": "smoke-not-M2-acceptance",
+          "generations": 4
+        }
+      },
+      "H0_H1_checks_pass": true
+    }
+  },
+  "M2_acceptance": "open: B0, H2 memory/CartPole learning, comparison reports, W8 environment and integrated performance gates not run",
+  "Q2": "original capacity failure/resource-stage audit remains open",
+  "H0_H1_complete": true
+}

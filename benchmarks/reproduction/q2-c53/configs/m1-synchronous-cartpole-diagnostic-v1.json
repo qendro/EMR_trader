@@ -1,0 +1,53 @@
+{
+  "schema": 1,
+  "id": "m1-synchronous-cartpole-diagnostic-v1",
+  "kind": "diagnostic",
+  "workload": "W3-generation",
+  "task": "cartpole",
+  "seeds": [
+    100,
+    101,
+    102,
+    103,
+    104
+  ],
+  "generations": 100,
+  "episodes": 8,
+  "horizon": 500,
+  "microbatch": 32,
+  "validation_episodes": 32,
+  "heldout_episodes": 20,
+  "finalists": 8,
+  "target": 450,
+  "required_seeds": 3,
+  "checkpoint_every": 10,
+  "budget_seconds_per_seed": 7200,
+  "budget_status": "diagnostic-proposed-budget",
+  "scenario_policy": "generation-specific",
+  "action": "argmax-first-tie",
+  "adapter": {
+    "population": 128,
+    "inputs": 4,
+    "outputs": 2,
+    "nodes": 32,
+    "edges": 128,
+    "profile": "synchronous",
+    "mutation": {
+      "conn_add": 0.2,
+      "conn_delete": 0.2,
+      "node_add": 0.1,
+      "node_delete": 0.1
+    },
+    "species": {
+      "species_size": 10,
+      "max_stagnation": 15,
+      "species_elitism": 2,
+      "spawn_number_change_rate": 0.5,
+      "genome_elitism": 2,
+      "survival_threshold": 0.1,
+      "min_species_size": 1,
+      "compatibility_threshold": 2.0,
+      "species_number_calculate_by": "rank"
+    }
+  }
+}

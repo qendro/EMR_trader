@@ -1,0 +1,23 @@
+{
+  "cold_initialize_generation_seconds": 25.365422371000022,
+  "hardware": {
+    "backend": "gpu",
+    "devices": [
+      "cuda:0"
+    ],
+    "gpu": [
+      "GPU-84389f80-a576-d373-ecb0-92e972e72dfd",
+      "NVIDIA GeForce RTX 3070",
+      "8192",
+      "591.74"
+    ],
+    "kernel": "6.6.87.2-microsoft-standard-WSL2",
+    "preallocate": false,
+    "precision": "float32",
+    "python": "3.11.14"
+  },
+  "resource_gate": "requires-profile-peak-memory-audit",
+  "status": "smoke-completed",
+  "timing_pass": true,
+  "warm_median_seconds": 21.11274043000003
+}

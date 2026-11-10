@@ -1,0 +1,7 @@
+{
+  "cache_entries_at_start": 2,
+  "compilation_cache_dir": "/cache/q2-native-v2/rtx3060-fixed",
+  "jax_enable_x64": false,
+  "jit_enabled": true,
+  "matmul_precision": "float32"
+}

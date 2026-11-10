@@ -1,0 +1,11 @@
+{
+  "date":"2026-11-10",
+  "experiments":[
+    {"id":"h1-calibration-v1-output-coverage","status":"failed",
+     "profile":"cpu","nodes":1024,"coefficient":30,"output_error_to_threshold_ratio":3.451071544113742,
+     "cause":"v1 calibrated batched hidden matrices but omitted single-candidate/two-output repeated-term reductions",
+     "evidence":"evidence/h1-development/output-threshold-cpu/threshold-failure.json",
+     "superseded":["h1-calibration-v1/cpu.json","h1-calibration-v1/rtx3070.json","h1-calibration-v1/rtx3060-validation.json","h1-audit-v1/cpu"],
+     "resolution":"dated protocol v2 adds representative layouts/constant terms before fresh calibration; c=456 frozen from CPU/RTX3070; 168 calibration/validation fixtures and both large execution fixtures rerun on all profiles; small and trajectory tolerances unchanged"}
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "force_mag": 10.0,
+  "gravity": 9.8,
+  "length": 0.5,
+  "masscart": 1.0,
+  "masspole": 0.1,
+  "max_steps_in_episode": 500,
+  "polemass_length": 0.05,
+  "tau": 0.02,
+  "theta_threshold_radians": 0.20943951023931953,
+  "total_mass": 1.1,
+  "x_threshold": 2.4
+}

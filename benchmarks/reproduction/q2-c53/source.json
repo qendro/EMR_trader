@@ -1,0 +1,4 @@
+{
+  "engine_sha256": "c53ce7e30be494f74d44969d07989a53ddc750e9d42eb8081901c07c2626b3d5",
+  "purpose": "exact source for recorded training/checkpoint artifacts; current importer adds stricter validation"
+}

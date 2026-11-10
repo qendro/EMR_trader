@@ -1,0 +1,33 @@
+{
+  "delays": [
+    1,
+    2,
+    4,
+    8,
+    16
+  ],
+  "episodes": 10,
+  "hardware": {
+    "allocator_fraction": 0.6,
+    "backend": "gpu",
+    "development_mount": false,
+    "devices": [
+      "cuda:0"
+    ],
+    "gpu": [
+      "GPU-84389f80-a576-d373-ecb0-92e972e72dfd",
+      "NVIDIA GeForce RTX 3070",
+      "8192",
+      "591.74"
+    ],
+    "image_digest": "sha256:5c567eb307576b52543497c16f7a6fdaedb333272067b4d774b508dbcc29fd46",
+    "kernel": "6.6.87.2-microsoft-standard-WSL2",
+    "preallocate": false,
+    "precision": "float32",
+    "python": "3.11.14"
+  },
+  "label": "runtime-correctness-only",
+  "oracle_accuracy": 1.0,
+  "reset_accuracy": 0.5,
+  "status": "pass"
+}

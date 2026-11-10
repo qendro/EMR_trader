@@ -1,0 +1,2623 @@
+{
+  "schema": 1,
+  "date": "2026-11-10",
+  "profiles": {
+    "cpu": {
+      "q1": "pass",
+      "oracle": "pass",
+      "tests": {
+        "tests": 44,
+        "errors": 0,
+        "failures": 0,
+        "skipped": 0
+      },
+      "differential": {
+        "status": "pass",
+        "max_error_threshold_ratio": 0.01752706730962038,
+        "max_trajectory_error": 2.999198570052819e-08
+      },
+      "g9": {
+        "passes": true,
+        "fixed_overhead_seconds": 13.40133514500485,
+        "warm_generation_seconds": 0.2049491424995722,
+        "allowable_generations": 31558.75023181908
+      },
+      "learning": {
+        "complete_protocol": true,
+        "passed_seeds": 5,
+        "heldout_scores": [
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0
+        ],
+        "wall_seconds": [
+          40.99881615300001,
+          39.45254032500088,
+          46.68893671600017,
+          46.013366428000154,
+          51.201358009000614
+        ],
+        "structural_mutation_all_seeds": true,
+        "engine_sha256": "8d3aba6552b6872ab47ddca1c1992ee839ce5339c9f48ba221ba780525fddebb",
+        "image_digest": "sha256:7172c6d3749ceef15f01283145f0049e622f26202a36d88957b7486ec31a2a80"
+      },
+      "memory": {
+        "cgroup_peak_bytes": 974934016,
+        "process_peak_rss_bytes": 1042116608,
+        "swap_bytes_max": 0
+      },
+      "g2": {
+        "post_warm_generations": 100,
+        "signatures": {
+          "rollout_signatures": [
+            1
+          ],
+          "tell_signatures": [
+            2
+          ],
+          "observer_signatures": [
+            2
+          ]
+        },
+        "backend_compile_calls": 0,
+        "passes": true,
+        "source": "g4-cpu/driver-0"
+      },
+      "g4": {
+        "pairs": [
+          {
+            "trial": 0,
+            "controller_seconds": 0.20119082700148283,
+            "minimal_seconds": 0.19929492799928994,
+            "ratio": 1.009513031873042
+          },
+          {
+            "trial": 1,
+            "controller_seconds": 0.31529132700052287,
+            "minimal_seconds": 0.21219127500080504,
+            "ratio": 1.4858826169894435
+          },
+          {
+            "trial": 2,
+            "controller_seconds": 0.19885442899976624,
+            "minimal_seconds": 0.2034400660013489,
+            "ratio": 0.9774595187088061
+          }
+        ],
+        "ratio": 0.9889439723252392,
+        "passes": true,
+        "median_pair_ratio": 1.009513031873042,
+        "sample_generations": "2..10 inclusive; terminal selection and forced terminal checkpoint excluded"
+      },
+      "g3": {
+        "passes": true,
+        "host_limit_bytes": 6442450944,
+        "vram_limit_fraction": null,
+        "coverage": "per-run cgroup/process/allocator peaks; physical GPU and VM samples in recorded time window"
+      }
+    },
+    "rtx3070": {
+      "q1": "pass",
+      "oracle": "pass",
+      "tests": {
+        "tests": 44,
+        "errors": 0,
+        "failures": 0,
+        "skipped": 0
+      },
+      "differential": {
+        "status": "pass",
+        "max_error_threshold_ratio": 0.021638256058457168,
+        "max_trajectory_error": 2.0305350734162175e-08
+      },
+      "g9": {
+        "passes": true,
+        "fixed_overhead_seconds": 55.74729797299551,
+        "warm_generation_seconds": 1.6148865635004768,
+        "allowable_generations": 3981.5969599046116
+      },
+      "learning": {
+        "complete_protocol": true,
+        "passed_seeds": 5,
+        "heldout_scores": [
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0
+        ],
+        "wall_seconds": [
+          298.20780730800107,
+          260.62788685799933,
+          240.21631124499982,
+          261.15878644500117,
+          222.4368000300001
+        ],
+        "structural_mutation_all_seeds": true,
+        "engine_sha256": "8d3aba6552b6872ab47ddca1c1992ee839ce5339c9f48ba221ba780525fddebb",
+        "image_digest": "sha256:7172c6d3749ceef15f01283145f0049e622f26202a36d88957b7486ec31a2a80"
+      },
+      "memory": {
+        "cgroup_peak_bytes": 1174110208,
+        "process_peak_rss_bytes": 1171124224,
+        "swap_bytes_max": 0,
+        "gpu_allocator_peak_bytes": 5009664,
+        "gpu_pool_peak_bytes": 6291456,
+        "physical_samples": {
+          "samples": 3456,
+          "used_mib_max": 477.0,
+          "free_mib_min": 7542.0,
+          "temperature_c_max": 46.0
+        }
+      },
+      "g2": {
+        "post_warm_generations": 100,
+        "signatures": {
+          "rollout_signatures": [
+            1
+          ],
+          "tell_signatures": [
+            2
+          ],
+          "observer_signatures": [
+            2
+          ]
+        },
+        "backend_compile_calls": 0,
+        "passes": true,
+        "source": "g4-rtx3070/driver-0"
+      },
+      "g4": {
+        "pairs": [
+          {
+            "trial": 0,
+            "controller_seconds": 1.467340596998838,
+            "minimal_seconds": 1.3619249910007056,
+            "ratio": 1.0774019176494263
+          },
+          {
+            "trial": 1,
+            "controller_seconds": 1.3937903549995099,
+            "minimal_seconds": 1.3753781180002989,
+            "ratio": 1.0133870364507334
+          },
+          {
+            "trial": 2,
+            "controller_seconds": 1.4208835419995012,
+            "minimal_seconds": 1.4874400040007458,
+            "ratio": 0.9552543552531674
+          }
+        ],
+        "ratio": 1.033085755403295,
+        "passes": true,
+        "median_pair_ratio": 1.0133870364507334,
+        "sample_generations": "2..10 inclusive; terminal selection and forced terminal checkpoint excluded"
+      },
+      "g3": {
+        "passes": true,
+        "host_limit_bytes": 6442450944,
+        "vram_limit_fraction": 0.6,
+        "coverage": "per-run cgroup/process/allocator peaks; physical GPU and VM samples in recorded time window"
+      }
+    },
+    "rtx3060": {
+      "q1": "pass",
+      "oracle": "pass",
+      "tests": {
+        "tests": 44,
+        "errors": 0,
+        "failures": 0,
+        "skipped": 0
+      },
+      "differential": {
+        "status": "pass",
+        "max_error_threshold_ratio": 0.021638256058457168,
+        "max_trajectory_error": 2.0305350734162175e-08
+      },
+      "g9": {
+        "passes": true,
+        "fixed_overhead_seconds": 66.67331311900307,
+        "warm_generation_seconds": 1.8253911274996426,
+        "allowable_generations": 3517.0511795939224
+      },
+      "learning": {
+        "complete_protocol": true,
+        "passed_seeds": 5,
+        "heldout_scores": [
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0
+        ],
+        "wall_seconds": [
+          331.4241930629996,
+          292.1784243840011,
+          283.74654762200043,
+          286.3335217450003,
+          210.21019407600033
+        ],
+        "structural_mutation_all_seeds": true,
+        "engine_sha256": "8d3aba6552b6872ab47ddca1c1992ee839ce5339c9f48ba221ba780525fddebb",
+        "image_digest": "sha256:7172c6d3749ceef15f01283145f0049e622f26202a36d88957b7486ec31a2a80"
+      },
+      "memory": {
+        "cgroup_peak_bytes": 1177219072,
+        "process_peak_rss_bytes": 1175752704,
+        "swap_bytes_max": 0,
+        "gpu_allocator_peak_bytes": 5009664,
+        "gpu_pool_peak_bytes": 6291456,
+        "physical_samples": {
+          "samples": 3456,
+          "used_mib_max": 1123.0,
+          "free_mib_min": 10993.0,
+          "temperature_c_max": 44.0
+        }
+      },
+      "g2": {
+        "post_warm_generations": 100,
+        "signatures": {
+          "rollout_signatures": [
+            1
+          ],
+          "tell_signatures": [
+            2
+          ],
+          "observer_signatures": [
+            2
+          ]
+        },
+        "backend_compile_calls": 0,
+        "passes": true,
+        "source": "g4-rtx3060/driver-0"
+      },
+      "g4": {
+        "pairs": [
+          {
+            "trial": 0,
+            "controller_seconds": 1.548492351999812,
+            "minimal_seconds": 1.6788113640013762,
+            "ratio": 0.9223742376326579
+          },
+          {
+            "trial": 1,
+            "controller_seconds": 1.490665433999311,
+            "minimal_seconds": 1.6003709609994985,
+            "ratio": 0.9314499389993481
+          },
+          {
+            "trial": 2,
+            "controller_seconds": 1.5203934349992778,
+            "minimal_seconds": 1.587610003998634,
+            "ratio": 0.9576617879516625
+          }
+        ],
+        "ratio": 0.9500256328381069,
+        "passes": true,
+        "median_pair_ratio": 0.9314499389993481,
+        "sample_generations": "2..10 inclusive; terminal selection and forced terminal checkpoint excluded"
+      },
+      "g3": {
+        "passes": true,
+        "host_limit_bytes": 6442450944,
+        "vram_limit_fraction": 0.6,
+        "coverage": "per-run cgroup/process/allocator peaks; physical GPU and VM samples in recorded time window"
+      }
+    }
+  },
+  "q2": [
+    {
+      "profile": "rtx3060",
+      "mode": "feedforward",
+      "seed": 700,
+      "path": "q2-v2/rtx3060-feedforward-700",
+      "result": {
+        "cold_initialize_generation_seconds": 47.45209899100064,
+        "hardware": {
+          "allocator_fraction": 0.6,
+          "backend": "gpu",
+          "development_mount": false,
+          "devices": [
+            "cuda:0"
+          ],
+          "gpu": [
+            "GPU-d7c4073b-c643-21ed-3d64-35a73d3d7a72",
+            "NVIDIA GeForce RTX 3060",
+            "12288",
+            "591.74"
+          ],
+          "image_digest": "sha256:c294142b115e520a548f15452a6620efadf3675385861d3dd54b2a8c6146207c",
+          "kernel": "6.6.87.2-microsoft-standard-WSL2",
+          "preallocate": false,
+          "precision": "float32",
+          "python": "3.11.14"
+        },
+        "resource_gate": "requires-profile-peak-memory-audit",
+        "status": "measured",
+        "timing_pass": true,
+        "warm_median_seconds": 0.16327191949994813
+      },
+      "failure": null
+    },
+    {
+      "profile": "rtx3060",
+      "mode": "feedforward",
+      "seed": 701,
+      "path": "q2-v2/rtx3060-feedforward-701",
+      "result": {
+        "cold_initialize_generation_seconds": 45.740200698999615,
+        "hardware": {
+          "allocator_fraction": 0.6,
+          "backend": "gpu",
+          "development_mount": false,
+          "devices": [
+            "cuda:0"
+          ],
+          "gpu": [
+            "GPU-d7c4073b-c643-21ed-3d64-35a73d3d7a72",
+            "NVIDIA GeForce RTX 3060",
+            "12288",
+            "591.74"
+          ],
+          "image_digest": "sha256:c294142b115e520a548f15452a6620efadf3675385861d3dd54b2a8c6146207c",
+          "kernel": "6.6.87.2-microsoft-standard-WSL2",
+          "preallocate": false,
+          "precision": "float32",
+          "python": "3.11.14"
+        },
+        "resource_gate": "requires-profile-peak-memory-audit",
+        "status": "measured",
+        "timing_pass": true,
+        "warm_median_seconds": 0.15450311400036298
+      },
+      "failure": null
+    },
+    {
+      "profile": "rtx3060",
+      "mode": "feedforward",
+      "seed": 702,
+      "path": "q2-v2/rtx3060-feedforward-702",
+      "result": {
+        "cold_initialize_generation_seconds": 46.28534739299994,
+        "hardware": {
+          "allocator_fraction": 0.6,
+          "backend": "gpu",
+          "development_mount": false,
+          "devices": [
+            "cuda:0"
+          ],
+          "gpu": [
+            "GPU-d7c4073b-c643-21ed-3d64-35a73d3d7a72",
+            "NVIDIA GeForce RTX 3060",
+            "12288",
+            "591.74"
+          ],
+          "image_digest": "sha256:c294142b115e520a548f15452a6620efadf3675385861d3dd54b2a8c6146207c",
+          "kernel": "6.6.87.2-microsoft-standard-WSL2",
+          "preallocate": false,
+          "precision": "float32",
+          "python": "3.11.14"
+        },
+        "resource_gate": "requires-profile-peak-memory-audit",
+        "status": "measured",
+        "timing_pass": true,
+        "warm_median_seconds": 0.16270439500067368
+      },
+      "failure": null
+    },
+    {
+      "profile": "rtx3060",
+      "mode": "recurrent",
+      "seed": 700,
+      "path": "q2-v2/rtx3060-recurrent-700",
+      "result": {
+        "cold_initialize_generation_seconds": 68.22104669099917,
+        "hardware": {
+          "allocator_fraction": 0.6,
+          "backend": "gpu",
+          "development_mount": false,
+          "devices": [
+            "cuda:0"
+          ],
+          "gpu": [
+            "GPU-d7c4073b-c643-21ed-3d64-35a73d3d7a72",
+            "NVIDIA GeForce RTX 3060",
+            "12288",
+            "591.74"
+          ],
+          "image_digest": "sha256:c294142b115e520a548f15452a6620efadf3675385861d3dd54b2a8c6146207c",
+          "kernel": "6.6.87.2-microsoft-standard-WSL2",
+          "preallocate": false,
+          "precision": "float32",
+          "python": "3.11.14"
+        },
+        "resource_gate": "requires-profile-peak-memory-audit",
+        "status": "measured",
+        "timing_pass": true,
+        "warm_median_seconds": 0.3443924559996958
+      },
+      "failure": null
+    },
+    {
+      "profile": "rtx3060",
+      "mode": "recurrent",
+      "seed": 701,
+      "path": "q2-v2/rtx3060-recurrent-701",
+      "result": {
+        "cold_initialize_generation_seconds": 62.15417171899935,
+        "hardware": {
+          "allocator_fraction": 0.6,
+          "backend": "gpu",
+          "development_mount": false,
+          "devices": [
+            "cuda:0"
+          ],
+          "gpu": [
+            "GPU-d7c4073b-c643-21ed-3d64-35a73d3d7a72",
+            "NVIDIA GeForce RTX 3060",
+            "12288",
+            "591.74"
+          ],
+          "image_digest": "sha256:c294142b115e520a548f15452a6620efadf3675385861d3dd54b2a8c6146207c",
+          "kernel": "6.6.87.2-microsoft-standard-WSL2",
+          "preallocate": false,
+          "precision": "float32",
+          "python": "3.11.14"
+        },
+        "resource_gate": "requires-profile-peak-memory-audit",
+        "status": "measured",
+        "timing_pass": true,
+        "warm_median_seconds": 0.354111988999648
+      },
+      "failure": null
+    },
+    {
+      "profile": "rtx3060",
+      "mode": "recurrent",
+      "seed": 702,
+      "path": "q2-v2/rtx3060-recurrent-702",
+      "result": null,
+      "failure": {
+        "message": "recurrence.max_sparse_conns=10000 cannot hold the hidden-to-hidden connections discovered for 1 of 128 genomes (largest set 13424): the cap would keep each genome's first pairs in (source, target) position order, not its strongest. Set recurrence.max_sparse_conns to at least 13424.",
+        "status": "failed",
+        "type": "SparseCapExceeded"
+      }
+    },
+    {
+      "profile": "rtx3070",
+      "mode": "feedforward",
+      "seed": 700,
+      "path": "q2-complete/rtx3070-feedforward-700",
+      "result": {
+        "cold_initialize_generation_seconds": 61.89609348199974,
+        "hardware": {
+          "allocator_fraction": 0.6,
+          "backend": "gpu",
+          "development_mount": false,
+          "devices": [
+            "cuda:0"
+          ],
+          "gpu": [
+            "GPU-84389f80-a576-d373-ecb0-92e972e72dfd",
+            "NVIDIA GeForce RTX 3070",
+            "8192",
+            "591.74"
+          ],
+          "image_digest": "sha256:c294142b115e520a548f15452a6620efadf3675385861d3dd54b2a8c6146207c",
+          "kernel": "6.6.87.2-microsoft-standard-WSL2",
+          "preallocate": false,
+          "precision": "float32",
+          "python": "3.11.14"
+        },
+        "resource_gate": "requires-profile-peak-memory-audit",
+        "status": "measured",
+        "timing_pass": true,
+        "warm_median_seconds": 0.14058259850025934
+      },
+      "failure": null
+    },
+    {
+      "profile": "rtx3070",
+      "mode": "feedforward",
+      "seed": 701,
+      "path": "q2-complete/rtx3070-feedforward-701",
+      "result": {
+        "cold_initialize_generation_seconds": 63.82794753899907,
+        "hardware": {
+          "allocator_fraction": 0.6,
+          "backend": "gpu",
+          "development_mount": false,
+          "devices": [
+            "cuda:0"
+          ],
+          "gpu": [
+            "GPU-84389f80-a576-d373-ecb0-92e972e72dfd",
+            "NVIDIA GeForce RTX 3070",
+            "8192",
+            "591.74"
+          ],
+          "image_digest": "sha256:c294142b115e520a548f15452a6620efadf3675385861d3dd54b2a8c6146207c",
+          "kernel": "6.6.87.2-microsoft-standard-WSL2",
+          "preallocate": false,
+          "precision": "float32",
+          "python": "3.11.14"
+        },
+        "resource_gate": "requires-profile-peak-memory-audit",
+        "status": "measured",
+        "timing_pass": true,
+        "warm_median_seconds": 0.17696409550080716
+      },
+      "failure": null
+    },
+    {
+      "profile": "rtx3070",
+      "mode": "feedforward",
+      "seed": 702,
+      "path": "q2-complete/rtx3070-feedforward-702",
+      "result": {
+        "cold_initialize_generation_seconds": 45.762007183000605,
+        "hardware": {
+          "allocator_fraction": 0.6,
+          "backend": "gpu",
+          "development_mount": false,
+          "devices": [
+            "cuda:0"
+          ],
+          "gpu": [
+            "GPU-84389f80-a576-d373-ecb0-92e972e72dfd",
+            "NVIDIA GeForce RTX 3070",
+            "8192",
+            "591.74"
+          ],
+          "image_digest": "sha256:c294142b115e520a548f15452a6620efadf3675385861d3dd54b2a8c6146207c",
+          "kernel": "6.6.87.2-microsoft-standard-WSL2",
+          "preallocate": false,
+          "precision": "float32",
+          "python": "3.11.14"
+        },
+        "resource_gate": "requires-profile-peak-memory-audit",
+        "status": "measured",
+        "timing_pass": true,
+        "warm_median_seconds": 0.14609811200080003
+      },
+      "failure": null
+    },
+    {
+      "profile": "rtx3070",
+      "mode": "recurrent",
+      "seed": 700,
+      "path": "q2-complete/rtx3070-recurrent-700",
+      "result": {
+        "cold_initialize_generation_seconds": 85.2090902910004,
+        "hardware": {
+          "allocator_fraction": 0.6,
+          "backend": "gpu",
+          "development_mount": false,
+          "devices": [
+            "cuda:0"
+          ],
+          "gpu": [
+            "GPU-84389f80-a576-d373-ecb0-92e972e72dfd",
+            "NVIDIA GeForce RTX 3070",
+            "8192",
+            "591.74"
+          ],
+          "image_digest": "sha256:c294142b115e520a548f15452a6620efadf3675385861d3dd54b2a8c6146207c",
+          "kernel": "6.6.87.2-microsoft-standard-WSL2",
+          "preallocate": false,
+          "precision": "float32",
+          "python": "3.11.14"
+        },
+        "resource_gate": "requires-profile-peak-memory-audit",
+        "status": "measured",
+        "timing_pass": true,
+        "warm_median_seconds": 0.484883250999701
+      },
+      "failure": null
+    },
+    {
+      "profile": "rtx3070",
+      "mode": "recurrent",
+      "seed": 701,
+      "path": "q2-complete/rtx3070-recurrent-701",
+      "result": {
+        "cold_initialize_generation_seconds": 67.17128925900033,
+        "hardware": {
+          "allocator_fraction": 0.6,
+          "backend": "gpu",
+          "development_mount": false,
+          "devices": [
+            "cuda:0"
+          ],
+          "gpu": [
+            "GPU-84389f80-a576-d373-ecb0-92e972e72dfd",
+            "NVIDIA GeForce RTX 3070",
+            "8192",
+            "591.74"
+          ],
+          "image_digest": "sha256:c294142b115e520a548f15452a6620efadf3675385861d3dd54b2a8c6146207c",
+          "kernel": "6.6.87.2-microsoft-standard-WSL2",
+          "preallocate": false,
+          "precision": "float32",
+          "python": "3.11.14"
+        },
+        "resource_gate": "requires-profile-peak-memory-audit",
+        "status": "measured",
+        "timing_pass": true,
+        "warm_median_seconds": 0.32588038349967974
+      },
+      "failure": null
+    },
+    {
+      "profile": "rtx3070",
+      "mode": "recurrent",
+      "seed": 702,
+      "path": "q2-complete/rtx3070-recurrent-702",
+      "result": null,
+      "failure": {
+        "message": "recurrence.max_sparse_conns=10000 cannot hold the hidden-to-hidden connections discovered for 1 of 128 genomes (largest set 13424): the cap would keep each genome's first pairs in (source, target) position order, not its strongest. Set recurrence.max_sparse_conns to at least 13424.",
+        "status": "failed",
+        "type": "SparseCapExceeded"
+      }
+    }
+  ],
+  "diagnostics": {
+    "memory": [
+      {
+        "seed": 100,
+        "heldout_score": 1.0,
+        "generalization_score": 1.0,
+        "interpolation_by_delay": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "generalization_by_delay": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "stagnation_removed": 46,
+        "first_training_threshold_generation": 54
+      },
+      {
+        "seed": 101,
+        "heldout_score": 1.0,
+        "generalization_score": 1.0,
+        "interpolation_by_delay": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "generalization_by_delay": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "stagnation_removed": 23,
+        "first_training_threshold_generation": 8
+      },
+      {
+        "seed": 102,
+        "heldout_score": 1.0,
+        "generalization_score": 1.0,
+        "interpolation_by_delay": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "generalization_by_delay": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "stagnation_removed": 29,
+        "first_training_threshold_generation": 22
+      },
+      {
+        "seed": 103,
+        "heldout_score": 1.0,
+        "generalization_score": 1.0,
+        "interpolation_by_delay": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "generalization_by_delay": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "stagnation_removed": 42,
+        "first_training_threshold_generation": 11
+      },
+      {
+        "seed": 104,
+        "heldout_score": 1.0,
+        "generalization_score": 1.0,
+        "interpolation_by_delay": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "generalization_by_delay": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "stagnation_removed": 33,
+        "first_training_threshold_generation": 11
+      }
+    ],
+    "dag-control": [
+      {
+        "seed": 100,
+        "heldout_score": 500.0,
+        "generalization_score": null,
+        "interpolation_by_delay": null,
+        "generalization_by_delay": null,
+        "stagnation_removed": 1,
+        "first_training_threshold_generation": 1
+      },
+      {
+        "seed": 101,
+        "heldout_score": 500.0,
+        "generalization_score": null,
+        "interpolation_by_delay": null,
+        "generalization_by_delay": null,
+        "stagnation_removed": 0,
+        "first_training_threshold_generation": 2
+      },
+      {
+        "seed": 102,
+        "heldout_score": 500.0,
+        "generalization_score": null,
+        "interpolation_by_delay": null,
+        "generalization_by_delay": null,
+        "stagnation_removed": 3,
+        "first_training_threshold_generation": 1
+      },
+      {
+        "seed": 103,
+        "heldout_score": 500.0,
+        "generalization_score": null,
+        "interpolation_by_delay": null,
+        "generalization_by_delay": null,
+        "stagnation_removed": 2,
+        "first_training_threshold_generation": 2
+      },
+      {
+        "seed": 104,
+        "heldout_score": 500.0,
+        "generalization_score": null,
+        "interpolation_by_delay": null,
+        "generalization_by_delay": null,
+        "stagnation_removed": 0,
+        "first_training_threshold_generation": 0
+      }
+    ],
+    "synchronous-cartpole": [
+      {
+        "seed": 100,
+        "heldout_score": 500.0,
+        "generalization_score": null,
+        "interpolation_by_delay": null,
+        "generalization_by_delay": null,
+        "stagnation_removed": 0,
+        "first_training_threshold_generation": 1
+      },
+      {
+        "seed": 101,
+        "heldout_score": 500.0,
+        "generalization_score": null,
+        "interpolation_by_delay": null,
+        "generalization_by_delay": null,
+        "stagnation_removed": 0,
+        "first_training_threshold_generation": 2
+      },
+      {
+        "seed": 102,
+        "heldout_score": 500.0,
+        "generalization_score": null,
+        "interpolation_by_delay": null,
+        "generalization_by_delay": null,
+        "stagnation_removed": 0,
+        "first_training_threshold_generation": 1
+      },
+      {
+        "seed": 103,
+        "heldout_score": 500.0,
+        "generalization_score": null,
+        "interpolation_by_delay": null,
+        "generalization_by_delay": null,
+        "stagnation_removed": 0,
+        "first_training_threshold_generation": 2
+      },
+      {
+        "seed": 104,
+        "heldout_score": 500.0,
+        "generalization_score": null,
+        "interpolation_by_delay": null,
+        "generalization_by_delay": null,
+        "stagnation_removed": 0,
+        "first_training_threshold_generation": 0
+      }
+    ],
+    "fixed-scenario": [
+      {
+        "seed": 100,
+        "heldout_score": 500.0,
+        "generalization_score": null,
+        "interpolation_by_delay": null,
+        "generalization_by_delay": null,
+        "stagnation_removed": 1,
+        "first_training_threshold_generation": 1
+      },
+      {
+        "seed": 101,
+        "heldout_score": 500.0,
+        "generalization_score": null,
+        "interpolation_by_delay": null,
+        "generalization_by_delay": null,
+        "stagnation_removed": 3,
+        "first_training_threshold_generation": 2
+      },
+      {
+        "seed": 102,
+        "heldout_score": 500.0,
+        "generalization_score": null,
+        "interpolation_by_delay": null,
+        "generalization_by_delay": null,
+        "stagnation_removed": 3,
+        "first_training_threshold_generation": 1
+      },
+      {
+        "seed": 103,
+        "heldout_score": 500.0,
+        "generalization_score": null,
+        "interpolation_by_delay": null,
+        "generalization_by_delay": null,
+        "stagnation_removed": 1,
+        "first_training_threshold_generation": 2
+      },
+      {
+        "seed": 104,
+        "heldout_score": 500.0,
+        "generalization_score": null,
+        "interpolation_by_delay": null,
+        "generalization_by_delay": null,
+        "stagnation_removed": 3,
+        "first_training_threshold_generation": 0
+      }
+    ]
+  },
+  "vm_observed_window": {
+    "samples": 2982,
+    "start_unix_seconds": 1794341557.9942873,
+    "end_unix_seconds": 1794344545.930756,
+    "mem_available_min_bytes": 3601580032,
+    "swap_used_start_bytes": 68997120,
+    "swap_used_end_bytes": 68997120,
+    "swap_out_pages": 0
+  },
+  "resume-40-100.json": {
+    "comparison": "bitwise-all-native-state-leaves-and-evaluated-archive",
+    "generations": 100,
+    "hardware": {
+      "allocator_fraction": 0.0,
+      "backend": "cpu",
+      "development_mount": false,
+      "devices": [
+        "TFRT_CPU_0"
+      ],
+      "gpu": null,
+      "image_digest": "sha256:7172c6d3749ceef15f01283145f0049e622f26202a36d88957b7486ec31a2a80",
+      "kernel": "6.6.87.2-microsoft-standard-WSL2",
+      "preallocate": false,
+      "precision": "float32",
+      "python": "3.11.14"
+    },
+    "history_quality_fields": "exact",
+    "split": 40,
+    "status": "pass",
+    "timing_fields": "excluded"
+  },
+  "closed-loop-replay-cpu.json": {
+    "all_actions_match": true,
+    "backend_imports": false,
+    "candidate_id": "seed-0:99:0",
+    "hardware": {
+      "allocator_fraction": 0.0,
+      "backend": "cpu",
+      "development_mount": false,
+      "devices": [
+        "TFRT_CPU_0"
+      ],
+      "gpu": null,
+      "image_digest": "sha256:7172c6d3749ceef15f01283145f0049e622f26202a36d88957b7486ec31a2a80",
+      "kernel": "6.6.87.2-microsoft-standard-WSL2",
+      "preallocate": false,
+      "precision": "float32",
+      "python": "3.11.14"
+    },
+    "max_head_abs_error": 9.375672666012136e-08,
+    "reference_return": 500.0,
+    "return": 500.0,
+    "status": "pass",
+    "steps": 500
+  },
+  "statistics-cpu.json": {
+    "fixtures": [
+      {
+        "abs_error_vs_float64": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "fixture": "zero",
+        "mean": 0.0,
+        "partition": [
+          10000
+        ],
+        "score": 0.0,
+        "std": 0.0
+      },
+      {
+        "abs_error_vs_float64": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "fixture": "zero",
+        "mean": 0.0,
+        "partition": [
+          2500,
+          2500,
+          2500,
+          2500
+        ],
+        "score": 0.0,
+        "std": 0.0
+      },
+      {
+        "abs_error_vs_float64": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "fixture": "zero",
+        "mean": 0.0,
+        "partition": [
+          1,
+          31,
+          997,
+          8971
+        ],
+        "score": 0.0,
+        "std": 0.0
+      },
+      {
+        "abs_error_vs_float64": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "fixture": "zero",
+        "mean": 0.0,
+        "partition": [
+          9999,
+          1
+        ],
+        "score": 0.0,
+        "std": 0.0
+      },
+      {
+        "abs_error_vs_float64": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "fixture": "positive",
+        "mean": 0.5,
+        "partition": [
+          10000
+        ],
+        "score": 50.0,
+        "std": 0.0
+      },
+      {
+        "abs_error_vs_float64": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "fixture": "positive",
+        "mean": 0.5,
+        "partition": [
+          2500,
+          2500,
+          2500,
+          2500
+        ],
+        "score": 50.0,
+        "std": 0.0
+      },
+      {
+        "abs_error_vs_float64": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "fixture": "positive",
+        "mean": 0.5,
+        "partition": [
+          1,
+          31,
+          997,
+          8971
+        ],
+        "score": 50.0,
+        "std": 0.0
+      },
+      {
+        "abs_error_vs_float64": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "fixture": "positive",
+        "mean": 0.5,
+        "partition": [
+          9999,
+          1
+        ],
+        "score": 50.0,
+        "std": 0.0
+      },
+      {
+        "abs_error_vs_float64": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "fixture": "negative",
+        "mean": -0.5,
+        "partition": [
+          10000
+        ],
+        "score": -50.0,
+        "std": 0.0
+      },
+      {
+        "abs_error_vs_float64": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "fixture": "negative",
+        "mean": -0.5,
+        "partition": [
+          2500,
+          2500,
+          2500,
+          2500
+        ],
+        "score": -50.0,
+        "std": 0.0
+      },
+      {
+        "abs_error_vs_float64": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "fixture": "negative",
+        "mean": -0.5,
+        "partition": [
+          1,
+          31,
+          997,
+          8971
+        ],
+        "score": -50.0,
+        "std": 0.0
+      },
+      {
+        "abs_error_vs_float64": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "fixture": "negative",
+        "mean": -0.5,
+        "partition": [
+          9999,
+          1
+        ],
+        "score": -50.0,
+        "std": 0.0
+      },
+      {
+        "abs_error_vs_float64": [
+          2.2649765396565158e-10,
+          4.3034708882786804e-13,
+          4.955587371568981e-07
+        ],
+        "fixture": "near-constant",
+        "mean": 0.5,
+        "partition": [
+          10000
+        ],
+        "score": 49.99970245361328,
+        "std": 5.960464477539063e-08
+      },
+      {
+        "abs_error_vs_float64": [
+          2.2649765396565158e-10,
+          1.2041088595313473e-08,
+          6.05395975128431e-05
+        ],
+        "fixture": "near-constant",
+        "mean": 0.5,
+        "partition": [
+          2500,
+          2500,
+          2500,
+          2500
+        ],
+        "score": 49.99964141845703,
+        "std": 7.164530302361527e-08
+      },
+      {
+        "abs_error_vs_float64": [
+          2.2649765396565158e-10,
+          5.6234770198481855e-12,
+          4.955587371568981e-07
+        ],
+        "fixture": "near-constant",
+        "mean": 0.5,
+        "partition": [
+          1,
+          31,
+          997,
+          8971
+        ],
+        "score": 49.99970245361328,
+        "std": 5.959859095128195e-08
+      },
+      {
+        "abs_error_vs_float64": [
+          2.2649765396565158e-10,
+          4.3034708882786804e-13,
+          4.955587371568981e-07
+        ],
+        "fixture": "near-constant",
+        "mean": 0.5,
+        "partition": [
+          9999,
+          1
+        ],
+        "score": 49.99970245361328,
+        "std": 5.960464477539063e-08
+      },
+      {
+        "abs_error_vs_float64": [
+          4.897116378209387e-09,
+          3.5426479960687374e-07,
+          3.0172647609572056e-09
+        ],
+        "fixture": "full-range",
+        "mean": -0.004671721253544092,
+        "partition": [
+          10000
+        ],
+        "score": -0.007892770692706108,
+        "std": 0.5818988084793091
+      },
+      {
+        "abs_error_vs_float64": [
+          5.362777665517127e-09,
+          1.2257235859625126e-07,
+          1.0467845357881034e-08
+        ],
+        "fixture": "full-range",
+        "mean": -0.004671720787882805,
+        "partition": [
+          2500,
+          2500,
+          2500,
+          2500
+        ],
+        "score": -0.007892763242125511,
+        "std": 0.5818992853164673
+      },
+      {
+        "abs_error_vs_float64": [
+          2.0878029314067015e-09,
+          7.118926682592175e-07,
+          1.2815219007505929e-08
+        ],
+        "fixture": "full-range",
+        "mean": -0.004671728238463402,
+        "partition": [
+          1,
+          31,
+          997,
+          8971
+        ],
+        "score": -0.007892786525189877,
+        "std": 0.5818984508514404
+      },
+      {
+        "abs_error_vs_float64": [
+          4.897116378209387e-09,
+          3.5426479960687374e-07,
+          3.0172647609572056e-09
+        ],
+        "fixture": "full-range",
+        "mean": -0.004671721253544092,
+        "partition": [
+          9999,
+          1
+        ],
+        "score": -0.007892770692706108,
+        "std": 0.5818988084793091
+      }
+    ],
+    "hardware": {
+      "allocator_fraction": 0.0,
+      "backend": "cpu",
+      "development_mount": false,
+      "devices": [
+        "TFRT_CPU_0"
+      ],
+      "gpu": null,
+      "image_digest": "sha256:7172c6d3749ceef15f01283145f0049e622f26202a36d88957b7486ec31a2a80",
+      "kernel": "6.6.87.2-microsoft-standard-WSL2",
+      "preallocate": false,
+      "precision": "float32",
+      "python": "3.11.14"
+    },
+    "protocol": "configs/w8-v1.json",
+    "schema": 1,
+    "sequence_environment_status": "M2-not-implemented",
+    "status": "pass",
+    "steps": 10000
+  },
+  "q2_native": [
+    {
+      "profile": "cpu",
+      "mode": "direct",
+      "seed": 700,
+      "hardware": {
+        "allocator_fraction": 0.0,
+        "backend": "cpu",
+        "development_mount": false,
+        "devices": [
+          "TFRT_CPU_0"
+        ],
+        "gpu": null,
+        "image_digest": "sha256:7172c6d3749ceef15f01283145f0049e622f26202a36d88957b7486ec31a2a80",
+        "kernel": "6.6.87.2-microsoft-standard-WSL2",
+        "preallocate": false,
+        "precision": "float32",
+        "python": "3.11.14"
+      },
+      "interpretation": "upstream-system-baseline-not-encoding-isolating-or-persistent-rollout",
+      "invalid_candidate_evaluations": 26,
+      "manifest_id": "q2-native-direct-fixed-v2",
+      "memory": {
+        "cgroup_current_bytes": 783527936,
+        "cgroup_peak_bytes": 783970304,
+        "cgroup_swap_bytes": 0,
+        "device_allocator": null,
+        "process_peak_rss_bytes": 1064837120
+      },
+      "status": "measured",
+      "wall_seconds": 24.315866777998963,
+      "warm_median_seconds": 0.035771909500908805
+    },
+    {
+      "profile": "cpu",
+      "mode": "direct",
+      "seed": 701,
+      "hardware": {
+        "allocator_fraction": 0.0,
+        "backend": "cpu",
+        "development_mount": false,
+        "devices": [
+          "TFRT_CPU_0"
+        ],
+        "gpu": null,
+        "image_digest": "sha256:7172c6d3749ceef15f01283145f0049e622f26202a36d88957b7486ec31a2a80",
+        "kernel": "6.6.87.2-microsoft-standard-WSL2",
+        "preallocate": false,
+        "precision": "float32",
+        "python": "3.11.14"
+      },
+      "interpretation": "upstream-system-baseline-not-encoding-isolating-or-persistent-rollout",
+      "invalid_candidate_evaluations": 21,
+      "manifest_id": "q2-native-direct-fixed-v2",
+      "memory": {
+        "cgroup_current_bytes": 718905344,
+        "cgroup_peak_bytes": 719503360,
+        "cgroup_swap_bytes": 0,
+        "device_allocator": null,
+        "process_peak_rss_bytes": 1002541056
+      },
+      "status": "measured",
+      "wall_seconds": 10.519321597999806,
+      "warm_median_seconds": 0.03344843349987059
+    },
+    {
+      "profile": "cpu",
+      "mode": "direct",
+      "seed": 702,
+      "hardware": {
+        "allocator_fraction": 0.0,
+        "backend": "cpu",
+        "development_mount": false,
+        "devices": [
+          "TFRT_CPU_0"
+        ],
+        "gpu": null,
+        "image_digest": "sha256:7172c6d3749ceef15f01283145f0049e622f26202a36d88957b7486ec31a2a80",
+        "kernel": "6.6.87.2-microsoft-standard-WSL2",
+        "preallocate": false,
+        "precision": "float32",
+        "python": "3.11.14"
+      },
+      "interpretation": "upstream-system-baseline-not-encoding-isolating-or-persistent-rollout",
+      "invalid_candidate_evaluations": 38,
+      "manifest_id": "q2-native-direct-fixed-v2",
+      "memory": {
+        "cgroup_current_bytes": 727834624,
+        "cgroup_peak_bytes": 727867392,
+        "cgroup_swap_bytes": 0,
+        "device_allocator": null,
+        "process_peak_rss_bytes": 1009717248
+      },
+      "status": "measured",
+      "wall_seconds": 9.367434269999649,
+      "warm_median_seconds": 0.03444689499974629
+    },
+    {
+      "profile": "cpu",
+      "mode": "fixed",
+      "seed": 700,
+      "hardware": {
+        "allocator_fraction": 0.0,
+        "backend": "cpu",
+        "development_mount": false,
+        "devices": [
+          "TFRT_CPU_0"
+        ],
+        "gpu": null,
+        "image_digest": "sha256:7172c6d3749ceef15f01283145f0049e622f26202a36d88957b7486ec31a2a80",
+        "kernel": "6.6.87.2-microsoft-standard-WSL2",
+        "preallocate": false,
+        "precision": "float32",
+        "python": "3.11.14"
+      },
+      "interpretation": "upstream-system-baseline-not-encoding-isolating-or-persistent-rollout",
+      "invalid_candidate_evaluations": 0,
+      "manifest_id": "q2-native-direct-fixed-v2",
+      "memory": {
+        "cgroup_current_bytes": 794001408,
+        "cgroup_peak_bytes": 794009600,
+        "cgroup_swap_bytes": 0,
+        "device_allocator": null,
+        "process_peak_rss_bytes": 1074913280
+      },
+      "status": "measured",
+      "wall_seconds": 22.92953973999829,
+      "warm_median_seconds": 0.04476541700114467
+    },
+    {
+      "profile": "cpu",
+      "mode": "fixed",
+      "seed": 701,
+      "hardware": {
+        "allocator_fraction": 0.0,
+        "backend": "cpu",
+        "development_mount": false,
+        "devices": [
+          "TFRT_CPU_0"
+        ],
+        "gpu": null,
+        "image_digest": "sha256:7172c6d3749ceef15f01283145f0049e622f26202a36d88957b7486ec31a2a80",
+        "kernel": "6.6.87.2-microsoft-standard-WSL2",
+        "preallocate": false,
+        "precision": "float32",
+        "python": "3.11.14"
+      },
+      "interpretation": "upstream-system-baseline-not-encoding-isolating-or-persistent-rollout",
+      "invalid_candidate_evaluations": 0,
+      "manifest_id": "q2-native-direct-fixed-v2",
+      "memory": {
+        "cgroup_current_bytes": 728444928,
+        "cgroup_peak_bytes": 728461312,
+        "cgroup_swap_bytes": 0,
+        "device_allocator": null,
+        "process_peak_rss_bytes": 1011077120
+      },
+      "status": "measured",
+      "wall_seconds": 8.688187760999426,
+      "warm_median_seconds": 0.03905248650062276
+    },
+    {
+      "profile": "cpu",
+      "mode": "fixed",
+      "seed": 702,
+      "hardware": {
+        "allocator_fraction": 0.0,
+        "backend": "cpu",
+        "development_mount": false,
+        "devices": [
+          "TFRT_CPU_0"
+        ],
+        "gpu": null,
+        "image_digest": "sha256:7172c6d3749ceef15f01283145f0049e622f26202a36d88957b7486ec31a2a80",
+        "kernel": "6.6.87.2-microsoft-standard-WSL2",
+        "preallocate": false,
+        "precision": "float32",
+        "python": "3.11.14"
+      },
+      "interpretation": "upstream-system-baseline-not-encoding-isolating-or-persistent-rollout",
+      "invalid_candidate_evaluations": 0,
+      "manifest_id": "q2-native-direct-fixed-v2",
+      "memory": {
+        "cgroup_current_bytes": 715022336,
+        "cgroup_peak_bytes": 715309056,
+        "cgroup_swap_bytes": 0,
+        "device_allocator": null,
+        "process_peak_rss_bytes": 997699584
+      },
+      "status": "measured",
+      "wall_seconds": 8.700147780000407,
+      "warm_median_seconds": 0.0323085150002953
+    },
+    {
+      "profile": "rtx3070",
+      "mode": "direct",
+      "seed": 700,
+      "hardware": {
+        "allocator_fraction": 0.6,
+        "backend": "gpu",
+        "development_mount": false,
+        "devices": [
+          "cuda:0"
+        ],
+        "gpu": [
+          "GPU-84389f80-a576-d373-ecb0-92e972e72dfd",
+          "NVIDIA GeForce RTX 3070",
+          "8192",
+          "591.74"
+        ],
+        "image_digest": "sha256:7172c6d3749ceef15f01283145f0049e622f26202a36d88957b7486ec31a2a80",
+        "kernel": "6.6.87.2-microsoft-standard-WSL2",
+        "preallocate": false,
+        "precision": "float32",
+        "python": "3.11.14"
+      },
+      "interpretation": "upstream-system-baseline-not-encoding-isolating-or-persistent-rollout",
+      "invalid_candidate_evaluations": 26,
+      "manifest_id": "q2-native-direct-fixed-v2",
+      "memory": {
+        "cgroup_current_bytes": 1117130752,
+        "cgroup_peak_bytes": 1193267200,
+        "cgroup_swap_bytes": 0,
+        "device_allocator": {
+          "bytes_in_use": 3500544,
+          "bytes_limit": 5153646387,
+          "bytes_reserved": 0,
+          "largest_alloc_size": 3847168,
+          "largest_free_block_bytes": 0,
+          "num_allocs": 800,
+          "peak_bytes_in_use": 7459072,
+          "peak_bytes_reserved": 0,
+          "peak_pool_bytes": 14680064,
+          "pool_bytes": 14680064
+        },
+        "process_peak_rss_bytes": 1425784832
+      },
+      "status": "measured",
+      "wall_seconds": 40.95980682700065,
+      "warm_median_seconds": 0.02349737050008116
+    },
+    {
+      "profile": "rtx3070",
+      "mode": "direct",
+      "seed": 701,
+      "hardware": {
+        "allocator_fraction": 0.6,
+        "backend": "gpu",
+        "development_mount": false,
+        "devices": [
+          "cuda:0"
+        ],
+        "gpu": [
+          "GPU-84389f80-a576-d373-ecb0-92e972e72dfd",
+          "NVIDIA GeForce RTX 3070",
+          "8192",
+          "591.74"
+        ],
+        "image_digest": "sha256:7172c6d3749ceef15f01283145f0049e622f26202a36d88957b7486ec31a2a80",
+        "kernel": "6.6.87.2-microsoft-standard-WSL2",
+        "preallocate": false,
+        "precision": "float32",
+        "python": "3.11.14"
+      },
+      "interpretation": "upstream-system-baseline-not-encoding-isolating-or-persistent-rollout",
+      "invalid_candidate_evaluations": 21,
+      "manifest_id": "q2-native-direct-fixed-v2",
+      "memory": {
+        "cgroup_current_bytes": 785809408,
+        "cgroup_peak_bytes": 795262976,
+        "cgroup_swap_bytes": 0,
+        "device_allocator": {
+          "bytes_in_use": 3479552,
+          "bytes_limit": 5153646387,
+          "bytes_reserved": 0,
+          "largest_alloc_size": 3847168,
+          "largest_free_block_bytes": 0,
+          "num_allocs": 804,
+          "peak_bytes_in_use": 7459584,
+          "peak_bytes_reserved": 0,
+          "peak_pool_bytes": 14680064,
+          "pool_bytes": 14680064
+        },
+        "process_peak_rss_bytes": 1096458240
+      },
+      "status": "measured",
+      "wall_seconds": 11.60814639199998,
+      "warm_median_seconds": 0.021197961500547535
+    },
+    {
+      "profile": "rtx3070",
+      "mode": "direct",
+      "seed": 702,
+      "hardware": {
+        "allocator_fraction": 0.6,
+        "backend": "gpu",
+        "development_mount": false,
+        "devices": [
+          "cuda:0"
+        ],
+        "gpu": [
+          "GPU-84389f80-a576-d373-ecb0-92e972e72dfd",
+          "NVIDIA GeForce RTX 3070",
+          "8192",
+          "591.74"
+        ],
+        "image_digest": "sha256:7172c6d3749ceef15f01283145f0049e622f26202a36d88957b7486ec31a2a80",
+        "kernel": "6.6.87.2-microsoft-standard-WSL2",
+        "preallocate": false,
+        "precision": "float32",
+        "python": "3.11.14"
+      },
+      "interpretation": "upstream-system-baseline-not-encoding-isolating-or-persistent-rollout",
+      "invalid_candidate_evaluations": 38,
+      "manifest_id": "q2-native-direct-fixed-v2",
+      "memory": {
+        "cgroup_current_bytes": 786890752,
+        "cgroup_peak_bytes": 795455488,
+        "cgroup_swap_bytes": 0,
+        "device_allocator": {
+          "bytes_in_use": 3479552,
+          "bytes_limit": 5153646387,
+          "bytes_reserved": 0,
+          "largest_alloc_size": 3847168,
+          "largest_free_block_bytes": 0,
+          "num_allocs": 804,
+          "peak_bytes_in_use": 7459584,
+          "peak_bytes_reserved": 0,
+          "peak_pool_bytes": 14680064,
+          "pool_bytes": 14680064
+        },
+        "process_peak_rss_bytes": 1096482816
+      },
+      "status": "measured",
+      "wall_seconds": 11.338936021000336,
+      "warm_median_seconds": 0.022161126999890257
+    },
+    {
+      "profile": "rtx3070",
+      "mode": "fixed",
+      "seed": 700,
+      "hardware": {
+        "allocator_fraction": 0.6,
+        "backend": "gpu",
+        "development_mount": false,
+        "devices": [
+          "cuda:0"
+        ],
+        "gpu": [
+          "GPU-84389f80-a576-d373-ecb0-92e972e72dfd",
+          "NVIDIA GeForce RTX 3070",
+          "8192",
+          "591.74"
+        ],
+        "image_digest": "sha256:7172c6d3749ceef15f01283145f0049e622f26202a36d88957b7486ec31a2a80",
+        "kernel": "6.6.87.2-microsoft-standard-WSL2",
+        "preallocate": false,
+        "precision": "float32",
+        "python": "3.11.14"
+      },
+      "interpretation": "upstream-system-baseline-not-encoding-isolating-or-persistent-rollout",
+      "invalid_candidate_evaluations": 0,
+      "manifest_id": "q2-native-direct-fixed-v2",
+      "memory": {
+        "cgroup_current_bytes": 1126051840,
+        "cgroup_peak_bytes": 1202159616,
+        "cgroup_swap_bytes": 0,
+        "device_allocator": {
+          "bytes_in_use": 1071360,
+          "bytes_limit": 5153646387,
+          "bytes_reserved": 0,
+          "largest_alloc_size": 8388608,
+          "largest_free_block_bytes": 0,
+          "num_allocs": 790,
+          "peak_bytes_in_use": 9820160,
+          "peak_bytes_reserved": 0,
+          "peak_pool_bytes": 10485760,
+          "pool_bytes": 10485760
+        },
+        "process_peak_rss_bytes": 1434783744
+      },
+      "status": "measured",
+      "wall_seconds": 42.84001179000006,
+      "warm_median_seconds": 0.022572009499526757
+    },
+    {
+      "profile": "rtx3070",
+      "mode": "fixed",
+      "seed": 701,
+      "hardware": {
+        "allocator_fraction": 0.6,
+        "backend": "gpu",
+        "development_mount": false,
+        "devices": [
+          "cuda:0"
+        ],
+        "gpu": [
+          "GPU-84389f80-a576-d373-ecb0-92e972e72dfd",
+          "NVIDIA GeForce RTX 3070",
+          "8192",
+          "591.74"
+        ],
+        "image_digest": "sha256:7172c6d3749ceef15f01283145f0049e622f26202a36d88957b7486ec31a2a80",
+        "kernel": "6.6.87.2-microsoft-standard-WSL2",
+        "preallocate": false,
+        "precision": "float32",
+        "python": "3.11.14"
+      },
+      "interpretation": "upstream-system-baseline-not-encoding-isolating-or-persistent-rollout",
+      "invalid_candidate_evaluations": 0,
+      "manifest_id": "q2-native-direct-fixed-v2",
+      "memory": {
+        "cgroup_current_bytes": 796131328,
+        "cgroup_peak_bytes": 796446720,
+        "cgroup_swap_bytes": 0,
+        "device_allocator": {
+          "bytes_in_use": 1104384,
+          "bytes_limit": 5153646387,
+          "bytes_reserved": 0,
+          "largest_alloc_size": 8388608,
+          "largest_free_block_bytes": 0,
+          "num_allocs": 790,
+          "peak_bytes_in_use": 9820160,
+          "peak_bytes_reserved": 0,
+          "peak_pool_bytes": 10485760,
+          "pool_bytes": 10485760
+        },
+        "process_peak_rss_bytes": 1106907136
+      },
+      "status": "measured",
+      "wall_seconds": 11.917750488999445,
+      "warm_median_seconds": 0.02282731550076278
+    },
+    {
+      "profile": "rtx3070",
+      "mode": "fixed",
+      "seed": 702,
+      "hardware": {
+        "allocator_fraction": 0.6,
+        "backend": "gpu",
+        "development_mount": false,
+        "devices": [
+          "cuda:0"
+        ],
+        "gpu": [
+          "GPU-84389f80-a576-d373-ecb0-92e972e72dfd",
+          "NVIDIA GeForce RTX 3070",
+          "8192",
+          "591.74"
+        ],
+        "image_digest": "sha256:7172c6d3749ceef15f01283145f0049e622f26202a36d88957b7486ec31a2a80",
+        "kernel": "6.6.87.2-microsoft-standard-WSL2",
+        "preallocate": false,
+        "precision": "float32",
+        "python": "3.11.14"
+      },
+      "interpretation": "upstream-system-baseline-not-encoding-isolating-or-persistent-rollout",
+      "invalid_candidate_evaluations": 0,
+      "manifest_id": "q2-native-direct-fixed-v2",
+      "memory": {
+        "cgroup_current_bytes": 796475392,
+        "cgroup_peak_bytes": 796925952,
+        "cgroup_swap_bytes": 0,
+        "device_allocator": {
+          "bytes_in_use": 990464,
+          "bytes_limit": 5153646387,
+          "bytes_reserved": 0,
+          "largest_alloc_size": 8388608,
+          "largest_free_block_bytes": 0,
+          "num_allocs": 790,
+          "peak_bytes_in_use": 9820416,
+          "peak_bytes_reserved": 0,
+          "peak_pool_bytes": 10485760,
+          "pool_bytes": 10485760
+        },
+        "process_peak_rss_bytes": 1106423808
+      },
+      "status": "measured",
+      "wall_seconds": 11.824754756999027,
+      "warm_median_seconds": 0.02135970850031299
+    },
+    {
+      "profile": "rtx3060",
+      "mode": "direct",
+      "seed": 700,
+      "hardware": {
+        "allocator_fraction": 0.6,
+        "backend": "gpu",
+        "development_mount": false,
+        "devices": [
+          "cuda:0"
+        ],
+        "gpu": [
+          "GPU-d7c4073b-c643-21ed-3d64-35a73d3d7a72",
+          "NVIDIA GeForce RTX 3060",
+          "12288",
+          "591.74"
+        ],
+        "image_digest": "sha256:7172c6d3749ceef15f01283145f0049e622f26202a36d88957b7486ec31a2a80",
+        "kernel": "6.6.87.2-microsoft-standard-WSL2",
+        "preallocate": false,
+        "precision": "float32",
+        "python": "3.11.14"
+      },
+      "interpretation": "upstream-system-baseline-not-encoding-isolating-or-persistent-rollout",
+      "invalid_candidate_evaluations": 26,
+      "manifest_id": "q2-native-direct-fixed-v2",
+      "memory": {
+        "cgroup_current_bytes": 1086906368,
+        "cgroup_peak_bytes": 1159487488,
+        "cgroup_swap_bytes": 0,
+        "device_allocator": {
+          "bytes_in_use": 3500800,
+          "bytes_limit": 7730548223,
+          "bytes_reserved": 0,
+          "largest_alloc_size": 3847168,
+          "largest_free_block_bytes": 0,
+          "num_allocs": 800,
+          "peak_bytes_in_use": 7465728,
+          "peak_bytes_reserved": 0,
+          "peak_pool_bytes": 14680064,
+          "pool_bytes": 14680064
+        },
+        "process_peak_rss_bytes": 1396215808
+      },
+      "status": "measured",
+      "wall_seconds": 41.123058408998986,
+      "warm_median_seconds": 0.030058955499043805
+    },
+    {
+      "profile": "rtx3060",
+      "mode": "direct",
+      "seed": 701,
+      "hardware": {
+        "allocator_fraction": 0.6,
+        "backend": "gpu",
+        "development_mount": false,
+        "devices": [
+          "cuda:0"
+        ],
+        "gpu": [
+          "GPU-d7c4073b-c643-21ed-3d64-35a73d3d7a72",
+          "NVIDIA GeForce RTX 3060",
+          "12288",
+          "591.74"
+        ],
+        "image_digest": "sha256:7172c6d3749ceef15f01283145f0049e622f26202a36d88957b7486ec31a2a80",
+        "kernel": "6.6.87.2-microsoft-standard-WSL2",
+        "preallocate": false,
+        "precision": "float32",
+        "python": "3.11.14"
+      },
+      "interpretation": "upstream-system-baseline-not-encoding-isolating-or-persistent-rollout",
+      "invalid_candidate_evaluations": 21,
+      "manifest_id": "q2-native-direct-fixed-v2",
+      "memory": {
+        "cgroup_current_bytes": 786059264,
+        "cgroup_peak_bytes": 795303936,
+        "cgroup_swap_bytes": 0,
+        "device_allocator": {
+          "bytes_in_use": 3495168,
+          "bytes_limit": 7730548223,
+          "bytes_reserved": 0,
+          "largest_alloc_size": 3847168,
+          "largest_free_block_bytes": 0,
+          "num_allocs": 804,
+          "peak_bytes_in_use": 7465472,
+          "peak_bytes_reserved": 0,
+          "peak_pool_bytes": 14680064,
+          "pool_bytes": 14680064
+        },
+        "process_peak_rss_bytes": 1096962048
+      },
+      "status": "measured",
+      "wall_seconds": 11.218102513001213,
+      "warm_median_seconds": 0.03181117200074368
+    },
+    {
+      "profile": "rtx3060",
+      "mode": "direct",
+      "seed": 702,
+      "hardware": {
+        "allocator_fraction": 0.6,
+        "backend": "gpu",
+        "development_mount": false,
+        "devices": [
+          "cuda:0"
+        ],
+        "gpu": [
+          "GPU-d7c4073b-c643-21ed-3d64-35a73d3d7a72",
+          "NVIDIA GeForce RTX 3060",
+          "12288",
+          "591.74"
+        ],
+        "image_digest": "sha256:7172c6d3749ceef15f01283145f0049e622f26202a36d88957b7486ec31a2a80",
+        "kernel": "6.6.87.2-microsoft-standard-WSL2",
+        "preallocate": false,
+        "precision": "float32",
+        "python": "3.11.14"
+      },
+      "interpretation": "upstream-system-baseline-not-encoding-isolating-or-persistent-rollout",
+      "invalid_candidate_evaluations": 38,
+      "manifest_id": "q2-native-direct-fixed-v2",
+      "memory": {
+        "cgroup_current_bytes": 785653760,
+        "cgroup_peak_bytes": 795181056,
+        "cgroup_swap_bytes": 0,
+        "device_allocator": {
+          "bytes_in_use": 3498752,
+          "bytes_limit": 7730548223,
+          "bytes_reserved": 0,
+          "largest_alloc_size": 3847168,
+          "largest_free_block_bytes": 0,
+          "num_allocs": 804,
+          "peak_bytes_in_use": 7465472,
+          "peak_bytes_reserved": 0,
+          "peak_pool_bytes": 14680064,
+          "pool_bytes": 14680064
+        },
+        "process_peak_rss_bytes": 1096216576
+      },
+      "status": "measured",
+      "wall_seconds": 11.190923383001063,
+      "warm_median_seconds": 0.03127405200029898
+    },
+    {
+      "profile": "rtx3060",
+      "mode": "fixed",
+      "seed": 700,
+      "hardware": {
+        "allocator_fraction": 0.6,
+        "backend": "gpu",
+        "development_mount": false,
+        "devices": [
+          "cuda:0"
+        ],
+        "gpu": [
+          "GPU-d7c4073b-c643-21ed-3d64-35a73d3d7a72",
+          "NVIDIA GeForce RTX 3060",
+          "12288",
+          "591.74"
+        ],
+        "image_digest": "sha256:7172c6d3749ceef15f01283145f0049e622f26202a36d88957b7486ec31a2a80",
+        "kernel": "6.6.87.2-microsoft-standard-WSL2",
+        "preallocate": false,
+        "precision": "float32",
+        "python": "3.11.14"
+      },
+      "interpretation": "upstream-system-baseline-not-encoding-isolating-or-persistent-rollout",
+      "invalid_candidate_evaluations": 0,
+      "manifest_id": "q2-native-direct-fixed-v2",
+      "memory": {
+        "cgroup_current_bytes": 1095708672,
+        "cgroup_peak_bytes": 1168343040,
+        "cgroup_swap_bytes": 0,
+        "device_allocator": {
+          "bytes_in_use": 1072128,
+          "bytes_limit": 7730548223,
+          "bytes_reserved": 0,
+          "largest_alloc_size": 8388608,
+          "largest_free_block_bytes": 0,
+          "num_allocs": 790,
+          "peak_bytes_in_use": 9820416,
+          "peak_bytes_reserved": 0,
+          "peak_pool_bytes": 10485760,
+          "pool_bytes": 10485760
+        },
+        "process_peak_rss_bytes": 1404416000
+      },
+      "status": "measured",
+      "wall_seconds": 41.196685495000565,
+      "warm_median_seconds": 0.03340151449992845
+    },
+    {
+      "profile": "rtx3060",
+      "mode": "fixed",
+      "seed": 701,
+      "hardware": {
+        "allocator_fraction": 0.6,
+        "backend": "gpu",
+        "development_mount": false,
+        "devices": [
+          "cuda:0"
+        ],
+        "gpu": [
+          "GPU-d7c4073b-c643-21ed-3d64-35a73d3d7a72",
+          "NVIDIA GeForce RTX 3060",
+          "12288",
+          "591.74"
+        ],
+        "image_digest": "sha256:7172c6d3749ceef15f01283145f0049e622f26202a36d88957b7486ec31a2a80",
+        "kernel": "6.6.87.2-microsoft-standard-WSL2",
+        "preallocate": false,
+        "precision": "float32",
+        "python": "3.11.14"
+      },
+      "interpretation": "upstream-system-baseline-not-encoding-isolating-or-persistent-rollout",
+      "invalid_candidate_evaluations": 0,
+      "manifest_id": "q2-native-direct-fixed-v2",
+      "memory": {
+        "cgroup_current_bytes": 796504064,
+        "cgroup_peak_bytes": 796565504,
+        "cgroup_swap_bytes": 0,
+        "device_allocator": {
+          "bytes_in_use": 1017856,
+          "bytes_limit": 7730548223,
+          "bytes_reserved": 0,
+          "largest_alloc_size": 8388608,
+          "largest_free_block_bytes": 0,
+          "num_allocs": 790,
+          "peak_bytes_in_use": 9819648,
+          "peak_bytes_reserved": 0,
+          "peak_pool_bytes": 10485760,
+          "pool_bytes": 10485760
+        },
+        "process_peak_rss_bytes": 1107152896
+      },
+      "status": "measured",
+      "wall_seconds": 12.069847234000918,
+      "warm_median_seconds": 0.03295180450004409
+    },
+    {
+      "profile": "rtx3060",
+      "mode": "fixed",
+      "seed": 702,
+      "hardware": {
+        "allocator_fraction": 0.6,
+        "backend": "gpu",
+        "development_mount": false,
+        "devices": [
+          "cuda:0"
+        ],
+        "gpu": [
+          "GPU-d7c4073b-c643-21ed-3d64-35a73d3d7a72",
+          "NVIDIA GeForce RTX 3060",
+          "12288",
+          "591.74"
+        ],
+        "image_digest": "sha256:7172c6d3749ceef15f01283145f0049e622f26202a36d88957b7486ec31a2a80",
+        "kernel": "6.6.87.2-microsoft-standard-WSL2",
+        "preallocate": false,
+        "precision": "float32",
+        "python": "3.11.14"
+      },
+      "interpretation": "upstream-system-baseline-not-encoding-isolating-or-persistent-rollout",
+      "invalid_candidate_evaluations": 0,
+      "manifest_id": "q2-native-direct-fixed-v2",
+      "memory": {
+        "cgroup_current_bytes": 796880896,
+        "cgroup_peak_bytes": 796938240,
+        "cgroup_swap_bytes": 0,
+        "device_allocator": {
+          "bytes_in_use": 1072640,
+          "bytes_limit": 7730548223,
+          "bytes_reserved": 0,
+          "largest_alloc_size": 8388608,
+          "largest_free_block_bytes": 0,
+          "num_allocs": 790,
+          "peak_bytes_in_use": 9819648,
+          "peak_bytes_reserved": 0,
+          "peak_pool_bytes": 10485760,
+          "pool_bytes": 10485760
+        },
+        "process_peak_rss_bytes": 1106522112
+      },
+      "status": "measured",
+      "wall_seconds": 11.927145977000691,
+      "warm_median_seconds": 0.03003227449971746
+    }
+  ],
+  "q2_native_v1": [
+    {
+      "profile": "cpu",
+      "mode": "fixed",
+      "seed": 700,
+      "hardware": {
+        "allocator_fraction": 0.0,
+        "backend": "cpu",
+        "development_mount": false,
+        "devices": [
+          "TFRT_CPU_0"
+        ],
+        "gpu": null,
+        "image_digest": "sha256:7172c6d3749ceef15f01283145f0049e622f26202a36d88957b7486ec31a2a80",
+        "kernel": "6.6.87.2-microsoft-standard-WSL2",
+        "preallocate": false,
+        "precision": "float32",
+        "python": "3.11.14"
+      },
+      "interpretation": "upstream-system-baseline-not-encoding-isolating-or-persistent-rollout",
+      "memory": {
+        "cgroup_current_bytes": 776196096,
+        "cgroup_peak_bytes": 776290304,
+        "cgroup_swap_bytes": 0,
+        "device_allocator": null,
+        "process_peak_rss_bytes": 1056858112
+      },
+      "status": "measured",
+      "wall_seconds": 23.64636341199912,
+      "warm_median_seconds": 0.04655336300038471
+    },
+    {
+      "profile": "cpu",
+      "mode": "fixed",
+      "seed": 701,
+      "hardware": {
+        "allocator_fraction": 0.0,
+        "backend": "cpu",
+        "development_mount": false,
+        "devices": [
+          "TFRT_CPU_0"
+        ],
+        "gpu": null,
+        "image_digest": "sha256:7172c6d3749ceef15f01283145f0049e622f26202a36d88957b7486ec31a2a80",
+        "kernel": "6.6.87.2-microsoft-standard-WSL2",
+        "preallocate": false,
+        "precision": "float32",
+        "python": "3.11.14"
+      },
+      "interpretation": "upstream-system-baseline-not-encoding-isolating-or-persistent-rollout",
+      "memory": {
+        "cgroup_current_bytes": 780689408,
+        "cgroup_peak_bytes": 780886016,
+        "cgroup_swap_bytes": 0,
+        "device_allocator": null,
+        "process_peak_rss_bytes": 1062223872
+      },
+      "status": "measured",
+      "wall_seconds": 23.016298673001074,
+      "warm_median_seconds": 0.03880154200032848
+    },
+    {
+      "profile": "cpu",
+      "mode": "fixed",
+      "seed": 702,
+      "hardware": {
+        "allocator_fraction": 0.0,
+        "backend": "cpu",
+        "development_mount": false,
+        "devices": [
+          "TFRT_CPU_0"
+        ],
+        "gpu": null,
+        "image_digest": "sha256:7172c6d3749ceef15f01283145f0049e622f26202a36d88957b7486ec31a2a80",
+        "kernel": "6.6.87.2-microsoft-standard-WSL2",
+        "preallocate": false,
+        "precision": "float32",
+        "python": "3.11.14"
+      },
+      "interpretation": "upstream-system-baseline-not-encoding-isolating-or-persistent-rollout",
+      "memory": {
+        "cgroup_current_bytes": 789655552,
+        "cgroup_peak_bytes": 789667840,
+        "cgroup_swap_bytes": 0,
+        "device_allocator": null,
+        "process_peak_rss_bytes": 1070252032
+      },
+      "status": "measured",
+      "wall_seconds": 23.175840017000155,
+      "warm_median_seconds": 0.030711252499713737
+    },
+    {
+      "profile": "rtx3070",
+      "mode": "fixed",
+      "seed": 700,
+      "hardware": {
+        "allocator_fraction": 0.6,
+        "backend": "gpu",
+        "development_mount": false,
+        "devices": [
+          "cuda:0"
+        ],
+        "gpu": [
+          "GPU-84389f80-a576-d373-ecb0-92e972e72dfd",
+          "NVIDIA GeForce RTX 3070",
+          "8192",
+          "591.74"
+        ],
+        "image_digest": "sha256:7172c6d3749ceef15f01283145f0049e622f26202a36d88957b7486ec31a2a80",
+        "kernel": "6.6.87.2-microsoft-standard-WSL2",
+        "preallocate": false,
+        "precision": "float32",
+        "python": "3.11.14"
+      },
+      "interpretation": "upstream-system-baseline-not-encoding-isolating-or-persistent-rollout",
+      "memory": {
+        "cgroup_current_bytes": 1116397568,
+        "cgroup_peak_bytes": 1193050112,
+        "cgroup_swap_bytes": 0,
+        "device_allocator": {
+          "bytes_in_use": 1026048,
+          "bytes_limit": 5153646387,
+          "bytes_reserved": 0,
+          "largest_alloc_size": 8388608,
+          "largest_free_block_bytes": 0,
+          "num_allocs": 610,
+          "peak_bytes_in_use": 9822464,
+          "peak_bytes_reserved": 0,
+          "peak_pool_bytes": 10485760,
+          "pool_bytes": 10485760
+        },
+        "process_peak_rss_bytes": 1425813504
+      },
+      "status": "measured",
+      "wall_seconds": 42.46350206200077,
+      "warm_median_seconds": 0.01735203550015285
+    },
+    {
+      "profile": "rtx3070",
+      "mode": "fixed",
+      "seed": 701,
+      "hardware": {
+        "allocator_fraction": 0.6,
+        "backend": "gpu",
+        "development_mount": false,
+        "devices": [
+          "cuda:0"
+        ],
+        "gpu": [
+          "GPU-84389f80-a576-d373-ecb0-92e972e72dfd",
+          "NVIDIA GeForce RTX 3070",
+          "8192",
+          "591.74"
+        ],
+        "image_digest": "sha256:7172c6d3749ceef15f01283145f0049e622f26202a36d88957b7486ec31a2a80",
+        "kernel": "6.6.87.2-microsoft-standard-WSL2",
+        "preallocate": false,
+        "precision": "float32",
+        "python": "3.11.14"
+      },
+      "interpretation": "upstream-system-baseline-not-encoding-isolating-or-persistent-rollout",
+      "memory": {
+        "cgroup_current_bytes": 1115590656,
+        "cgroup_peak_bytes": 1192312832,
+        "cgroup_swap_bytes": 0,
+        "device_allocator": {
+          "bytes_in_use": 987136,
+          "bytes_limit": 5153646387,
+          "bytes_reserved": 0,
+          "largest_alloc_size": 8388608,
+          "largest_free_block_bytes": 0,
+          "num_allocs": 610,
+          "peak_bytes_in_use": 9815296,
+          "peak_bytes_reserved": 0,
+          "peak_pool_bytes": 10485760,
+          "pool_bytes": 10485760
+        },
+        "process_peak_rss_bytes": 1424560128
+      },
+      "status": "measured",
+      "wall_seconds": 41.755644931999996,
+      "warm_median_seconds": 0.0203999940003996
+    },
+    {
+      "profile": "rtx3070",
+      "mode": "fixed",
+      "seed": 702,
+      "hardware": {
+        "allocator_fraction": 0.6,
+        "backend": "gpu",
+        "development_mount": false,
+        "devices": [
+          "cuda:0"
+        ],
+        "gpu": [
+          "GPU-84389f80-a576-d373-ecb0-92e972e72dfd",
+          "NVIDIA GeForce RTX 3070",
+          "8192",
+          "591.74"
+        ],
+        "image_digest": "sha256:7172c6d3749ceef15f01283145f0049e622f26202a36d88957b7486ec31a2a80",
+        "kernel": "6.6.87.2-microsoft-standard-WSL2",
+        "preallocate": false,
+        "precision": "float32",
+        "python": "3.11.14"
+      },
+      "interpretation": "upstream-system-baseline-not-encoding-isolating-or-persistent-rollout",
+      "memory": {
+        "cgroup_current_bytes": 1115770880,
+        "cgroup_peak_bytes": 1192353792,
+        "cgroup_swap_bytes": 0,
+        "device_allocator": {
+          "bytes_in_use": 1105920,
+          "bytes_limit": 5153646387,
+          "bytes_reserved": 0,
+          "largest_alloc_size": 8388608,
+          "largest_free_block_bytes": 0,
+          "num_allocs": 610,
+          "peak_bytes_in_use": 9819648,
+          "peak_bytes_reserved": 0,
+          "peak_pool_bytes": 10485760,
+          "pool_bytes": 10485760
+        },
+        "process_peak_rss_bytes": 1425326080
+      },
+      "status": "measured",
+      "wall_seconds": 42.06530750099955,
+      "warm_median_seconds": 0.015267856500031485
+    },
+    {
+      "profile": "rtx3060",
+      "mode": "fixed",
+      "seed": 700,
+      "hardware": {
+        "allocator_fraction": 0.6,
+        "backend": "gpu",
+        "development_mount": false,
+        "devices": [
+          "cuda:0"
+        ],
+        "gpu": [
+          "GPU-d7c4073b-c643-21ed-3d64-35a73d3d7a72",
+          "NVIDIA GeForce RTX 3060",
+          "12288",
+          "591.74"
+        ],
+        "image_digest": "sha256:7172c6d3749ceef15f01283145f0049e622f26202a36d88957b7486ec31a2a80",
+        "kernel": "6.6.87.2-microsoft-standard-WSL2",
+        "preallocate": false,
+        "precision": "float32",
+        "python": "3.11.14"
+      },
+      "interpretation": "upstream-system-baseline-not-encoding-isolating-or-persistent-rollout",
+      "memory": {
+        "cgroup_current_bytes": 1086230528,
+        "cgroup_peak_bytes": 1159118848,
+        "cgroup_swap_bytes": 0,
+        "device_allocator": {
+          "bytes_in_use": 1082624,
+          "bytes_limit": 7730548223,
+          "bytes_reserved": 0,
+          "largest_alloc_size": 8388608,
+          "largest_free_block_bytes": 0,
+          "num_allocs": 610,
+          "peak_bytes_in_use": 9820928,
+          "peak_bytes_reserved": 0,
+          "peak_pool_bytes": 10485760,
+          "pool_bytes": 10485760
+        },
+        "process_peak_rss_bytes": 1395904512
+      },
+      "status": "measured",
+      "wall_seconds": 41.545665241999814,
+      "warm_median_seconds": 0.025863253000352415
+    },
+    {
+      "profile": "rtx3060",
+      "mode": "fixed",
+      "seed": 701,
+      "hardware": {
+        "allocator_fraction": 0.6,
+        "backend": "gpu",
+        "development_mount": false,
+        "devices": [
+          "cuda:0"
+        ],
+        "gpu": [
+          "GPU-d7c4073b-c643-21ed-3d64-35a73d3d7a72",
+          "NVIDIA GeForce RTX 3060",
+          "12288",
+          "591.74"
+        ],
+        "image_digest": "sha256:7172c6d3749ceef15f01283145f0049e622f26202a36d88957b7486ec31a2a80",
+        "kernel": "6.6.87.2-microsoft-standard-WSL2",
+        "preallocate": false,
+        "precision": "float32",
+        "python": "3.11.14"
+      },
+      "interpretation": "upstream-system-baseline-not-encoding-isolating-or-persistent-rollout",
+      "memory": {
+        "cgroup_current_bytes": 1086943232,
+        "cgroup_peak_bytes": 1159270400,
+        "cgroup_swap_bytes": 0,
+        "device_allocator": {
+          "bytes_in_use": 998656,
+          "bytes_limit": 7730548223,
+          "bytes_reserved": 0,
+          "largest_alloc_size": 8388608,
+          "largest_free_block_bytes": 0,
+          "num_allocs": 610,
+          "peak_bytes_in_use": 9819648,
+          "peak_bytes_reserved": 0,
+          "peak_pool_bytes": 10485760,
+          "pool_bytes": 10485760
+        },
+        "process_peak_rss_bytes": 1395085312
+      },
+      "status": "measured",
+      "wall_seconds": 41.27169246700032,
+      "warm_median_seconds": 0.02532016749955801
+    },
+    {
+      "profile": "rtx3060",
+      "mode": "fixed",
+      "seed": 702,
+      "hardware": {
+        "allocator_fraction": 0.6,
+        "backend": "gpu",
+        "development_mount": false,
+        "devices": [
+          "cuda:0"
+        ],
+        "gpu": [
+          "GPU-d7c4073b-c643-21ed-3d64-35a73d3d7a72",
+          "NVIDIA GeForce RTX 3060",
+          "12288",
+          "591.74"
+        ],
+        "image_digest": "sha256:7172c6d3749ceef15f01283145f0049e622f26202a36d88957b7486ec31a2a80",
+        "kernel": "6.6.87.2-microsoft-standard-WSL2",
+        "preallocate": false,
+        "precision": "float32",
+        "python": "3.11.14"
+      },
+      "interpretation": "upstream-system-baseline-not-encoding-isolating-or-persistent-rollout",
+      "memory": {
+        "cgroup_current_bytes": 1086730240,
+        "cgroup_peak_bytes": 1159340032,
+        "cgroup_swap_bytes": 0,
+        "device_allocator": {
+          "bytes_in_use": 1062144,
+          "bytes_limit": 7730548223,
+          "bytes_reserved": 0,
+          "largest_alloc_size": 8388608,
+          "largest_free_block_bytes": 0,
+          "num_allocs": 610,
+          "peak_bytes_in_use": 9820416,
+          "peak_bytes_reserved": 0,
+          "peak_pool_bytes": 10485760,
+          "pool_bytes": 10485760
+        },
+        "process_peak_rss_bytes": 1396322304
+      },
+      "status": "measured",
+      "wall_seconds": 40.93876562699916,
+      "warm_median_seconds": 0.025109790999522374
+    }
+  ],
+  "q2_native_failures": [
+    {
+      "version": "v1",
+      "profile": "cpu",
+      "mode": "direct",
+      "seed": 700,
+      "message": "Out of range float values are not JSON compliant: nan",
+      "status": "failed",
+      "type": "ValueError"
+    },
+    {
+      "version": "v1",
+      "profile": "cpu",
+      "mode": "direct",
+      "seed": 701,
+      "message": "Out of range float values are not JSON compliant: nan",
+      "status": "failed",
+      "type": "ValueError"
+    },
+    {
+      "version": "v1",
+      "profile": "cpu",
+      "mode": "direct",
+      "seed": 702,
+      "message": "Out of range float values are not JSON compliant: nan",
+      "status": "failed",
+      "type": "ValueError"
+    },
+    {
+      "version": "v1",
+      "profile": "rtx3070",
+      "mode": "direct",
+      "seed": 700,
+      "message": "Out of range float values are not JSON compliant: nan",
+      "status": "failed",
+      "type": "ValueError"
+    },
+    {
+      "version": "v1",
+      "profile": "rtx3070",
+      "mode": "direct",
+      "seed": 701,
+      "message": "Out of range float values are not JSON compliant: nan",
+      "status": "failed",
+      "type": "ValueError"
+    },
+    {
+      "version": "v1",
+      "profile": "rtx3070",
+      "mode": "direct",
+      "seed": 702,
+      "message": "Out of range float values are not JSON compliant: nan",
+      "status": "failed",
+      "type": "ValueError"
+    },
+    {
+      "version": "v1",
+      "profile": "rtx3060",
+      "mode": "direct",
+      "seed": 700,
+      "message": "Out of range float values are not JSON compliant: nan",
+      "status": "failed",
+      "type": "ValueError"
+    },
+    {
+      "version": "v1",
+      "profile": "rtx3060",
+      "mode": "direct",
+      "seed": 701,
+      "message": "Out of range float values are not JSON compliant: nan",
+      "status": "failed",
+      "type": "ValueError"
+    },
+    {
+      "version": "v1",
+      "profile": "rtx3060",
+      "mode": "direct",
+      "seed": 702,
+      "message": "Out of range float values are not JSON compliant: nan",
+      "status": "failed",
+      "type": "ValueError"
+    }
+  ],
+  "native_invalid_replay": {
+    "active_attributes_finite": true,
+    "hardware": {
+      "allocator_fraction": 0.0,
+      "backend": "cpu",
+      "development_mount": false,
+      "devices": [
+        "TFRT_CPU_0"
+      ],
+      "gpu": null,
+      "image_digest": "sha256:7172c6d3749ceef15f01283145f0049e622f26202a36d88957b7486ec31a2a80",
+      "kernel": "6.6.87.2-microsoft-standard-WSL2",
+      "preallocate": false,
+      "precision": "float32",
+      "python": "3.11.14"
+    },
+    "interpretation": "native empty-input aggregation convention; platform isolated-bias contract differs",
+    "isolated_noninput_ids": [
+      4
+    ],
+    "nonfinite_output_columns": [
+      0
+    ],
+    "nonfinite_outputs": 64,
+    "samples": 64,
+    "status": "reproduced-upstream-nonfinite-output"
+  },
+  "q2_dataset_audit": {
+    "status": "pass",
+    "datasets": 49
+  },
+  "learning_and_correctness_all_profiles": true,
+  "m1_functional": true,
+  "m1_closed": true,
+  "m1_status": "closed-first-vertical-slice; H0 is next; M2\u2013M5 not implemented",
+  "q2_status": "open-capacity-failure-and-resource-stage-audit",
+  "w3_gpu_to_cpu_throughput_ratio": {
+    "rtx3070": 0.141595578423241,
+    "rtx3060": 0.1323281345276122
+  },
+  "w3_controller_medians_and_ranges": {
+    "cpu": {
+      "median_seconds": 0.20119082700148283,
+      "range_seconds": [
+        0.19885442899976624,
+        0.31529132700052287
+      ]
+    },
+    "rtx3070": {
+      "median_seconds": 1.4208835419995012,
+      "range_seconds": [
+        1.3937903549995099,
+        1.467340596998838
+      ]
+    },
+    "rtx3060": {
+      "median_seconds": 1.5203934349992778,
+      "range_seconds": [
+        1.490665433999311,
+        1.548492351999812
+      ]
+    }
+  }
+}

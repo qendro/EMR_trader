@@ -1,0 +1,649 @@
+{
+  "complete_protocol": true,
+  "config": {
+    "action": "argmax-first-tie",
+    "adapter": {
+      "edges": 128,
+      "inputs": 4,
+      "mutation": {
+        "conn_add": 0.2,
+        "conn_delete": 0.2,
+        "node_add": 0.1,
+        "node_delete": 0.1
+      },
+      "nodes": 32,
+      "outputs": 2,
+      "population": 128,
+      "profile": "synchronous",
+      "species": {
+        "compatibility_threshold": 2.0,
+        "genome_elitism": 2,
+        "max_stagnation": 15,
+        "min_species_size": 1,
+        "spawn_number_change_rate": 0.5,
+        "species_elitism": 2,
+        "species_number_calculate_by": "rank",
+        "species_size": 10,
+        "survival_threshold": 0.1
+      }
+    },
+    "budget_seconds_per_seed": 7200,
+    "budget_status": "diagnostic-proposed-budget",
+    "checkpoint_every": 10,
+    "episodes": 8,
+    "finalists": 8,
+    "generations": 100,
+    "heldout_episodes": 20,
+    "horizon": 500,
+    "id": "m1-synchronous-cartpole-diagnostic-v1",
+    "kind": "diagnostic",
+    "microbatch": 32,
+    "required_seeds": 3,
+    "scenario_policy": "generation-specific",
+    "schema": 1,
+    "seeds": [
+      100,
+      101,
+      102,
+      103,
+      104
+    ],
+    "target": 450,
+    "task": "cartpole",
+    "validation_episodes": 32,
+    "workload": "W3-generation"
+  },
+  "passed_seeds": 5,
+  "runs": [
+    {
+      "config_sha256": "db4439eb0dda84607e74722b477082eaf59544096c90b3f144d4b4720bbc91c9",
+      "generations": 100,
+      "hardware": {
+        "allocator_fraction": 0.0,
+        "backend": "cpu",
+        "development_mount": false,
+        "devices": [
+          "TFRT_CPU_0"
+        ],
+        "gpu": null,
+        "image_digest": "sha256:7172c6d3749ceef15f01283145f0049e622f26202a36d88957b7486ec31a2a80",
+        "kernel": "6.6.87.2-microsoft-standard-WSL2",
+        "preallocate": false,
+        "precision": "float32",
+        "python": "3.11.14"
+      },
+      "kind": "diagnostic",
+      "memory": {
+        "cgroup_current_bytes": 958889984,
+        "cgroup_peak_bytes": 959315968,
+        "cgroup_swap_bytes": 0,
+        "device_allocator": null,
+        "process_peak_rss_bytes": 1031966720
+      },
+      "provenance": {
+        "compatibility_lock_sha256": "a11a7696492404e642f411a817893b984511a7f0da0131318d44173b2741c4d9",
+        "engine_sha256": "8d3aba6552b6872ab47ddca1c1992ee839ce5339c9f48ba221ba780525fddebb",
+        "lock_sha256": "df89b8faeaefc2cf0a8ad1e723e7b000cbf48496a00b1e2ef0a3bac6fb33bdae",
+        "packages": {
+          "emr-hyperneat": "0.3.0",
+          "gymnax": "0.0.9",
+          "jax": "0.6.1",
+          "jaxlib": "0.6.1",
+          "numpy": "1.26.4",
+          "tensorneat": "0.1.0"
+        },
+        "sources": {
+          "base_image": "python:3.11.14-slim-bookworm@sha256:65a93d69fa75478d554f4ad27c85c1e69fa184956261b4301ebaf6dbb0a3543d",
+          "emr": {
+            "archive_sha256": "2e4e7ec552fd2fb6ebd59e44b8ea89057f9980ef296d4451e22ccb7915bfb59d",
+            "license": "GPL-3.0-or-later (bundled LICENSE)",
+            "sha": "306eb4e67687390bb88131ead6af8bebffa8cee9",
+            "url": "https://github.com/RomainClaret/emr-hyperneat.git"
+          },
+          "schema": 1,
+          "tensorneat": {
+            "archive_sha256": "6776462f279bc6fa2ff9c0bf4adc405732d25681424346c8f5d6f9d7469cda3f",
+            "license": "GPL-3.0-or-later (bundled LICENSE)",
+            "sha": "49c193d546447d5fe2cb4b26f60758d23fc24cb0",
+            "url": "https://github.com/RomainClaret/tensorneat.git"
+          }
+        }
+      },
+      "seed": 100,
+      "selection": {
+        "candidate_id": "seed-100:99:0",
+        "episode_scores": [
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0
+        ],
+        "finalist_ids": [
+          "seed-100:99:0",
+          "seed-100:99:1",
+          "seed-100:99:2",
+          "seed-100:99:3",
+          "seed-100:99:4",
+          "seed-100:99:7",
+          "seed-100:99:8",
+          "seed-100:99:9"
+        ],
+        "finalist_training_scores": [
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0
+        ],
+        "finalist_validation_scores": [
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0
+        ],
+        "heldout_score": 500.0,
+        "heldout_valid": true,
+        "kind": "diagnostic",
+        "passes_learning": true,
+        "validation_score": 500.0
+      },
+      "structural_mutation_observed": true,
+      "wall_seconds": 50.40457439999955
+    },
+    {
+      "config_sha256": "db4439eb0dda84607e74722b477082eaf59544096c90b3f144d4b4720bbc91c9",
+      "generations": 100,
+      "hardware": {
+        "allocator_fraction": 0.0,
+        "backend": "cpu",
+        "development_mount": false,
+        "devices": [
+          "TFRT_CPU_0"
+        ],
+        "gpu": null,
+        "image_digest": "sha256:7172c6d3749ceef15f01283145f0049e622f26202a36d88957b7486ec31a2a80",
+        "kernel": "6.6.87.2-microsoft-standard-WSL2",
+        "preallocate": false,
+        "precision": "float32",
+        "python": "3.11.14"
+      },
+      "kind": "diagnostic",
+      "memory": {
+        "cgroup_current_bytes": 948899840,
+        "cgroup_peak_bytes": 959315968,
+        "cgroup_swap_bytes": 0,
+        "device_allocator": null,
+        "process_peak_rss_bytes": 1020596224
+      },
+      "provenance": {
+        "compatibility_lock_sha256": "a11a7696492404e642f411a817893b984511a7f0da0131318d44173b2741c4d9",
+        "engine_sha256": "8d3aba6552b6872ab47ddca1c1992ee839ce5339c9f48ba221ba780525fddebb",
+        "lock_sha256": "df89b8faeaefc2cf0a8ad1e723e7b000cbf48496a00b1e2ef0a3bac6fb33bdae",
+        "packages": {
+          "emr-hyperneat": "0.3.0",
+          "gymnax": "0.0.9",
+          "jax": "0.6.1",
+          "jaxlib": "0.6.1",
+          "numpy": "1.26.4",
+          "tensorneat": "0.1.0"
+        },
+        "sources": {
+          "base_image": "python:3.11.14-slim-bookworm@sha256:65a93d69fa75478d554f4ad27c85c1e69fa184956261b4301ebaf6dbb0a3543d",
+          "emr": {
+            "archive_sha256": "2e4e7ec552fd2fb6ebd59e44b8ea89057f9980ef296d4451e22ccb7915bfb59d",
+            "license": "GPL-3.0-or-later (bundled LICENSE)",
+            "sha": "306eb4e67687390bb88131ead6af8bebffa8cee9",
+            "url": "https://github.com/RomainClaret/emr-hyperneat.git"
+          },
+          "schema": 1,
+          "tensorneat": {
+            "archive_sha256": "6776462f279bc6fa2ff9c0bf4adc405732d25681424346c8f5d6f9d7469cda3f",
+            "license": "GPL-3.0-or-later (bundled LICENSE)",
+            "sha": "49c193d546447d5fe2cb4b26f60758d23fc24cb0",
+            "url": "https://github.com/RomainClaret/tensorneat.git"
+          }
+        }
+      },
+      "seed": 101,
+      "selection": {
+        "candidate_id": "seed-101:99:0",
+        "episode_scores": [
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0
+        ],
+        "finalist_ids": [
+          "seed-101:99:0",
+          "seed-101:99:1",
+          "seed-101:99:4",
+          "seed-101:99:6",
+          "seed-101:99:7",
+          "seed-101:99:11",
+          "seed-101:99:13",
+          "seed-101:99:14"
+        ],
+        "finalist_training_scores": [
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0
+        ],
+        "finalist_validation_scores": [
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0
+        ],
+        "heldout_score": 500.0,
+        "heldout_valid": true,
+        "kind": "diagnostic",
+        "passes_learning": true,
+        "validation_score": 500.0
+      },
+      "structural_mutation_observed": true,
+      "wall_seconds": 50.01669702199979
+    },
+    {
+      "config_sha256": "db4439eb0dda84607e74722b477082eaf59544096c90b3f144d4b4720bbc91c9",
+      "generations": 100,
+      "hardware": {
+        "allocator_fraction": 0.0,
+        "backend": "cpu",
+        "development_mount": false,
+        "devices": [
+          "TFRT_CPU_0"
+        ],
+        "gpu": null,
+        "image_digest": "sha256:7172c6d3749ceef15f01283145f0049e622f26202a36d88957b7486ec31a2a80",
+        "kernel": "6.6.87.2-microsoft-standard-WSL2",
+        "preallocate": false,
+        "precision": "float32",
+        "python": "3.11.14"
+      },
+      "kind": "diagnostic",
+      "memory": {
+        "cgroup_current_bytes": 959877120,
+        "cgroup_peak_bytes": 960540672,
+        "cgroup_swap_bytes": 0,
+        "device_allocator": null,
+        "process_peak_rss_bytes": 1031888896
+      },
+      "provenance": {
+        "compatibility_lock_sha256": "a11a7696492404e642f411a817893b984511a7f0da0131318d44173b2741c4d9",
+        "engine_sha256": "8d3aba6552b6872ab47ddca1c1992ee839ce5339c9f48ba221ba780525fddebb",
+        "lock_sha256": "df89b8faeaefc2cf0a8ad1e723e7b000cbf48496a00b1e2ef0a3bac6fb33bdae",
+        "packages": {
+          "emr-hyperneat": "0.3.0",
+          "gymnax": "0.0.9",
+          "jax": "0.6.1",
+          "jaxlib": "0.6.1",
+          "numpy": "1.26.4",
+          "tensorneat": "0.1.0"
+        },
+        "sources": {
+          "base_image": "python:3.11.14-slim-bookworm@sha256:65a93d69fa75478d554f4ad27c85c1e69fa184956261b4301ebaf6dbb0a3543d",
+          "emr": {
+            "archive_sha256": "2e4e7ec552fd2fb6ebd59e44b8ea89057f9980ef296d4451e22ccb7915bfb59d",
+            "license": "GPL-3.0-or-later (bundled LICENSE)",
+            "sha": "306eb4e67687390bb88131ead6af8bebffa8cee9",
+            "url": "https://github.com/RomainClaret/emr-hyperneat.git"
+          },
+          "schema": 1,
+          "tensorneat": {
+            "archive_sha256": "6776462f279bc6fa2ff9c0bf4adc405732d25681424346c8f5d6f9d7469cda3f",
+            "license": "GPL-3.0-or-later (bundled LICENSE)",
+            "sha": "49c193d546447d5fe2cb4b26f60758d23fc24cb0",
+            "url": "https://github.com/RomainClaret/tensorneat.git"
+          }
+        }
+      },
+      "seed": 102,
+      "selection": {
+        "candidate_id": "seed-102:99:0",
+        "episode_scores": [
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0
+        ],
+        "finalist_ids": [
+          "seed-102:99:0",
+          "seed-102:99:1",
+          "seed-102:99:2",
+          "seed-102:99:3",
+          "seed-102:99:4",
+          "seed-102:99:5",
+          "seed-102:99:10",
+          "seed-102:99:12"
+        ],
+        "finalist_training_scores": [
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0
+        ],
+        "finalist_validation_scores": [
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0
+        ],
+        "heldout_score": 500.0,
+        "heldout_valid": true,
+        "kind": "diagnostic",
+        "passes_learning": true,
+        "validation_score": 500.0
+      },
+      "structural_mutation_observed": true,
+      "wall_seconds": 47.96695610400093
+    },
+    {
+      "config_sha256": "db4439eb0dda84607e74722b477082eaf59544096c90b3f144d4b4720bbc91c9",
+      "generations": 100,
+      "hardware": {
+        "allocator_fraction": 0.0,
+        "backend": "cpu",
+        "development_mount": false,
+        "devices": [
+          "TFRT_CPU_0"
+        ],
+        "gpu": null,
+        "image_digest": "sha256:7172c6d3749ceef15f01283145f0049e622f26202a36d88957b7486ec31a2a80",
+        "kernel": "6.6.87.2-microsoft-standard-WSL2",
+        "preallocate": false,
+        "precision": "float32",
+        "python": "3.11.14"
+      },
+      "kind": "diagnostic",
+      "memory": {
+        "cgroup_current_bytes": 948981760,
+        "cgroup_peak_bytes": 960540672,
+        "cgroup_swap_bytes": 0,
+        "device_allocator": null,
+        "process_peak_rss_bytes": 1019949056
+      },
+      "provenance": {
+        "compatibility_lock_sha256": "a11a7696492404e642f411a817893b984511a7f0da0131318d44173b2741c4d9",
+        "engine_sha256": "8d3aba6552b6872ab47ddca1c1992ee839ce5339c9f48ba221ba780525fddebb",
+        "lock_sha256": "df89b8faeaefc2cf0a8ad1e723e7b000cbf48496a00b1e2ef0a3bac6fb33bdae",
+        "packages": {
+          "emr-hyperneat": "0.3.0",
+          "gymnax": "0.0.9",
+          "jax": "0.6.1",
+          "jaxlib": "0.6.1",
+          "numpy": "1.26.4",
+          "tensorneat": "0.1.0"
+        },
+        "sources": {
+          "base_image": "python:3.11.14-slim-bookworm@sha256:65a93d69fa75478d554f4ad27c85c1e69fa184956261b4301ebaf6dbb0a3543d",
+          "emr": {
+            "archive_sha256": "2e4e7ec552fd2fb6ebd59e44b8ea89057f9980ef296d4451e22ccb7915bfb59d",
+            "license": "GPL-3.0-or-later (bundled LICENSE)",
+            "sha": "306eb4e67687390bb88131ead6af8bebffa8cee9",
+            "url": "https://github.com/RomainClaret/emr-hyperneat.git"
+          },
+          "schema": 1,
+          "tensorneat": {
+            "archive_sha256": "6776462f279bc6fa2ff9c0bf4adc405732d25681424346c8f5d6f9d7469cda3f",
+            "license": "GPL-3.0-or-later (bundled LICENSE)",
+            "sha": "49c193d546447d5fe2cb4b26f60758d23fc24cb0",
+            "url": "https://github.com/RomainClaret/tensorneat.git"
+          }
+        }
+      },
+      "seed": 103,
+      "selection": {
+        "candidate_id": "seed-103:99:0",
+        "episode_scores": [
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0
+        ],
+        "finalist_ids": [
+          "seed-103:99:0",
+          "seed-103:99:1",
+          "seed-103:99:2",
+          "seed-103:99:3",
+          "seed-103:99:4",
+          "seed-103:99:5",
+          "seed-103:99:6",
+          "seed-103:99:7"
+        ],
+        "finalist_training_scores": [
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0
+        ],
+        "finalist_validation_scores": [
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          499.15625,
+          500.0,
+          500.0
+        ],
+        "heldout_score": 500.0,
+        "heldout_valid": true,
+        "kind": "diagnostic",
+        "passes_learning": true,
+        "validation_score": 500.0
+      },
+      "structural_mutation_observed": true,
+      "wall_seconds": 49.03444288300125
+    },
+    {
+      "config_sha256": "db4439eb0dda84607e74722b477082eaf59544096c90b3f144d4b4720bbc91c9",
+      "generations": 100,
+      "hardware": {
+        "allocator_fraction": 0.0,
+        "backend": "cpu",
+        "development_mount": false,
+        "devices": [
+          "TFRT_CPU_0"
+        ],
+        "gpu": null,
+        "image_digest": "sha256:7172c6d3749ceef15f01283145f0049e622f26202a36d88957b7486ec31a2a80",
+        "kernel": "6.6.87.2-microsoft-standard-WSL2",
+        "preallocate": false,
+        "precision": "float32",
+        "python": "3.11.14"
+      },
+      "kind": "diagnostic",
+      "memory": {
+        "cgroup_current_bytes": 952623104,
+        "cgroup_peak_bytes": 960540672,
+        "cgroup_swap_bytes": 0,
+        "device_allocator": null,
+        "process_peak_rss_bytes": 1023565824
+      },
+      "provenance": {
+        "compatibility_lock_sha256": "a11a7696492404e642f411a817893b984511a7f0da0131318d44173b2741c4d9",
+        "engine_sha256": "8d3aba6552b6872ab47ddca1c1992ee839ce5339c9f48ba221ba780525fddebb",
+        "lock_sha256": "df89b8faeaefc2cf0a8ad1e723e7b000cbf48496a00b1e2ef0a3bac6fb33bdae",
+        "packages": {
+          "emr-hyperneat": "0.3.0",
+          "gymnax": "0.0.9",
+          "jax": "0.6.1",
+          "jaxlib": "0.6.1",
+          "numpy": "1.26.4",
+          "tensorneat": "0.1.0"
+        },
+        "sources": {
+          "base_image": "python:3.11.14-slim-bookworm@sha256:65a93d69fa75478d554f4ad27c85c1e69fa184956261b4301ebaf6dbb0a3543d",
+          "emr": {
+            "archive_sha256": "2e4e7ec552fd2fb6ebd59e44b8ea89057f9980ef296d4451e22ccb7915bfb59d",
+            "license": "GPL-3.0-or-later (bundled LICENSE)",
+            "sha": "306eb4e67687390bb88131ead6af8bebffa8cee9",
+            "url": "https://github.com/RomainClaret/emr-hyperneat.git"
+          },
+          "schema": 1,
+          "tensorneat": {
+            "archive_sha256": "6776462f279bc6fa2ff9c0bf4adc405732d25681424346c8f5d6f9d7469cda3f",
+            "license": "GPL-3.0-or-later (bundled LICENSE)",
+            "sha": "49c193d546447d5fe2cb4b26f60758d23fc24cb0",
+            "url": "https://github.com/RomainClaret/tensorneat.git"
+          }
+        }
+      },
+      "seed": 104,
+      "selection": {
+        "candidate_id": "seed-104:99:0",
+        "episode_scores": [
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0
+        ],
+        "finalist_ids": [
+          "seed-104:99:0",
+          "seed-104:99:1",
+          "seed-104:99:4",
+          "seed-104:99:6",
+          "seed-104:99:7",
+          "seed-104:99:8",
+          "seed-104:99:9",
+          "seed-104:99:11"
+        ],
+        "finalist_training_scores": [
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0
+        ],
+        "finalist_validation_scores": [
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0
+        ],
+        "heldout_score": 500.0,
+        "heldout_valid": true,
+        "kind": "diagnostic",
+        "passes_learning": true,
+        "validation_score": 500.0
+      },
+      "structural_mutation_observed": true,
+      "wall_seconds": 48.287863715999265
+    }
+  ]
+}

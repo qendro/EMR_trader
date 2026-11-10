@@ -1,0 +1,14 @@
+{
+  "candidate_id": "seed-900:3:1",
+  "episode_scores": [
+    31.0,
+    38.0,
+    34.0,
+    34.0
+  ],
+  "heldout_score": 34.25,
+  "heldout_valid": true,
+  "kind": "smoke",
+  "passes_learning": false,
+  "validation_score": 33.75
+}

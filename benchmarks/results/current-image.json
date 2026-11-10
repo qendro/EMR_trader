@@ -1,0 +1,82 @@
+[
+    {
+        "Id": "sha256:7172c6d3749ceef15f01283145f0049e622f26202a36d88957b7486ec31a2a80",
+        "RepoTags": [
+            "neuroevo:current"
+        ],
+        "RepoDigests": [
+            "neuroevo@sha256:7172c6d3749ceef15f01283145f0049e622f26202a36d88957b7486ec31a2a80"
+        ],
+        "Comment": "buildkit.dockerfile.v0",
+        "Created": "2026-11-10T19:57:10.962210052Z",
+        "Config": {
+            "Env": [
+                "PATH=/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "LANG=C.UTF-8",
+                "GPG_KEY=A035C8C19219BA821ECEA86B64E628F8D684696D",
+                "PYTHON_VERSION=3.11.14",
+                "PYTHON_SHA256=8d3ed8ec5c88c1c95f5e558612a725450d2452813ddad5e58fdb1a53b1209b78",
+                "PYTHONUNBUFFERED=1",
+                "PIP_DISABLE_PIP_VERSION_CHECK=1",
+                "MPLBACKEND=Agg",
+                "MUJOCO_GL=disable",
+                "JAX_DEFAULT_MATMUL_PRECISION=float32",
+                "JAX_ENABLE_X64=false",
+                "XLA_PYTHON_CLIENT_PREALLOCATE=false",
+                "JAX_COMPILATION_CACHE_DIR=/cache/jax-0.6.1"
+            ],
+            "Entrypoint": [
+                "python",
+                "-m",
+                "neuroevo"
+            ],
+            "Cmd": [
+                "qualify",
+                "--output",
+                "/results/qualification.json"
+            ],
+            "WorkingDir": "/app",
+            "ArgsEscaped": true
+        },
+        "Architecture": "amd64",
+        "Os": "linux",
+        "Size": 3639301671,
+        "RootFS": {
+            "Type": "layers",
+            "Layers": [
+                "sha256:9eb9a78eeb101ab215acf43ffb2a709d5fca9ca2a22178564c7ee5cc30774c60",
+                "sha256:f3098f2e4408e57b4f0787f1e18511cd06ddecfad252a0f51f478088fe0052df",
+                "sha256:da331f07f3e9fb1214ced70513485eefe47e1d0a647b4af8fa5afb176b40b2a7",
+                "sha256:f108605b29eebcf199a536318658e173a8b1eb01172bdef33740acc5e50ee9ef",
+                "sha256:4700e5b9de946ac61b9910823eddacfa8c03e5dc8eaf1ac84e425a62962a0e3b",
+                "sha256:c86e70f8927e5ad00c77c8c2bf9c8a9cfc48ec43ae3df409db5ed18559c869c7",
+                "sha256:a7bbc675f745f6eff1e5a6f665115c58d86f32db1de014c876e57504665c2850",
+                "sha256:b83a4eab951f13145aad079a63ae6cfc26f0347c92715a9d8beb00febf7df701",
+                "sha256:f0baaafa76a51cfcff4da9dde94d83b347567d02cd78c2a44911ff22b1ac3573",
+                "sha256:f475da79b1b42a0e2e3789db981e8e89c740d3c30574c4b6d9653fa73d0e4319",
+                "sha256:e5d9f421aa820e5c27f1fbee18d41eac07f8d45feaac879152b8d73d3ee294dc",
+                "sha256:de4d74d29627cd4e1e87a4e1be093170a88c92817294a70cf578cd66b15186ba",
+                "sha256:fd005a4f1be941d3362d65538643d4c07bbd1cea8316412f7f38701ce3ffb510",
+                "sha256:634adc17a2d45261f608dd47f359f6b4d93c341cb33bf21c0c4204e5e267c5f3",
+                "sha256:873dcea15252b0eb61c3d0aedd97eeaf4b7cec38300e4754fb39d6cff25d3aff",
+                "sha256:04a5814b2bd1d2913926c683af3263713bafab6ccff1ce7dbbd0f9bc56ea6736"
+            ]
+        },
+        "Metadata": {
+            "LastTagTime": "2026-11-10T19:57:12.063505992Z"
+        },
+        "Descriptor": {
+            "mediaType": "application/vnd.oci.image.index.v1+json",
+            "digest": "sha256:7172c6d3749ceef15f01283145f0049e622f26202a36d88957b7486ec31a2a80",
+            "size": 856
+        },
+        "Identity": {
+            "Build": [
+                {
+                    "Ref": "tgwmcldt5sx98pz2q1zslbhdc",
+                    "CreatedAt": "2026-11-10T19:57:12.287245476Z"
+                }
+            ]
+        }
+    }
+]

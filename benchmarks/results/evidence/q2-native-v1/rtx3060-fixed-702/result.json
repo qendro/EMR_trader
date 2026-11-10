@@ -1,0 +1,44 @@
+{
+  "hardware": {
+    "allocator_fraction": 0.6,
+    "backend": "gpu",
+    "development_mount": false,
+    "devices": [
+      "cuda:0"
+    ],
+    "gpu": [
+      "GPU-d7c4073b-c643-21ed-3d64-35a73d3d7a72",
+      "NVIDIA GeForce RTX 3060",
+      "12288",
+      "591.74"
+    ],
+    "image_digest": "sha256:7172c6d3749ceef15f01283145f0049e622f26202a36d88957b7486ec31a2a80",
+    "kernel": "6.6.87.2-microsoft-standard-WSL2",
+    "preallocate": false,
+    "precision": "float32",
+    "python": "3.11.14"
+  },
+  "interpretation": "upstream-system-baseline-not-encoding-isolating-or-persistent-rollout",
+  "memory": {
+    "cgroup_current_bytes": 1086730240,
+    "cgroup_peak_bytes": 1159340032,
+    "cgroup_swap_bytes": 0,
+    "device_allocator": {
+      "bytes_in_use": 1062144,
+      "bytes_limit": 7730548223,
+      "bytes_reserved": 0,
+      "largest_alloc_size": 8388608,
+      "largest_free_block_bytes": 0,
+      "num_allocs": 610,
+      "peak_bytes_in_use": 9820416,
+      "peak_bytes_reserved": 0,
+      "peak_pool_bytes": 10485760,
+      "pool_bytes": 10485760
+    },
+    "process_peak_rss_bytes": 1396322304
+  },
+  "mode": "fixed",
+  "status": "measured",
+  "wall_seconds": 40.93876562699916,
+  "warm_median_seconds": 0.025109790999522374
+}

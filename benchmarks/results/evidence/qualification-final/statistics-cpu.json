@@ -1,0 +1,338 @@
+{
+  "fixtures": [
+    {
+      "abs_error_vs_float64": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "fixture": "zero",
+      "mean": 0.0,
+      "partition": [
+        10000
+      ],
+      "score": 0.0,
+      "std": 0.0
+    },
+    {
+      "abs_error_vs_float64": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "fixture": "zero",
+      "mean": 0.0,
+      "partition": [
+        2500,
+        2500,
+        2500,
+        2500
+      ],
+      "score": 0.0,
+      "std": 0.0
+    },
+    {
+      "abs_error_vs_float64": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "fixture": "zero",
+      "mean": 0.0,
+      "partition": [
+        1,
+        31,
+        997,
+        8971
+      ],
+      "score": 0.0,
+      "std": 0.0
+    },
+    {
+      "abs_error_vs_float64": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "fixture": "zero",
+      "mean": 0.0,
+      "partition": [
+        9999,
+        1
+      ],
+      "score": 0.0,
+      "std": 0.0
+    },
+    {
+      "abs_error_vs_float64": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "fixture": "positive",
+      "mean": 0.5,
+      "partition": [
+        10000
+      ],
+      "score": 50.0,
+      "std": 0.0
+    },
+    {
+      "abs_error_vs_float64": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "fixture": "positive",
+      "mean": 0.5,
+      "partition": [
+        2500,
+        2500,
+        2500,
+        2500
+      ],
+      "score": 50.0,
+      "std": 0.0
+    },
+    {
+      "abs_error_vs_float64": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "fixture": "positive",
+      "mean": 0.5,
+      "partition": [
+        1,
+        31,
+        997,
+        8971
+      ],
+      "score": 50.0,
+      "std": 0.0
+    },
+    {
+      "abs_error_vs_float64": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "fixture": "positive",
+      "mean": 0.5,
+      "partition": [
+        9999,
+        1
+      ],
+      "score": 50.0,
+      "std": 0.0
+    },
+    {
+      "abs_error_vs_float64": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "fixture": "negative",
+      "mean": -0.5,
+      "partition": [
+        10000
+      ],
+      "score": -50.0,
+      "std": 0.0
+    },
+    {
+      "abs_error_vs_float64": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "fixture": "negative",
+      "mean": -0.5,
+      "partition": [
+        2500,
+        2500,
+        2500,
+        2500
+      ],
+      "score": -50.0,
+      "std": 0.0
+    },
+    {
+      "abs_error_vs_float64": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "fixture": "negative",
+      "mean": -0.5,
+      "partition": [
+        1,
+        31,
+        997,
+        8971
+      ],
+      "score": -50.0,
+      "std": 0.0
+    },
+    {
+      "abs_error_vs_float64": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "fixture": "negative",
+      "mean": -0.5,
+      "partition": [
+        9999,
+        1
+      ],
+      "score": -50.0,
+      "std": 0.0
+    },
+    {
+      "abs_error_vs_float64": [
+        2.2649765396565158e-10,
+        4.3034708882786804e-13,
+        4.955587371568981e-07
+      ],
+      "fixture": "near-constant",
+      "mean": 0.5,
+      "partition": [
+        10000
+      ],
+      "score": 49.99970245361328,
+      "std": 5.960464477539063e-08
+    },
+    {
+      "abs_error_vs_float64": [
+        2.2649765396565158e-10,
+        1.2041088595313473e-08,
+        6.05395975128431e-05
+      ],
+      "fixture": "near-constant",
+      "mean": 0.5,
+      "partition": [
+        2500,
+        2500,
+        2500,
+        2500
+      ],
+      "score": 49.99964141845703,
+      "std": 7.164530302361527e-08
+    },
+    {
+      "abs_error_vs_float64": [
+        2.2649765396565158e-10,
+        5.6234770198481855e-12,
+        4.955587371568981e-07
+      ],
+      "fixture": "near-constant",
+      "mean": 0.5,
+      "partition": [
+        1,
+        31,
+        997,
+        8971
+      ],
+      "score": 49.99970245361328,
+      "std": 5.959859095128195e-08
+    },
+    {
+      "abs_error_vs_float64": [
+        2.2649765396565158e-10,
+        4.3034708882786804e-13,
+        4.955587371568981e-07
+      ],
+      "fixture": "near-constant",
+      "mean": 0.5,
+      "partition": [
+        9999,
+        1
+      ],
+      "score": 49.99970245361328,
+      "std": 5.960464477539063e-08
+    },
+    {
+      "abs_error_vs_float64": [
+        4.897116378209387e-09,
+        3.5426479960687374e-07,
+        3.0172647609572056e-09
+      ],
+      "fixture": "full-range",
+      "mean": -0.004671721253544092,
+      "partition": [
+        10000
+      ],
+      "score": -0.007892770692706108,
+      "std": 0.5818988084793091
+    },
+    {
+      "abs_error_vs_float64": [
+        5.362777665517127e-09,
+        1.2257235859625126e-07,
+        1.0467845357881034e-08
+      ],
+      "fixture": "full-range",
+      "mean": -0.004671720787882805,
+      "partition": [
+        2500,
+        2500,
+        2500,
+        2500
+      ],
+      "score": -0.007892763242125511,
+      "std": 0.5818992853164673
+    },
+    {
+      "abs_error_vs_float64": [
+        2.0878029314067015e-09,
+        7.118926682592175e-07,
+        1.2815219007505929e-08
+      ],
+      "fixture": "full-range",
+      "mean": -0.004671728238463402,
+      "partition": [
+        1,
+        31,
+        997,
+        8971
+      ],
+      "score": -0.007892786525189877,
+      "std": 0.5818984508514404
+    },
+    {
+      "abs_error_vs_float64": [
+        4.897116378209387e-09,
+        3.5426479960687374e-07,
+        3.0172647609572056e-09
+      ],
+      "fixture": "full-range",
+      "mean": -0.004671721253544092,
+      "partition": [
+        9999,
+        1
+      ],
+      "score": -0.007892770692706108,
+      "std": 0.5818988084793091
+    }
+  ],
+  "hardware": {
+    "allocator_fraction": 0.0,
+    "backend": "cpu",
+    "development_mount": false,
+    "devices": [
+      "TFRT_CPU_0"
+    ],
+    "gpu": null,
+    "image_digest": "sha256:1a6b04f37a5a8e39806b1acbd1ece24a591656eade41656f2c6f28e925cd471b",
+    "kernel": "6.6.87.2-microsoft-standard-WSL2",
+    "preallocate": false,
+    "precision": "float32",
+    "python": "3.11.14"
+  },
+  "protocol": "configs/w8-v1.json",
+  "schema": 1,
+  "sequence_environment_status": "M2-not-implemented",
+  "status": "pass",
+  "steps": 10000
+}

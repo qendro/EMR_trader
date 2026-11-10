@@ -1,0 +1,16 @@
+{
+  "schema": 1,
+  "base_image": "python:3.11.14-slim-bookworm@sha256:65a93d69fa75478d554f4ad27c85c1e69fa184956261b4301ebaf6dbb0a3543d",
+  "emr": {
+    "url": "https://github.com/RomainClaret/emr-hyperneat.git",
+    "sha": "306eb4e67687390bb88131ead6af8bebffa8cee9",
+    "license": "GPL-3.0-or-later (bundled LICENSE)",
+    "archive_sha256": "2e4e7ec552fd2fb6ebd59e44b8ea89057f9980ef296d4451e22ccb7915bfb59d"
+  },
+  "tensorneat": {
+    "url": "https://github.com/RomainClaret/tensorneat.git",
+    "sha": "49c193d546447d5fe2cb4b26f60758d23fc24cb0",
+    "license": "GPL-3.0-or-later (bundled LICENSE)",
+    "archive_sha256": "6776462f279bc6fa2ff9c0bf4adc405732d25681424346c8f5d6f9d7469cda3f"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "schema": 1, "id": "shared-evolved-memory-v1", "workload": "W4-memory",
+  "observation": ["cue-or-distractor", "query"],
+  "cue_values": [-1, 1], "cue_time": 0,
+  "query_action_time": "after-policy-update-at-delay",
+  "tie_action": 1, "distractor_distribution": "uniform", "distractor_range": [-0.25, 0.25],
+  "distractor_times": "all-times-after-zero-including-query", "horizon": 17,
+  "training_delays": [1,2,3,4,5,6,7,8], "training_repeats_per_pair": 2,
+  "validation_repeats_per_pair": 4, "heldout_repeats_per_pair": 16,
+  "generalization_delays": [9,10,11,12,13,14,15,16],
+  "episodes": {"train": 32, "validation": 64, "interpolation": 256, "generalization": 256},
+  "champion": "top-eight-final-generation-on-training-then-best-validation-first-index-tie",
+  "diagnostic_seeds": [100,101,102,103,104], "acceptance_seeds": [0,1,2,3,4],
+  "population": 128, "generations": 250, "interpolation_target": 0.9, "required_seeds": 3,
+  "generalization_gated": false,
+  "profiles": {"direct": "synchronous-K1", "fixed": "layered", "adaptive": "layered"},
+  "namespaces": {"evolution": 11, "train": 23, "validation": 37, "interpolation": 41, "generalization": 53},
+  "random_key_order": ["run-seed", "namespace", "generation", "semantic-episode-id", "time"],
+  "training_scenarios": "generation-specific-shared-across-candidates",
+  "budget_seconds_per_seed": 7200, "budget_status": "requires-integrated-G9-pilot"
+}

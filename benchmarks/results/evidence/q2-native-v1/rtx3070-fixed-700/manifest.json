@@ -1,0 +1,138 @@
+{
+  "hardware": {
+    "allocator_fraction": 0.6,
+    "backend": "gpu",
+    "development_mount": false,
+    "devices": [
+      "cuda:0"
+    ],
+    "gpu": [
+      "GPU-84389f80-a576-d373-ecb0-92e972e72dfd",
+      "NVIDIA GeForce RTX 3070",
+      "8192",
+      "591.74"
+    ],
+    "image_digest": "sha256:7172c6d3749ceef15f01283145f0049e622f26202a36d88957b7486ec31a2a80",
+    "kernel": "6.6.87.2-microsoft-standard-WSL2",
+    "preallocate": false,
+    "precision": "float32",
+    "python": "3.11.14"
+  },
+  "mode": "fixed",
+  "script_sha256": "823e8dadeebab197c659c2b281e8bc2a179cdcbadfa9cd8278dba1a91e570dce",
+  "seed": 700,
+  "sources": {
+    "base_image": "python:3.11.14-slim-bookworm@sha256:65a93d69fa75478d554f4ad27c85c1e69fa184956261b4301ebaf6dbb0a3543d",
+    "emr": {
+      "archive_sha256": "2e4e7ec552fd2fb6ebd59e44b8ea89057f9980ef296d4451e22ccb7915bfb59d",
+      "license": "GPL-3.0-or-later (bundled LICENSE)",
+      "sha": "306eb4e67687390bb88131ead6af8bebffa8cee9",
+      "url": "https://github.com/RomainClaret/emr-hyperneat.git"
+    },
+    "schema": 1,
+    "tensorneat": {
+      "archive_sha256": "6776462f279bc6fa2ff9c0bf4adc405732d25681424346c8f5d6f9d7469cda3f",
+      "license": "GPL-3.0-or-later (bundled LICENSE)",
+      "sha": "49c193d546447d5fe2cb4b26f60758d23fc24cb0",
+      "url": "https://github.com/RomainClaret/tensorneat.git"
+    }
+  },
+  "workload": {
+    "cold_generations": 2,
+    "comparison": "system-only-semantics-and-capacities-differ",
+    "connection": {
+      "weight_init_mean": 0.0,
+      "weight_init_std": 1.0,
+      "weight_lower_bound": -5,
+      "weight_mutate_power": 0.15,
+      "weight_mutate_rate": 0.2,
+      "weight_replace_rate": 0.015,
+      "weight_upper_bound": 5
+    },
+    "coordinate_generation": "equally-spaced-within-layer-float32",
+    "coordinate_range": [
+      -1,
+      1,
+      -1,
+      1
+    ],
+    "cppn_output_transform": "tanh",
+    "dataset": "q2-v1.json:dataset",
+    "direct_output_transform": "sigmoid",
+    "direct_profile": "upstream-DAG-independent-samples",
+    "fitness": "negative-mean-squared-error-maximized",
+    "fixed_hidden_activation": "tanh",
+    "fixed_input_bias": "upstream-forward-appends-constant-one",
+    "fixed_layers": [
+      5,
+      8,
+      2
+    ],
+    "fixed_max_weight": 5.0,
+    "fixed_output_transform": "sigmoid",
+    "fixed_profile": "upstream-synchronous-settling-reset-per-sample-K3",
+    "fixed_query_dimensions": 4,
+    "fixed_query_row": [
+      "source-x",
+      "source-y",
+      "target-x",
+      "target-y"
+    ],
+    "fixed_weight_threshold": 0.3,
+    "genome_capacity_edges": 100,
+    "genome_capacity_nodes": 50,
+    "id": "q2-native-direct-fixed-v1",
+    "initial_hidden": [],
+    "inputs": 4,
+    "mutation": {
+      "conn_add": 0.2,
+      "conn_delete": 0.2,
+      "node_add": 0.1,
+      "node_delete": 0.1
+    },
+    "node": {
+      "activation_replace_rate": 0.1,
+      "aggregation_replace_rate": 0.1,
+      "bias_init_mean": 0.0,
+      "bias_init_std": 1.0,
+      "bias_lower_bound": -5,
+      "bias_mutate_power": 0.15,
+      "bias_mutate_rate": 0.2,
+      "bias_replace_rate": 0.015,
+      "bias_upper_bound": 5,
+      "response_init_mean": 1.0,
+      "response_init_std": 0.0,
+      "response_lower_bound": -5,
+      "response_mutate_power": 0.15,
+      "response_mutate_rate": 0.2,
+      "response_replace_rate": 0.015,
+      "response_upper_bound": 5
+    },
+    "not_a_sequential_rollout_budget": true,
+    "outputs": 2,
+    "population": 128,
+    "precision": "float32-HIGHEST-global-policy",
+    "randomness": "native-PRNGKey(seed)",
+    "samples": 64,
+    "schema": 1,
+    "seeds": [
+      700,
+      701,
+      702
+    ],
+    "source_lock": "locks/sources.json",
+    "species": {
+      "compatibility_threshold": 2.0,
+      "genome_elitism": 2,
+      "max_stagnation": 15,
+      "min_species_size": 1,
+      "spawn_number_change_rate": 0.5,
+      "species_elitism": 2,
+      "species_number_calculate_by": "rank",
+      "species_size": 10,
+      "survival_threshold": 0.1
+    },
+    "timing": "ask-transform-evaluate-64-independent-samples-tell-synchronize-metrics",
+    "warm_generations": 10
+  }
+}

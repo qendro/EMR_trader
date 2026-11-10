@@ -1,0 +1,135 @@
+{
+  "calibration_fixture_sha256": "294d033f3e5deb175987f324d0d94041b1e8b5331bde7bcf4b1d3fec099da6e3",
+  "coefficient": 456,
+  "fixtures": [
+    {
+      "B": 1,
+      "decode": {
+        "bias_queries": 250,
+        "encoding": "role-blocks-v1",
+        "expressed_biases": 250,
+        "expressed_edges": 64000,
+        "host_array_bytes": 322312,
+        "phenotype_nodes": 256,
+        "queries": 64250,
+        "query_slab": 4096
+      },
+      "decode_seconds": 0.267782418999559,
+      "decoded_carry_vs_reset_output_difference": 6.0428466796875,
+      "decoded_output_preactivation_error_to_threshold_ratio": 0.027476021208214886,
+      "decoded_trajectory_error_max": 0.0008413003157556886,
+      "first_compiled_scan_seconds": 0.4004387519999,
+      "hidden": 250,
+      "kind": "synthetic-not-H2-learning-or-G5",
+      "nodes": 256,
+      "p": 1,
+      "preactivation_error_to_frozen_threshold_ratio": 0.0026742289778126996,
+      "query_signatures": 1,
+      "steps": 128,
+      "trajectory_error_max": 2.4342623861084434e-08,
+      "trajectory_signatures": 1
+    },
+    {
+      "B": 1,
+      "decode": {
+        "bias_queries": 1018,
+        "encoding": "role-blocks-v1",
+        "expressed_biases": 1018,
+        "expressed_edges": 1042432,
+        "host_array_bytes": 5221384,
+        "phenotype_nodes": 1024,
+        "queries": 1043450,
+        "query_slab": 4096
+      },
+      "decode_seconds": 0.6043540779992327,
+      "decoded_carry_vs_reset_output_difference": 38.78759765625,
+      "decoded_output_preactivation_error_to_threshold_ratio": 0.0005710083531543237,
+      "decoded_trajectory_error_max": 5.741403037973214e-05,
+      "first_compiled_scan_seconds": 0.2784364799990726,
+      "hidden": 1018,
+      "kind": "synthetic-not-H2-learning-or-G5",
+      "nodes": 1024,
+      "p": 1,
+      "preactivation_error_to_frozen_threshold_ratio": 0.0040722480792903274,
+      "query_signatures": 1,
+      "steps": 128,
+      "trajectory_error_max": 2.6703364255920015e-08,
+      "trajectory_signatures": 2
+    }
+  ],
+  "hardware": {
+    "allocator_fraction": 0.6,
+    "backend": "gpu",
+    "development_mount": false,
+    "devices": [
+      "cuda:0"
+    ],
+    "gpu": [
+      "GPU-d7c4073b-c643-21ed-3d64-35a73d3d7a72",
+      "NVIDIA GeForce RTX 3060",
+      "12288",
+      "591.74"
+    ],
+    "image_digest": "sha256:5c567eb307576b52543497c16f7a6fdaedb333272067b4d774b508dbcc29fd46",
+    "kernel": "6.6.87.2-microsoft-standard-WSL2",
+    "preallocate": false,
+    "precision": "float32",
+    "python": "3.11.14"
+  },
+  "memory": {
+    "cgroup_current_bytes": 666361856,
+    "cgroup_peak_bytes": 674832384,
+    "cgroup_swap_bytes": 0,
+    "device_allocator": {
+      "bytes_in_use": 256,
+      "bytes_limit": 7730548223,
+      "bytes_reserved": 0,
+      "largest_alloc_size": 4194304,
+      "largest_free_block_bytes": 0,
+      "num_allocs": 3719,
+      "peak_bytes_in_use": 10415104,
+      "peak_bytes_reserved": 0,
+      "peak_pool_bytes": 14680064,
+      "pool_bytes": 14680064
+    },
+    "process_peak_rss_bytes": 984539136
+  },
+  "not_qualified": [
+    "H2 learning",
+    "B0",
+    "M2 G2/G4/G5",
+    "W8 sequence environment"
+  ],
+  "provenance": {
+    "compatibility_lock_sha256": "a11a7696492404e642f411a817893b984511a7f0da0131318d44173b2741c4d9",
+    "engine_sha256": "e4fbdd7588fd6008455fc109d12996fa21097bd40d07849f83149d2493b113b6",
+    "lock_sha256": "df89b8faeaefc2cf0a8ad1e723e7b000cbf48496a00b1e2ef0a3bac6fb33bdae",
+    "packages": {
+      "emr-hyperneat": "0.3.0",
+      "gymnax": "0.0.9",
+      "jax": "0.6.1",
+      "jaxlib": "0.6.1",
+      "numpy": "1.26.4",
+      "tensorneat": "0.1.0"
+    },
+    "sources": {
+      "base_image": "python:3.11.14-slim-bookworm@sha256:65a93d69fa75478d554f4ad27c85c1e69fa184956261b4301ebaf6dbb0a3543d",
+      "emr": {
+        "archive_sha256": "2e4e7ec552fd2fb6ebd59e44b8ea89057f9980ef296d4451e22ccb7915bfb59d",
+        "license": "GPL-3.0-or-later (bundled LICENSE)",
+        "sha": "306eb4e67687390bb88131ead6af8bebffa8cee9",
+        "url": "https://github.com/RomainClaret/emr-hyperneat.git"
+      },
+      "schema": 1,
+      "tensorneat": {
+        "archive_sha256": "6776462f279bc6fa2ff9c0bf4adc405732d25681424346c8f5d6f9d7469cda3f",
+        "license": "GPL-3.0-or-later (bundled LICENSE)",
+        "sha": "49c193d546447d5fe2cb4b26f60758d23fc24cb0",
+        "url": "https://github.com/RomainClaret/tensorneat.git"
+      }
+    }
+  },
+  "schema": 1,
+  "script_sha256": "66a3308c2f4c39fbba2104a751c551f3dc08653e4869e3697bf400b416278fcd",
+  "status": "pass"
+}

@@ -1,0 +1,5 @@
+{
+  "message": "recurrence.multi_hop_chunk_size is not a setting; the settings of recurrence are ['activate_time', 'allow_backward', 'allow_hidden_to_hidden', 'allow_lateral', 'allow_self_loops', 'enabled', 'eval_chunk_size', 'hh_cache_enabled', 'hh_cache_trigger', 'hh_discovery_mode', 'hh_mask_change_threshold', 'hh_refresh_interval', 'hop_decay_factor', 'iteration_level', 'max_connections', 'max_sparse_conns', 'max_sparse_conns_ceiling', 'multi_hop_algorithm', 'multi_hop_second_factor', 'network_model', 'preset', 'settling_rule', 'sparse_cap_policy', 'use_dense_discovery', 'use_vectorized_discovery']",
+  "status": "failed",
+  "type": "ValueError"
+}

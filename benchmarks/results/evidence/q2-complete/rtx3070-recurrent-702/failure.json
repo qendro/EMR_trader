@@ -1,0 +1,5 @@
+{
+  "message": "recurrence.max_sparse_conns=10000 cannot hold the hidden-to-hidden connections discovered for 1 of 128 genomes (largest set 13424): the cap would keep each genome's first pairs in (source, target) position order, not its strongest. Set recurrence.max_sparse_conns to at least 13424.",
+  "status": "failed",
+  "type": "SparseCapExceeded"
+}

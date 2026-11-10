@@ -1,0 +1,8 @@
+# Local code iteration on the already built, immutable dependency-qualified image.
+# Clean builds always use the repository-root Dockerfile.
+FROM neuroevo:qualified@sha256:1ec09aa0fdef06b7132e4f56efd1093957405cbbce7a40613d16b8679a4a4a26
+COPY src /app/src
+COPY tests /app/tests
+COPY scripts /app/scripts
+COPY docs /app/docs
+RUN pip install --no-deps --no-build-isolation /app

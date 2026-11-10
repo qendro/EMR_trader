@@ -1,0 +1,28 @@
+{
+  "hardware": {
+    "allocator_fraction": 0.0,
+    "backend": "cpu",
+    "development_mount": false,
+    "devices": [
+      "TFRT_CPU_0"
+    ],
+    "gpu": null,
+    "image_digest": "sha256:1a6b04f37a5a8e39806b1acbd1ece24a591656eade41656f2c6f28e925cd471b",
+    "kernel": "6.6.87.2-microsoft-standard-WSL2",
+    "preallocate": false,
+    "precision": "float32",
+    "python": "3.11.14"
+  },
+  "interpretation": "upstream-system-baseline-not-encoding-isolating-or-persistent-rollout",
+  "memory": {
+    "cgroup_current_bytes": 781090816,
+    "cgroup_peak_bytes": 781099008,
+    "cgroup_swap_bytes": 0,
+    "device_allocator": null,
+    "process_peak_rss_bytes": 1060564992
+  },
+  "mode": "fixed",
+  "status": "measured",
+  "wall_seconds": 28.366219204999652,
+  "warm_median_seconds": 0.07893292150038178
+}

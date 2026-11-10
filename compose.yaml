@@ -1,0 +1,56 @@
+x-common: &common
+  image: neuroevo:release
+  build: .
+  platform: linux/amd64
+  cpus: 4
+  mem_limit: 6g
+  shm_size: 1g
+  volumes:
+    - results:/results
+    - cache:/cache
+  environment: &env
+    NEUROEVO_BACKEND: cpu
+    JAX_PLATFORMS: cpu
+    OMP_NUM_THREADS: '4'
+    NEUROEVO_IMAGE_DIGEST: ${NEUROEVO_IMAGE_DIGEST:-not-recorded}
+services:
+  cpu:
+    <<: *common
+    profiles: [cpu]
+  rtx3060:
+    <<: *common
+    profiles: [rtx3060]
+    environment:
+      <<: *env
+      NEUROEVO_BACKEND: gpu
+      JAX_PLATFORMS: cuda
+      NEUROEVO_GPU_NAME: NVIDIA GeForce RTX 3060
+      NEUROEVO_GPU_MIB: '12288'
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+  rtx3070:
+    <<: *common
+    profiles: [rtx3070]
+    environment:
+      <<: *env
+      NEUROEVO_BACKEND: gpu
+      JAX_PLATFORMS: cuda
+      NEUROEVO_GPU_NAME: NVIDIA GeForce RTX 3070
+      NEUROEVO_GPU_MIB: '8192'
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+volumes:
+  results:
+    name: neuroevo-results
+  cache:
+    name: neuroevo-cache

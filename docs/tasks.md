@@ -2,6 +2,10 @@
 
 Use these work packages as implementation units. Each should produce a reviewable change with relevant tests and benchmark evidence. Dependency labels identify technical ordering; they do not request concurrent coding agents. Do not create all proposed modules before the first vertical slice needs them.
 
+Implementation and evidence are tracked in [implementation.md](implementation.md). Task definitions below remain the acceptance requirements; source existence alone does not close a work package.
+
+The first qualified increment implemented Q0/Q1 and V0–V5. M1's required gates passed on its retained source; the [M1 report](../benchmarks/REPORT.md) and [JSON status](../benchmarks/status.json) contain historical per-profile results. H0/H1 and B0 now have measured reports: [H1](../benchmarks/H1-REPORT.md), [B0](../benchmarks/B0-REPORT.md). H2 follows; M2 is not yet accepted. Q2 records independent connection-cap failures on both cards and remains open for its resource/stage audit and declared capacity-promotion experiment. A0–P1 are not implemented.
+
 ## Qualification
 
 | ID | Work package | Depends on | Completion evidence |

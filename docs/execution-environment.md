@@ -1,6 +1,6 @@
 # Windows, Docker and NVIDIA execution specification
 
-This is a deployment plan, not an installed environment. Target GPUs are RTX 3060 and RTX 3070. Their exact variants, VRAM, host RAM and physical arrangement are recorded during Q0. All project commands—including tests and CPU reference runs—execute inside Docker.
+This document specifies deployment requirements. The Dockerfile and Compose profiles now implement the initial lane; actual inventory, dependency decisions and execution evidence are in [implementation.md](implementation.md). All project commands—including tests and CPU reference runs—execute inside Docker.
 
 ## 1. Execution stack
 
@@ -24,7 +24,7 @@ JAX supplies Linux CUDA wheels; its platform matrix still labels WSL2 GPU execut
 
 ## 2. Image and dependency ownership
 
-Q0 will create a Dockerfile, Compose configuration and dockerignore. Do not implement them as part of this documentation revision.
+Q0 supplies the Dockerfile, Compose configuration, dockerignore, source checksums and Python locks. The following requirements remain acceptance criteria, independently of whether a smoke build succeeds.
 
 - Base: a digest-pinned Linux/amd64 image supporting Python 3.11 and the required wheels. Resolve and record its distribution/system packages at Q0.
 - Python: pin project dependencies, EMR source SHA, TensorNEAT submodule SHA and environment lock. Start with EMR’s JAX 0.6.1/CUDA 12 route.

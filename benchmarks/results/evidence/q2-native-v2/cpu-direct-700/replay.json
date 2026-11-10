@@ -1,0 +1,27 @@
+{
+  "active_attributes_finite": true,
+  "hardware": {
+    "allocator_fraction": 0.0,
+    "backend": "cpu",
+    "development_mount": false,
+    "devices": [
+      "TFRT_CPU_0"
+    ],
+    "gpu": null,
+    "image_digest": "sha256:7172c6d3749ceef15f01283145f0049e622f26202a36d88957b7486ec31a2a80",
+    "kernel": "6.6.87.2-microsoft-standard-WSL2",
+    "preallocate": false,
+    "precision": "float32",
+    "python": "3.11.14"
+  },
+  "interpretation": "native empty-input aggregation convention; platform isolated-bias contract differs",
+  "isolated_noninput_ids": [
+    4
+  ],
+  "nonfinite_output_columns": [
+    0
+  ],
+  "nonfinite_outputs": 64,
+  "samples": 64,
+  "status": "reproduced-upstream-nonfinite-output"
+}

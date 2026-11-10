@@ -1,0 +1,36 @@
+{
+  "baseline": {
+    "elite_count": 2,
+    "hidden": 4,
+    "init_std": 0.5,
+    "inputs": 2,
+    "kind": "fixed-weight-v1",
+    "mutation_rate": 0.2,
+    "mutation_std": 0.15,
+    "outputs": 1,
+    "population": 128,
+    "profile": "layered",
+    "recurrent": true,
+    "schema": 1,
+    "survival_fraction": 0.1,
+    "weight_bound": 5.0
+  },
+  "genotype_encoding": "flat-role-weights-v1",
+  "output_bias": "zero",
+  "response": "one",
+  "role_activation": "tanh-hidden-identity-output",
+  "state_order": "input-hidden-output",
+  "topology": "fixed dense input-hidden/hidden-output; fixed delayed hidden-hidden if enabled",
+  "weight_order": [
+    "input-hidden",
+    "hidden-hidden-delayed-if-enabled",
+    "hidden-output",
+    "hidden-bias"
+  ],
+  "weight_segment_sizes": [
+    8,
+    16,
+    4,
+    4
+  ]
+}

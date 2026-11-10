@@ -1,0 +1,4 @@
+* text=auto eol=lf
+benchmarks/results/** -text -whitespace
+benchmarks/reproduction/** -text -whitespace
+vendor/*.tar.gz -text

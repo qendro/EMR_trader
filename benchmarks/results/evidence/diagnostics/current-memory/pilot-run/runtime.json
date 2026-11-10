@@ -1,0 +1,10 @@
+{
+  "cache_entries_at_start": 26,
+  "compilation_cache_dir": "/cache/jax-0.6.1",
+  "cuda_visible_devices": null,
+  "jax_enable_x64": false,
+  "jit_enabled": true,
+  "matmul_precision": "float32",
+  "planning": "host-NumPy-once-per-generation",
+  "rollout": "compiled-JAX-scan"
+}

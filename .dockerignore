@@ -1,0 +1,6 @@
+.git
+.upstream
+artifacts
+**/__pycache__
+.pytest_cache
+benchmarks/results/build.log

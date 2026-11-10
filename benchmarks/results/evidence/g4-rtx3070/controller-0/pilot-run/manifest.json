@@ -1,0 +1,105 @@
+{
+  "config": {
+    "action": "argmax-first-tie",
+    "adapter": {
+      "edges": 128,
+      "inputs": 4,
+      "mutation": {
+        "conn_add": 0.2,
+        "conn_delete": 0.2,
+        "node_add": 0.1,
+        "node_delete": 0.1
+      },
+      "nodes": 32,
+      "outputs": 2,
+      "population": 128,
+      "profile": "dag",
+      "species": {
+        "compatibility_threshold": 2.0,
+        "genome_elitism": 2,
+        "max_stagnation": 15,
+        "min_species_size": 1,
+        "spawn_number_change_rate": 0.5,
+        "species_elitism": 2,
+        "species_number_calculate_by": "rank",
+        "species_size": 10,
+        "survival_threshold": 0.1
+      }
+    },
+    "budget_seconds_per_seed": 7200,
+    "budget_status": "proposed-requires-G9-pilot",
+    "checkpoint_every": 10,
+    "episodes": 8,
+    "finalists": 8,
+    "generations": 100,
+    "heldout_episodes": 20,
+    "horizon": 500,
+    "id": "m1-cartpole-acceptance-v1",
+    "kind": "acceptance",
+    "microbatch": 32,
+    "required_seeds": 3,
+    "scenario_policy": "generation-specific",
+    "schema": 1,
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "target": 450,
+    "task": "cartpole",
+    "validation_episodes": 32,
+    "workload": "W3-generation"
+  },
+  "config_sha256": "bd1835e185320f6a327326005d573ef2535a3bff16e95aabf95f7f2521cc1146",
+  "hardware": {
+    "allocator_fraction": 0.6,
+    "backend": "gpu",
+    "development_mount": false,
+    "devices": [
+      "cuda:0"
+    ],
+    "gpu": [
+      "GPU-84389f80-a576-d373-ecb0-92e972e72dfd",
+      "NVIDIA GeForce RTX 3070",
+      "8192",
+      "591.74"
+    ],
+    "image_digest": "sha256:7172c6d3749ceef15f01283145f0049e622f26202a36d88957b7486ec31a2a80",
+    "kernel": "6.6.87.2-microsoft-standard-WSL2",
+    "preallocate": false,
+    "precision": "float32",
+    "python": "3.11.14"
+  },
+  "provenance": {
+    "compatibility_lock_sha256": "a11a7696492404e642f411a817893b984511a7f0da0131318d44173b2741c4d9",
+    "engine_sha256": "8d3aba6552b6872ab47ddca1c1992ee839ce5339c9f48ba221ba780525fddebb",
+    "lock_sha256": "df89b8faeaefc2cf0a8ad1e723e7b000cbf48496a00b1e2ef0a3bac6fb33bdae",
+    "packages": {
+      "emr-hyperneat": "0.3.0",
+      "gymnax": "0.0.9",
+      "jax": "0.6.1",
+      "jaxlib": "0.6.1",
+      "numpy": "1.26.4",
+      "tensorneat": "0.1.0"
+    },
+    "sources": {
+      "base_image": "python:3.11.14-slim-bookworm@sha256:65a93d69fa75478d554f4ad27c85c1e69fa184956261b4301ebaf6dbb0a3543d",
+      "emr": {
+        "archive_sha256": "2e4e7ec552fd2fb6ebd59e44b8ea89057f9980ef296d4451e22ccb7915bfb59d",
+        "license": "GPL-3.0-or-later (bundled LICENSE)",
+        "sha": "306eb4e67687390bb88131ead6af8bebffa8cee9",
+        "url": "https://github.com/RomainClaret/emr-hyperneat.git"
+      },
+      "schema": 1,
+      "tensorneat": {
+        "archive_sha256": "6776462f279bc6fa2ff9c0bf4adc405732d25681424346c8f5d6f9d7469cda3f",
+        "license": "GPL-3.0-or-later (bundled LICENSE)",
+        "sha": "49c193d546447d5fe2cb4b26f60758d23fc24cb0",
+        "url": "https://github.com/RomainClaret/tensorneat.git"
+      }
+    }
+  },
+  "seed": 900
+}
