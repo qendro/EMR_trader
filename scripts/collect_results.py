@@ -21,12 +21,13 @@ for pattern in ('qualification-*','m1-final-*','m1-current-*','m1-resume-*',
                 'development','h1-*','b0-v1','b0-resume-v1','b0-qualification-v1','b0-development',
                 'h2-fixed-*','h2-direct-*','h2-visual-*',
                 'm2-g2-*','m2-g3-*','m2-g4-*','m2-g5-*',
-                'm2-elapsed-calibration-*','m2-elapsed-v1','m2-elapsed-v2','w8-v2'):
+                'm2-elapsed-calibration-*','m2-elapsed-v1','m2-elapsed-v2',
+                'm2-elapsed-v2-driver591','w8-v2'):
     roots.extend(source.glob(pattern))
 rows=[]
 for root in sorted(set(roots)):
     for original in sorted(root.rglob('*')):
-        if not original.is_file() or original.suffix not in ('.json','.jsonl','.xml','.npz','.bin'): continue
+        if not original.is_file() or original.suffix not in ('.json','.jsonl','.xml','.npz','.bin','.log'): continue
         if any('cache' in part for part in original.relative_to(root).parts[:-1]): continue
         relative=original.relative_to(source)
         destination=output/relative

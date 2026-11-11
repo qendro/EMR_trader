@@ -4,7 +4,7 @@ param([string]$Image='neuroevo:elapsed-v2',
 $ErrorActionPreference='Stop'
 $digest=(& docker image inspect $Image --format '{{.Id}}').Trim()
 if ($LASTEXITCODE -ne 0 -or -not $digest) { throw "Image unavailable: $Image" }
-& docker run -d --name $Container --gpus all --memory=6g --cpus=4 `
+& docker run -d --name $Container --restart 'on-failure:3' --gpus all --memory=6g --cpus=4 `
     --mount 'type=volume,source=neuroevo-results,target=/results' `
     --mount 'type=volume,source=neuroevo-cache,target=/cache' `
     --mount "type=bind,source=$PSScriptRoot,target=/audit,readonly" `

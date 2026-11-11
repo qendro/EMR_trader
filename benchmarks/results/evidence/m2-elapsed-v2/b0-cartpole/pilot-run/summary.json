@@ -12,7 +12,7 @@
       "GPU-84389f80-a576-d373-ecb0-92e972e72dfd",
       "NVIDIA GeForce RTX 3070",
       "8192",
-      "591.74"
+      "610.88"
     ],
     "image_digest": "sha256:f69c6ea5dbb7d24b0b1f13e71edcddc0e92db82d2a856b618840aa402b238da8",
     "kernel": "6.6.87.2-microsoft-standard-WSL2",
@@ -22,8 +22,8 @@
   },
   "kind": "acceptance",
   "memory": {
-    "cgroup_current_bytes": 668520448,
-    "cgroup_peak_bytes": 684216320,
+    "cgroup_current_bytes": 899543040,
+    "cgroup_peak_bytes": 915116032,
     "cgroup_swap_bytes": 0,
     "device_allocator": {
       "bytes_in_use": 70144,
@@ -37,7 +37,7 @@
       "peak_pool_bytes": 2097152,
       "pool_bytes": 2097152
     },
-    "process_peak_rss_bytes": 1010012160
+    "process_peak_rss_bytes": 1036431360
   },
   "provenance": {
     "compatibility_lock_sha256": "a11a7696492404e642f411a817893b984511a7f0da0131318d44173b2741c4d9",
@@ -70,5 +70,5 @@
   },
   "seed": 900,
   "structural_mutation_observed": false,
-  "wall_seconds": 10.038785053999163
+  "wall_seconds": 11.374706477999979
 }

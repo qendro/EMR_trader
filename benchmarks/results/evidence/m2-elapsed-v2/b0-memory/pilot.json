@@ -1,7 +1,7 @@
 {
-  "allowable_generations": 37866.585653012444,
+  "allowable_generations": 40494.65886547055,
   "config_sha256": "af5a04f39f34ce228c58e2c17990ecfd94cda7d7795250a76ad827907c1b08ce",
-  "fixed_overhead_seconds": 8.103435920005722,
+  "fixed_overhead_seconds": 8.105818634000173,
   "generations": 12,
   "hardware": {
     "allocator_fraction": 0.6,
@@ -14,7 +14,7 @@
       "GPU-84389f80-a576-d373-ecb0-92e972e72dfd",
       "NVIDIA GeForce RTX 3070",
       "8192",
-      "591.74"
+      "610.88"
     ],
     "image_digest": "sha256:f69c6ea5dbb7d24b0b1f13e71edcddc0e92db82d2a856b618840aa402b238da8",
     "kernel": "6.6.87.2-microsoft-standard-WSL2",
@@ -25,8 +25,8 @@
   "kind": "acceptance",
   "label": "G9-pilot-not-learning-acceptance",
   "memory": {
-    "cgroup_current_bytes": 626470912,
-    "cgroup_peak_bytes": 637825024,
+    "cgroup_current_bytes": 655257600,
+    "cgroup_peak_bytes": 666550272,
     "cgroup_swap_bytes": 0,
     "device_allocator": {
       "bytes_in_use": 18176,
@@ -40,7 +40,7 @@
       "peak_pool_bytes": 2097152,
       "pool_bytes": 2097152
     },
-    "process_peak_rss_bytes": 939761664
+    "process_peak_rss_bytes": 968675328
   },
   "passes": true,
   "pilot_seed": 900,
@@ -75,6 +75,6 @@
   },
   "seed": 900,
   "structural_mutation_observed": false,
-  "wall_seconds": 9.812781189997622,
-  "warm_generation_seconds": 0.17093452699918998
+  "wall_seconds": 9.704228139000008,
+  "warm_generation_seconds": 0.1598409504999836
 }
