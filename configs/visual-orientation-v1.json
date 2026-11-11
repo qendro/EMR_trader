@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "id": "visual-orientation-v1",
+  "grid": [
+    5,
+    5
+  ],
+  "stroke_length": 3,
+  "signal": 1.0,
+  "background_noise_uniform": [
+    -0.15,
+    0.15
+  ],
+  "train_positions": [
+    [
+      0,
+      0
+    ],
+    [
+      0,
+      2
+    ],
+    [
+      1,
+      1
+    ],
+    [
+      2,
+      0
+    ],
+    [
+      2,
+      2
+    ]
+  ],
+  "heldout_positions": [
+    [
+      0,
+      1
+    ],
+    [
+      1,
+      0
+    ],
+    [
+      1,
+      2
+    ],
+    [
+      2,
+      1
+    ]
+  ],
+  "label": {
+    "horizontal": -1,
+    "vertical": 1
+  },
+  "decision": "sign-positive-tie",
+  "episodes": {
+    "training": 40,
+    "validation": 40,
+    "heldout": 160
+  },
+  "seeds": [
+    700,
+    701,
+    702
+  ],
+  "outcome": "per-image accuracy on held-out positions; ungated",
+  "comparison": "same one-step population evaluator; distinct network families and topology sizes"
+}

@@ -8,6 +8,18 @@ from .runtime import population_step, step
 from .contracts import stack_plans
 
 
+@partial(jax.jit, static_argnames=("profile",))
+def visual_chunk(plans, observations, labels, *, profile="layered"):
+    """Evaluate independent one-step images using the production population step."""
+    population, nodes = plans.node_mask.shape
+    states = jnp.zeros((population, len(labels), nodes), jnp.float32)
+    shared = jnp.broadcast_to(observations, (population, *observations.shape))
+    heads, new = population_step(plans, states, shared, profile=profile)
+    valid = jnp.all(jnp.isfinite(new), axis=(1, 2)) & jnp.all(jnp.isfinite(heads), axis=(1, 2))
+    correct = jnp.where(heads[..., 0] >= 0, 1, -1) == labels[None, :]
+    return correct.astype(jnp.float32), valid
+
+
 class MemoryCarry(NamedTuple):
     policy: object
     correct: object

@@ -68,7 +68,8 @@ The image-matched source and frozen manifests are retained in
 [`reproduction/h2-90ec`](reproduction/h2-90ec/source.json).
 
 The [W8 shared-sequence contract check](W8-REPORT.md) subsequently passed
-on CPU and both GPUs with a new source image. H2/M2 remain open for the
-geometric diagnostic, fixed-elapsed-time comparison, and integrated G2–G5 performance evidence,
+on CPU and both GPUs with a new source image. The [geometric visual diagnostic](H2-VISUAL-REPORT.md)
+has now been measured separately on a newer image. H2/M2 remain open for the
+fixed-elapsed-time comparison and integrated G2–G5 performance evidence,
 including the named 1,024-node G5 cell. Q2's capacity/resource decision remains
 a separate prerequisite for adaptive A0.

@@ -1,0 +1,144 @@
+{
+  "schema": 1,
+  "status": "measured-ungated",
+  "methods": {
+    "b0": {
+      "config_sha256": "b4bb65b4778407bbaad304f1550ee4d983afb4bcb034c5ba011927902d2e6d08",
+      "engine_sha256": "c01f6ca585f9cd66cac3adf160a0f839a1d939bd99a3f714d8726d6f12a5460d",
+      "image_digest": "sha256:1a0c2014dbf15aca9a24259d3fe643b1d2c75ebde19981df92c915b81962eed3",
+      "seed_scores": [
+        0.6937500238418579,
+        0.550000011920929,
+        0.5249999761581421
+      ],
+      "heldout_score": {
+        "median": 0.550000011920929,
+        "range": [
+          0.5249999761581421,
+          0.6937500238418579
+        ]
+      },
+      "wall_seconds": {
+        "median": 16.74437037700045,
+        "range": [
+          16.60600817700106,
+          18.35063162499864
+        ]
+      },
+      "heldout_by_position": [
+        [
+          0.800000011920929,
+          0.5,
+          0.6000000238418579,
+          0.875
+        ],
+        [
+          0.375,
+          0.5,
+          0.625,
+          0.699999988079071
+        ],
+        [
+          0.5,
+          0.5,
+          0.574999988079071,
+          0.5249999761581421
+        ]
+      ],
+      "minimum_valid_candidates": 96,
+      "champion_reconstruction_and_replay": "pass"
+    },
+    "direct": {
+      "config_sha256": "bb7ef1c96d1b977b6110db2a3c06259b101d7a3782acc67e8032997f531d2866",
+      "engine_sha256": "c01f6ca585f9cd66cac3adf160a0f839a1d939bd99a3f714d8726d6f12a5460d",
+      "image_digest": "sha256:1a0c2014dbf15aca9a24259d3fe643b1d2c75ebde19981df92c915b81962eed3",
+      "seed_scores": [
+        0.7437499761581421,
+        0.793749988079071,
+        0.706250011920929
+      ],
+      "heldout_score": {
+        "median": 0.7437499761581421,
+        "range": [
+          0.706250011920929,
+          0.793749988079071
+        ]
+      },
+      "wall_seconds": {
+        "median": 27.511480863999168,
+        "range": [
+          27.479204907998792,
+          58.068503585000144
+        ]
+      },
+      "heldout_by_position": [
+        [
+          0.5,
+          0.5,
+          0.9750000238418579,
+          1.0
+        ],
+        [
+          0.824999988079071,
+          0.5,
+          0.8500000238418579,
+          1.0
+        ],
+        [
+          0.5,
+          0.5,
+          1.0,
+          0.824999988079071
+        ]
+      ],
+      "minimum_valid_candidates": 96,
+      "champion_reconstruction_and_replay": "pass"
+    },
+    "fixed": {
+      "config_sha256": "12e8a32871887a16340e8c9262c812606f1965eb6a121bf8f4ab01b9321936f8",
+      "engine_sha256": "c01f6ca585f9cd66cac3adf160a0f839a1d939bd99a3f714d8726d6f12a5460d",
+      "image_digest": "sha256:1a0c2014dbf15aca9a24259d3fe643b1d2c75ebde19981df92c915b81962eed3",
+      "seed_scores": [
+        0.75,
+        0.7875000238418579,
+        0.800000011920929
+      ],
+      "heldout_score": {
+        "median": 0.7875000238418579,
+        "range": [
+          0.75,
+          0.800000011920929
+        ]
+      },
+      "wall_seconds": {
+        "median": 62.215760720002436,
+        "range": [
+          60.27411427699917,
+          87.04076256600092
+        ]
+      },
+      "heldout_by_position": [
+        [
+          1.0,
+          0.5,
+          1.0,
+          0.5
+        ],
+        [
+          0.550000011920929,
+          0.9750000238418579,
+          0.675000011920929,
+          0.949999988079071
+        ],
+        [
+          0.949999988079071,
+          0.7250000238418579,
+          1.0,
+          0.5249999761581421
+        ]
+      ],
+      "minimum_valid_candidates": 96,
+      "champion_reconstruction_and_replay": "pass"
+    }
+  }
+}

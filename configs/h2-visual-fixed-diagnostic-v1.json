@@ -1,0 +1,171 @@
+{
+  "schema": 1,
+  "id": "h2-visual-fixed-diagnostic-v1",
+  "kind": "diagnostic",
+  "workload": "W-visual-orientation",
+  "task": "visual",
+  "seeds": [
+    700,
+    701,
+    702
+  ],
+  "generations": 60,
+  "episodes": 40,
+  "horizon": 1,
+  "microbatch": 16,
+  "validation_episodes": 40,
+  "heldout_episodes": 160,
+  "finalists": 8,
+  "target": 0.75,
+  "required_seeds": 0,
+  "checkpoint_every": 10,
+  "budget_seconds_per_seed": 7200,
+  "budget_status": "diagnostic-ungated",
+  "scenario_policy": "generation-specific",
+  "action": "sign-positive-tie",
+  "shared_protocol": "configs/visual-orientation-v1.json",
+  "comparison": "same one-step evaluator; held-out positions; no acceptance gate",
+  "method": "fixed-coordinate-CPPN",
+  "adapter": {
+    "population": 96,
+    "inputs": 4,
+    "outputs": 1,
+    "nodes": 32,
+    "edges": 128,
+    "profile": "dag",
+    "mutation": {
+      "conn_add": 0.2,
+      "conn_delete": 0.2,
+      "node_add": 0.1,
+      "node_delete": 0.1
+    },
+    "species": {
+      "species_size": 10,
+      "max_stagnation": 15,
+      "species_elitism": 2,
+      "spawn_number_change_rate": 0.5,
+      "genome_elitism": 2,
+      "survival_threshold": 0.1,
+      "min_species_size": 1,
+      "compatibility_threshold": 2.0,
+      "species_number_calculate_by": "rank"
+    }
+  },
+  "decoder": {
+    "schema": 1,
+    "kind": "fixed-coordinate-v2",
+    "inputs": 25,
+    "hidden": 12,
+    "outputs": 1,
+    "recurrent": false,
+    "threshold": 0.3,
+    "max_weight": 5.0,
+    "query_slab": 4096,
+    "input_coordinates": [
+      [
+        -1.0,
+        -1.0
+      ],
+      [
+        -0.5,
+        -1.0
+      ],
+      [
+        0.0,
+        -1.0
+      ],
+      [
+        0.5,
+        -1.0
+      ],
+      [
+        1.0,
+        -1.0
+      ],
+      [
+        -1.0,
+        -0.5
+      ],
+      [
+        -0.5,
+        -0.5
+      ],
+      [
+        0.0,
+        -0.5
+      ],
+      [
+        0.5,
+        -0.5
+      ],
+      [
+        1.0,
+        -0.5
+      ],
+      [
+        -1.0,
+        0.0
+      ],
+      [
+        -0.5,
+        0.0
+      ],
+      [
+        0.0,
+        0.0
+      ],
+      [
+        0.5,
+        0.0
+      ],
+      [
+        1.0,
+        0.0
+      ],
+      [
+        -1.0,
+        0.5
+      ],
+      [
+        -0.5,
+        0.5
+      ],
+      [
+        0.0,
+        0.5
+      ],
+      [
+        0.5,
+        0.5
+      ],
+      [
+        1.0,
+        0.5
+      ],
+      [
+        -1.0,
+        1.0
+      ],
+      [
+        -0.5,
+        1.0
+      ],
+      [
+        0.0,
+        1.0
+      ],
+      [
+        0.5,
+        1.0
+      ],
+      [
+        1.0,
+        1.0
+      ]
+    ],
+    "bias_coordinate": [
+      0.0,
+      -2.0
+    ]
+  }
+}

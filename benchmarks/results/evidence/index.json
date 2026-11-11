@@ -8202,6 +8202,621 @@
       "sha256": "f25f1f3c373726528f5771a06a0d8164a36b925a827a101aefb37caf7212e7c2"
     },
     {
+      "path": "h2-visual-diagnostic-v1/rtx3070-b0/experiment.json",
+      "bytes": 19713,
+      "sha256": "0261ea899058d13d8e645e53c6592a117227b16460ae0334f2de83468d3aa666"
+    },
+    {
+      "path": "h2-visual-diagnostic-v1/rtx3070-b0/seed-700/backend-settings.json",
+      "bytes": 816,
+      "sha256": "918000e8368f6a96c19e1d15c6415e74d6031ba7388205068391c37ed3f8a915"
+    },
+    {
+      "path": "h2-visual-diagnostic-v1/rtx3070-b0/seed-700/champion-genes.npz",
+      "bytes": 1462,
+      "sha256": "552837a0809586dd06ee066b8c28afbb93a7ca3f7710774d05d4323a02efe739"
+    },
+    {
+      "path": "h2-visual-diagnostic-v1/rtx3070-b0/seed-700/champion.npz",
+      "bytes": 4949,
+      "sha256": "36500b2bc1c8cd5d49e7bab2c6f49d37574fd1687ca6be9d834c4b16b31cf628"
+    },
+    {
+      "path": "h2-visual-diagnostic-v1/rtx3070-b0/seed-700/checkpoint.bin",
+      "bytes": 150829,
+      "sha256": "8ad189e05412f9f2de1bcddfc7b8876b094b8dea418ff69473568921fa0dca16"
+    },
+    {
+      "path": "h2-visual-diagnostic-v1/rtx3070-b0/seed-700/environment.json",
+      "bytes": 500,
+      "sha256": "8b73c9ade2b60e666fa66ce403f3cf715a1606c905ff9be0a772cfeaf9980986"
+    },
+    {
+      "path": "h2-visual-diagnostic-v1/rtx3070-b0/seed-700/evaluated-winner-genes.npz",
+      "bytes": 1465,
+      "sha256": "de53671c70f445c08accc15be3e4986e44a8814f5cb560874350f416038606c7"
+    },
+    {
+      "path": "h2-visual-diagnostic-v1/rtx3070-b0/seed-700/evaluated-winner.npz",
+      "bytes": 4968,
+      "sha256": "03aefb3b30133e83a8aab9b50eac2eddbd62bdc0358c6179e7a724676155997a"
+    },
+    {
+      "path": "h2-visual-diagnostic-v1/rtx3070-b0/seed-700/history.json",
+      "bytes": 61641,
+      "sha256": "a1cea6bcbf38c9ae66b290950090a7e15186388bbb278109b34e80def2ca556f"
+    },
+    {
+      "path": "h2-visual-diagnostic-v1/rtx3070-b0/seed-700/manifest.json",
+      "bytes": 3037,
+      "sha256": "75e8cf08a971fe0dbbee60731cb82a167ec77e3a8826f6602636913511356aa5"
+    },
+    {
+      "path": "h2-visual-diagnostic-v1/rtx3070-b0/seed-700/runtime.json",
+      "bytes": 317,
+      "sha256": "ee7461e860de18d4460b83d438bcd7e42ee4589df7253b5fbac2a0b249972136"
+    },
+    {
+      "path": "h2-visual-diagnostic-v1/rtx3070-b0/seed-700/selection.json",
+      "bytes": 2155,
+      "sha256": "f622715f891d9c1493654bd0bba13d9f2593f5cb7e3d3157ced5aa4bb06cf92f"
+    },
+    {
+      "path": "h2-visual-diagnostic-v1/rtx3070-b0/seed-700/summary.json",
+      "bytes": 2495,
+      "sha256": "fe76db7850a589e1d4cce9d0f300a219920b2b0ce79b2304f474af7310b74b4e"
+    },
+    {
+      "path": "h2-visual-diagnostic-v1/rtx3070-b0/seed-700/validation-finalists-genes.npz",
+      "bytes": 7055,
+      "sha256": "285f063f76dcbdc85f0017683e9adcf02447d95ff71e63029904541926942232"
+    },
+    {
+      "path": "h2-visual-diagnostic-v1/rtx3070-b0/seed-701/backend-settings.json",
+      "bytes": 816,
+      "sha256": "918000e8368f6a96c19e1d15c6415e74d6031ba7388205068391c37ed3f8a915"
+    },
+    {
+      "path": "h2-visual-diagnostic-v1/rtx3070-b0/seed-701/champion-genes.npz",
+      "bytes": 1466,
+      "sha256": "81486c543f4a68bc063a5e0303f082a50dde55e2e8a99cd2a200fa5da14bf57f"
+    },
+    {
+      "path": "h2-visual-diagnostic-v1/rtx3070-b0/seed-701/champion.npz",
+      "bytes": 4956,
+      "sha256": "4f607a07216fead02ca17820b41d407e7a0e789a2a12c0dfaaa89be6002faebc"
+    },
+    {
+      "path": "h2-visual-diagnostic-v1/rtx3070-b0/seed-701/checkpoint.bin",
+      "bytes": 150829,
+      "sha256": "80df7490d8a4bdf711c9f346f294fbf4354a72a2aedb109847bc7e78cbcf423e"
+    },
+    {
+      "path": "h2-visual-diagnostic-v1/rtx3070-b0/seed-701/environment.json",
+      "bytes": 500,
+      "sha256": "8b73c9ade2b60e666fa66ce403f3cf715a1606c905ff9be0a772cfeaf9980986"
+    },
+    {
+      "path": "h2-visual-diagnostic-v1/rtx3070-b0/seed-701/evaluated-winner-genes.npz",
+      "bytes": 1466,
+      "sha256": "81486c543f4a68bc063a5e0303f082a50dde55e2e8a99cd2a200fa5da14bf57f"
+    },
+    {
+      "path": "h2-visual-diagnostic-v1/rtx3070-b0/seed-701/evaluated-winner.npz",
+      "bytes": 4970,
+      "sha256": "7cbc508a66fb39298ef431476e884f68da2481fed9bef39cea985cd78be7ab8c"
+    },
+    {
+      "path": "h2-visual-diagnostic-v1/rtx3070-b0/seed-701/history.json",
+      "bytes": 61510,
+      "sha256": "66c46a7a867bdba0297e3472d1934488565c141284403c085ef2884c3f483aff"
+    },
+    {
+      "path": "h2-visual-diagnostic-v1/rtx3070-b0/seed-701/manifest.json",
+      "bytes": 3037,
+      "sha256": "53908ec90d837766f979358e884618e1edf970adecff13198adb693d3b42c6b0"
+    },
+    {
+      "path": "h2-visual-diagnostic-v1/rtx3070-b0/seed-701/runtime.json",
+      "bytes": 317,
+      "sha256": "2f611fc8ca9bcc0f6bfe72348944dbe737047b306fe62c47305e6570a28c3be7"
+    },
+    {
+      "path": "h2-visual-diagnostic-v1/rtx3070-b0/seed-701/selection.json",
+      "bytes": 2088,
+      "sha256": "965414a340e1ca7dd440fe9861190f8328216197cbbc5ec2da84fce84a9d25a1"
+    },
+    {
+      "path": "h2-visual-diagnostic-v1/rtx3070-b0/seed-701/summary.json",
+      "bytes": 2495,
+      "sha256": "fded04a5035454bc69b5c067efc3f1e6032072132b8cb5419922811fc8b387fd"
+    },
+    {
+      "path": "h2-visual-diagnostic-v1/rtx3070-b0/seed-701/validation-finalists-genes.npz",
+      "bytes": 7403,
+      "sha256": "11ddf54fa2331ee139dee97d1d027dd094a447e4a7fd953caae2c71d386bc14f"
+    },
+    {
+      "path": "h2-visual-diagnostic-v1/rtx3070-b0/seed-702/backend-settings.json",
+      "bytes": 816,
+      "sha256": "918000e8368f6a96c19e1d15c6415e74d6031ba7388205068391c37ed3f8a915"
+    },
+    {
+      "path": "h2-visual-diagnostic-v1/rtx3070-b0/seed-702/champion-genes.npz",
+      "bytes": 1467,
+      "sha256": "0780a9f496009d2dabe3258b2d02e26a62232cb5455fb162280333dbaeb82cbf"
+    },
+    {
+      "path": "h2-visual-diagnostic-v1/rtx3070-b0/seed-702/champion.npz",
+      "bytes": 4953,
+      "sha256": "b438d363289c80f76fa01d9665b35cf98e7dd61b044584ebc26aa778b7443fe1"
+    },
+    {
+      "path": "h2-visual-diagnostic-v1/rtx3070-b0/seed-702/checkpoint.bin",
+      "bytes": 150829,
+      "sha256": "67c6bca2aef731fe10f98b5379a89af71dbaf89cc56618ef84f5ace57e5bef2e"
+    },
+    {
+      "path": "h2-visual-diagnostic-v1/rtx3070-b0/seed-702/environment.json",
+      "bytes": 500,
+      "sha256": "8b73c9ade2b60e666fa66ce403f3cf715a1606c905ff9be0a772cfeaf9980986"
+    },
+    {
+      "path": "h2-visual-diagnostic-v1/rtx3070-b0/seed-702/evaluated-winner-genes.npz",
+      "bytes": 1467,
+      "sha256": "0780a9f496009d2dabe3258b2d02e26a62232cb5455fb162280333dbaeb82cbf"
+    },
+    {
+      "path": "h2-visual-diagnostic-v1/rtx3070-b0/seed-702/evaluated-winner.npz",
+      "bytes": 4968,
+      "sha256": "768b016b79ccd14282f747a4b67fe31b07e8f72c0fefb6ca782604927fc53bfc"
+    },
+    {
+      "path": "h2-visual-diagnostic-v1/rtx3070-b0/seed-702/history.json",
+      "bytes": 62134,
+      "sha256": "9251144ebabfb56f6878e689d21f18235315af17f3556ad45a9a498ba908c998"
+    },
+    {
+      "path": "h2-visual-diagnostic-v1/rtx3070-b0/seed-702/manifest.json",
+      "bytes": 3037,
+      "sha256": "69c8378e6e30487aa63a30ce57255c0f053011c0005d82196092505178981ac8"
+    },
+    {
+      "path": "h2-visual-diagnostic-v1/rtx3070-b0/seed-702/runtime.json",
+      "bytes": 317,
+      "sha256": "2f611fc8ca9bcc0f6bfe72348944dbe737047b306fe62c47305e6570a28c3be7"
+    },
+    {
+      "path": "h2-visual-diagnostic-v1/rtx3070-b0/seed-702/selection.json",
+      "bytes": 2204,
+      "sha256": "8eb6d5b0e1093542537bfb5d5b2322e781de145c3093301081f1cf01f897790c"
+    },
+    {
+      "path": "h2-visual-diagnostic-v1/rtx3070-b0/seed-702/summary.json",
+      "bytes": 2495,
+      "sha256": "31351af28e23befba8572d1255dbb8cf3d04fed29f7e4bff1bbc3cbe26204cd9"
+    },
+    {
+      "path": "h2-visual-diagnostic-v1/rtx3070-b0/seed-702/validation-finalists-genes.npz",
+      "bytes": 6161,
+      "sha256": "fc517dc9b9438337473b2c7fba93bcc54f2221f4380dbcd82f84337a3d5c6e38"
+    },
+    {
+      "path": "h2-visual-diagnostic-v1/rtx3070-direct/experiment.json",
+      "bytes": 19999,
+      "sha256": "aca517ba43f0bd8ef281f0223ec1d6e6f4c3aaabe45b862e584369b8138b1620"
+    },
+    {
+      "path": "h2-visual-diagnostic-v1/rtx3070-direct/seed-700/backend-settings.json",
+      "bytes": 1272,
+      "sha256": "ff8f4292359662c765969311600e5aa9a782e536fc176d0f0eaadfb3f1d0638f"
+    },
+    {
+      "path": "h2-visual-diagnostic-v1/rtx3070-direct/seed-700/champion-genes.npz",
+      "bytes": 835,
+      "sha256": "3fc09652f5a2c7a8239d2662e635d4efbd910a13b556f9dfc8ccdf500ccb5b43"
+    },
+    {
+      "path": "h2-visual-diagnostic-v1/rtx3070-direct/seed-700/champion.npz",
+      "bytes": 4046,
+      "sha256": "f784acbf80a693bdb375971b4afa839fcdd6345381a39e2f6455af2cd2020a8c"
+    },
+    {
+      "path": "h2-visual-diagnostic-v1/rtx3070-direct/seed-700/checkpoint.bin",
+      "bytes": 490761,
+      "sha256": "44bd3f85cbda00c490fe6e94df30b954e407ad9f5a09941a3e4e0607db5f1a3f"
+    },
+    {
+      "path": "h2-visual-diagnostic-v1/rtx3070-direct/seed-700/environment.json",
+      "bytes": 500,
+      "sha256": "8b73c9ade2b60e666fa66ce403f3cf715a1606c905ff9be0a772cfeaf9980986"
+    },
+    {
+      "path": "h2-visual-diagnostic-v1/rtx3070-direct/seed-700/evaluated-winner-genes.npz",
+      "bytes": 835,
+      "sha256": "3fc09652f5a2c7a8239d2662e635d4efbd910a13b556f9dfc8ccdf500ccb5b43"
+    },
+    {
+      "path": "h2-visual-diagnostic-v1/rtx3070-direct/seed-700/evaluated-winner.npz",
+      "bytes": 4057,
+      "sha256": "a589e2a315c0bf329b4dca0aec6b81e3e4fa1c53f64043898bf4dcc20bd2e2cc"
+    },
+    {
+      "path": "h2-visual-diagnostic-v1/rtx3070-direct/seed-700/history.json",
+      "bytes": 53240,
+      "sha256": "a6979fa54bff718872814e27a4da51f32c63b0507df5e47b3d11fa64d469fa0f"
+    },
+    {
+      "path": "h2-visual-diagnostic-v1/rtx3070-direct/seed-700/manifest.json",
+      "bytes": 3275,
+      "sha256": "7110fad7650a6f797145b93b34f5759b8092f159aa74808fd94eb0e49793e559"
+    },
+    {
+      "path": "h2-visual-diagnostic-v1/rtx3070-direct/seed-700/runtime.json",
+      "bytes": 317,
+      "sha256": "2f611fc8ca9bcc0f6bfe72348944dbe737047b306fe62c47305e6570a28c3be7"
+    },
+    {
+      "path": "h2-visual-diagnostic-v1/rtx3070-direct/seed-700/selection.json",
+      "bytes": 2106,
+      "sha256": "27b0044a540f14ebfbdfd2b8a9264381d9f5787f32f10851035952e63bcda6d9"
+    },
+    {
+      "path": "h2-visual-diagnostic-v1/rtx3070-direct/seed-700/summary.json",
+      "bytes": 2502,
+      "sha256": "0a564c71a34759b80cedff3c53d22be09817e0e27b8cd8a450d5a0947f938c88"
+    },
+    {
+      "path": "h2-visual-diagnostic-v1/rtx3070-direct/seed-700/validation-finalists-genes.npz",
+      "bytes": 2477,
+      "sha256": "a0d747470eb21189ff323c7fab92afab9a6a5c84dcf2fc35d792e02aeba0aa6b"
+    },
+    {
+      "path": "h2-visual-diagnostic-v1/rtx3070-direct/seed-701/backend-settings.json",
+      "bytes": 1272,
+      "sha256": "ff8f4292359662c765969311600e5aa9a782e536fc176d0f0eaadfb3f1d0638f"
+    },
+    {
+      "path": "h2-visual-diagnostic-v1/rtx3070-direct/seed-701/champion-genes.npz",
+      "bytes": 764,
+      "sha256": "d8ffcc2fd75e41c922ddb0fe486d54b6abc221c3c7821aadf83927d64cd245e1"
+    },
+    {
+      "path": "h2-visual-diagnostic-v1/rtx3070-direct/seed-701/champion.npz",
+      "bytes": 3970,
+      "sha256": "7592d48faeb0c56c6750051918f130608160670ba7884dc75df56c069b1585b0"
+    },
+    {
+      "path": "h2-visual-diagnostic-v1/rtx3070-direct/seed-701/checkpoint.bin",
+      "bytes": 490761,
+      "sha256": "57186db688a13b0660d95fe9c4fd86eecd3091aa5162ab723d5081a0398a62f2"
+    },
+    {
+      "path": "h2-visual-diagnostic-v1/rtx3070-direct/seed-701/environment.json",
+      "bytes": 500,
+      "sha256": "8b73c9ade2b60e666fa66ce403f3cf715a1606c905ff9be0a772cfeaf9980986"
+    },
+    {
+      "path": "h2-visual-diagnostic-v1/rtx3070-direct/seed-701/evaluated-winner-genes.npz",
+      "bytes": 764,
+      "sha256": "d8ffcc2fd75e41c922ddb0fe486d54b6abc221c3c7821aadf83927d64cd245e1"
+    },
+    {
+      "path": "h2-visual-diagnostic-v1/rtx3070-direct/seed-701/evaluated-winner.npz",
+      "bytes": 3990,
+      "sha256": "d34b0db2884c756f6b4baa2a6a142e1d520aa5368f7672bcbd27b0d5caeab5cd"
+    },
+    {
+      "path": "h2-visual-diagnostic-v1/rtx3070-direct/seed-701/history.json",
+      "bytes": 53981,
+      "sha256": "c22f799f1a481d503b6497eda3323e2907678991aa4ebefc10cbc34d83455e55"
+    },
+    {
+      "path": "h2-visual-diagnostic-v1/rtx3070-direct/seed-701/manifest.json",
+      "bytes": 3275,
+      "sha256": "6fc65c51ad3fab7ec726af646b12158a5303f097d6618ac5689bbf8a6085c6f8"
+    },
+    {
+      "path": "h2-visual-diagnostic-v1/rtx3070-direct/seed-701/runtime.json",
+      "bytes": 317,
+      "sha256": "896e7b6fb9fc17ee708e8a42dc2993608157ea6e2fe0b14ee4fad3fa17128666"
+    },
+    {
+      "path": "h2-visual-diagnostic-v1/rtx3070-direct/seed-701/selection.json",
+      "bytes": 2312,
+      "sha256": "85b9f3b93f634f6e7cfa830ba87ef816de00f1dae76fdc842b1390d03806836c"
+    },
+    {
+      "path": "h2-visual-diagnostic-v1/rtx3070-direct/seed-701/summary.json",
+      "bytes": 2502,
+      "sha256": "2dc271717b5b8ccba22d0eb6c79e827cebc62ece90aea774494123989939500d"
+    },
+    {
+      "path": "h2-visual-diagnostic-v1/rtx3070-direct/seed-701/validation-finalists-genes.npz",
+      "bytes": 2207,
+      "sha256": "f4ebe98c678cec9d0d8b11ba4ec9e5ac290b4bf35af71bbc44cd9c79d621e207"
+    },
+    {
+      "path": "h2-visual-diagnostic-v1/rtx3070-direct/seed-702/backend-settings.json",
+      "bytes": 1272,
+      "sha256": "ff8f4292359662c765969311600e5aa9a782e536fc176d0f0eaadfb3f1d0638f"
+    },
+    {
+      "path": "h2-visual-diagnostic-v1/rtx3070-direct/seed-702/champion-genes.npz",
+      "bytes": 793,
+      "sha256": "cf38310475a539f7980a4bf3d26307ea158299391cfd570054b54abc4386a90e"
+    },
+    {
+      "path": "h2-visual-diagnostic-v1/rtx3070-direct/seed-702/champion.npz",
+      "bytes": 3984,
+      "sha256": "fdca3f9888d22d5a897f5370c7c43ab888e9a0fa297f4002cd554307758f9f4c"
+    },
+    {
+      "path": "h2-visual-diagnostic-v1/rtx3070-direct/seed-702/checkpoint.bin",
+      "bytes": 490761,
+      "sha256": "cf8c7b7779b14008f70e00868f939e85090002b6632db6d6215ebeff0c9de53c"
+    },
+    {
+      "path": "h2-visual-diagnostic-v1/rtx3070-direct/seed-702/environment.json",
+      "bytes": 500,
+      "sha256": "8b73c9ade2b60e666fa66ce403f3cf715a1606c905ff9be0a772cfeaf9980986"
+    },
+    {
+      "path": "h2-visual-diagnostic-v1/rtx3070-direct/seed-702/evaluated-winner-genes.npz",
+      "bytes": 793,
+      "sha256": "cf38310475a539f7980a4bf3d26307ea158299391cfd570054b54abc4386a90e"
+    },
+    {
+      "path": "h2-visual-diagnostic-v1/rtx3070-direct/seed-702/evaluated-winner.npz",
+      "bytes": 3996,
+      "sha256": "3d1018ad116ccbe2916ad9b5dbf7653812ba09bbeab878f1fe46bd82ce2a534d"
+    },
+    {
+      "path": "h2-visual-diagnostic-v1/rtx3070-direct/seed-702/history.json",
+      "bytes": 53153,
+      "sha256": "46b18448c5dbb1c5c8d42fc3e8579a95401b6f958a501301f8af710daa679fdd"
+    },
+    {
+      "path": "h2-visual-diagnostic-v1/rtx3070-direct/seed-702/manifest.json",
+      "bytes": 3275,
+      "sha256": "630b2ed5f20786417e6342e2feae44528759f9aa6bd741b8f1b2b74634483a15"
+    },
+    {
+      "path": "h2-visual-diagnostic-v1/rtx3070-direct/seed-702/runtime.json",
+      "bytes": 317,
+      "sha256": "896e7b6fb9fc17ee708e8a42dc2993608157ea6e2fe0b14ee4fad3fa17128666"
+    },
+    {
+      "path": "h2-visual-diagnostic-v1/rtx3070-direct/seed-702/selection.json",
+      "bytes": 2056,
+      "sha256": "2a495fdf3dbcf9776dea9b7823ae881750a8e3b8b02463f85ea07e1afceadf15"
+    },
+    {
+      "path": "h2-visual-diagnostic-v1/rtx3070-direct/seed-702/summary.json",
+      "bytes": 2502,
+      "sha256": "77c32459b3258384c3b632de95a75a97eec366298bab35a5d9ef29301b5ff3c3"
+    },
+    {
+      "path": "h2-visual-diagnostic-v1/rtx3070-direct/seed-702/validation-finalists-genes.npz",
+      "bytes": 2328,
+      "sha256": "4d2d5353e13d3e99d7fe9b1f5f6186aa338a02c0c3b5618d75cd966ee4780696"
+    },
+    {
+      "path": "h2-visual-diagnostic-v1/rtx3070-fixed/experiment.json",
+      "bytes": 22043,
+      "sha256": "93700e7b2b5563a2226f1594dea5a8d1ad650152b10996e026753bc9e286ab57"
+    },
+    {
+      "path": "h2-visual-diagnostic-v1/rtx3070-fixed/seed-700/backend-settings.json",
+      "bytes": 1272,
+      "sha256": "ff8f4292359662c765969311600e5aa9a782e536fc176d0f0eaadfb3f1d0638f"
+    },
+    {
+      "path": "h2-visual-diagnostic-v1/rtx3070-fixed/seed-700/champion-genes.npz",
+      "bytes": 493,
+      "sha256": "9108c7a6b1c8a201b255ba02cecb5edc8d056c7ba8e0852aa443be3a9d7d2ef7"
+    },
+    {
+      "path": "h2-visual-diagnostic-v1/rtx3070-fixed/seed-700/champion.npz",
+      "bytes": 4125,
+      "sha256": "d590382ee8f3a03e1bec52d4953702763e0ebc64dcc8871ee997655a8e785862"
+    },
+    {
+      "path": "h2-visual-diagnostic-v1/rtx3070-fixed/seed-700/checkpoint.bin",
+      "bytes": 261147,
+      "sha256": "79ca5e5294fd82c0a56c971ff01dd5cad0990fd1530c8bfb78a5444d94869ec8"
+    },
+    {
+      "path": "h2-visual-diagnostic-v1/rtx3070-fixed/seed-700/decoder.json",
+      "bytes": 3518,
+      "sha256": "6dcc423ccbf14d96d236ad282b4c751ef5092a5d90216f1d333b78a71f0d58e5"
+    },
+    {
+      "path": "h2-visual-diagnostic-v1/rtx3070-fixed/seed-700/environment.json",
+      "bytes": 500,
+      "sha256": "8b73c9ade2b60e666fa66ce403f3cf715a1606c905ff9be0a772cfeaf9980986"
+    },
+    {
+      "path": "h2-visual-diagnostic-v1/rtx3070-fixed/seed-700/evaluated-winner-genes.npz",
+      "bytes": 493,
+      "sha256": "9108c7a6b1c8a201b255ba02cecb5edc8d056c7ba8e0852aa443be3a9d7d2ef7"
+    },
+    {
+      "path": "h2-visual-diagnostic-v1/rtx3070-fixed/seed-700/evaluated-winner.npz",
+      "bytes": 4148,
+      "sha256": "063e531f93bd41ac5ebf89c3d8422829a09cebcd30fa6fb5a158c84f95d02ecd"
+    },
+    {
+      "path": "h2-visual-diagnostic-v1/rtx3070-fixed/seed-700/history.json",
+      "bytes": 61818,
+      "sha256": "e02de9d0f3eb6de8af6f6281cf5d4be51da3588be3a89ff835e1561b8fa1b88a"
+    },
+    {
+      "path": "h2-visual-diagnostic-v1/rtx3070-fixed/seed-700/manifest.json",
+      "bytes": 4890,
+      "sha256": "292c8918e439c78ac44cc717b0c7c87874a97a71ce2407341e9dff751344091a"
+    },
+    {
+      "path": "h2-visual-diagnostic-v1/rtx3070-fixed/seed-700/runtime.json",
+      "bytes": 317,
+      "sha256": "896e7b6fb9fc17ee708e8a42dc2993608157ea6e2fe0b14ee4fad3fa17128666"
+    },
+    {
+      "path": "h2-visual-diagnostic-v1/rtx3070-fixed/seed-700/selection.json",
+      "bytes": 2289,
+      "sha256": "6020338c3169da4dabc0132a80ba9974fa7032dfa8c301953d974f42f958ad3a"
+    },
+    {
+      "path": "h2-visual-diagnostic-v1/rtx3070-fixed/seed-700/summary.json",
+      "bytes": 2500,
+      "sha256": "a242e8b8c1a59cc97f4aae012ca613e12387ee1f2012b7869cfc43fbacbe3751"
+    },
+    {
+      "path": "h2-visual-diagnostic-v1/rtx3070-fixed/seed-700/validation-finalists-genes.npz",
+      "bytes": 798,
+      "sha256": "648521b404734bc29d021d74aa117602581745f4c0061c565f344bc27b66eac5"
+    },
+    {
+      "path": "h2-visual-diagnostic-v1/rtx3070-fixed/seed-701/backend-settings.json",
+      "bytes": 1272,
+      "sha256": "ff8f4292359662c765969311600e5aa9a782e536fc176d0f0eaadfb3f1d0638f"
+    },
+    {
+      "path": "h2-visual-diagnostic-v1/rtx3070-fixed/seed-701/champion-genes.npz",
+      "bytes": 565,
+      "sha256": "860dee5a577a9843d8f531cadf889cdac6b699c132204fa0c77a91eb83cf6453"
+    },
+    {
+      "path": "h2-visual-diagnostic-v1/rtx3070-fixed/seed-701/champion.npz",
+      "bytes": 4092,
+      "sha256": "aa25a23168f80fe9a3c7570b2afc3442ffa35f39b0cccf70b3f4248a76f817e8"
+    },
+    {
+      "path": "h2-visual-diagnostic-v1/rtx3070-fixed/seed-701/checkpoint.bin",
+      "bytes": 261153,
+      "sha256": "35cd3d3ce0d23accb18b70bd31f5fa0b5c5add634f02d9df1a223beafb7049c3"
+    },
+    {
+      "path": "h2-visual-diagnostic-v1/rtx3070-fixed/seed-701/decoder.json",
+      "bytes": 3518,
+      "sha256": "6dcc423ccbf14d96d236ad282b4c751ef5092a5d90216f1d333b78a71f0d58e5"
+    },
+    {
+      "path": "h2-visual-diagnostic-v1/rtx3070-fixed/seed-701/environment.json",
+      "bytes": 500,
+      "sha256": "8b73c9ade2b60e666fa66ce403f3cf715a1606c905ff9be0a772cfeaf9980986"
+    },
+    {
+      "path": "h2-visual-diagnostic-v1/rtx3070-fixed/seed-701/evaluated-winner-genes.npz",
+      "bytes": 565,
+      "sha256": "860dee5a577a9843d8f531cadf889cdac6b699c132204fa0c77a91eb83cf6453"
+    },
+    {
+      "path": "h2-visual-diagnostic-v1/rtx3070-fixed/seed-701/evaluated-winner.npz",
+      "bytes": 4113,
+      "sha256": "3dbe6143c9e094882dce5d6029b603dfd20d3cad75f52b718f7bd2b6b173a76c"
+    },
+    {
+      "path": "h2-visual-diagnostic-v1/rtx3070-fixed/seed-701/history.json",
+      "bytes": 61940,
+      "sha256": "1458007f05e0c17a8ff42b7c2d5a385fbd74d26bc838f4a6a955ddb3e924df2f"
+    },
+    {
+      "path": "h2-visual-diagnostic-v1/rtx3070-fixed/seed-701/manifest.json",
+      "bytes": 4890,
+      "sha256": "3fb23f7424dadc92c56fd4b1ec7621005d9b4106f2d814fe2f8073661f9e6417"
+    },
+    {
+      "path": "h2-visual-diagnostic-v1/rtx3070-fixed/seed-701/runtime.json",
+      "bytes": 317,
+      "sha256": "24d6b8d02a3cd773dc43795bf1dd9d366f81d29bcd618d16885211805defc87e"
+    },
+    {
+      "path": "h2-visual-diagnostic-v1/rtx3070-fixed/seed-701/selection.json",
+      "bytes": 2315,
+      "sha256": "5550bd6af0145cdadbabef21ab34d2042f1bee20637594a47156e4d807df70ff"
+    },
+    {
+      "path": "h2-visual-diagnostic-v1/rtx3070-fixed/seed-701/summary.json",
+      "bytes": 2501,
+      "sha256": "5c5d675cd2ef057c05b64297bd54b9e6c93331a0611ed1411eaa8571d3fc2f2e"
+    },
+    {
+      "path": "h2-visual-diagnostic-v1/rtx3070-fixed/seed-701/validation-finalists-genes.npz",
+      "bytes": 833,
+      "sha256": "5bfcd0e21c6c0a698516cec8a10f5d568dd1aa12ba484d15aec268883085f164"
+    },
+    {
+      "path": "h2-visual-diagnostic-v1/rtx3070-fixed/seed-702/backend-settings.json",
+      "bytes": 1272,
+      "sha256": "ff8f4292359662c765969311600e5aa9a782e536fc176d0f0eaadfb3f1d0638f"
+    },
+    {
+      "path": "h2-visual-diagnostic-v1/rtx3070-fixed/seed-702/champion-genes.npz",
+      "bytes": 532,
+      "sha256": "f936733d7343799168c5f0ed2f522f3048424701a249e40bb95a07a8a2d14801"
+    },
+    {
+      "path": "h2-visual-diagnostic-v1/rtx3070-fixed/seed-702/champion.npz",
+      "bytes": 4104,
+      "sha256": "f2c6587e752c42ea02c952d7bdbae28adafd97a91c75622a1cce8cce2919cd8c"
+    },
+    {
+      "path": "h2-visual-diagnostic-v1/rtx3070-fixed/seed-702/checkpoint.bin",
+      "bytes": 261148,
+      "sha256": "c1f0eac55a8d5493b5d5410e34fb2365ab795490a93fc879620ae403dddb7091"
+    },
+    {
+      "path": "h2-visual-diagnostic-v1/rtx3070-fixed/seed-702/decoder.json",
+      "bytes": 3518,
+      "sha256": "6dcc423ccbf14d96d236ad282b4c751ef5092a5d90216f1d333b78a71f0d58e5"
+    },
+    {
+      "path": "h2-visual-diagnostic-v1/rtx3070-fixed/seed-702/environment.json",
+      "bytes": 500,
+      "sha256": "8b73c9ade2b60e666fa66ce403f3cf715a1606c905ff9be0a772cfeaf9980986"
+    },
+    {
+      "path": "h2-visual-diagnostic-v1/rtx3070-fixed/seed-702/evaluated-winner-genes.npz",
+      "bytes": 571,
+      "sha256": "ede80853302a09be64d85d73b9f3ca8401162fdb62d108c47d878bfa9389d7ad"
+    },
+    {
+      "path": "h2-visual-diagnostic-v1/rtx3070-fixed/seed-702/evaluated-winner.npz",
+      "bytes": 5004,
+      "sha256": "854ed26a1e22524f134b7eb828046a8c7634239ab45234f4c0ada160bc8b5895"
+    },
+    {
+      "path": "h2-visual-diagnostic-v1/rtx3070-fixed/seed-702/history.json",
+      "bytes": 61909,
+      "sha256": "71ee88061b17a71ecaec748241d243d0f91a54e5f0f6e4467f8ea5d069488212"
+    },
+    {
+      "path": "h2-visual-diagnostic-v1/rtx3070-fixed/seed-702/manifest.json",
+      "bytes": 4890,
+      "sha256": "b07d22538b90ca39ddbddd09e84c5727d964781e1ced14aff60b397cef9c35b6"
+    },
+    {
+      "path": "h2-visual-diagnostic-v1/rtx3070-fixed/seed-702/runtime.json",
+      "bytes": 317,
+      "sha256": "24d6b8d02a3cd773dc43795bf1dd9d366f81d29bcd618d16885211805defc87e"
+    },
+    {
+      "path": "h2-visual-diagnostic-v1/rtx3070-fixed/seed-702/selection.json",
+      "bytes": 2304,
+      "sha256": "c85b2299559407dd0baa6b5d50245d7d71760d31d3841d75d0de5e56dcf45c5c"
+    },
+    {
+      "path": "h2-visual-diagnostic-v1/rtx3070-fixed/seed-702/summary.json",
+      "bytes": 2500,
+      "sha256": "bd67d3a9b31357f8975cda759b4590a2e8c5805be07f8248acd6be9a20d56b72"
+    },
+    {
+      "path": "h2-visual-diagnostic-v1/rtx3070-fixed/seed-702/validation-finalists-genes.npz",
+      "bytes": 1041,
+      "sha256": "384ba902d0fb4105b3acaa3004474317473e1d0481e5eaf6a8b245dac9876699"
+    },
+    {
       "path": "m1-current-cpu/experiment.json",
       "bytes": 18868,
       "sha256": "02fcfc7148aff7766f55d74a26eca60b3da6286b421434c2ad3dfc61c2e09bfb"

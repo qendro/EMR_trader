@@ -12,7 +12,7 @@ import psutil
 from .artifacts import (canonical, write_json, export, save_checkpoint, load_checkpoint)
 from .planning import plan
 from .environments import cartpole, memory_scenarios
-from .evaluation import (make_cartpole_rollout, evaluate_population, memory_chunk, memory_initial)
+from .evaluation import (make_cartpole_rollout, evaluate_population, memory_chunk, memory_initial, visual_chunk)
 from .contracts import stack_plans
 from .randomness import key
 
@@ -29,11 +29,12 @@ def provenance():
 
 def load_config(path):
     config = json.loads(Path(path).read_text())
-    if type(config.get("schema")) is not int or config["schema"] != 1 or config.get("task") not in ("cartpole", "memory"):
+    if type(config.get("schema")) is not int or config["schema"] != 1 or config.get("task") not in ("cartpole", "memory", "visual"):
         raise ValueError("Unsupported experiment schema/task")
     if config.get("kind") not in ("acceptance","smoke","diagnostic"):
         raise ValueError("Unsupported experiment kind")
-    expected={"cartpole":(4,2,"argmax-first-tie"),"memory":(2,1,"sign-positive-tie")}[config["task"]]
+    expected={"cartpole":(4,2,"argmax-first-tie"),"memory":(2,1,"sign-positive-tie"),
+              "visual":(25,1,"sign-positive-tie")}[config["task"]]
     baseline=config['adapter'].get('kind')=='fixed-weight-v1'
     if config['adapter'].get('kind') not in (None,'fixed-weight-v1'):
         raise ValueError('Unknown evolution adapter')
@@ -69,6 +70,14 @@ def load_config(path):
         raise ValueError("Unknown comparability policy")
     if config["task"] == "memory" and (config["episodes"], config["horizon"]) != (32, 17):
         raise ValueError("Shared memory protocol requires 32 episodes and horizon 17")
+    if config["task"] == "visual":
+        from .visual import input_coordinates
+        if (config['kind']!='diagnostic' or config['horizon']!=1 or
+                any(config[f] % n for f,n in (('episodes',10),('validation_episodes',10),('heldout_episodes',8)))):
+            raise ValueError('Visual diagnostic requires one step and balanced scenarios')
+        if decoder is not None and (decoder['kind']!='fixed-coordinate-v2' or
+                                    decoder['input_coordinates']!=input_coordinates()):
+            raise ValueError('Visual fixed decoder requires the frozen 5x5 coordinates')
     return config
 
 
@@ -142,7 +151,7 @@ def run(config, seed, directory, hardware, *, resume=False, stop_after=None, pil
             keys = jnp.stack([key(seed, namespace, generation, e) for e in range(episodes)])
             result = evaluate_population(plans, evaluator, keys, shared, config["microbatch"])
             return result[0].mean(axis=1), result[4].all(axis=1), result[0]
-    else:
+    elif config["task"] == "memory":
         def evaluate(plans, namespace, generation, episodes):
             delays = range(9, 17) if namespace == "generalization" else range(1, 9)
             obs, cues, ds = memory_scenarios(seed, namespace, generation, delays=delays, repeats=episodes//16)
@@ -156,6 +165,23 @@ def run(config, seed, directory, hardware, *, resume=False, stop_after=None, pil
                 validity.extend(np.asarray(final.valid[:len(part)]).all(axis=1))
             scores = np.asarray(summaries, np.float32)
             return scores.mean(axis=1), np.array(validity), scores
+    else:
+        from .visual import visual_scenarios, TRAIN_POSITIONS, HELDOUT_POSITIONS
+        write_json(directory/'environment.json', {'grid':[5,5], 'stroke_length':3,
+            'train_positions':TRAIN_POSITIONS, 'heldout_positions':HELDOUT_POSITIONS,
+            'background_noise_uniform':[-.15,.15], 'target':'vertical=+1; horizontal=-1',
+            'one_step':True})
+        def evaluate(plans, namespace, generation, episodes):
+            obs, labels, _ = visual_scenarios(seed,namespace,generation,episodes)
+            summaries, validity = [], []
+            for start in range(0,len(plans),config['microbatch']):
+                part=plans[start:start+config['microbatch']]
+                packed=stack_plans(part+[part[0]]*(config['microbatch']-len(part)))
+                correct, valid=visual_chunk(packed,obs,labels,profile=profile)
+                summaries.extend(np.asarray(correct[:len(part)]))
+                validity.extend(np.asarray(valid[:len(part)]))
+            scores=np.asarray(summaries,np.float32)
+            return scores.mean(axis=1),np.asarray(validity,bool),scores
     limit = min(config["generations"], stop_after or config["generations"])
     for generation in range(int(state.generation), limit):
         gen_start = time.perf_counter()
@@ -236,7 +262,8 @@ def run(config, seed, directory, hardware, *, resume=False, stop_after=None, pil
                "edges_max": sum(adapter.sizes[:3]) if baseline else int((~np.isnan(batch.conns[:, :, 0])).sum(axis=1).max()),
                "decode_plan_seconds": decode_seconds, "rollout_seconds": rollout_seconds,
                "evolve_seconds": evolve_seconds, "selection_seconds": selection_seconds,
-               "rollout_signatures": evaluator._cache_size() if config["task"] == "cartpole" else memory_chunk._cache_size(),
+               "rollout_signatures": (evaluator._cache_size() if config["task"] == "cartpole" else
+                   memory_chunk._cache_size() if config["task"] == "memory" else visual_chunk._cache_size()),
                "tell_signatures": adapter._tell._cache_size(),
                "observer_signatures": None if baseline else adapter._observe._cache_size(),
                "rss_bytes": psutil.Process().memory_info().rss,

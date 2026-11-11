@@ -5,7 +5,10 @@ from .substrate import blocks
 
 def settings(config):
     required={'schema','kind','inputs','hidden','outputs','recurrent','threshold','max_weight','query_slab'}
-    if set(config)!=required or type(config['schema']) is not int or config['schema']!=1 or config['kind']!='fixed-coordinate-v1':
+    if type(config.get('schema')) is not int or config['schema']!=1 or config.get('kind') not in ('fixed-coordinate-v1','fixed-coordinate-v2'):
+        raise ValueError('Unsupported fixed decoder configuration')
+    explicit=config['kind']=='fixed-coordinate-v2'
+    if set(config)!=(required|{'input_coordinates','bias_coordinate'} if explicit else required):
         raise ValueError('Unsupported fixed decoder configuration')
     for name in ('inputs','hidden','outputs','query_slab'):
         if type(config[name]) is not int or config[name]<1:
@@ -21,6 +24,19 @@ def settings(config):
             raise ValueError('Invalid fixed weight transform')
     if not 0<=config['threshold']<1 or config['max_weight']<=0:
         raise ValueError('Invalid fixed weight threshold/range')
+    if explicit:
+        points=config['input_coordinates']
+        bias=config['bias_coordinate']
+        if (type(points) is not list or len(points)!=config['inputs'] or
+                any(type(p) is not list or len(p)!=2 for p in points) or
+                type(bias) is not list or len(bias)!=2):
+            raise ValueError('Invalid explicit input coordinates')
+        try:
+            coords=np.asarray(points+[bias],np.float32)
+        except (TypeError,ValueError,OverflowError) as error:
+            raise ValueError('Invalid explicit input coordinates') from error
+        if not np.isfinite(coords).all() or np.any(np.abs(coords)>2) or len(np.unique(coords,axis=0))!=len(coords):
+            raise ValueError('Invalid explicit input coordinates')
     return dict(config)
 
 
@@ -49,7 +65,8 @@ class FixedDecoder:
         self.query=query
         c=self.config
         # Last virtual input is constant one. Its decoded row becomes hidden bias.
-        self.input_coordinates=coordinates(c['inputs']+1,-1.)
+        self.input_coordinates=(np.asarray(c['input_coordinates']+[c['bias_coordinate']],np.float32)
+                                if c['kind']=='fixed-coordinate-v2' else coordinates(c['inputs']+1,-1.))
         self.hidden_coordinates=coordinates(c['hidden'],0.)
         self.output_coordinates=coordinates(c['outputs'],1.)
         self.last_stats=None

@@ -1,0 +1,53 @@
+{
+  "background_noise_uniform": [
+    -0.15,
+    0.15
+  ],
+  "grid": [
+    5,
+    5
+  ],
+  "heldout_positions": [
+    [
+      0,
+      1
+    ],
+    [
+      1,
+      0
+    ],
+    [
+      1,
+      2
+    ],
+    [
+      2,
+      1
+    ]
+  ],
+  "one_step": true,
+  "stroke_length": 3,
+  "target": "vertical=+1; horizontal=-1",
+  "train_positions": [
+    [
+      0,
+      0
+    ],
+    [
+      0,
+      2
+    ],
+    [
+      1,
+      1
+    ],
+    [
+      2,
+      0
+    ],
+    [
+      2,
+      2
+    ]
+  ]
+}
