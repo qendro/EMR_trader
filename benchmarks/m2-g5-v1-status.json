@@ -1,0 +1,152 @@
+{
+  "schema": 1,
+  "status": "measured",
+  "config_sha256": "5d931dc9d5a3e0109582cd804c776eeb715f0f677ae2b9932c77a4db58b1433b",
+  "engine_sha256": "c01f6ca585f9cd66cac3adf160a0f839a1d939bd99a3f714d8726d6f12a5460d",
+  "image_digest": "sha256:aaac6211a0bd721bc7f00b1b787fdd455685b0e5a6882de10c34484201cbdf0c",
+  "profiles": {
+    "cpu": {
+      "trials": [
+        {
+          "seed": 9100,
+          "seconds": 50.99686414700045,
+          "decode_plan_seconds": 24.412292203000106,
+          "rollout_reduce_seconds": 19.927048593999643,
+          "tell_seconds": 6.6574925490022,
+          "memory": {
+            "cgroup_current_bytes": 1445584896,
+            "cgroup_peak_bytes": 1598279680,
+            "cgroup_swap_bytes": 0,
+            "device_allocator": null,
+            "process_peak_rss_bytes": 1905426432
+          }
+        },
+        {
+          "seed": 9101,
+          "seconds": 44.78739068199866,
+          "decode_plan_seconds": 23.98031351899772,
+          "rollout_reduce_seconds": 19.410817123000015,
+          "tell_seconds": 1.3962287379981717,
+          "memory": {
+            "cgroup_current_bytes": 1401856000,
+            "cgroup_peak_bytes": 1531408384,
+            "cgroup_swap_bytes": 0,
+            "device_allocator": null,
+            "process_peak_rss_bytes": 1837854720
+          }
+        },
+        {
+          "seed": 9102,
+          "seconds": 45.118568812999,
+          "decode_plan_seconds": 24.171859960999427,
+          "rollout_reduce_seconds": 19.52667855600157,
+          "tell_seconds": 1.4199945940017642,
+          "memory": {
+            "cgroup_current_bytes": 1400709120,
+            "cgroup_peak_bytes": 1536905216,
+            "cgroup_swap_bytes": 0,
+            "device_allocator": null,
+            "process_peak_rss_bytes": 1843601408
+          }
+        }
+      ],
+      "seconds_median": 45.118568812999,
+      "seconds_range": [
+        44.78739068199866,
+        50.99686414700045
+      ],
+      "throughput_candidate_episodes_per_second": 22.69575536059508,
+      "g3_recorded_allocator_and_cgroup_passes": true
+    },
+    "rtx3070": {
+      "trials": [
+        {
+          "seed": 9100,
+          "seconds": 87.58842549800102,
+          "decode_plan_seconds": 82.11315504899903,
+          "rollout_reduce_seconds": 3.352507539002545,
+          "tell_seconds": 2.1226671019976493,
+          "memory": {
+            "cgroup_current_bytes": 1734713344,
+            "cgroup_peak_bytes": 1845874688,
+            "cgroup_swap_bytes": 0,
+            "device_allocator": {
+              "bytes_in_use": 399104,
+              "bytes_limit": 5153646387,
+              "bytes_reserved": 0,
+              "largest_alloc_size": 134217728,
+              "largest_free_block_bytes": 0,
+              "num_allocs": 790290,
+              "peak_bytes_in_use": 219350016,
+              "peak_bytes_reserved": 0,
+              "peak_pool_bytes": 270532608,
+              "pool_bytes": 270532608
+            },
+            "process_peak_rss_bytes": 2182709248
+          }
+        },
+        {
+          "seed": 9101,
+          "seconds": 87.54853923799965,
+          "decode_plan_seconds": 82.36299418699855,
+          "rollout_reduce_seconds": 3.01811324099981,
+          "tell_seconds": 2.1674019079982827,
+          "memory": {
+            "cgroup_current_bytes": 1731031040,
+            "cgroup_peak_bytes": 1842581504,
+            "cgroup_swap_bytes": 0,
+            "device_allocator": {
+              "bytes_in_use": 399360,
+              "bytes_limit": 5153646387,
+              "bytes_reserved": 0,
+              "largest_alloc_size": 134217728,
+              "largest_free_block_bytes": 0,
+              "num_allocs": 790290,
+              "peak_bytes_in_use": 219350016,
+              "peak_bytes_reserved": 0,
+              "peak_pool_bytes": 270532608,
+              "pool_bytes": 270532608
+            },
+            "process_peak_rss_bytes": 2182164480
+          }
+        },
+        {
+          "seed": 9102,
+          "seconds": 88.46305920700252,
+          "decode_plan_seconds": 83.428585544003,
+          "rollout_reduce_seconds": 2.9949607779999496,
+          "tell_seconds": 2.0394845829978294,
+          "memory": {
+            "cgroup_current_bytes": 1730871296,
+            "cgroup_peak_bytes": 1843015680,
+            "cgroup_swap_bytes": 0,
+            "device_allocator": {
+              "bytes_in_use": 399104,
+              "bytes_limit": 5153646387,
+              "bytes_reserved": 0,
+              "largest_alloc_size": 134217728,
+              "largest_free_block_bytes": 0,
+              "num_allocs": 790290,
+              "peak_bytes_in_use": 219349760,
+              "peak_bytes_reserved": 0,
+              "peak_pool_bytes": 270532608,
+              "pool_bytes": 270532608
+            },
+            "process_peak_rss_bytes": 2182017024
+          }
+        }
+      ],
+      "seconds_median": 87.58842549800102,
+      "seconds_range": [
+        87.54853923799965,
+        88.46305920700252
+      ],
+      "throughput_candidate_episodes_per_second": 11.69104244285531,
+      "g3_recorded_allocator_and_cgroup_passes": true,
+      "gpu_over_cpu_throughput": 0.5151202177281828,
+      "g5_passes": false,
+      "faster_than_cpu_noise_range": false
+    }
+  },
+  "gating_card_passes": false
+}

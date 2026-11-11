@@ -11377,6 +11377,951 @@
       "sha256": "456e9eb774606dea60da55adfe2dd773661001552c8f9aa7905d4f8573159a93"
     },
     {
+      "path": "m2-g2-v1/rtx3070/backend-settings.json",
+      "bytes": 1272,
+      "sha256": "ff8f4292359662c765969311600e5aa9a782e536fc176d0f0eaadfb3f1d0638f"
+    },
+    {
+      "path": "m2-g2-v1/rtx3070/champion-genes.npz",
+      "bytes": 496,
+      "sha256": "8ee34020d4b1659b4b2acb50c02ba6d52e6ef29aedeb1a5622b29382b7a67ceb"
+    },
+    {
+      "path": "m2-g2-v1/rtx3070/champion.npz",
+      "bytes": 3713,
+      "sha256": "c74cbafc39608c709db26431cc62ead80efb2aa0f68a4286a2b2cf21ace08747"
+    },
+    {
+      "path": "m2-g2-v1/rtx3070/checkpoint.bin",
+      "bytes": 345381,
+      "sha256": "01550672056afab5901dc7c60a9008b57dd342c7551aab62583952fc71ca9f56"
+    },
+    {
+      "path": "m2-g2-v1/rtx3070/decoder.json",
+      "bytes": 1159,
+      "sha256": "73b4deedd2498476c28dc4b5a8d15bc24e4562e919b25152b01dd1449ed89839"
+    },
+    {
+      "path": "m2-g2-v1/rtx3070/evaluated-winner-genes.npz",
+      "bytes": 496,
+      "sha256": "8ee34020d4b1659b4b2acb50c02ba6d52e6ef29aedeb1a5622b29382b7a67ceb"
+    },
+    {
+      "path": "m2-g2-v1/rtx3070/evaluated-winner.npz",
+      "bytes": 3727,
+      "sha256": "949df5e1b365145db7bef3d41e6db2981aa0103b4c8990952977824428ccc6bb"
+    },
+    {
+      "path": "m2-g2-v1/rtx3070/g2-result.json",
+      "bytes": 4429,
+      "sha256": "2654f0f8e9bcd0d2a23cf1fd2ce9688362e87c12656b02a2fbf85dbbd34aef2e"
+    },
+    {
+      "path": "m2-g2-v1/rtx3070/history.json",
+      "bytes": 107407,
+      "sha256": "c8ad63b56efe656d739552a9d8699ebbe323a025ce3b9c3d38578de66cc03661"
+    },
+    {
+      "path": "m2-g2-v1/rtx3070/manifest.json",
+      "bytes": 3570,
+      "sha256": "cca004c18afb7e225ba76081fdded6ea157af60adc3e4ec221d967adfd9f5e8b"
+    },
+    {
+      "path": "m2-g2-v1/rtx3070/runtime.json",
+      "bytes": 317,
+      "sha256": "93b40ea5e75e7b0df6836f429a156ef632c3cf77cc5351a6d33c0cc9f02d34da"
+    },
+    {
+      "path": "m2-g2-v1/rtx3070/selection.json",
+      "bytes": 1174,
+      "sha256": "463ca2fa2dd9c7178ec1993ac06e00767c1933ac64b4103685f414923a4524c0"
+    },
+    {
+      "path": "m2-g2-v1/rtx3070/summary.json",
+      "bytes": 2500,
+      "sha256": "fb5ddeb10107bcc99042a64480777c667f03d11b2fba6814335d7cc24a247f19"
+    },
+    {
+      "path": "m2-g2-v1/rtx3070/validation-finalists-genes.npz",
+      "bytes": 819,
+      "sha256": "b299335e3b25fd46995bd24dbc04fb59f7b467d00c9436fb1ba1bdbed5b8170f"
+    },
+    {
+      "path": "m2-g2-v2/cpu/backend-settings.json",
+      "bytes": 1272,
+      "sha256": "ff8f4292359662c765969311600e5aa9a782e536fc176d0f0eaadfb3f1d0638f"
+    },
+    {
+      "path": "m2-g2-v2/cpu/champion-genes.npz",
+      "bytes": 496,
+      "sha256": "1d13919c3b55fa84765274cbe68464133a0dfaaf91ebc46c12d3b90692f3e803"
+    },
+    {
+      "path": "m2-g2-v2/cpu/champion.npz",
+      "bytes": 3713,
+      "sha256": "f4e1de4464814f53fd81e9d8f36f4872317d29763222df662154c3b6fda84ed5"
+    },
+    {
+      "path": "m2-g2-v2/cpu/checkpoint.bin",
+      "bytes": 322344,
+      "sha256": "216f98abb911f91b093f7b69173d1e6e76359df2386d7c7ba5ab9d58245b5ec7"
+    },
+    {
+      "path": "m2-g2-v2/cpu/decoder.json",
+      "bytes": 1159,
+      "sha256": "73b4deedd2498476c28dc4b5a8d15bc24e4562e919b25152b01dd1449ed89839"
+    },
+    {
+      "path": "m2-g2-v2/cpu/evaluated-winner-genes.npz",
+      "bytes": 496,
+      "sha256": "1d13919c3b55fa84765274cbe68464133a0dfaaf91ebc46c12d3b90692f3e803"
+    },
+    {
+      "path": "m2-g2-v2/cpu/evaluated-winner.npz",
+      "bytes": 3727,
+      "sha256": "d1264a95a3bbdcc560af7af0aa27b15ffa4250ae4ac61914de6710e5f46ac35f"
+    },
+    {
+      "path": "m2-g2-v2/cpu/g2-result.json",
+      "bytes": 4404,
+      "sha256": "9f58b3f792f1cda7a1e2b7883b5412e9e7a46e72b9e8978881af72930a02ab93"
+    },
+    {
+      "path": "m2-g2-v2/cpu/history.json",
+      "bytes": 74266,
+      "sha256": "5f4a05abd0c90324d02fbbd122b88cba00d9ed137534c346127dca15feef8151"
+    },
+    {
+      "path": "m2-g2-v2/cpu/manifest.json",
+      "bytes": 3459,
+      "sha256": "8f548e8a99bc1ee2f5bec7e87c7fd43b420133496332e7cd90aabe98a5a97fbe"
+    },
+    {
+      "path": "m2-g2-v2/cpu/runtime.json",
+      "bytes": 279,
+      "sha256": "99e5d71f92be9c56f70870ae607fac8d50fb5a059c515464d1b815c16bc9241f"
+    },
+    {
+      "path": "m2-g2-v2/cpu/selection.json",
+      "bytes": 1174,
+      "sha256": "463ca2fa2dd9c7178ec1993ac06e00767c1933ac64b4103685f414923a4524c0"
+    },
+    {
+      "path": "m2-g2-v2/cpu/summary.json",
+      "bytes": 2062,
+      "sha256": "bb39494958522d94d075bfd3b8f8f9ee00b539791707c2bb6e9cd86811a8b956"
+    },
+    {
+      "path": "m2-g2-v2/cpu/validation-finalists-genes.npz",
+      "bytes": 819,
+      "sha256": "21a1b9a8768f761627a10881410a1f30d849064730e994264f5fc9379ae31c52"
+    },
+    {
+      "path": "m2-g2-v2/rtx3060/backend-settings.json",
+      "bytes": 1272,
+      "sha256": "ff8f4292359662c765969311600e5aa9a782e536fc176d0f0eaadfb3f1d0638f"
+    },
+    {
+      "path": "m2-g2-v2/rtx3060/champion-genes.npz",
+      "bytes": 496,
+      "sha256": "8ee34020d4b1659b4b2acb50c02ba6d52e6ef29aedeb1a5622b29382b7a67ceb"
+    },
+    {
+      "path": "m2-g2-v2/rtx3060/champion.npz",
+      "bytes": 3713,
+      "sha256": "c74cbafc39608c709db26431cc62ead80efb2aa0f68a4286a2b2cf21ace08747"
+    },
+    {
+      "path": "m2-g2-v2/rtx3060/checkpoint.bin",
+      "bytes": 345381,
+      "sha256": "fd6a2378ae0a56cb1b53ef629b2f9e24dec5a8ef036961ae6c082f3a5a95a2cc"
+    },
+    {
+      "path": "m2-g2-v2/rtx3060/decoder.json",
+      "bytes": 1159,
+      "sha256": "73b4deedd2498476c28dc4b5a8d15bc24e4562e919b25152b01dd1449ed89839"
+    },
+    {
+      "path": "m2-g2-v2/rtx3060/evaluated-winner-genes.npz",
+      "bytes": 496,
+      "sha256": "8ee34020d4b1659b4b2acb50c02ba6d52e6ef29aedeb1a5622b29382b7a67ceb"
+    },
+    {
+      "path": "m2-g2-v2/rtx3060/evaluated-winner.npz",
+      "bytes": 3727,
+      "sha256": "949df5e1b365145db7bef3d41e6db2981aa0103b4c8990952977824428ccc6bb"
+    },
+    {
+      "path": "m2-g2-v2/rtx3060/g2-result.json",
+      "bytes": 4516,
+      "sha256": "73751bb40003c417ac67aef2bc394d77396d75c51b7e4f61266af27621f9ab35"
+    },
+    {
+      "path": "m2-g2-v2/rtx3060/history.json",
+      "bytes": 107381,
+      "sha256": "5da819254356ac2ebea5566fffd4d0ed9126b8fd5f42ffd206f7592a1089fda3"
+    },
+    {
+      "path": "m2-g2-v2/rtx3060/manifest.json",
+      "bytes": 3571,
+      "sha256": "e36274dfb57cdc4b920e9a58fcdaeb8a9fcfd7147b6c31481a373593c02c2dd9"
+    },
+    {
+      "path": "m2-g2-v2/rtx3060/runtime.json",
+      "bytes": 317,
+      "sha256": "afb06683a80de087d68387fea6092e53041165106747c22aa38b3bcc5f88cb4f"
+    },
+    {
+      "path": "m2-g2-v2/rtx3060/selection.json",
+      "bytes": 1174,
+      "sha256": "463ca2fa2dd9c7178ec1993ac06e00767c1933ac64b4103685f414923a4524c0"
+    },
+    {
+      "path": "m2-g2-v2/rtx3060/summary.json",
+      "bytes": 2500,
+      "sha256": "700684fe91318b23c59689e2d1f8e9112d7365f2f5010c0953751f2574d1ac2f"
+    },
+    {
+      "path": "m2-g2-v2/rtx3060/validation-finalists-genes.npz",
+      "bytes": 819,
+      "sha256": "b299335e3b25fd46995bd24dbc04fb59f7b467d00c9436fb1ba1bdbed5b8170f"
+    },
+    {
+      "path": "m2-g2-v2/rtx3070/backend-settings.json",
+      "bytes": 1272,
+      "sha256": "ff8f4292359662c765969311600e5aa9a782e536fc176d0f0eaadfb3f1d0638f"
+    },
+    {
+      "path": "m2-g2-v2/rtx3070/champion-genes.npz",
+      "bytes": 496,
+      "sha256": "8ee34020d4b1659b4b2acb50c02ba6d52e6ef29aedeb1a5622b29382b7a67ceb"
+    },
+    {
+      "path": "m2-g2-v2/rtx3070/champion.npz",
+      "bytes": 3713,
+      "sha256": "c74cbafc39608c709db26431cc62ead80efb2aa0f68a4286a2b2cf21ace08747"
+    },
+    {
+      "path": "m2-g2-v2/rtx3070/checkpoint.bin",
+      "bytes": 345381,
+      "sha256": "df63be9581e3e34b07169302d0f62afc09fe045ccffbf10504b03dc5d3e622fa"
+    },
+    {
+      "path": "m2-g2-v2/rtx3070/decoder.json",
+      "bytes": 1159,
+      "sha256": "73b4deedd2498476c28dc4b5a8d15bc24e4562e919b25152b01dd1449ed89839"
+    },
+    {
+      "path": "m2-g2-v2/rtx3070/evaluated-winner-genes.npz",
+      "bytes": 496,
+      "sha256": "8ee34020d4b1659b4b2acb50c02ba6d52e6ef29aedeb1a5622b29382b7a67ceb"
+    },
+    {
+      "path": "m2-g2-v2/rtx3070/evaluated-winner.npz",
+      "bytes": 3727,
+      "sha256": "949df5e1b365145db7bef3d41e6db2981aa0103b4c8990952977824428ccc6bb"
+    },
+    {
+      "path": "m2-g2-v2/rtx3070/g2-result.json",
+      "bytes": 4515,
+      "sha256": "c9c6ca8e59d6df547f49a6cd8230ef43a28a1f11338ba752624b601b521c4d3a"
+    },
+    {
+      "path": "m2-g2-v2/rtx3070/history.json",
+      "bytes": 107396,
+      "sha256": "1b3bf61a882d85e3a4bc86f060dd39ed1cee6a027752a68ecfabcfacd2ee647c"
+    },
+    {
+      "path": "m2-g2-v2/rtx3070/manifest.json",
+      "bytes": 3570,
+      "sha256": "8ebf3c58d72600a3f2b7ea83c2ddf06a1e0b5a745b49654f6ca592c4de5a33e2"
+    },
+    {
+      "path": "m2-g2-v2/rtx3070/runtime.json",
+      "bytes": 317,
+      "sha256": "93b40ea5e75e7b0df6836f429a156ef632c3cf77cc5351a6d33c0cc9f02d34da"
+    },
+    {
+      "path": "m2-g2-v2/rtx3070/selection.json",
+      "bytes": 1174,
+      "sha256": "463ca2fa2dd9c7178ec1993ac06e00767c1933ac64b4103685f414923a4524c0"
+    },
+    {
+      "path": "m2-g2-v2/rtx3070/summary.json",
+      "bytes": 2500,
+      "sha256": "566c8f00597f5cf677ffa82c5884385d43428fa6c4d14b5ebb8c96db399c3a36"
+    },
+    {
+      "path": "m2-g2-v2/rtx3070/validation-finalists-genes.npz",
+      "bytes": 819,
+      "sha256": "b299335e3b25fd46995bd24dbc04fb59f7b467d00c9436fb1ba1bdbed5b8170f"
+    },
+    {
+      "path": "m2-g3-telemetry/rtx3060/history.json",
+      "bytes": 1884,
+      "sha256": "74f9ae7dd6aa4000db494f39bf72635cb0a7d0417fda011fb29561f29d3be18e"
+    },
+    {
+      "path": "m2-g3-telemetry/rtx3060/manifest.json",
+      "bytes": 3952,
+      "sha256": "5ebd0c817de919ea7ea86c5f588c635011cfe1ffb61e3b50455b50c5121d8d3d"
+    },
+    {
+      "path": "m2-g3-telemetry/rtx3060/result.json",
+      "bytes": 4523,
+      "sha256": "21014528c086c2dc57848d726a19bb8948a8aa31b1d9b83154661b00673e0677"
+    },
+    {
+      "path": "m2-g3-telemetry/rtx3060/runtime.json",
+      "bytes": 211,
+      "sha256": "89a03fe3800894ecdb0a4550663b83c642b741b4ccbe1f4d6b2eddcb4c2b5554"
+    },
+    {
+      "path": "m2-g3-telemetry/rtx3070/history.json",
+      "bytes": 1888,
+      "sha256": "7def88e11d4f1629a7aefc11a986acea20c83d6e65476c3ebe494fdbf6de2780"
+    },
+    {
+      "path": "m2-g3-telemetry/rtx3070/manifest.json",
+      "bytes": 3951,
+      "sha256": "a47faf805ebdfd909196341f75bac0b2d703fd10535087c5cab79727fd538f29"
+    },
+    {
+      "path": "m2-g3-telemetry/rtx3070/result.json",
+      "bytes": 4526,
+      "sha256": "5fce3af3dba0f33dc7f745bc2e9948859c182035fc05da147fe1f9caab54b033"
+    },
+    {
+      "path": "m2-g3-telemetry/rtx3070/runtime.json",
+      "bytes": 211,
+      "sha256": "89a03fe3800894ecdb0a4550663b83c642b741b4ccbe1f4d6b2eddcb4c2b5554"
+    },
+    {
+      "path": "m2-g4-v1/rtx3070-controller-0/experiment.json",
+      "bytes": 5755,
+      "sha256": "1230444e968e88d852930ebff92fc01e96a0ac95a0e515e04c245e3c9383228f"
+    },
+    {
+      "path": "m2-g4-v1/rtx3070-controller-0/seed-900/backend-settings.json",
+      "bytes": 1272,
+      "sha256": "ff8f4292359662c765969311600e5aa9a782e536fc176d0f0eaadfb3f1d0638f"
+    },
+    {
+      "path": "m2-g4-v1/rtx3070-controller-0/seed-900/champion-genes.npz",
+      "bytes": 492,
+      "sha256": "9acc8e0d1b1f05cc9c22228de26874000aeab9cd599a71aee7c66f6d0f5f8af6"
+    },
+    {
+      "path": "m2-g4-v1/rtx3070-controller-0/seed-900/champion.npz",
+      "bytes": 4190,
+      "sha256": "32be87f8c11bab0b48b7509ea81c32e58ba03164b812c0b6ba9eb87a93f41689"
+    },
+    {
+      "path": "m2-g4-v1/rtx3070-controller-0/seed-900/checkpoint.bin",
+      "bytes": 311047,
+      "sha256": "3ff86dadfc935454415d50a73db9bc102ccb4ef3a39aed762a0386f3ec6e4c2e"
+    },
+    {
+      "path": "m2-g4-v1/rtx3070-controller-0/seed-900/decoder.json",
+      "bytes": 1463,
+      "sha256": "e731285a1cedabf23bee9a22da28233744cfa604ef0f6316754502ec1c7a1a19"
+    },
+    {
+      "path": "m2-g4-v1/rtx3070-controller-0/seed-900/environment.json",
+      "bytes": 263,
+      "sha256": "803be92ea41d4c494b12a6be8702436b7c9d34d3674869dc8e8e43801b8df321"
+    },
+    {
+      "path": "m2-g4-v1/rtx3070-controller-0/seed-900/evaluated-winner-genes.npz",
+      "bytes": 492,
+      "sha256": "9acc8e0d1b1f05cc9c22228de26874000aeab9cd599a71aee7c66f6d0f5f8af6"
+    },
+    {
+      "path": "m2-g4-v1/rtx3070-controller-0/seed-900/evaluated-winner.npz",
+      "bytes": 4207,
+      "sha256": "b2f43674dfcf6938f8bb0023298be20e2e4cf028e9f4e52dfbff657f7278a9d1"
+    },
+    {
+      "path": "m2-g4-v1/rtx3070-controller-0/seed-900/history.json",
+      "bytes": 12182,
+      "sha256": "4f07d1b20b9afee36f5a41c8df7dc0c4177530a0972fd1a0478531d7ef73c517"
+    },
+    {
+      "path": "m2-g4-v1/rtx3070-controller-0/seed-900/manifest.json",
+      "bytes": 3452,
+      "sha256": "f7b3a23c822231ba357ef03aaf9080d8e1c2ffd85ba10f6e41f6f1acdf3f8d57"
+    },
+    {
+      "path": "m2-g4-v1/rtx3070-controller-0/seed-900/runtime.json",
+      "bytes": 317,
+      "sha256": "93b40ea5e75e7b0df6836f429a156ef632c3cf77cc5351a6d33c0cc9f02d34da"
+    },
+    {
+      "path": "m2-g4-v1/rtx3070-controller-0/seed-900/selection.json",
+      "bytes": 923,
+      "sha256": "65a88587ec1ebf554391f2408169b290bb101b9336f02a73f505dc18a00c6906"
+    },
+    {
+      "path": "m2-g4-v1/rtx3070-controller-0/seed-900/summary.json",
+      "bytes": 2498,
+      "sha256": "ac2e8860c8ea0cf27dee607810aed0e79d50e9cad34c3f5cbb1c1734c7369f95"
+    },
+    {
+      "path": "m2-g4-v1/rtx3070-controller-0/seed-900/validation-finalists-genes.npz",
+      "bytes": 744,
+      "sha256": "80653c575707854697d859a435729feb0cf1c357f330afb16b0ea22fac5d30fd"
+    },
+    {
+      "path": "m2-g4-v1/rtx3070-controller-1/experiment.json",
+      "bytes": 5755,
+      "sha256": "ba271f81d4a830c163b7dee9f028aa56edcb4b01532930bc4336d160b1c25e6d"
+    },
+    {
+      "path": "m2-g4-v1/rtx3070-controller-1/seed-900/backend-settings.json",
+      "bytes": 1272,
+      "sha256": "ff8f4292359662c765969311600e5aa9a782e536fc176d0f0eaadfb3f1d0638f"
+    },
+    {
+      "path": "m2-g4-v1/rtx3070-controller-1/seed-900/champion-genes.npz",
+      "bytes": 492,
+      "sha256": "9acc8e0d1b1f05cc9c22228de26874000aeab9cd599a71aee7c66f6d0f5f8af6"
+    },
+    {
+      "path": "m2-g4-v1/rtx3070-controller-1/seed-900/champion.npz",
+      "bytes": 4190,
+      "sha256": "32be87f8c11bab0b48b7509ea81c32e58ba03164b812c0b6ba9eb87a93f41689"
+    },
+    {
+      "path": "m2-g4-v1/rtx3070-controller-1/seed-900/checkpoint.bin",
+      "bytes": 311047,
+      "sha256": "3adc7f961e0c3f729c9908490a5e25088693cb1f62d773353d28d011e239d2cb"
+    },
+    {
+      "path": "m2-g4-v1/rtx3070-controller-1/seed-900/decoder.json",
+      "bytes": 1463,
+      "sha256": "e731285a1cedabf23bee9a22da28233744cfa604ef0f6316754502ec1c7a1a19"
+    },
+    {
+      "path": "m2-g4-v1/rtx3070-controller-1/seed-900/environment.json",
+      "bytes": 263,
+      "sha256": "803be92ea41d4c494b12a6be8702436b7c9d34d3674869dc8e8e43801b8df321"
+    },
+    {
+      "path": "m2-g4-v1/rtx3070-controller-1/seed-900/evaluated-winner-genes.npz",
+      "bytes": 492,
+      "sha256": "9acc8e0d1b1f05cc9c22228de26874000aeab9cd599a71aee7c66f6d0f5f8af6"
+    },
+    {
+      "path": "m2-g4-v1/rtx3070-controller-1/seed-900/evaluated-winner.npz",
+      "bytes": 4207,
+      "sha256": "b2f43674dfcf6938f8bb0023298be20e2e4cf028e9f4e52dfbff657f7278a9d1"
+    },
+    {
+      "path": "m2-g4-v1/rtx3070-controller-1/seed-900/history.json",
+      "bytes": 12187,
+      "sha256": "ac1cbfdf24a2041d526fe61620a0fa41f54d6286ec69dc00b49078a4853e6fa2"
+    },
+    {
+      "path": "m2-g4-v1/rtx3070-controller-1/seed-900/manifest.json",
+      "bytes": 3452,
+      "sha256": "f7b3a23c822231ba357ef03aaf9080d8e1c2ffd85ba10f6e41f6f1acdf3f8d57"
+    },
+    {
+      "path": "m2-g4-v1/rtx3070-controller-1/seed-900/runtime.json",
+      "bytes": 317,
+      "sha256": "93b40ea5e75e7b0df6836f429a156ef632c3cf77cc5351a6d33c0cc9f02d34da"
+    },
+    {
+      "path": "m2-g4-v1/rtx3070-controller-1/seed-900/selection.json",
+      "bytes": 923,
+      "sha256": "65a88587ec1ebf554391f2408169b290bb101b9336f02a73f505dc18a00c6906"
+    },
+    {
+      "path": "m2-g4-v1/rtx3070-controller-1/seed-900/summary.json",
+      "bytes": 2498,
+      "sha256": "6bceeb4cf63c1dafbbec3e9de21991f37f3054001edaece62f9aac084f3e90ce"
+    },
+    {
+      "path": "m2-g4-v1/rtx3070-controller-1/seed-900/validation-finalists-genes.npz",
+      "bytes": 744,
+      "sha256": "80653c575707854697d859a435729feb0cf1c357f330afb16b0ea22fac5d30fd"
+    },
+    {
+      "path": "m2-g4-v1/rtx3070-controller-2/experiment.json",
+      "bytes": 5755,
+      "sha256": "53cc006555c47091aac0ae0e7dd26c45e7db7988edab06fe89ca30179137a5e1"
+    },
+    {
+      "path": "m2-g4-v1/rtx3070-controller-2/seed-900/backend-settings.json",
+      "bytes": 1272,
+      "sha256": "ff8f4292359662c765969311600e5aa9a782e536fc176d0f0eaadfb3f1d0638f"
+    },
+    {
+      "path": "m2-g4-v1/rtx3070-controller-2/seed-900/champion-genes.npz",
+      "bytes": 492,
+      "sha256": "9acc8e0d1b1f05cc9c22228de26874000aeab9cd599a71aee7c66f6d0f5f8af6"
+    },
+    {
+      "path": "m2-g4-v1/rtx3070-controller-2/seed-900/champion.npz",
+      "bytes": 4190,
+      "sha256": "32be87f8c11bab0b48b7509ea81c32e58ba03164b812c0b6ba9eb87a93f41689"
+    },
+    {
+      "path": "m2-g4-v1/rtx3070-controller-2/seed-900/checkpoint.bin",
+      "bytes": 311047,
+      "sha256": "689de2d46d33adbb5421b0d210c1a0b904ca60da62a25da0ff5b5a60330ab6a3"
+    },
+    {
+      "path": "m2-g4-v1/rtx3070-controller-2/seed-900/decoder.json",
+      "bytes": 1463,
+      "sha256": "e731285a1cedabf23bee9a22da28233744cfa604ef0f6316754502ec1c7a1a19"
+    },
+    {
+      "path": "m2-g4-v1/rtx3070-controller-2/seed-900/environment.json",
+      "bytes": 263,
+      "sha256": "803be92ea41d4c494b12a6be8702436b7c9d34d3674869dc8e8e43801b8df321"
+    },
+    {
+      "path": "m2-g4-v1/rtx3070-controller-2/seed-900/evaluated-winner-genes.npz",
+      "bytes": 492,
+      "sha256": "9acc8e0d1b1f05cc9c22228de26874000aeab9cd599a71aee7c66f6d0f5f8af6"
+    },
+    {
+      "path": "m2-g4-v1/rtx3070-controller-2/seed-900/evaluated-winner.npz",
+      "bytes": 4207,
+      "sha256": "b2f43674dfcf6938f8bb0023298be20e2e4cf028e9f4e52dfbff657f7278a9d1"
+    },
+    {
+      "path": "m2-g4-v1/rtx3070-controller-2/seed-900/history.json",
+      "bytes": 12186,
+      "sha256": "afd4bae275351e9a60e7f286777b1c9557226d6e64f6cf4464885c7dded554e6"
+    },
+    {
+      "path": "m2-g4-v1/rtx3070-controller-2/seed-900/manifest.json",
+      "bytes": 3452,
+      "sha256": "f7b3a23c822231ba357ef03aaf9080d8e1c2ffd85ba10f6e41f6f1acdf3f8d57"
+    },
+    {
+      "path": "m2-g4-v1/rtx3070-controller-2/seed-900/runtime.json",
+      "bytes": 317,
+      "sha256": "93b40ea5e75e7b0df6836f429a156ef632c3cf77cc5351a6d33c0cc9f02d34da"
+    },
+    {
+      "path": "m2-g4-v1/rtx3070-controller-2/seed-900/selection.json",
+      "bytes": 923,
+      "sha256": "65a88587ec1ebf554391f2408169b290bb101b9336f02a73f505dc18a00c6906"
+    },
+    {
+      "path": "m2-g4-v1/rtx3070-controller-2/seed-900/summary.json",
+      "bytes": 2498,
+      "sha256": "b07f0b15e076d487ef77d00e591bb84f02f8eebc24d25fe7341f3a71d624dfa1"
+    },
+    {
+      "path": "m2-g4-v1/rtx3070-controller-2/seed-900/validation-finalists-genes.npz",
+      "bytes": 744,
+      "sha256": "80653c575707854697d859a435729feb0cf1c357f330afb16b0ea22fac5d30fd"
+    },
+    {
+      "path": "m2-g4-v1/rtx3070-driver-0/checkpoint.bin",
+      "bytes": 311047,
+      "sha256": "a664e0ebe429bb44def16ffa4f8020b6accb22e76845340a2e5df8f3610da272"
+    },
+    {
+      "path": "m2-g4-v1/rtx3070-driver-0/evaluated-winner-genes.npz",
+      "bytes": 492,
+      "sha256": "9acc8e0d1b1f05cc9c22228de26874000aeab9cd599a71aee7c66f6d0f5f8af6"
+    },
+    {
+      "path": "m2-g4-v1/rtx3070-driver-0/evaluated-winner.npz",
+      "bytes": 4207,
+      "sha256": "b2f43674dfcf6938f8bb0023298be20e2e4cf028e9f4e52dfbff657f7278a9d1"
+    },
+    {
+      "path": "m2-g4-v1/rtx3070-driver-0/history.json",
+      "bytes": 12171,
+      "sha256": "7ff21f90563ac58e434b1a0e24678469a8441047e5e9e718631a5314164f4710"
+    },
+    {
+      "path": "m2-g4-v1/rtx3070-driver-0/manifest.json",
+      "bytes": 3452,
+      "sha256": "f7b3a23c822231ba357ef03aaf9080d8e1c2ffd85ba10f6e41f6f1acdf3f8d57"
+    },
+    {
+      "path": "m2-g4-v1/rtx3070-driver-0/result.json",
+      "bytes": 2671,
+      "sha256": "e7bcc5bf88c554b61033672b88524b52cb941836756fcf7b21aa29d3bf39f54d"
+    },
+    {
+      "path": "m2-g4-v1/rtx3070-driver-1/checkpoint.bin",
+      "bytes": 311047,
+      "sha256": "45a5bc1c285f00d30e5554328e1bf404f9c93c8e87ee8281d12d7b417582aa3c"
+    },
+    {
+      "path": "m2-g4-v1/rtx3070-driver-1/evaluated-winner-genes.npz",
+      "bytes": 492,
+      "sha256": "9acc8e0d1b1f05cc9c22228de26874000aeab9cd599a71aee7c66f6d0f5f8af6"
+    },
+    {
+      "path": "m2-g4-v1/rtx3070-driver-1/evaluated-winner.npz",
+      "bytes": 4207,
+      "sha256": "b2f43674dfcf6938f8bb0023298be20e2e4cf028e9f4e52dfbff657f7278a9d1"
+    },
+    {
+      "path": "m2-g4-v1/rtx3070-driver-1/history.json",
+      "bytes": 12170,
+      "sha256": "f2872c1dc4a7f9424b8ce478838671b39b6a392081bb42915a4c0297f8c892e3"
+    },
+    {
+      "path": "m2-g4-v1/rtx3070-driver-1/manifest.json",
+      "bytes": 3452,
+      "sha256": "f7b3a23c822231ba357ef03aaf9080d8e1c2ffd85ba10f6e41f6f1acdf3f8d57"
+    },
+    {
+      "path": "m2-g4-v1/rtx3070-driver-1/result.json",
+      "bytes": 2671,
+      "sha256": "a01ee13dd8a9f333a74b49f214482c03a9da218df2d96aa45dff97fd2d533bcb"
+    },
+    {
+      "path": "m2-g4-v1/rtx3070-driver-2/checkpoint.bin",
+      "bytes": 311047,
+      "sha256": "68f16a14cf717058e5dee4088ffb1e2c90e4ed3b1137feec54ce7026582fe3a4"
+    },
+    {
+      "path": "m2-g4-v1/rtx3070-driver-2/evaluated-winner-genes.npz",
+      "bytes": 492,
+      "sha256": "9acc8e0d1b1f05cc9c22228de26874000aeab9cd599a71aee7c66f6d0f5f8af6"
+    },
+    {
+      "path": "m2-g4-v1/rtx3070-driver-2/evaluated-winner.npz",
+      "bytes": 4207,
+      "sha256": "b2f43674dfcf6938f8bb0023298be20e2e4cf028e9f4e52dfbff657f7278a9d1"
+    },
+    {
+      "path": "m2-g4-v1/rtx3070-driver-2/history.json",
+      "bytes": 12173,
+      "sha256": "6acab42a4988f1b28d044664892eae4e24f6e6d0557aaa4888172ddd03b70833"
+    },
+    {
+      "path": "m2-g4-v1/rtx3070-driver-2/manifest.json",
+      "bytes": 3452,
+      "sha256": "f7b3a23c822231ba357ef03aaf9080d8e1c2ffd85ba10f6e41f6f1acdf3f8d57"
+    },
+    {
+      "path": "m2-g4-v1/rtx3070-driver-2/result.json",
+      "bytes": 2671,
+      "sha256": "32f3db1306dbea8cefecc04921509e56b1aa7e914a7926f101f0860c349f8432"
+    },
+    {
+      "path": "m2-g5-slab-probe-v1/cpu.json",
+      "bytes": 2532,
+      "sha256": "c7293c188773118be2e1f702b0e1dd94e1502b498ac476bd2aef76cb75b3f59f"
+    },
+    {
+      "path": "m2-g5-slab-probe-v1/rtx3070.json",
+      "bytes": 2643,
+      "sha256": "17405e74b48e257aff1c1c9074bd3b66808d619fe4b747a32412c539ee6309e1"
+    },
+    {
+      "path": "m2-g5-v1/cpu-9100/history.json",
+      "bytes": 1224,
+      "sha256": "6d03154dc958a584ac81f9f6e0c93d36fbf0b1bed2ac239824a0176e872c7271"
+    },
+    {
+      "path": "m2-g5-v1/cpu-9100/manifest.json",
+      "bytes": 3616,
+      "sha256": "720bb6e7f2c83a9765b0772f88e12a61782a2a242f05aed2e790ff03d89556fe"
+    },
+    {
+      "path": "m2-g5-v1/cpu-9100/result.json",
+      "bytes": 3419,
+      "sha256": "2862df976f94b8d010f84214b7650633b22078f87ea1e4c1758701db1089fc89"
+    },
+    {
+      "path": "m2-g5-v1/cpu-9100/runtime.json",
+      "bytes": 211,
+      "sha256": "89a03fe3800894ecdb0a4550663b83c642b741b4ccbe1f4d6b2eddcb4c2b5554"
+    },
+    {
+      "path": "m2-g5-v1/cpu-9101/history.json",
+      "bytes": 1227,
+      "sha256": "61ba14c76ebfa7e28c13f0a0259869ecb5a1269f9dad44550df62603731c347a"
+    },
+    {
+      "path": "m2-g5-v1/cpu-9101/manifest.json",
+      "bytes": 3616,
+      "sha256": "deca0e4f15d8d72f0717e096a05591bb191e7b0acc03d1f1c748c2e5c3a0bf07"
+    },
+    {
+      "path": "m2-g5-v1/cpu-9101/result.json",
+      "bytes": 3422,
+      "sha256": "a99d3e13baf00c72c9ceb76bad15a2c2992abdd29a97e038f8a864752bb1075d"
+    },
+    {
+      "path": "m2-g5-v1/cpu-9101/runtime.json",
+      "bytes": 211,
+      "sha256": "89a03fe3800894ecdb0a4550663b83c642b741b4ccbe1f4d6b2eddcb4c2b5554"
+    },
+    {
+      "path": "m2-g5-v1/cpu-9102/history.json",
+      "bytes": 1224,
+      "sha256": "8246c2c58425b5e270d39e58063a0c48809d318763d006c85d9faae42476c901"
+    },
+    {
+      "path": "m2-g5-v1/cpu-9102/manifest.json",
+      "bytes": 3616,
+      "sha256": "f285c5c88d563dbc9fc3136e4e5d8061b97586ba9bf719790f5fafb51f62baf6"
+    },
+    {
+      "path": "m2-g5-v1/cpu-9102/result.json",
+      "bytes": 3419,
+      "sha256": "cc4c20b277952f955ae7e44d0f3b34252b44a05908c157ac67d36bf9649c87da"
+    },
+    {
+      "path": "m2-g5-v1/cpu-9102/runtime.json",
+      "bytes": 211,
+      "sha256": "89a03fe3800894ecdb0a4550663b83c642b741b4ccbe1f4d6b2eddcb4c2b5554"
+    },
+    {
+      "path": "m2-g5-v1/rtx3070-9100/history.json",
+      "bytes": 1888,
+      "sha256": "9016ff7934183952ec07a7089adc1d9f97360b5e26d95cd69abecc8fed49364b"
+    },
+    {
+      "path": "m2-g5-v1/rtx3070-9100/manifest.json",
+      "bytes": 3727,
+      "sha256": "aa2fada844fa55acd27ac5a187f74465b02bf62f90e178cbb4a8f7d2c6c10a5e"
+    },
+    {
+      "path": "m2-g5-v1/rtx3070-9100/result.json",
+      "bytes": 4527,
+      "sha256": "b250283c2754d24c5bc26e2cc284de20aa130ac8017657229fa93bdd7604cf1b"
+    },
+    {
+      "path": "m2-g5-v1/rtx3070-9100/runtime.json",
+      "bytes": 211,
+      "sha256": "89a03fe3800894ecdb0a4550663b83c642b741b4ccbe1f4d6b2eddcb4c2b5554"
+    },
+    {
+      "path": "m2-g5-v1/rtx3070-9101/history.json",
+      "bytes": 1888,
+      "sha256": "49cdc4f467930541936d18e6db3565a295b7928e482a36d22a522273975fb766"
+    },
+    {
+      "path": "m2-g5-v1/rtx3070-9101/manifest.json",
+      "bytes": 3727,
+      "sha256": "aa78dd13a55e7384bb83957b9074957081edaa85e1bdc65a8fc6f58f54fa88f6"
+    },
+    {
+      "path": "m2-g5-v1/rtx3070-9101/result.json",
+      "bytes": 4527,
+      "sha256": "08f3e04e681fed0683b9311e3590dce72bbbdbe38149e495ce381fba7d53995f"
+    },
+    {
+      "path": "m2-g5-v1/rtx3070-9101/runtime.json",
+      "bytes": 211,
+      "sha256": "89a03fe3800894ecdb0a4550663b83c642b741b4ccbe1f4d6b2eddcb4c2b5554"
+    },
+    {
+      "path": "m2-g5-v1/rtx3070-9102/history.json",
+      "bytes": 1888,
+      "sha256": "d28433722cb68e2eb92582f20473ed831e34de7fd3e9763aa22cbfdb84aed3d2"
+    },
+    {
+      "path": "m2-g5-v1/rtx3070-9102/manifest.json",
+      "bytes": 3727,
+      "sha256": "6dee460c87a57f68297e7c5b2070e05e82ec070235d3a63c095c9edb5849bf69"
+    },
+    {
+      "path": "m2-g5-v1/rtx3070-9102/result.json",
+      "bytes": 4527,
+      "sha256": "557610f813c2684885b07e1790b586fc6f66065a6141687e4d620aba0c06ec03"
+    },
+    {
+      "path": "m2-g5-v1/rtx3070-9102/runtime.json",
+      "bytes": 211,
+      "sha256": "89a03fe3800894ecdb0a4550663b83c642b741b4ccbe1f4d6b2eddcb4c2b5554"
+    },
+    {
+      "path": "m2-g5-v2/cpu-9100/history.json",
+      "bytes": 1224,
+      "sha256": "d1373b281e1f93fd855bb47de149ca5ca705369a5b9fc7d902e2e9fdcca5a6b8"
+    },
+    {
+      "path": "m2-g5-v2/cpu-9100/manifest.json",
+      "bytes": 3840,
+      "sha256": "96f9e7decba23b777ed85c4ea27ef3664f094280db26e2260af8bdac13b57d63"
+    },
+    {
+      "path": "m2-g5-v2/cpu-9100/result.json",
+      "bytes": 3419,
+      "sha256": "68d0993fddb88992a9ffc8d62a125df63a084a87ecb70c21a9ae0400f508c74f"
+    },
+    {
+      "path": "m2-g5-v2/cpu-9100/runtime.json",
+      "bytes": 211,
+      "sha256": "89a03fe3800894ecdb0a4550663b83c642b741b4ccbe1f4d6b2eddcb4c2b5554"
+    },
+    {
+      "path": "m2-g5-v2/cpu-9101/history.json",
+      "bytes": 1228,
+      "sha256": "587868d69745062a1994e656ee22e5aef4a68e05aa3e1926c4cfd68e14267e69"
+    },
+    {
+      "path": "m2-g5-v2/cpu-9101/manifest.json",
+      "bytes": 3840,
+      "sha256": "78664a68d9433e43ac004ac00966561fe263d206c1e7606382a10416b946f30b"
+    },
+    {
+      "path": "m2-g5-v2/cpu-9101/result.json",
+      "bytes": 3423,
+      "sha256": "f89557667eadf3da66662aab449115be6fc5f2335872c4ae89eb43a1ae38e83f"
+    },
+    {
+      "path": "m2-g5-v2/cpu-9101/runtime.json",
+      "bytes": 211,
+      "sha256": "89a03fe3800894ecdb0a4550663b83c642b741b4ccbe1f4d6b2eddcb4c2b5554"
+    },
+    {
+      "path": "m2-g5-v2/cpu-9102/history.json",
+      "bytes": 1225,
+      "sha256": "4bcdd1750a63e3a7f95f693a3fd067b2b1ad869a2dc5c987a19f00bbeeaa3d01"
+    },
+    {
+      "path": "m2-g5-v2/cpu-9102/manifest.json",
+      "bytes": 3840,
+      "sha256": "89ad592a0285996b3ea058b802f8d5c5d94b1793b870393bc4588a1d5e2a6756"
+    },
+    {
+      "path": "m2-g5-v2/cpu-9102/result.json",
+      "bytes": 3420,
+      "sha256": "d22a61bbc42442c3c75931c9af8ebcee4fb7d48210c5705333de2ea4252f9be8"
+    },
+    {
+      "path": "m2-g5-v2/cpu-9102/runtime.json",
+      "bytes": 211,
+      "sha256": "89a03fe3800894ecdb0a4550663b83c642b741b4ccbe1f4d6b2eddcb4c2b5554"
+    },
+    {
+      "path": "m2-g5-v2/rtx3060-9100/history.json",
+      "bytes": 1887,
+      "sha256": "0020ae79f42b20849840be2e1527ebbab28cd6fe7b1566e2b11a09f21244b08f"
+    },
+    {
+      "path": "m2-g5-v2/rtx3060-9100/manifest.json",
+      "bytes": 3952,
+      "sha256": "5ebd0c817de919ea7ea86c5f588c635011cfe1ffb61e3b50455b50c5121d8d3d"
+    },
+    {
+      "path": "m2-g5-v2/rtx3060-9100/result.json",
+      "bytes": 4526,
+      "sha256": "09767e053f255c5443ff3ebb8230ba698b6e041ef9f342440e7dc05e4c8a0156"
+    },
+    {
+      "path": "m2-g5-v2/rtx3060-9100/runtime.json",
+      "bytes": 211,
+      "sha256": "89a03fe3800894ecdb0a4550663b83c642b741b4ccbe1f4d6b2eddcb4c2b5554"
+    },
+    {
+      "path": "m2-g5-v2/rtx3060-9101/history.json",
+      "bytes": 1892,
+      "sha256": "ac5132d25ccd00e10dca887df00982d88354b0b0c31cafc0c73953d95f318ef3"
+    },
+    {
+      "path": "m2-g5-v2/rtx3060-9101/manifest.json",
+      "bytes": 3952,
+      "sha256": "f3c8911dc9554607a11ea78c31fdded23c4c646127fa4549caca0d04e20f8c7b"
+    },
+    {
+      "path": "m2-g5-v2/rtx3060-9101/result.json",
+      "bytes": 4531,
+      "sha256": "3cdb0995878cae1fc70b2c7400e149df357afc94a752619f582c82c800817c2d"
+    },
+    {
+      "path": "m2-g5-v2/rtx3060-9101/runtime.json",
+      "bytes": 211,
+      "sha256": "89a03fe3800894ecdb0a4550663b83c642b741b4ccbe1f4d6b2eddcb4c2b5554"
+    },
+    {
+      "path": "m2-g5-v2/rtx3060-9102/history.json",
+      "bytes": 1890,
+      "sha256": "eed3fb11f05894056c5ba6f407045490767f46459e2f3a098428820b40e161c5"
+    },
+    {
+      "path": "m2-g5-v2/rtx3060-9102/manifest.json",
+      "bytes": 3952,
+      "sha256": "b5efc1cab369785ed1692fe4c1efaa51385ebbf3902ffedddea599c0342a2176"
+    },
+    {
+      "path": "m2-g5-v2/rtx3060-9102/result.json",
+      "bytes": 4529,
+      "sha256": "c3c87b10eb0d48a583c0230545af1823c5f9dccca7801491aa74f2f27add060c"
+    },
+    {
+      "path": "m2-g5-v2/rtx3060-9102/runtime.json",
+      "bytes": 211,
+      "sha256": "89a03fe3800894ecdb0a4550663b83c642b741b4ccbe1f4d6b2eddcb4c2b5554"
+    },
+    {
+      "path": "m2-g5-v2/rtx3070-9100/history.json",
+      "bytes": 1889,
+      "sha256": "6976aefd0c6758b98daacd579f3f0d97702281c1aaa080186ff7d5eecbc93a07"
+    },
+    {
+      "path": "m2-g5-v2/rtx3070-9100/manifest.json",
+      "bytes": 3951,
+      "sha256": "a47faf805ebdfd909196341f75bac0b2d703fd10535087c5cab79727fd538f29"
+    },
+    {
+      "path": "m2-g5-v2/rtx3070-9100/result.json",
+      "bytes": 4527,
+      "sha256": "b668089670faa24314ed11d5b4e74c7ca726db645051e4413cc98832de414423"
+    },
+    {
+      "path": "m2-g5-v2/rtx3070-9100/runtime.json",
+      "bytes": 211,
+      "sha256": "89a03fe3800894ecdb0a4550663b83c642b741b4ccbe1f4d6b2eddcb4c2b5554"
+    },
+    {
+      "path": "m2-g5-v2/rtx3070-9101/history.json",
+      "bytes": 1890,
+      "sha256": "cf67672d02adfe2425ea56d3e226963a6339f24988efeba0cc125b695821261b"
+    },
+    {
+      "path": "m2-g5-v2/rtx3070-9101/manifest.json",
+      "bytes": 3951,
+      "sha256": "dcbcdcc12ff6ed5a21fc3a38ea378e2059aa517a81069715778411027de25ce7"
+    },
+    {
+      "path": "m2-g5-v2/rtx3070-9101/result.json",
+      "bytes": 4528,
+      "sha256": "2c927dd1198ebc9f2b169aceb05e1120bda7fa886b9b19ac0713e7e24ce69439"
+    },
+    {
+      "path": "m2-g5-v2/rtx3070-9101/runtime.json",
+      "bytes": 211,
+      "sha256": "89a03fe3800894ecdb0a4550663b83c642b741b4ccbe1f4d6b2eddcb4c2b5554"
+    },
+    {
+      "path": "m2-g5-v2/rtx3070-9102/history.json",
+      "bytes": 1891,
+      "sha256": "7a9d557226a18f85de0b180963b4b95c0475d3f20aaf615e1183de5a43484f2d"
+    },
+    {
+      "path": "m2-g5-v2/rtx3070-9102/manifest.json",
+      "bytes": 3951,
+      "sha256": "d6eb520b489f80a42bfa57b7f6d7df01d7274f8989a273379bc250810027d55b"
+    },
+    {
+      "path": "m2-g5-v2/rtx3070-9102/result.json",
+      "bytes": 4529,
+      "sha256": "fa0cdbc70fa7175190f520b617ec02afe589043c91bce88cce1c52b14abe82a3"
+    },
+    {
+      "path": "m2-g5-v2/rtx3070-9102/runtime.json",
+      "bytes": 211,
+      "sha256": "89a03fe3800894ecdb0a4550663b83c642b741b4ccbe1f4d6b2eddcb4c2b5554"
+    },
+    {
       "path": "q2-complete/rtx3070-feedforward-700/dataset.npz",
       "bytes": 2048,
       "sha256": "c7c19b545fc787d482a4109758e84926dfe6544f07ad04857b166182c0ecc535"
@@ -12850,6 +13795,16 @@
       "path": "w8-v2/rtx3070.json",
       "bytes": 2915,
       "sha256": "21123cb5b00a309ea540258762efaabfa4506c584d8c45df01b39b09e789c3a3"
+    },
+    {
+      "path": "m2-g3-telemetry/current-vm.jsonl",
+      "bytes": 31943,
+      "sha256": "d2ae853d813b10940d92079546d2ea67891acce3c22226f8886e90bba00bd3c1"
+    },
+    {
+      "path": "m2-g3-telemetry/gpu.csv",
+      "bytes": 40030,
+      "sha256": "459abd267cf734385b3f98ad056b5318819187fe04e4cede18808a9bcfed2e70"
     }
   ]
 }

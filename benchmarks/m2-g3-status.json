@@ -1,0 +1,73 @@
+{
+  "schema": 1,
+  "status": "pass",
+  "scope": "one full monitored 1024-node G5 trial on each GPU; 3-trial allocator/cgroup checks in G5 status",
+  "vm": {
+    "samples": 153,
+    "available_min_bytes": 5713002496,
+    "swap_out_pages_delta": 0,
+    "swap_used_start_bytes": 68997120,
+    "swap_used_end_bytes": 68997120,
+    "no_sustained_swap_growth": true
+  },
+  "profiles": {
+    "rtx3070": {
+      "samples": 155,
+      "physical_used_mib_max": 397,
+      "physical_free_mib_min": 7622,
+      "total_mib": 8192,
+      "allocator_peak_pool_bytes": 241172480,
+      "cgroup_peak_bytes": 1846521856,
+      "cgroup_swap_bytes": 0,
+      "g3_passes": true,
+      "hardware": {
+        "allocator_fraction": 0.6,
+        "backend": "gpu",
+        "development_mount": false,
+        "devices": [
+          "cuda:0"
+        ],
+        "gpu": [
+          "GPU-84389f80-a576-d373-ecb0-92e972e72dfd",
+          "NVIDIA GeForce RTX 3070",
+          "8192",
+          "591.74"
+        ],
+        "image_digest": "sha256:32845385460595ff17cceb65d23502cd0cba108b49c2a4afad7f09330305ddcc",
+        "kernel": "6.6.87.2-microsoft-standard-WSL2",
+        "preallocate": false,
+        "precision": "float32",
+        "python": "3.11.14"
+      }
+    },
+    "rtx3060": {
+      "samples": 155,
+      "physical_used_mib_max": 787,
+      "physical_free_mib_min": 11329,
+      "total_mib": 12288,
+      "allocator_peak_pool_bytes": 241172480,
+      "cgroup_peak_bytes": 1845727232,
+      "cgroup_swap_bytes": 0,
+      "g3_passes": true,
+      "hardware": {
+        "allocator_fraction": 0.6,
+        "backend": "gpu",
+        "development_mount": false,
+        "devices": [
+          "cuda:0"
+        ],
+        "gpu": [
+          "GPU-d7c4073b-c643-21ed-3d64-35a73d3d7a72",
+          "NVIDIA GeForce RTX 3060",
+          "12288",
+          "591.74"
+        ],
+        "image_digest": "sha256:32845385460595ff17cceb65d23502cd0cba108b49c2a4afad7f09330305ddcc",
+        "kernel": "6.6.87.2-microsoft-standard-WSL2",
+        "preallocate": false,
+        "precision": "float32",
+        "python": "3.11.14"
+      }
+    }
+  }
+}

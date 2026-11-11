@@ -1,0 +1,63 @@
+{
+  "schema": 1,
+  "id": "m2-g4-fixed-cartpole-v1",
+  "kind": "diagnostic",
+  "workload": "W3-generation",
+  "task": "cartpole",
+  "seeds": [
+    900
+  ],
+  "generations": 12,
+  "episodes": 8,
+  "horizon": 500,
+  "microbatch": 32,
+  "validation_episodes": 32,
+  "heldout_episodes": 20,
+  "finalists": 8,
+  "target": 450,
+  "required_seeds": 0,
+  "checkpoint_every": 10,
+  "budget_seconds_per_seed": 7200,
+  "budget_status": "G4-three-matched-pairs",
+  "scenario_policy": "generation-specific",
+  "action": "argmax-first-tie",
+  "adapter": {
+    "population": 128,
+    "inputs": 4,
+    "outputs": 1,
+    "nodes": 32,
+    "edges": 128,
+    "profile": "dag",
+    "mutation": {
+      "conn_add": 0.2,
+      "conn_delete": 0.2,
+      "node_add": 0.1,
+      "node_delete": 0.1
+    },
+    "species": {
+      "species_size": 10,
+      "max_stagnation": 15,
+      "species_elitism": 2,
+      "spawn_number_change_rate": 0.5,
+      "genome_elitism": 2,
+      "survival_threshold": 0.1,
+      "min_species_size": 1,
+      "compatibility_threshold": 2.0,
+      "species_number_calculate_by": "rank"
+    }
+  },
+  "method": "fixed-coordinate-CPPN-G4",
+  "protocol_status": "frozen-not-run",
+  "comparison": "controller-versus-minimal-driver-timing-only",
+  "decoder": {
+    "schema": 1,
+    "kind": "fixed-coordinate-v1",
+    "inputs": 4,
+    "hidden": 8,
+    "outputs": 2,
+    "recurrent": true,
+    "threshold": 0.3,
+    "max_weight": 5.0,
+    "query_slab": 4096
+  }
+}

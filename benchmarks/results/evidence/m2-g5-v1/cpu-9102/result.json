@@ -1,0 +1,99 @@
+{
+  "candidate_episode_evaluations": 1024,
+  "config_sha256": "5d931dc9d5a3e0109582cd804c776eeb715f0f677ae2b9932c77a4db58b1433b",
+  "hardware": {
+    "allocator_fraction": 0.0,
+    "backend": "cpu",
+    "development_mount": false,
+    "devices": [
+      "TFRT_CPU_0"
+    ],
+    "gpu": null,
+    "image_digest": "sha256:aaac6211a0bd721bc7f00b1b787fdd455685b0e5a6882de10c34484201cbdf0c",
+    "kernel": "6.6.87.2-microsoft-standard-WSL2",
+    "preallocate": false,
+    "precision": "float32",
+    "python": "3.11.14"
+  },
+  "label": "M2-G5-integrated-one-generation",
+  "measured_generation": {
+    "best_return": 45.5,
+    "cppn_queries_per_candidate": 1043450,
+    "decode_plan_seconds": 24.171859960999427,
+    "device_memory": null,
+    "generation": 1,
+    "median_return": 40.5,
+    "observer_signatures": 2,
+    "query_signatures": 1,
+    "recurrent_edges_max": 1036324,
+    "recurrent_edges_median": 848145.0,
+    "recurrent_edges_min": 151682,
+    "rollout_reduce_seconds": 19.52667855600157,
+    "rollout_signatures": 1,
+    "stagnation_removed": [],
+    "tell_seconds": 1.4199945940017642,
+    "tell_signatures": 2,
+    "total_seconds": 45.118568812999,
+    "valid_candidates": 128
+  },
+  "memory": {
+    "cgroup_current_bytes": 1400709120,
+    "cgroup_peak_bytes": 1536905216,
+    "cgroup_swap_bytes": 0,
+    "device_allocator": null,
+    "process_peak_rss_bytes": 1843601408
+  },
+  "provenance": {
+    "compatibility_lock_sha256": "a11a7696492404e642f411a817893b984511a7f0da0131318d44173b2741c4d9",
+    "engine_sha256": "c01f6ca585f9cd66cac3adf160a0f839a1d939bd99a3f714d8726d6f12a5460d",
+    "lock_sha256": "df89b8faeaefc2cf0a8ad1e723e7b000cbf48496a00b1e2ef0a3bac6fb33bdae",
+    "packages": {
+      "emr-hyperneat": "0.3.0",
+      "gymnax": "0.0.9",
+      "jax": "0.6.1",
+      "jaxlib": "0.6.1",
+      "numpy": "1.26.4",
+      "tensorneat": "0.1.0"
+    },
+    "sources": {
+      "base_image": "python:3.11.14-slim-bookworm@sha256:65a93d69fa75478d554f4ad27c85c1e69fa184956261b4301ebaf6dbb0a3543d",
+      "emr": {
+        "archive_sha256": "2e4e7ec552fd2fb6ebd59e44b8ea89057f9980ef296d4451e22ccb7915bfb59d",
+        "license": "GPL-3.0-or-later (bundled LICENSE)",
+        "sha": "306eb4e67687390bb88131ead6af8bebffa8cee9",
+        "url": "https://github.com/RomainClaret/emr-hyperneat.git"
+      },
+      "schema": 1,
+      "tensorneat": {
+        "archive_sha256": "6776462f279bc6fa2ff9c0bf4adc405732d25681424346c8f5d6f9d7469cda3f",
+        "license": "GPL-3.0-or-later (bundled LICENSE)",
+        "sha": "49c193d546447d5fe2cb4b26f60758d23fc24cb0",
+        "url": "https://github.com/RomainClaret/tensorneat.git"
+      }
+    }
+  },
+  "schema": 1,
+  "script_sha256": "1e9e715d2618c4a8643072f7cfaff30a53a2e7e264e103815e69d10693e86bf4",
+  "seed": 9102,
+  "status": "measured",
+  "warm_generation": {
+    "best_return": 46.25,
+    "cppn_queries_per_candidate": 1043450,
+    "decode_plan_seconds": 24.311735941002553,
+    "device_memory": null,
+    "generation": 0,
+    "median_return": 24.6875,
+    "observer_signatures": 1,
+    "query_signatures": 1,
+    "recurrent_edges_max": 1036324,
+    "recurrent_edges_median": 874517.5,
+    "recurrent_edges_min": 227196,
+    "rollout_reduce_seconds": 20.30036808600198,
+    "rollout_signatures": 1,
+    "stagnation_removed": [],
+    "tell_seconds": 1.9508615279992227,
+    "tell_signatures": 1,
+    "total_seconds": 46.563016759002494,
+    "valid_candidates": 128
+  }
+}

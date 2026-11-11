@@ -1,0 +1,7 @@
+{
+  "schema": 1,
+  "image_digest": "sha256:32845385460595ff17cceb65d23502cd0cba108b49c2a4afad7f09330305ddcc",
+  "engine_sha256": "c01f6ca585f9cd66cac3adf160a0f839a1d939bd99a3f714d8726d6f12a5460d",
+  "script_sha256": "69f3aa750ff93d18552476b38deca52cae519b5fc1cc9f58c1b09efcd0989b46",
+  "config": "configs/m2-g5-fixed-1024-v2.json"
+}

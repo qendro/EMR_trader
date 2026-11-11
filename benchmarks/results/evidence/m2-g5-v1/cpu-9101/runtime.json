@@ -1,0 +1,7 @@
+{
+  "compilation_cache_dir": "/cache/jax-0.6.1",
+  "jit_enabled": true,
+  "matmul_precision": "float32",
+  "measurement": "steady second generation; first generation warms the same signatures",
+  "x64": false
+}

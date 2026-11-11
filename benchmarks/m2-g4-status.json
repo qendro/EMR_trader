@@ -1,0 +1,51 @@
+{
+  "schema": 1,
+  "status": "measured",
+  "profile": "rtx3070",
+  "config_sha256": "1e4df1891cc300000c4e2c5628c79a2d3d48e847fc641953ed908a72223f5351",
+  "pairs": [
+    {
+      "trial": 0,
+      "controller_median_seconds": 1.0755905770020036,
+      "driver_median_seconds": 1.0921559070011426,
+      "controller_range": [
+        1.01395027900071,
+        1.1674833879988
+      ],
+      "driver_range": [
+        1.0182186669990188,
+        1.1862091249968216
+      ]
+    },
+    {
+      "trial": 1,
+      "controller_median_seconds": 1.0703216060064733,
+      "driver_median_seconds": 1.0705280600013793,
+      "controller_range": [
+        1.0167741980039864,
+        1.3110396839983878
+      ],
+      "driver_range": [
+        0.989257307999651,
+        1.2076207370046177
+      ]
+    },
+    {
+      "trial": 2,
+      "controller_median_seconds": 1.05643150099786,
+      "driver_median_seconds": 1.0731437440044829,
+      "controller_range": [
+        0.9983222719965852,
+        1.216473638000025
+      ],
+      "driver_range": [
+        0.9954748969976208,
+        1.2118329649965744
+      ]
+    }
+  ],
+  "controller_median_seconds": 1.0703216060064733,
+  "driver_median_seconds": 1.0731437440044829,
+  "controller_over_driver_ratio": 0.997370214368973,
+  "g4_passes": true
+}

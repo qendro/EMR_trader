@@ -1,0 +1,125 @@
+{
+  "config": {
+    "adapter": {
+      "edges": 128,
+      "inputs": 4,
+      "mutation": {
+        "conn_add": 0.2,
+        "conn_delete": 0.2,
+        "node_add": 0.1,
+        "node_delete": 0.1
+      },
+      "nodes": 32,
+      "outputs": 1,
+      "population": 128,
+      "profile": "dag",
+      "species": {
+        "compatibility_threshold": 2.0,
+        "genome_elitism": 2,
+        "max_stagnation": 15,
+        "min_species_size": 1,
+        "spawn_number_change_rate": 0.5,
+        "species_elitism": 2,
+        "species_number_calculate_by": "rank",
+        "species_size": 10,
+        "survival_threshold": 0.1
+      }
+    },
+    "decoder": {
+      "hidden": 1018,
+      "inputs": 4,
+      "kind": "fixed-coordinate-v1",
+      "max_weight": 5.0,
+      "outputs": 2,
+      "query_slab": 65536,
+      "recurrent": true,
+      "schema": 1,
+      "threshold": 0.3
+    },
+    "gate": {
+      "gating_card": "rtx3070",
+      "gpu_over_cpu_throughput_min": 1.2,
+      "repetitions": 3
+    },
+    "id": "m2-g5-fixed-1024-v2",
+    "kind": "integrated-performance",
+    "metric": "end-to-end second generation includes ask, CPPN decode, graph planning, rollout, reduction and tell; excludes process startup; each trial fresh process",
+    "profiles": [
+      "cpu",
+      "rtx3070",
+      "rtx3060"
+    ],
+    "revision_reason": "v1 integrated G5 failed GPU benefit; exact decoded phenotype parity passed for 4096, 16384 and 65536 slabs; choose 65536 from CPU/RTX3070 timing, independently validate RTX3060",
+    "schema": 1,
+    "seeds": [
+      9100,
+      9101,
+      9102
+    ],
+    "source_config": "configs/h2-fixed-cartpole-acceptance-v1.json",
+    "source_config_sha256": "8a2a766f408d9199c6b306f329534e0d5fbf056ab0f38196ea01e8189745e493",
+    "status": "frozen-after-slab-probe-before-v2-runs",
+    "workload": {
+      "episodes": 8,
+      "horizon": 500,
+      "measured_generations": 1,
+      "microbatch": 16,
+      "population": 128,
+      "profile": "layered",
+      "recurrent": true,
+      "task": "cartpole",
+      "total_nodes": 1024,
+      "warm_generations": 1
+    }
+  },
+  "config_sha256": "ec7e6a0da31779a185466686405cf6217e1c7b3374d142fdb2fc3fbe328c3412",
+  "hardware": {
+    "allocator_fraction": 0.6,
+    "backend": "gpu",
+    "development_mount": false,
+    "devices": [
+      "cuda:0"
+    ],
+    "gpu": [
+      "GPU-d7c4073b-c643-21ed-3d64-35a73d3d7a72",
+      "NVIDIA GeForce RTX 3060",
+      "12288",
+      "591.74"
+    ],
+    "image_digest": "sha256:32845385460595ff17cceb65d23502cd0cba108b49c2a4afad7f09330305ddcc",
+    "kernel": "6.6.87.2-microsoft-standard-WSL2",
+    "preallocate": false,
+    "precision": "float32",
+    "python": "3.11.14"
+  },
+  "provenance": {
+    "compatibility_lock_sha256": "a11a7696492404e642f411a817893b984511a7f0da0131318d44173b2741c4d9",
+    "engine_sha256": "c01f6ca585f9cd66cac3adf160a0f839a1d939bd99a3f714d8726d6f12a5460d",
+    "lock_sha256": "df89b8faeaefc2cf0a8ad1e723e7b000cbf48496a00b1e2ef0a3bac6fb33bdae",
+    "packages": {
+      "emr-hyperneat": "0.3.0",
+      "gymnax": "0.0.9",
+      "jax": "0.6.1",
+      "jaxlib": "0.6.1",
+      "numpy": "1.26.4",
+      "tensorneat": "0.1.0"
+    },
+    "sources": {
+      "base_image": "python:3.11.14-slim-bookworm@sha256:65a93d69fa75478d554f4ad27c85c1e69fa184956261b4301ebaf6dbb0a3543d",
+      "emr": {
+        "archive_sha256": "2e4e7ec552fd2fb6ebd59e44b8ea89057f9980ef296d4451e22ccb7915bfb59d",
+        "license": "GPL-3.0-or-later (bundled LICENSE)",
+        "sha": "306eb4e67687390bb88131ead6af8bebffa8cee9",
+        "url": "https://github.com/RomainClaret/emr-hyperneat.git"
+      },
+      "schema": 1,
+      "tensorneat": {
+        "archive_sha256": "6776462f279bc6fa2ff9c0bf4adc405732d25681424346c8f5d6f9d7469cda3f",
+        "license": "GPL-3.0-or-later (bundled LICENSE)",
+        "sha": "49c193d546447d5fe2cb4b26f60758d23fc24cb0",
+        "url": "https://github.com/RomainClaret/tensorneat.git"
+      }
+    }
+  },
+  "seed": 9100
+}

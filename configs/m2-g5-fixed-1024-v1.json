@@ -1,0 +1,72 @@
+{
+  "schema": 1,
+  "id": "m2-g5-fixed-1024-v1",
+  "kind": "integrated-performance",
+  "source_config": "configs/h2-fixed-cartpole-acceptance-v1.json",
+  "source_config_sha256": "8a2a766f408d9199c6b306f329534e0d5fbf056ab0f38196ea01e8189745e493",
+  "adapter": {
+    "population": 128,
+    "inputs": 4,
+    "outputs": 1,
+    "nodes": 32,
+    "edges": 128,
+    "profile": "dag",
+    "mutation": {
+      "conn_add": 0.2,
+      "conn_delete": 0.2,
+      "node_add": 0.1,
+      "node_delete": 0.1
+    },
+    "species": {
+      "species_size": 10,
+      "max_stagnation": 15,
+      "species_elitism": 2,
+      "spawn_number_change_rate": 0.5,
+      "genome_elitism": 2,
+      "survival_threshold": 0.1,
+      "min_species_size": 1,
+      "compatibility_threshold": 2.0,
+      "species_number_calculate_by": "rank"
+    }
+  },
+  "decoder": {
+    "schema": 1,
+    "kind": "fixed-coordinate-v1",
+    "inputs": 4,
+    "hidden": 1018,
+    "outputs": 2,
+    "recurrent": true,
+    "threshold": 0.3,
+    "max_weight": 5.0,
+    "query_slab": 4096
+  },
+  "workload": {
+    "task": "cartpole",
+    "population": 128,
+    "episodes": 8,
+    "horizon": 500,
+    "microbatch": 16,
+    "total_nodes": 1024,
+    "profile": "layered",
+    "recurrent": true,
+    "warm_generations": 1,
+    "measured_generations": 1
+  },
+  "seeds": [
+    9100,
+    9101,
+    9102
+  ],
+  "profiles": [
+    "cpu",
+    "rtx3070",
+    "rtx3060"
+  ],
+  "metric": "end-to-end second generation includes ask, CPPN decode, graph planning, rollout, reduction and tell; excludes process startup; each trial fresh process",
+  "gate": {
+    "gpu_over_cpu_throughput_min": 1.2,
+    "repetitions": 3,
+    "gating_card": "rtx3070"
+  },
+  "status": "frozen-before-runs"
+}

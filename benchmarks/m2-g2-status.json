@@ -1,0 +1,79 @@
+{
+  "schema": 1,
+  "status": "pass",
+  "config_sha256": "3533e33a1689d87ccbf99b7981601477391df9b4144a7f4d629beabb6290299e",
+  "engine_sha256": "c01f6ca585f9cd66cac3adf160a0f839a1d939bd99a3f714d8726d6f12a5460d",
+  "image_digest": "sha256:c28d71cae60c96b99f372cc7a8c4818966cd481a969745a099a052cafecbb9d4",
+  "profiles": {
+    "cpu": {
+      "post_warm_backend_compiles": 0,
+      "terminal_selection_backend_compiles": 4,
+      "warm_signatures": {
+        "rollout_signatures": 1,
+        "tell_signatures": 2,
+        "observer_signatures": 2
+      },
+      "memory": {
+        "cgroup_current_bytes": 674906112,
+        "cgroup_peak_bytes": 675119104,
+        "cgroup_swap_bytes": 0,
+        "device_allocator": null,
+        "process_peak_rss_bytes": 961613824
+      }
+    },
+    "rtx3070": {
+      "post_warm_backend_compiles": 0,
+      "terminal_selection_backend_compiles": 4,
+      "warm_signatures": {
+        "rollout_signatures": 1,
+        "tell_signatures": 2,
+        "observer_signatures": 2
+      },
+      "memory": {
+        "cgroup_current_bytes": 859918336,
+        "cgroup_peak_bytes": 869130240,
+        "cgroup_swap_bytes": 0,
+        "device_allocator": {
+          "bytes_in_use": 414464,
+          "bytes_limit": 5153646387,
+          "bytes_reserved": 0,
+          "largest_alloc_size": 4194304,
+          "largest_free_block_bytes": 0,
+          "num_allocs": 542331,
+          "peak_bytes_in_use": 4997376,
+          "peak_bytes_reserved": 0,
+          "peak_pool_bytes": 6291456,
+          "pool_bytes": 6291456
+        },
+        "process_peak_rss_bytes": 1176625152
+      }
+    },
+    "rtx3060": {
+      "post_warm_backend_compiles": 0,
+      "terminal_selection_backend_compiles": 4,
+      "warm_signatures": {
+        "rollout_signatures": 1,
+        "tell_signatures": 2,
+        "observer_signatures": 2
+      },
+      "memory": {
+        "cgroup_current_bytes": 864399360,
+        "cgroup_peak_bytes": 873680896,
+        "cgroup_swap_bytes": 0,
+        "device_allocator": {
+          "bytes_in_use": 411136,
+          "bytes_limit": 7730548223,
+          "bytes_reserved": 0,
+          "largest_alloc_size": 4194304,
+          "largest_free_block_bytes": 0,
+          "num_allocs": 542331,
+          "peak_bytes_in_use": 4994816,
+          "peak_bytes_reserved": 0,
+          "peak_pool_bytes": 6291456,
+          "pool_bytes": 6291456
+        },
+        "process_peak_rss_bytes": 1181192192
+      }
+    }
+  }
+}
