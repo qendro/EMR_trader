@@ -45,7 +45,7 @@ For the measured B0 baseline, use `scripts/b0_runs.ps1 -Image neuroevo:b0 -Profi
 
 For the ungated 5×5 visual diagnostic, build the current source as `neuroevo:visual` and run `scripts/h2_visual_runs.ps1 -Image neuroevo:visual -Profile rtx3070`. It runs three disjoint seeds for B0, direct genomes and fixed CPPN; `scripts/h2_visual_status.py` audits archived champions and held-out decisions.
 
-For the full procedure, `scripts/qualify.ps1`, `scripts/acceptance.ps1`, `scripts/resume.ps1` and `scripts/performance.ps1` launch bounded containers and record the selected image digest. Pass `-Image neuroevo:release` after building with Compose. Curated measurements, failed cells, checkpoints and portable champions are in [benchmarks/results/evidence](benchmarks/results/evidence); their byte hashes are indexed there. The original Q2 recurrent screen overflowed its frozen connection cap on both cards; its proposed capacity promotion has not run.
+For the full procedure, `scripts/qualify.ps1`, `scripts/acceptance.ps1`, `scripts/resume.ps1` and `scripts/performance.ps1` launch bounded containers and record the selected image digest. Pass `-Image neuroevo:release` after building with Compose. Curated measurements, failed cells, checkpoints and portable champions are in [benchmarks/results/evidence](benchmarks/results/evidence); their byte hashes are indexed there. The original Q2 recurrent screen overflowed its frozen connection cap on both cards; its proposed capacity promotion has not run. Its [capacity promotion preparation](benchmarks/Q2-CAPACITY-PREP.md) is ready for measurement after the M2 elapsed comparison completes.
 
 ## Revision history
 

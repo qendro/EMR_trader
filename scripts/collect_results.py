@@ -17,7 +17,8 @@ args=p.parse_args()
 source,output=Path(args.source),Path(args.output)
 roots=[]
 for pattern in ('qualification-*','m1-final-*','m1-current-*','m1-resume-*',
-                'g2-*','g4-*','q2-v2','q2-complete','q2-native*','validation','diagnostics',
+                'g2-*','g4-*','q2-v2','q2-complete','q2-native*','q2-capacity-v2*',
+                'validation','diagnostics',
                 'development','h1-*','b0-v1','b0-resume-v1','b0-qualification-v1','b0-development',
                 'h2-fixed-*','h2-direct-*','h2-visual-*',
                 'm2-g2-*','m2-g3-*','m2-g4-*','m2-g5-*',
