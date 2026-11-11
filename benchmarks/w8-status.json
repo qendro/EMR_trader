@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "status": "pass",
+  "task": "W8-tracking-contract",
+  "manifest_sha256": "45ca004f4cdfe4115032b159850a30aa96404bc9a823182631edad8635839151",
+  "engine_sha256": "54b32a9f470a556e28c6e537a4b1a5d342ddd15a0a58b993a864392057f1d0e7",
+  "image_digest": "sha256:f03d2ae876c9bcd18a1a11c732836e46b2704167c9897985765323dce791abac",
+  "policy_candidate_id": "seed-0:249:0",
+  "cells": {
+    "cpu": {
+      "status": "pass",
+      "score": 0.7142630219459534,
+      "reference_score": 0.7142640432293322,
+      "max_cgroup_bytes": 229834752,
+      "max_device_allocator_bytes": null
+    },
+    "rtx3070": {
+      "status": "pass",
+      "score": 0.7142629027366638,
+      "reference_score": 0.7142640340279803,
+      "max_cgroup_bytes": 472707072,
+      "max_device_allocator_bytes": 31232
+    },
+    "rtx3060": {
+      "status": "pass",
+      "score": 0.7142629027366638,
+      "reference_score": 0.7142640340279803,
+      "max_cgroup_bytes": 472174592,
+      "max_device_allocator_bytes": 31232
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "schema": 1, "id": "m1-cartpole-smoke-v1", "kind": "smoke", "workload": "W3-smoke",
+  "task": "cartpole", "seeds": [900], "generations": 4, "episodes": 2, "horizon": 64,
+  "microbatch": 4, "validation_episodes": 4, "heldout_episodes": 4,
+  "finalists": 4, "target": 450, "required_seeds": 1, "checkpoint_every": 2,
+  "budget_seconds_per_seed": 7200, "budget_status": "development-only",
+  "scenario_policy": "generation-specific", "action": "argmax-first-tie",
+  "adapter": {
+    "population": 8, "inputs": 4, "outputs": 2, "nodes": 32, "edges": 128,
+    "profile": "dag",
+    "mutation": {"conn_add": 0.2, "conn_delete": 0.2, "node_add": 0.1, "node_delete": 0.1},
+    "species": {
+      "species_size": 4, "max_stagnation": 15, "species_elitism": 2,
+      "spawn_number_change_rate": 0.5, "genome_elitism": 1, "survival_threshold": 0.25,
+      "min_species_size": 1, "compatibility_threshold": 2.0,
+      "species_number_calculate_by": "rank"
+    }
+  }
+}

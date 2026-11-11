@@ -1,0 +1,43 @@
+{
+  "schema": 1,
+  "id": "b0-memory-smoke-v1",
+  "kind": "smoke",
+  "workload": "W4-memory",
+  "task": "memory",
+  "seeds": [
+    900
+  ],
+  "generations": 4,
+  "episodes": 32,
+  "horizon": 17,
+  "microbatch": 32,
+  "validation_episodes": 64,
+  "heldout_episodes": 256,
+  "finalists": 4,
+  "target": 0.9,
+  "required_seeds": 3,
+  "checkpoint_every": 2,
+  "budget_seconds_per_seed": 7200,
+  "budget_status": "wiring-only-not-baseline-score-protocol",
+  "scenario_policy": "generation-specific",
+  "action": "sign-positive-tie",
+  "adapter": {
+    "schema": 1,
+    "kind": "fixed-weight-v1",
+    "population": 8,
+    "inputs": 2,
+    "hidden": 4,
+    "outputs": 1,
+    "profile": "layered",
+    "recurrent": true,
+    "init_std": 0.5,
+    "mutation_std": 0.15,
+    "mutation_rate": 0.2,
+    "survival_fraction": 0.1,
+    "elite_count": 2,
+    "weight_bound": 5.0
+  },
+  "shared_protocol": "configs/memory-v1.json",
+  "method": "fixed-topology-weight-only",
+  "comparison": "layered-system-and-architecture-family-control; no encoding claim from this method alone"
+}

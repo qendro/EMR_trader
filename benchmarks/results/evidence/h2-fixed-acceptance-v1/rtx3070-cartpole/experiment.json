@@ -1,0 +1,743 @@
+{
+  "complete_protocol": true,
+  "config": {
+    "action": "argmax-first-tie",
+    "adapter": {
+      "edges": 128,
+      "inputs": 4,
+      "mutation": {
+        "conn_add": 0.2,
+        "conn_delete": 0.2,
+        "node_add": 0.1,
+        "node_delete": 0.1
+      },
+      "nodes": 32,
+      "outputs": 1,
+      "population": 128,
+      "profile": "dag",
+      "species": {
+        "compatibility_threshold": 2.0,
+        "genome_elitism": 2,
+        "max_stagnation": 15,
+        "min_species_size": 1,
+        "spawn_number_change_rate": 0.5,
+        "species_elitism": 2,
+        "species_number_calculate_by": "rank",
+        "species_size": 10,
+        "survival_threshold": 0.1
+      }
+    },
+    "budget_seconds_per_seed": 7200,
+    "budget_status": "requires-matching-integrated-G9-pilot",
+    "checkpoint_every": 10,
+    "comparison": "layered-system-and-architecture-family-control",
+    "decoder": {
+      "hidden": 8,
+      "inputs": 4,
+      "kind": "fixed-coordinate-v1",
+      "max_weight": 5.0,
+      "outputs": 2,
+      "query_slab": 4096,
+      "recurrent": true,
+      "schema": 1,
+      "threshold": 0.3
+    },
+    "episodes": 8,
+    "finalists": 8,
+    "generations": 100,
+    "heldout_episodes": 20,
+    "horizon": 500,
+    "id": "h2-fixed-cartpole-acceptance-v1",
+    "kind": "acceptance",
+    "method": "fixed-coordinate-CPPN",
+    "microbatch": 32,
+    "protocol_status": "frozen-not-run",
+    "required_seeds": 3,
+    "scenario_policy": "generation-specific",
+    "schema": 1,
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "target": 450,
+    "task": "cartpole",
+    "validation_episodes": 32,
+    "workload": "W3-generation"
+  },
+  "passed_seeds": 4,
+  "runs": [
+    {
+      "config_sha256": "b7d1302cced3a628b9a5de6a9b12b00098c4f31be52c708539b1c197f939ae4a",
+      "generations": 100,
+      "hardware": {
+        "allocator_fraction": 0.6,
+        "backend": "gpu",
+        "development_mount": false,
+        "devices": [
+          "cuda:0"
+        ],
+        "gpu": [
+          "GPU-84389f80-a576-d373-ecb0-92e972e72dfd",
+          "NVIDIA GeForce RTX 3070",
+          "8192",
+          "591.74"
+        ],
+        "image_digest": "sha256:adb5659fed40c81f17c6ae5392a1fc9572ea944b63717dbb08c3786171f80321",
+        "kernel": "6.6.87.2-microsoft-standard-WSL2",
+        "preallocate": false,
+        "precision": "float32",
+        "python": "3.11.14"
+      },
+      "kind": "acceptance",
+      "memory": {
+        "cgroup_current_bytes": 1188081664,
+        "cgroup_peak_bytes": 1203081216,
+        "cgroup_swap_bytes": 0,
+        "device_allocator": {
+          "bytes_in_use": 412928,
+          "bytes_limit": 5153646387,
+          "bytes_reserved": 0,
+          "largest_alloc_size": 4194304,
+          "largest_free_block_bytes": 0,
+          "num_allocs": 483294,
+          "peak_bytes_in_use": 5010432,
+          "peak_bytes_reserved": 0,
+          "peak_pool_bytes": 6291456,
+          "pool_bytes": 6291456
+        },
+        "process_peak_rss_bytes": 1252671488
+      },
+      "provenance": {
+        "compatibility_lock_sha256": "a11a7696492404e642f411a817893b984511a7f0da0131318d44173b2741c4d9",
+        "engine_sha256": "90ec21d50ecf68fef4e0c13e526bde8a469262fde40b32fd6c2d4e8b7cb934be",
+        "lock_sha256": "df89b8faeaefc2cf0a8ad1e723e7b000cbf48496a00b1e2ef0a3bac6fb33bdae",
+        "packages": {
+          "emr-hyperneat": "0.3.0",
+          "gymnax": "0.0.9",
+          "jax": "0.6.1",
+          "jaxlib": "0.6.1",
+          "numpy": "1.26.4",
+          "tensorneat": "0.1.0"
+        },
+        "sources": {
+          "base_image": "python:3.11.14-slim-bookworm@sha256:65a93d69fa75478d554f4ad27c85c1e69fa184956261b4301ebaf6dbb0a3543d",
+          "emr": {
+            "archive_sha256": "2e4e7ec552fd2fb6ebd59e44b8ea89057f9980ef296d4451e22ccb7915bfb59d",
+            "license": "GPL-3.0-or-later (bundled LICENSE)",
+            "sha": "306eb4e67687390bb88131ead6af8bebffa8cee9",
+            "url": "https://github.com/RomainClaret/emr-hyperneat.git"
+          },
+          "schema": 1,
+          "tensorneat": {
+            "archive_sha256": "6776462f279bc6fa2ff9c0bf4adc405732d25681424346c8f5d6f9d7469cda3f",
+            "license": "GPL-3.0-or-later (bundled LICENSE)",
+            "sha": "49c193d546447d5fe2cb4b26f60758d23fc24cb0",
+            "url": "https://github.com/RomainClaret/tensorneat.git"
+          }
+        }
+      },
+      "seed": 0,
+      "selection": {
+        "candidate_id": "seed-0:99:40",
+        "episode_scores": [
+          340.0,
+          500.0,
+          435.0,
+          500.0,
+          365.0,
+          471.0,
+          461.0,
+          487.0,
+          472.0,
+          500.0,
+          500.0,
+          500.0,
+          465.0,
+          304.0,
+          430.0,
+          451.0,
+          450.0,
+          348.0,
+          343.0,
+          476.0
+        ],
+        "finalist_ids": [
+          "seed-0:99:40",
+          "seed-0:99:123",
+          "seed-0:99:2",
+          "seed-0:99:114",
+          "seed-0:99:26",
+          "seed-0:99:34",
+          "seed-0:99:112",
+          "seed-0:99:27"
+        ],
+        "finalist_training_scores": [
+          484.0,
+          478.125,
+          473.0,
+          471.375,
+          465.375,
+          460.875,
+          459.0,
+          457.625
+        ],
+        "finalist_validation_scores": [
+          451.75,
+          424.09375,
+          436.40625,
+          451.40625,
+          449.5625,
+          429.65625,
+          427.5,
+          400.78125
+        ],
+        "heldout_score": 439.8999938964844,
+        "heldout_valid": true,
+        "kind": "acceptance",
+        "passes_learning": false,
+        "validation_score": 451.75
+      },
+      "structural_mutation_observed": true,
+      "wall_seconds": 139.27656039000067
+    },
+    {
+      "config_sha256": "b7d1302cced3a628b9a5de6a9b12b00098c4f31be52c708539b1c197f939ae4a",
+      "generations": 100,
+      "hardware": {
+        "allocator_fraction": 0.6,
+        "backend": "gpu",
+        "development_mount": false,
+        "devices": [
+          "cuda:0"
+        ],
+        "gpu": [
+          "GPU-84389f80-a576-d373-ecb0-92e972e72dfd",
+          "NVIDIA GeForce RTX 3070",
+          "8192",
+          "591.74"
+        ],
+        "image_digest": "sha256:adb5659fed40c81f17c6ae5392a1fc9572ea944b63717dbb08c3786171f80321",
+        "kernel": "6.6.87.2-microsoft-standard-WSL2",
+        "preallocate": false,
+        "precision": "float32",
+        "python": "3.11.14"
+      },
+      "kind": "acceptance",
+      "memory": {
+        "cgroup_current_bytes": 1188286464,
+        "cgroup_peak_bytes": 1203576832,
+        "cgroup_swap_bytes": 0,
+        "device_allocator": {
+          "bytes_in_use": 413440,
+          "bytes_limit": 5153646387,
+          "bytes_reserved": 0,
+          "largest_alloc_size": 4194304,
+          "largest_free_block_bytes": 0,
+          "num_allocs": 483294,
+          "peak_bytes_in_use": 5008896,
+          "peak_bytes_reserved": 0,
+          "peak_pool_bytes": 6291456,
+          "pool_bytes": 6291456
+        },
+        "process_peak_rss_bytes": 1252990976
+      },
+      "provenance": {
+        "compatibility_lock_sha256": "a11a7696492404e642f411a817893b984511a7f0da0131318d44173b2741c4d9",
+        "engine_sha256": "90ec21d50ecf68fef4e0c13e526bde8a469262fde40b32fd6c2d4e8b7cb934be",
+        "lock_sha256": "df89b8faeaefc2cf0a8ad1e723e7b000cbf48496a00b1e2ef0a3bac6fb33bdae",
+        "packages": {
+          "emr-hyperneat": "0.3.0",
+          "gymnax": "0.0.9",
+          "jax": "0.6.1",
+          "jaxlib": "0.6.1",
+          "numpy": "1.26.4",
+          "tensorneat": "0.1.0"
+        },
+        "sources": {
+          "base_image": "python:3.11.14-slim-bookworm@sha256:65a93d69fa75478d554f4ad27c85c1e69fa184956261b4301ebaf6dbb0a3543d",
+          "emr": {
+            "archive_sha256": "2e4e7ec552fd2fb6ebd59e44b8ea89057f9980ef296d4451e22ccb7915bfb59d",
+            "license": "GPL-3.0-or-later (bundled LICENSE)",
+            "sha": "306eb4e67687390bb88131ead6af8bebffa8cee9",
+            "url": "https://github.com/RomainClaret/emr-hyperneat.git"
+          },
+          "schema": 1,
+          "tensorneat": {
+            "archive_sha256": "6776462f279bc6fa2ff9c0bf4adc405732d25681424346c8f5d6f9d7469cda3f",
+            "license": "GPL-3.0-or-later (bundled LICENSE)",
+            "sha": "49c193d546447d5fe2cb4b26f60758d23fc24cb0",
+            "url": "https://github.com/RomainClaret/tensorneat.git"
+          }
+        }
+      },
+      "seed": 1,
+      "selection": {
+        "candidate_id": "seed-1:99:2",
+        "episode_scores": [
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0
+        ],
+        "finalist_ids": [
+          "seed-1:99:0",
+          "seed-1:99:2",
+          "seed-1:99:6",
+          "seed-1:99:10",
+          "seed-1:99:13",
+          "seed-1:99:17",
+          "seed-1:99:26",
+          "seed-1:99:29"
+        ],
+        "finalist_training_scores": [
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0
+        ],
+        "finalist_validation_scores": [
+          494.1875,
+          500.0,
+          490.40625,
+          493.375,
+          500.0,
+          494.1875,
+          500.0,
+          498.1875
+        ],
+        "heldout_score": 500.0,
+        "heldout_valid": true,
+        "kind": "acceptance",
+        "passes_learning": true,
+        "validation_score": 500.0
+      },
+      "structural_mutation_observed": true,
+      "wall_seconds": 135.36882659399998
+    },
+    {
+      "config_sha256": "b7d1302cced3a628b9a5de6a9b12b00098c4f31be52c708539b1c197f939ae4a",
+      "generations": 100,
+      "hardware": {
+        "allocator_fraction": 0.6,
+        "backend": "gpu",
+        "development_mount": false,
+        "devices": [
+          "cuda:0"
+        ],
+        "gpu": [
+          "GPU-84389f80-a576-d373-ecb0-92e972e72dfd",
+          "NVIDIA GeForce RTX 3070",
+          "8192",
+          "591.74"
+        ],
+        "image_digest": "sha256:adb5659fed40c81f17c6ae5392a1fc9572ea944b63717dbb08c3786171f80321",
+        "kernel": "6.6.87.2-microsoft-standard-WSL2",
+        "preallocate": false,
+        "precision": "float32",
+        "python": "3.11.14"
+      },
+      "kind": "acceptance",
+      "memory": {
+        "cgroup_current_bytes": 1190100992,
+        "cgroup_peak_bytes": 1204998144,
+        "cgroup_swap_bytes": 0,
+        "device_allocator": {
+          "bytes_in_use": 412416,
+          "bytes_limit": 5153646387,
+          "bytes_reserved": 0,
+          "largest_alloc_size": 4194304,
+          "largest_free_block_bytes": 0,
+          "num_allocs": 483294,
+          "peak_bytes_in_use": 5009408,
+          "peak_bytes_reserved": 0,
+          "peak_pool_bytes": 6291456,
+          "pool_bytes": 6291456
+        },
+        "process_peak_rss_bytes": 1253060608
+      },
+      "provenance": {
+        "compatibility_lock_sha256": "a11a7696492404e642f411a817893b984511a7f0da0131318d44173b2741c4d9",
+        "engine_sha256": "90ec21d50ecf68fef4e0c13e526bde8a469262fde40b32fd6c2d4e8b7cb934be",
+        "lock_sha256": "df89b8faeaefc2cf0a8ad1e723e7b000cbf48496a00b1e2ef0a3bac6fb33bdae",
+        "packages": {
+          "emr-hyperneat": "0.3.0",
+          "gymnax": "0.0.9",
+          "jax": "0.6.1",
+          "jaxlib": "0.6.1",
+          "numpy": "1.26.4",
+          "tensorneat": "0.1.0"
+        },
+        "sources": {
+          "base_image": "python:3.11.14-slim-bookworm@sha256:65a93d69fa75478d554f4ad27c85c1e69fa184956261b4301ebaf6dbb0a3543d",
+          "emr": {
+            "archive_sha256": "2e4e7ec552fd2fb6ebd59e44b8ea89057f9980ef296d4451e22ccb7915bfb59d",
+            "license": "GPL-3.0-or-later (bundled LICENSE)",
+            "sha": "306eb4e67687390bb88131ead6af8bebffa8cee9",
+            "url": "https://github.com/RomainClaret/emr-hyperneat.git"
+          },
+          "schema": 1,
+          "tensorneat": {
+            "archive_sha256": "6776462f279bc6fa2ff9c0bf4adc405732d25681424346c8f5d6f9d7469cda3f",
+            "license": "GPL-3.0-or-later (bundled LICENSE)",
+            "sha": "49c193d546447d5fe2cb4b26f60758d23fc24cb0",
+            "url": "https://github.com/RomainClaret/tensorneat.git"
+          }
+        }
+      },
+      "seed": 2,
+      "selection": {
+        "candidate_id": "seed-2:99:40",
+        "episode_scores": [
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          267.0,
+          500.0,
+          500.0,
+          500.0,
+          258.0
+        ],
+        "finalist_ids": [
+          "seed-2:99:0",
+          "seed-2:99:8",
+          "seed-2:99:40",
+          "seed-2:99:63",
+          "seed-2:99:1",
+          "seed-2:99:62",
+          "seed-2:99:42",
+          "seed-2:99:7"
+        ],
+        "finalist_training_scores": [
+          500.0,
+          500.0,
+          500.0,
+          499.25,
+          497.125,
+          497.125,
+          474.125,
+          440.75
+        ],
+        "finalist_validation_scores": [
+          481.0625,
+          490.15625,
+          492.5625,
+          487.8125,
+          492.5625,
+          492.5625,
+          437.8125,
+          388.15625
+        ],
+        "heldout_score": 476.25,
+        "heldout_valid": true,
+        "kind": "acceptance",
+        "passes_learning": true,
+        "validation_score": 492.5625
+      },
+      "structural_mutation_observed": true,
+      "wall_seconds": 137.11292241000046
+    },
+    {
+      "config_sha256": "b7d1302cced3a628b9a5de6a9b12b00098c4f31be52c708539b1c197f939ae4a",
+      "generations": 100,
+      "hardware": {
+        "allocator_fraction": 0.6,
+        "backend": "gpu",
+        "development_mount": false,
+        "devices": [
+          "cuda:0"
+        ],
+        "gpu": [
+          "GPU-84389f80-a576-d373-ecb0-92e972e72dfd",
+          "NVIDIA GeForce RTX 3070",
+          "8192",
+          "591.74"
+        ],
+        "image_digest": "sha256:adb5659fed40c81f17c6ae5392a1fc9572ea944b63717dbb08c3786171f80321",
+        "kernel": "6.6.87.2-microsoft-standard-WSL2",
+        "preallocate": false,
+        "precision": "float32",
+        "python": "3.11.14"
+      },
+      "kind": "acceptance",
+      "memory": {
+        "cgroup_current_bytes": 1189040128,
+        "cgroup_peak_bytes": 1204998144,
+        "cgroup_swap_bytes": 0,
+        "device_allocator": {
+          "bytes_in_use": 417536,
+          "bytes_limit": 5153646387,
+          "bytes_reserved": 0,
+          "largest_alloc_size": 4194304,
+          "largest_free_block_bytes": 0,
+          "num_allocs": 483294,
+          "peak_bytes_in_use": 5027840,
+          "peak_bytes_reserved": 0,
+          "peak_pool_bytes": 6291456,
+          "pool_bytes": 6291456
+        },
+        "process_peak_rss_bytes": 1251893248
+      },
+      "provenance": {
+        "compatibility_lock_sha256": "a11a7696492404e642f411a817893b984511a7f0da0131318d44173b2741c4d9",
+        "engine_sha256": "90ec21d50ecf68fef4e0c13e526bde8a469262fde40b32fd6c2d4e8b7cb934be",
+        "lock_sha256": "df89b8faeaefc2cf0a8ad1e723e7b000cbf48496a00b1e2ef0a3bac6fb33bdae",
+        "packages": {
+          "emr-hyperneat": "0.3.0",
+          "gymnax": "0.0.9",
+          "jax": "0.6.1",
+          "jaxlib": "0.6.1",
+          "numpy": "1.26.4",
+          "tensorneat": "0.1.0"
+        },
+        "sources": {
+          "base_image": "python:3.11.14-slim-bookworm@sha256:65a93d69fa75478d554f4ad27c85c1e69fa184956261b4301ebaf6dbb0a3543d",
+          "emr": {
+            "archive_sha256": "2e4e7ec552fd2fb6ebd59e44b8ea89057f9980ef296d4451e22ccb7915bfb59d",
+            "license": "GPL-3.0-or-later (bundled LICENSE)",
+            "sha": "306eb4e67687390bb88131ead6af8bebffa8cee9",
+            "url": "https://github.com/RomainClaret/emr-hyperneat.git"
+          },
+          "schema": 1,
+          "tensorneat": {
+            "archive_sha256": "6776462f279bc6fa2ff9c0bf4adc405732d25681424346c8f5d6f9d7469cda3f",
+            "license": "GPL-3.0-or-later (bundled LICENSE)",
+            "sha": "49c193d546447d5fe2cb4b26f60758d23fc24cb0",
+            "url": "https://github.com/RomainClaret/tensorneat.git"
+          }
+        }
+      },
+      "seed": 3,
+      "selection": {
+        "candidate_id": "seed-3:99:0",
+        "episode_scores": [
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0
+        ],
+        "finalist_ids": [
+          "seed-3:99:0",
+          "seed-3:99:1",
+          "seed-3:99:4",
+          "seed-3:99:26",
+          "seed-3:99:28",
+          "seed-3:99:29",
+          "seed-3:99:36",
+          "seed-3:99:44"
+        ],
+        "finalist_training_scores": [
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0
+        ],
+        "finalist_validation_scores": [
+          492.6875,
+          492.6875,
+          492.6875,
+          492.6875,
+          492.6875,
+          492.6875,
+          492.6875,
+          492.6875
+        ],
+        "heldout_score": 500.0,
+        "heldout_valid": true,
+        "kind": "acceptance",
+        "passes_learning": true,
+        "validation_score": 492.6875
+      },
+      "structural_mutation_observed": true,
+      "wall_seconds": 126.55166860500321
+    },
+    {
+      "config_sha256": "b7d1302cced3a628b9a5de6a9b12b00098c4f31be52c708539b1c197f939ae4a",
+      "generations": 100,
+      "hardware": {
+        "allocator_fraction": 0.6,
+        "backend": "gpu",
+        "development_mount": false,
+        "devices": [
+          "cuda:0"
+        ],
+        "gpu": [
+          "GPU-84389f80-a576-d373-ecb0-92e972e72dfd",
+          "NVIDIA GeForce RTX 3070",
+          "8192",
+          "591.74"
+        ],
+        "image_digest": "sha256:adb5659fed40c81f17c6ae5392a1fc9572ea944b63717dbb08c3786171f80321",
+        "kernel": "6.6.87.2-microsoft-standard-WSL2",
+        "preallocate": false,
+        "precision": "float32",
+        "python": "3.11.14"
+      },
+      "kind": "acceptance",
+      "memory": {
+        "cgroup_current_bytes": 1191084032,
+        "cgroup_peak_bytes": 1206894592,
+        "cgroup_swap_bytes": 0,
+        "device_allocator": {
+          "bytes_in_use": 410624,
+          "bytes_limit": 5153646387,
+          "bytes_reserved": 0,
+          "largest_alloc_size": 4194304,
+          "largest_free_block_bytes": 0,
+          "num_allocs": 483294,
+          "peak_bytes_in_use": 5006848,
+          "peak_bytes_reserved": 0,
+          "peak_pool_bytes": 6291456,
+          "pool_bytes": 6291456
+        },
+        "process_peak_rss_bytes": 1253752832
+      },
+      "provenance": {
+        "compatibility_lock_sha256": "a11a7696492404e642f411a817893b984511a7f0da0131318d44173b2741c4d9",
+        "engine_sha256": "90ec21d50ecf68fef4e0c13e526bde8a469262fde40b32fd6c2d4e8b7cb934be",
+        "lock_sha256": "df89b8faeaefc2cf0a8ad1e723e7b000cbf48496a00b1e2ef0a3bac6fb33bdae",
+        "packages": {
+          "emr-hyperneat": "0.3.0",
+          "gymnax": "0.0.9",
+          "jax": "0.6.1",
+          "jaxlib": "0.6.1",
+          "numpy": "1.26.4",
+          "tensorneat": "0.1.0"
+        },
+        "sources": {
+          "base_image": "python:3.11.14-slim-bookworm@sha256:65a93d69fa75478d554f4ad27c85c1e69fa184956261b4301ebaf6dbb0a3543d",
+          "emr": {
+            "archive_sha256": "2e4e7ec552fd2fb6ebd59e44b8ea89057f9980ef296d4451e22ccb7915bfb59d",
+            "license": "GPL-3.0-or-later (bundled LICENSE)",
+            "sha": "306eb4e67687390bb88131ead6af8bebffa8cee9",
+            "url": "https://github.com/RomainClaret/emr-hyperneat.git"
+          },
+          "schema": 1,
+          "tensorneat": {
+            "archive_sha256": "6776462f279bc6fa2ff9c0bf4adc405732d25681424346c8f5d6f9d7469cda3f",
+            "license": "GPL-3.0-or-later (bundled LICENSE)",
+            "sha": "49c193d546447d5fe2cb4b26f60758d23fc24cb0",
+            "url": "https://github.com/RomainClaret/tensorneat.git"
+          }
+        }
+      },
+      "seed": 4,
+      "selection": {
+        "candidate_id": "seed-4:99:0",
+        "episode_scores": [
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0
+        ],
+        "finalist_ids": [
+          "seed-4:99:0",
+          "seed-4:99:1",
+          "seed-4:99:5",
+          "seed-4:99:9",
+          "seed-4:99:15",
+          "seed-4:99:25",
+          "seed-4:99:2",
+          "seed-4:99:28"
+        ],
+        "finalist_training_scores": [
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          497.5,
+          495.75
+        ],
+        "finalist_validation_scores": [
+          500.0,
+          500.0,
+          497.21875,
+          500.0,
+          500.0,
+          488.90625,
+          475.40625,
+          473.65625
+        ],
+        "heldout_score": 500.0,
+        "heldout_valid": true,
+        "kind": "acceptance",
+        "passes_learning": true,
+        "validation_score": 500.0
+      },
+      "structural_mutation_observed": true,
+      "wall_seconds": 142.0171939440006
+    }
+  ]
+}

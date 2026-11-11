@@ -1,0 +1,96 @@
+{
+  "hardware": {
+    "allocator_fraction": 0.6,
+    "backend": "gpu",
+    "development_mount": false,
+    "devices": [
+      "cuda:0"
+    ],
+    "gpu": [
+      "GPU-84389f80-a576-d373-ecb0-92e972e72dfd",
+      "NVIDIA GeForce RTX 3070",
+      "8192",
+      "591.74"
+    ],
+    "image_digest": "not-recorded-development-run",
+    "kernel": "6.6.87.2-microsoft-standard-WSL2",
+    "preallocate": false,
+    "precision": "float32",
+    "python": "3.11.14"
+  },
+  "label": "task-heldout-portable-and-scalar-replay",
+  "profile": "synchronous",
+  "runs": [
+    {
+      "candidate_id": "seed-0:249:0",
+      "generalization": {
+        "episodes": 256,
+        "scalar_action_agreement": true,
+        "score": 1.0
+      },
+      "interpolation": {
+        "episodes": 256,
+        "scalar_action_agreement": true,
+        "score": 1.0
+      },
+      "seed": 0
+    },
+    {
+      "candidate_id": "seed-1:249:0",
+      "generalization": {
+        "episodes": 256,
+        "scalar_action_agreement": true,
+        "score": 0.73828125
+      },
+      "interpolation": {
+        "episodes": 256,
+        "scalar_action_agreement": true,
+        "score": 0.7421875
+      },
+      "seed": 1
+    },
+    {
+      "candidate_id": "seed-2:249:0",
+      "generalization": {
+        "episodes": 256,
+        "scalar_action_agreement": true,
+        "score": 1.0
+      },
+      "interpolation": {
+        "episodes": 256,
+        "scalar_action_agreement": true,
+        "score": 1.0
+      },
+      "seed": 2
+    },
+    {
+      "candidate_id": "seed-3:249:0",
+      "generalization": {
+        "episodes": 256,
+        "scalar_action_agreement": true,
+        "score": 1.0
+      },
+      "interpolation": {
+        "episodes": 256,
+        "scalar_action_agreement": true,
+        "score": 1.0
+      },
+      "seed": 3
+    },
+    {
+      "candidate_id": "seed-4:249:0",
+      "generalization": {
+        "episodes": 256,
+        "scalar_action_agreement": true,
+        "score": 1.0
+      },
+      "interpolation": {
+        "episodes": 256,
+        "scalar_action_agreement": true,
+        "score": 1.0
+      },
+      "seed": 4
+    }
+  ],
+  "status": "pass"
+}

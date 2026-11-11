@@ -1,0 +1,42 @@
+{
+  "schema": 1,
+  "id": "b0-cartpole-smoke-v1",
+  "kind": "smoke",
+  "workload": "W3-generation",
+  "task": "cartpole",
+  "seeds": [
+    900
+  ],
+  "generations": 4,
+  "episodes": 2,
+  "horizon": 64,
+  "microbatch": 4,
+  "validation_episodes": 4,
+  "heldout_episodes": 4,
+  "finalists": 4,
+  "target": 450,
+  "required_seeds": 3,
+  "checkpoint_every": 2,
+  "budget_seconds_per_seed": 7200,
+  "budget_status": "wiring-only-not-baseline-score-protocol",
+  "scenario_policy": "generation-specific",
+  "action": "argmax-first-tie",
+  "adapter": {
+    "schema": 1,
+    "kind": "fixed-weight-v1",
+    "population": 8,
+    "inputs": 4,
+    "hidden": 8,
+    "outputs": 2,
+    "profile": "layered",
+    "recurrent": true,
+    "init_std": 0.5,
+    "mutation_std": 0.15,
+    "mutation_rate": 0.2,
+    "survival_fraction": 0.1,
+    "elite_count": 2,
+    "weight_bound": 5.0
+  },
+  "method": "fixed-topology-weight-only",
+  "comparison": "layered-system-and-architecture-family-control; no encoding claim from this method alone"
+}

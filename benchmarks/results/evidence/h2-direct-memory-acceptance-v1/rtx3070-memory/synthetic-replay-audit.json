@@ -1,0 +1,52 @@
+{
+  "hardware": {
+    "allocator_fraction": 0.6,
+    "backend": "gpu",
+    "development_mount": false,
+    "devices": [
+      "cuda:0"
+    ],
+    "gpu": [
+      "GPU-84389f80-a576-d373-ecb0-92e972e72dfd",
+      "NVIDIA GeForce RTX 3070",
+      "8192",
+      "591.74"
+    ],
+    "image_digest": "not-recorded-development-run",
+    "kernel": "6.6.87.2-microsoft-standard-WSL2",
+    "preallocate": false,
+    "precision": "float32",
+    "python": "3.11.14"
+  },
+  "probe": "generic-128-step-synthetic-observation",
+  "rows": [
+    {
+      "error_type": "AssertionError",
+      "message": "\nNot equal to tolerance rtol=0.0001, atol=0.0001\n\nx and y nan location mismatch:\n x: array([nan], dtype=float32)\n y: array([3.968487e+38])",
+      "seed": 0,
+      "status": "failed"
+    },
+    {
+      "max_abs_error": 3.4787656533197264e-07,
+      "seed": 1,
+      "status": "pass"
+    },
+    {
+      "error_type": "AssertionError",
+      "message": "\nNot equal to tolerance rtol=0.0001, atol=0.0001\n\nx and y nan location mismatch:\n x: array([nan], dtype=float32)\n y: array([-3.514648e+38])",
+      "seed": 2,
+      "status": "failed"
+    },
+    {
+      "max_abs_error": 3.2947590766774226e-07,
+      "seed": 3,
+      "status": "pass"
+    },
+    {
+      "max_abs_error": 6986700552.0,
+      "seed": 4,
+      "status": "pass"
+    }
+  ],
+  "schema": 1
+}

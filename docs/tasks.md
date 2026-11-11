@@ -4,7 +4,7 @@ Use these work packages as implementation units. Each should produce a reviewabl
 
 Implementation and evidence are tracked in [implementation.md](implementation.md). Task definitions below remain the acceptance requirements; source existence alone does not close a work package.
 
-The first qualified increment implemented Q0/Q1 and V0–V5. M1's required gates passed on its retained source; the [M1 report](../benchmarks/REPORT.md) and [JSON status](../benchmarks/status.json) contain historical per-profile results. H0/H1 and B0 now have measured reports: [H1](../benchmarks/H1-REPORT.md), [B0](../benchmarks/B0-REPORT.md). H2 follows; M2 is not yet accepted. Q2 records independent connection-cap failures on both cards and remains open for its resource/stage audit and declared capacity-promotion experiment. A0–P1 are not implemented.
+The first qualified increment implemented Q0/Q1 and V0–V5. M1's required gates passed on its retained source; the [M1 report](../benchmarks/REPORT.md) and [JSON status](../benchmarks/status.json) contain historical per-profile results. H0/H1 and B0 have measured reports: [H1](../benchmarks/H1-REPORT.md), [B0](../benchmarks/B0-REPORT.md). H2's small-substrate learning and direct-memory comparison are measured on the gating card in the [H2 report](../benchmarks/H2-REPORT.md); [W8](../benchmarks/W8-REPORT.md) has passed its three-profile contract check. Geometric diagnosis, fixed-time comparison and performance gates remain open, so M2 is not yet accepted. Q2 records independent connection-cap failures on both cards and remains open for its resource/stage audit and declared capacity-promotion experiment. A0–P1 are not implemented.
 
 ## Qualification
 

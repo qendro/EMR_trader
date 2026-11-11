@@ -1,0 +1,20 @@
+{
+  "schema":1,"id":"h0-h1-contract-v2","kind":"correctness-and-synthetic-execution-not-M2-acceptance",
+  "revision_reason":"v1 omitted single-candidate GEMV and two-output repeated-term reductions; observed CPU output preactivation exceeded c=30; all prior c-dependent G1 results are superseded and rerun on every profile",
+  "constant_output_weights":[0.01,0.1,0.2,0.3,0.7,1.1,2.2,4.9],
+  "source_lock":"locks/sources.json","precision":"float32-HIGHEST; independent-float64-reference",
+  "cppn":{"inputs":4,"outputs":1,"nodes":32,"edges":128,"profile":"dag",
+          "hidden_activation":"tanh","head":"identity-then-tanh-query-squash","aggregation":"sum"},
+  "query_order":["source-x","source-y","target-x","target-y"],
+  "coordinates":"FP32 MLP lattice: x=-1+2*j/(n-1), singleton x=0; y input=-1 hidden=0 output=1",
+  "bias":"virtual last input at input lattice with I+1 entries, value one; decoded row becomes hidden bias; output bias zero",
+  "transform":{"threshold":0.3,"max_weight":5.0,"rule":"sign(q)*(abs(q)-threshold)/(1-threshold)*max_weight if abs(q)>threshold; else zero","equality":"zero/unexpressed"},
+  "semantics":"single hidden population; input-hidden and hidden-output immediate; hidden-hidden delayed; tanh hidden/identity output; response one; zero reset",
+  "query_slab":4096,"maximum_total_nodes":1024,"synthetic_total_nodes":[256,1024],
+  "synthetic_steps":128,"synthetic_seed":8200,"calibration_seeds":[8100,8101,8102,8103,8104,8105,8106,8107],
+  "calibration_fanins":[64,256,1024],"calibration_fixture":"P=2 B=8; fanin=4 immediate inputs plus fanin-4 delayed hidden inputs; output hidden width=fanin-4; seeded PCG64 normal operands, positive/mixed/paired-cancellation patterns; include FP32 bias and S=sum(abs(all weighted terms))+abs(bias); same incoming FP32 state",
+  "calibration_policy":"CPU and RTX3070 only; freeze c=max(1,ceil(2*max(error/(2^-24*S)))); RTX3060 validates frozen c and never changes it",
+  "small_one_step_tolerance":{"atol":0.000001,"rtol":0.00001},
+  "stable_trajectory_tolerance":{"atol":0.0001,"rtol":0.0001},
+  "not_run_M2_requirements":["B0 baseline","H2 learning and comparisons","W8 sequence environment","M2 G5 integrated 1024-node generation"]
+}

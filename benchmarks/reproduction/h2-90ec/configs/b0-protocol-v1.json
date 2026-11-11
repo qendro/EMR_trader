@@ -1,0 +1,20 @@
+{
+  "schema":1,"id":"b0-fixed-topology-v1","status":"frozen-before-measurement",
+  "algorithm":"stable descending truncation; uniformly sample parents from ceil(0.1*P) valid current-generation candidates; two unmodified elites; independent additive Gaussian mutations std=0.15 with per-gene probability 0.2; clip to [-5,5]",
+  "initialization":"normal mean zero/std 0.5, clipped to [-5,5]",
+  "genotype_order":["input-hidden row-major","hidden-hidden delayed row-major if enabled","hidden-output row-major","hidden bias"],
+  "topology":"fixed dense immediate input-hidden/hidden-output; delayed hidden-hidden including self loops; no structural mutation",
+  "bias":"evolved hidden bias; output bias zero; responses one",
+  "activation":"tanh hidden, identity output","profile":"persistent-layered-K1; zero reset",
+  "hidden_sizes":{"cartpole":8,"memory":4},"parameters":{"cartpole":120,"memory":32},
+  "rng":"JAX root semantic evolution namespace; complete key in WeightState; independent of evaluator chunking",
+  "invalid":"nonfinite score excluded from parents/elites; valid elites repeated if too few; all-invalid abort",
+  "fitness":"same evaluator as CPPN; maximize mean return or balanced memory accuracy",
+  "selection":"top-eight final training candidates; select on separate validation; held-out never selects",
+  "seeds":[0,1,2,3,4],"pilot_seed":900,"budget_seconds_per_seed":7200,
+  "experiment_counts":{"cartpole":{"generations":100,"training_candidate_episodes":102400,"validation_candidate_episodes":256,"heldout_candidate_episodes":20},"memory":{"generations":250,"training_candidate_episodes":1024000,"validation_candidate_episodes":512,"interpolation_candidate_episodes":256,"generalization_candidate_episodes":256}},
+  "quality":"report every baseline score; failing the task learning target does not invalidate the baseline or permit tuning against these seeds",
+  "comparison":"fixed evaluation budget plus wall-time-to-that-budget; no fixed-wall-time quality claim without a separately executed time-budget protocol",
+  "reuse":"same algorithm and parameters at M2/M3/M5; task-specific input/output and hidden size match the fixed substrate",
+  "not_qualified":["H2 learning","geometric diagnostic","W8 sequence environment","M2 integrated 1024-node G5"]
+}

@@ -1,0 +1,98 @@
+{
+  "schema": 1,
+  "method": "fixed-coordinate-CPPN",
+  "hardware": {
+    "backend": "gpu",
+    "devices": [
+      "cuda:0"
+    ],
+    "gpu": [
+      "GPU-84389f80-a576-d373-ecb0-92e972e72dfd",
+      "NVIDIA GeForce RTX 3070",
+      "8192",
+      "591.74"
+    ],
+    "kernel": "6.6.87.2-microsoft-standard-WSL2",
+    "python": "3.11.14",
+    "precision": "float32",
+    "preallocate": false,
+    "image_digest": "sha256:adb5659fed40c81f17c6ae5392a1fc9572ea944b63717dbb08c3786171f80321",
+    "allocator_fraction": 0.6,
+    "development_mount": false
+  },
+  "cells": {
+    "cartpole": {
+      "status": "measured",
+      "config_sha256": "b7d1302cced3a628b9a5de6a9b12b00098c4f31be52c708539b1c197f939ae4a",
+      "image_digest": "sha256:adb5659fed40c81f17c6ae5392a1fc9572ea944b63717dbb08c3786171f80321",
+      "engine_sha256": "90ec21d50ecf68fef4e0c13e526bde8a469262fde40b32fd6c2d4e8b7cb934be",
+      "pilot_passes": true,
+      "generations": 100,
+      "population": 128,
+      "heldout_score": {
+        "median": 500.0,
+        "range": [
+          439.8999938964844,
+          500.0
+        ]
+      },
+      "seed_scores": [
+        439.8999938964844,
+        500.0,
+        476.25,
+        500.0,
+        500.0
+      ],
+      "passed_seeds": 4,
+      "wall_seconds_per_seed": {
+        "median": 137.11292241000046,
+        "range": [
+          126.55166860500321,
+          142.0171939440006
+        ]
+      },
+      "minimum_valid_candidates": 128,
+      "portable_replay": "pass"
+    },
+    "memory": {
+      "status": "measured",
+      "config_sha256": "da323d66efa011292604a27933648b2389b2c2cb18dc317f6b15692f96a6ca05",
+      "image_digest": "sha256:adb5659fed40c81f17c6ae5392a1fc9572ea944b63717dbb08c3786171f80321",
+      "engine_sha256": "90ec21d50ecf68fef4e0c13e526bde8a469262fde40b32fd6c2d4e8b7cb934be",
+      "pilot_passes": true,
+      "generations": 250,
+      "population": 128,
+      "heldout_score": {
+        "median": 1.0,
+        "range": [
+          1.0,
+          1.0
+        ]
+      },
+      "seed_scores": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "passed_seeds": 5,
+      "wall_seconds_per_seed": {
+        "median": 447.4846706120006,
+        "range": [
+          422.64598244599983,
+          472.1045335689996
+        ]
+      },
+      "minimum_valid_candidates": 128,
+      "portable_replay": "pass",
+      "generalization_score": {
+        "median": 1.0,
+        "range": [
+          1.0,
+          1.0
+        ]
+      }
+    }
+  }
+}

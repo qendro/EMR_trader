@@ -1,0 +1,22 @@
+{
+  "schema": 1,
+  "id": "w8-shared-sequence-tracking-v2",
+  "stage": "M2-contract-check",
+  "task": "tracking",
+  "seed": 700,
+  "horizon": 10000,
+  "channels": 2,
+  "sequence_distribution": "numpy-PCG64-uniform-minus-one-to-one-float32",
+  "observation": "current-two-channel-row",
+  "target": "next-row-channel-zero",
+  "policy_output": "tanh-of-identity-head-bounded-minus-one-to-one",
+  "reward": "clip(1-abs(action-target)-0.5*abs(action-previous_action),-1,1)",
+  "initial_action": 0,
+  "chunk_steps": 250,
+  "episodes": 1,
+  "profile": "layered",
+  "policy_artifact": "/results/b0-v1/rtx3070-memory/seed-0/champion.npz",
+  "reducer": "w8-v1-Welford-population-std-additive-epsilon-0.01-minimum-32",
+  "checks": ["dynamic-shared-values", "causal-observation", "policy-and-reducer-continuation", "10000-step-float64-reward-statistics", "no-new-signature-at-20000-steps"],
+  "interpretation": "contract-and-runtime-check-not-learning-acceptance"
+}

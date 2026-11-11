@@ -1,0 +1,53 @@
+{
+  "conn_gene": {
+    "weight_init_mean": 0.0,
+    "weight_init_std": 1.0,
+    "weight_lower_bound": -5.0,
+    "weight_mutate_power": 0.15,
+    "weight_mutate_rate": 0.2,
+    "weight_replace_rate": 0.015,
+    "weight_upper_bound": 5.0
+  },
+  "gene_identity": "native-node-keys-and-connection-endpoint-pairs",
+  "input_transform": null,
+  "mutation": {
+    "conn_add": 0.2,
+    "conn_delete": 0.2,
+    "node_add": 0.1,
+    "node_delete": 0.1
+  },
+  "network_type": "recurrent",
+  "node_gene": {
+    "activation_default": 0,
+    "activation_indices": [
+      0
+    ],
+    "activation_options": [
+      "tanh_"
+    ],
+    "activation_replace_rate": 0.1,
+    "aggregation_default": 0,
+    "aggregation_indices": [
+      0
+    ],
+    "aggregation_options": [
+      "sum_"
+    ],
+    "aggregation_replace_rate": 0.1,
+    "bias_init_mean": 0.0,
+    "bias_init_std": 1.0,
+    "bias_lower_bound": -5,
+    "bias_mutate_power": 0.15,
+    "bias_mutate_rate": 0.2,
+    "bias_replace_rate": 0.015,
+    "bias_upper_bound": 5,
+    "reponse_lower_bound": -5,
+    "response_init_mean": 1.0,
+    "response_init_std": 0.0,
+    "response_mutate_power": 0.15,
+    "response_mutate_rate": 0.0,
+    "response_replace_rate": 0.0,
+    "response_upper_bound": 5
+  },
+  "output_transform": null
+}

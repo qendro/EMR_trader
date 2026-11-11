@@ -1,5 +1,9 @@
 # H2 comparison preparation
 
+The frozen small-substrate and direct-memory acceptance cells have now run on
+RTX 3070. See the [measured H2 report](H2-REPORT.md); this document preserves
+the pre-run pilot and comparison setup.
+
 The small fixed substrates and B0 baseline use the same layered runtime,
 population 128, hidden sizes (CartPole 8, memory 4), episode counts and
 generation caps. Their frozen acceptance manifests use seeds 0–4. B0's measured
@@ -28,6 +32,6 @@ system comparison because execution timing differs from layered substrates.
 The already measured M1 direct CartPole result can be identified by its older
 source/image provenance; feedforward timing is compatible.
 
-H2 still needs five-seed fixed acceptance, the direct memory system cell,
-the ungated geometric diagnostic, W8 sequence environment, and both
-fixed-evaluation and fixed-elapsed-time comparison reports. M2 remains open.
+The [W8 contract check](W8-REPORT.md) has since passed on CPU and both GPUs.
+The geometric diagnostic, fixed-elapsed-time comparison and integrated
+performance gates remain open. M2 remains open.

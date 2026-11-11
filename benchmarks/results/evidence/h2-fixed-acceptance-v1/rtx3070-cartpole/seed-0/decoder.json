@@ -1,0 +1,92 @@
+{
+  "bias": "last virtual input is one; its weights become hidden biases; output bias zero",
+  "cppn_output": "tanh of direct identity head",
+  "decoder": {
+    "hidden": 8,
+    "inputs": 4,
+    "kind": "fixed-coordinate-v1",
+    "max_weight": 5.0,
+    "outputs": 2,
+    "query_slab": 4096,
+    "recurrent": true,
+    "schema": 1,
+    "threshold": 0.3
+  },
+  "delays": "input-hidden/output immediate; hidden-hidden unit-delay",
+  "hidden_coordinates": [
+    [
+      -1.0,
+      0.0
+    ],
+    [
+      -0.7142857313156128,
+      0.0
+    ],
+    [
+      -0.4285714328289032,
+      0.0
+    ],
+    [
+      -0.1428571492433548,
+      0.0
+    ],
+    [
+      0.1428571492433548,
+      0.0
+    ],
+    [
+      0.4285714328289032,
+      0.0
+    ],
+    [
+      0.7142857313156128,
+      0.0
+    ],
+    [
+      1.0,
+      0.0
+    ]
+  ],
+  "input_coordinates_including_virtual_bias": [
+    [
+      -1.0,
+      -1.0
+    ],
+    [
+      -0.5,
+      -1.0
+    ],
+    [
+      0.0,
+      -1.0
+    ],
+    [
+      0.5,
+      -1.0
+    ],
+    [
+      1.0,
+      -1.0
+    ]
+  ],
+  "output_coordinates": [
+    [
+      -1.0,
+      1.0
+    ],
+    [
+      1.0,
+      1.0
+    ]
+  ],
+  "query_order": [
+    "source-x",
+    "source-y",
+    "target-x",
+    "target-y"
+  ],
+  "response": "one",
+  "role_activation": "tanh-hidden-identity-output",
+  "state_order": "input-hidden-output",
+  "weight_transform": "sign(q)*(abs(q)-threshold)/(1-threshold)*max_weight when abs(q)>threshold; else zero"
+}

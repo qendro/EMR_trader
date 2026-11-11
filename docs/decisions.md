@@ -51,3 +51,22 @@ V2 also freezes one initially empty persistent compilation cache per profile/mod
 Source inspection identifies an inference edge case: pinned TensorNEAT `common/functions/__init__.py::apply_aggregation` explicitly returns NaN when all incoming terms are NaN, including empty incoming connectivity. The platform contract deliberately defines an empty sum as zero and evaluates an isolated node's bias. M1 reuses native evolution, not this padding convention; upstream inference parity is claimed for compatible connected fixtures, not isolated nodes. Raw Q2 baselines retain upstream inference and therefore need the separately declared invalid-candidate boundary. This difference is not patched in the upstream source.
 
 The v1 matrix finished with nine failed direct cells and nine completed fixed cells across CPU and both cards. All 18 v2 cells then completed. Direct seeds 700/701/702 recorded 26/21/38 invalid candidate evaluations on each profile; fixed cells recorded zero invalid outputs. The first-invalid CPU genome replay has finite active attributes, isolated output ID 4, and 64 nonfinite outputs in column 0. Its replay reproduces those outputs. The dataset audit verifies all 49 persisted datasets, v2 protocol/script identity, complete histories, counts and empty/retained cache policy. Q2 remains open for the original EMR capacity failure, capacity-promotion run and full resource/stage audit; successful native baselines do not close that gate.
+
+## 2026-11-10: H2 learning and W8 task protocol
+
+The frozen fixed-HyperNEAT acceptance manifests used the same 0–4 seed,
+population and episode budgets as B0. Fixed CartPole passed 4/5 seeds and
+fixed memory passed 5/5 on RTX 3070. The separate direct recurrent memory
+system cell passed 4/5. Its generic 128-step synthetic replay overflowed FP32
+on seeds 0 and 2; the exported champions nevertheless reproduced every actual
+held-out memory decision and matched the independent scalar reference. Both
+outcomes are retained in the H2 report and raw evidence. No parameter or
+threshold was changed after the held-out scores were inspected.
+
+`w8-v1.json` had fixed the Welford/Chan reducer but did not define an executable
+tracking environment. `w8-tracking-v2.json` freezes the first such environment:
+two current channels, next-step channel-zero target, bounded action/reward,
+10,000 steps and 250-step continuation chunks. It was written before its
+three-profile measurements. The v1 reducer tolerances and minimum count were
+reused unchanged. This is a contract check on a fixed exported policy, not an
+evolutionary learning acceptance result.
