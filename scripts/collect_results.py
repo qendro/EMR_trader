@@ -20,7 +20,8 @@ for pattern in ('qualification-*','m1-final-*','m1-current-*','m1-resume-*',
                 'g2-*','g4-*','q2-v2','q2-complete','q2-native*','validation','diagnostics',
                 'development','h1-*','b0-v1','b0-resume-v1','b0-qualification-v1','b0-development',
                 'h2-fixed-*','h2-direct-*','h2-visual-*',
-                'm2-g2-*','m2-g3-*','m2-g4-*','m2-g5-*','w8-v2'):
+                'm2-g2-*','m2-g3-*','m2-g4-*','m2-g5-*',
+                'm2-elapsed-calibration-*','m2-elapsed-v1','m2-elapsed-v2','w8-v2'):
     roots.extend(source.glob(pattern))
 rows=[]
 for root in sorted(set(roots)):

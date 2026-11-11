@@ -9,7 +9,7 @@ import jax
 import jax.numpy as jnp
 import numpy as np
 import psutil
-from .artifacts import (canonical, write_json, export, save_checkpoint, load_checkpoint)
+from .artifacts import (canonical, atomic_write, write_json, export, save_checkpoint, load_checkpoint)
 from .planning import plan
 from .environments import cartpole, memory_scenarios
 from .evaluation import (make_cartpole_rollout, evaluate_population, memory_chunk, memory_initial, visual_chunk)
@@ -33,6 +33,8 @@ def load_config(path):
         raise ValueError("Unsupported experiment schema/task")
     if config.get("kind") not in ("acceptance","smoke","diagnostic"):
         raise ValueError("Unsupported experiment kind")
+    if config.get('history_policy') not in (None,'jsonl'):
+        raise ValueError('Unsupported history persistence policy')
     expected={"cartpole":(4,2,"argmax-first-tie"),"memory":(2,1,"sign-positive-tie"),
               "visual":(25,1,"sign-positive-tie")}[config["task"]]
     baseline=config['adapter'].get('kind')=='fixed-weight-v1'
@@ -141,6 +143,10 @@ def run(config, seed, directory, hardware, *, resume=False, stop_after=None, pil
         previous_wall = saved["elapsed_seconds"]
     else:
         state = adapter.initialize(seed)
+    streaming_history=config.get('history_policy')=='jsonl'
+    if streaming_history:
+        # A checkpoint is the committed state. Discard any later JSONL rows on resume.
+        atomic_write(directory/'history.jsonl',b''.join(canonical(row)+b'\n' for row in history))
     profile = 'layered' if decoder is not None else config["adapter"]["profile"]
     if config["task"] == "cartpole":
         env, params = cartpole()
@@ -284,10 +290,18 @@ def run(config, seed, directory, hardware, *, resume=False, stop_after=None, pil
             save_checkpoint(directory/"checkpoint.bin", state, {**config, "run_seed": seed}, source, history, archive,
                             previous_wall+time.perf_counter()-started)
         row["total_seconds"] = time.perf_counter()-gen_start
-        # Atomic bounded history also makes interrupted generations reviewable.
-        write_json(directory/"history.json", history)
+        if streaming_history:
+            # Append one bounded record; avoid rewriting the whole history on long runs.
+            with (directory/'history.jsonl').open('ab') as stream:
+                stream.write(canonical(row)+b'\n')
+                stream.flush()
+                os.fsync(stream.fileno())
+        else:
+            # Atomic bounded history makes interrupted short runs reviewable.
+            write_json(directory/"history.json", history)
         print(json.dumps({k: row[k] for k in ("generation", "best", "mean", "nodes_max", "total_seconds")}), flush=True)
-        row["total_seconds"] = time.perf_counter()-gen_start
+        if not streaming_history:
+            row["total_seconds"] = time.perf_counter()-gen_start
         if previous_wall+time.perf_counter()-started > config["budget_seconds_per_seed"]:
             write_json(directory/"budget-failure.json", {"status": "over-budget", "generation": generation})
             raise RuntimeError("Research budget exceeded")

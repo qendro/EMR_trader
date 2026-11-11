@@ -1,0 +1,43 @@
+{
+  "schema": 1,
+  "id": "m2-elapsed-b0-cartpole-calibration-v1",
+  "kind": "diagnostic",
+  "workload": "W3-generation",
+  "task": "cartpole",
+  "seeds": [
+    900
+  ],
+  "generations": 12,
+  "episodes": 8,
+  "horizon": 500,
+  "microbatch": 32,
+  "validation_episodes": 32,
+  "heldout_episodes": 20,
+  "finalists": 8,
+  "target": 450,
+  "required_seeds": 0,
+  "checkpoint_every": 500,
+  "budget_seconds_per_seed": 7200,
+  "budget_status": "G9-calibration-not-learning-acceptance",
+  "scenario_policy": "generation-specific",
+  "action": "argmax-first-tie",
+  "adapter": {
+    "schema": 1,
+    "kind": "fixed-weight-v1",
+    "population": 128,
+    "inputs": 4,
+    "hidden": 8,
+    "outputs": 2,
+    "profile": "layered",
+    "recurrent": true,
+    "init_std": 0.5,
+    "mutation_std": 0.15,
+    "mutation_rate": 0.2,
+    "survival_fraction": 0.1,
+    "elite_count": 2,
+    "weight_bound": 5.0
+  },
+  "method": "fixed-topology-weight-only",
+  "comparison": "fixed-elapsed-time G9 calibration, same task and substrate",
+  "history_policy": "jsonl"
+}

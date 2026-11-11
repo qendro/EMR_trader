@@ -1,0 +1,78 @@
+{
+  "schema": 1,
+  "id": "m2-elapsed-fixed-memory-acceptance-v1",
+  "kind": "acceptance",
+  "workload": "W4-memory",
+  "task": "memory",
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "generations": 5200,
+  "episodes": 32,
+  "horizon": 17,
+  "microbatch": 32,
+  "validation_episodes": 64,
+  "heldout_episodes": 256,
+  "finalists": 8,
+  "target": 0.9,
+  "required_seeds": 3,
+  "checkpoint_every": 500,
+  "budget_seconds_per_seed": 7200,
+  "budget_status": "requires-matching-integrated-G9-pilot",
+  "scenario_policy": "generation-specific",
+  "action": "sign-positive-tie",
+  "adapter": {
+    "population": 128,
+    "inputs": 4,
+    "outputs": 1,
+    "nodes": 32,
+    "edges": 128,
+    "profile": "dag",
+    "mutation": {
+      "conn_add": 0.2,
+      "conn_delete": 0.2,
+      "node_add": 0.1,
+      "node_delete": 0.1
+    },
+    "species": {
+      "species_size": 10,
+      "max_stagnation": 15,
+      "species_elitism": 2,
+      "spawn_number_change_rate": 0.5,
+      "genome_elitism": 2,
+      "survival_threshold": 0.1,
+      "min_species_size": 1,
+      "compatibility_threshold": 2.0,
+      "species_number_calculate_by": "rank"
+    }
+  },
+  "shared_protocol": "configs/memory-v1.json",
+  "method": "fixed-coordinate-CPPN",
+  "protocol_status": "frozen-not-run",
+  "comparison": "two-hour G9 elapsed-budget quality; separate from fixed-evaluation comparison",
+  "decoder": {
+    "schema": 1,
+    "kind": "fixed-coordinate-v1",
+    "inputs": 2,
+    "hidden": 4,
+    "outputs": 1,
+    "recurrent": true,
+    "threshold": 0.3,
+    "max_weight": 5.0,
+    "query_slab": 4096
+  },
+  "history_policy": "jsonl",
+  "calibration": {
+    "pilot_sha256": "b0dd33f952150178a83822ffca69e33bce7d80fa2e61022873eb1e0299efe239",
+    "pilot_image_digest": "sha256:821a1271caaf8aa2922e20a1cfdd65523bb5173254b8297123e15bead519e5b0",
+    "warm_generation_seconds": 1.1602720775008493,
+    "fixed_overhead_seconds": 18.824280285996792,
+    "allowable_generations": 5570.295341126894,
+    "cap_fraction_of_allowable": 0.95,
+    "tuning_trials": 0
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "schema": 1,
+  "status": "revised-before-acceptance",
+  "old_config_sha256": "ce3271e0a98ab22a038cf9448dd2ad90deb9a05719e536db1870f8a7f499cba8",
+  "new_config_sha256": "8705fc9ec9a8905e8508f322b75cbe44673bca61f37160756397abb65c2cb5f5",
+  "old_cap": 47900,
+  "new_cap": 45000,
+  "failed_pilot_sha256": "c01aed8d1beb5d71d8c75d04e2c9342b66c9556c186cdef44b2e6dded12ecc3c"
+}

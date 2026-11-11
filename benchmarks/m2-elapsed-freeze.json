@@ -1,0 +1,38 @@
+{
+  "schema": 1,
+  "status": "frozen-before-acceptance",
+  "rows": [
+    {
+      "method": "b0",
+      "task": "cartpole",
+      "generations": 47900,
+      "allowable_generations": 50522.48024414775,
+      "expected_training_candidate_episodes": 49049600,
+      "config_sha256": "ce3271e0a98ab22a038cf9448dd2ad90deb9a05719e536db1870f8a7f499cba8"
+    },
+    {
+      "method": "b0",
+      "task": "memory",
+      "generations": 35800,
+      "allowable_generations": 37789.12202716506,
+      "expected_training_candidate_episodes": 146636800,
+      "config_sha256": "af5a04f39f34ce228c58e2c17990ecfd94cda7d7795250a76ad827907c1b08ce"
+    },
+    {
+      "method": "fixed",
+      "task": "cartpole",
+      "generations": 5700,
+      "allowable_generations": 6078.787265445146,
+      "expected_training_candidate_episodes": 5836800,
+      "config_sha256": "800de8418af06979080c5df7dcc67bd87057dcce4bc1c2e0fe851bfb8fcd1748"
+    },
+    {
+      "method": "fixed",
+      "task": "memory",
+      "generations": 5200,
+      "allowable_generations": 5570.295341126894,
+      "expected_training_candidate_episodes": 21299200,
+      "config_sha256": "1a45e63cbe1ffa1ee3140fb27eab1bb752aa4aaaab6128797f428601bb1a27ed"
+    }
+  ]
+}

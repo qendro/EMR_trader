@@ -101,6 +101,22 @@ def test_weight_controller_archive_resume_reconstruction(task,tmp_path):
         np.testing.assert_array_equal(data['weights'],saved['champion']['weights'])
 
 
+def test_weight_streaming_history_resume_discards_uncheckpointed_tail(tmp_path):
+    c={**load_config('configs/b0-memory-smoke-v1.json'),'history_policy':'jsonl'}
+    c['checkpoint_every']=2
+    run(c,900,tmp_path,{},stop_after=2)
+    path=tmp_path/'history.jsonl'
+    with path.open('ab') as stream:
+        stream.write(b'{"generation":999}\n')
+    run(c,900,tmp_path,{},resume=True)
+    rows=[json.loads(line) for line in path.read_text().splitlines()]
+    final=json.loads((tmp_path/'history.json').read_text())
+    assert [r['generation'] for r in rows]==list(range(4))
+    assert [r['generation'] for r in final]==list(range(4))
+    assert all(a['best']==b['best'] for a,b in zip(rows,final))
+    assert all('total_seconds' in r for r in rows)
+
+
 @pytest.mark.parametrize('changes',[{'mutation_rate':1.1},{'survival_fraction':0},
     {'profile':'synchronous'},{'elite_count':8},{'recurrent':1},{'hidden':1024},{'weight_bound':6}])
 def test_weight_configuration_rejects_unsupported(changes):
