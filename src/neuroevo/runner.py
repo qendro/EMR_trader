@@ -35,6 +35,10 @@ def load_config(path):
         raise ValueError("Unsupported experiment kind")
     if config.get('history_policy') not in (None,'jsonl'):
         raise ValueError('Unsupported history persistence policy')
+    elapsed_stop=config.get('elapsed_stop_seconds')
+    if elapsed_stop is not None and (type(elapsed_stop) not in (int,float) or
+            not np.isfinite(elapsed_stop) or not 0 < elapsed_stop < config['budget_seconds_per_seed']):
+        raise ValueError('Elapsed stop must be within the research budget')
     expected={"cartpole":(4,2,"argmax-first-tie"),"memory":(2,1,"sign-positive-tie"),
               "visual":(25,1,"sign-positive-tie")}[config["task"]]
     baseline=config['adapter'].get('kind')=='fixed-weight-v1'
@@ -189,6 +193,7 @@ def run(config, seed, directory, hardware, *, resume=False, stop_after=None, pil
             scores=np.asarray(summaries,np.float32)
             return scores.mean(axis=1),np.asarray(validity,bool),scores
     limit = min(config["generations"], stop_after or config["generations"])
+    stopped_for_elapsed = False
     for generation in range(int(state.generation), limit):
         gen_start = time.perf_counter()
         batch = adapter.ask(state, f"seed-{seed}")
@@ -231,7 +236,10 @@ def run(config, seed, directory, hardware, *, resume=False, stop_after=None, pil
         finalists = np.argsort(-scores, kind="stable")[:config["finalists"]]
         # Final selection is evaluated on the final evaluated generation, before tell.
         selection_seconds = 0.
-        if generation == limit-1:
+        stopped_for_elapsed = bool(config.get('elapsed_stop_seconds') is not None and
+            previous_wall+time.perf_counter()-started >= config['elapsed_stop_seconds'])
+        final_generation = generation == limit-1 or stopped_for_elapsed
+        if final_generation:
             selection_start = time.perf_counter()
             atomic_genes(directory/"validation-finalists-genes.npz",genes(batch,finalists))
             vs, vv, _ = evaluate([plans[i] for i in finalists], "validation", 0, config["validation_episodes"])
@@ -286,7 +294,7 @@ def run(config, seed, directory, hardware, *, resume=False, stop_after=None, pil
                        phenotype_host_bytes_total=sum(s['host_array_bytes'] for s in decoded_stats))
         history.append(row)
         row["total_seconds"] = time.perf_counter()-gen_start
-        if int(state.generation) % config["checkpoint_every"] == 0 or generation == limit-1:
+        if int(state.generation) % config["checkpoint_every"] == 0 or final_generation:
             save_checkpoint(directory/"checkpoint.bin", state, {**config, "run_seed": seed}, source, history, archive,
                             previous_wall+time.perf_counter()-started)
         row["total_seconds"] = time.perf_counter()-gen_start
@@ -305,11 +313,14 @@ def run(config, seed, directory, hardware, *, resume=False, stop_after=None, pil
         if previous_wall+time.perf_counter()-started > config["budget_seconds_per_seed"]:
             write_json(directory/"budget-failure.json", {"status": "over-budget", "generation": generation})
             raise RuntimeError("Research budget exceeded")
+        if final_generation:
+            break
     write_json(directory/"history.json", history)
     from .resources import memory_record
     summary = {"seed": seed, "generations": int(state.generation), "kind": config["kind"],
                "wall_seconds": previous_wall+time.perf_counter()-started, "provenance": source,
                "hardware": hardware, "config_sha256": config_hash, "memory": memory_record(),
+               "stop_reason": "elapsed" if stopped_for_elapsed else "generation-cap",
                "structural_mutation_observed": False if baseline else any(r["nodes_max"] > config["adapter"]["inputs"]+config["adapter"]["outputs"] for r in history)}
     write_json(directory/"summary.json", summary)
     return summary, history

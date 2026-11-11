@@ -1,5 +1,5 @@
-param([string]$Image='neuroevo:elapsed-v2',
-      [string]$RunRoot='/results/m2-elapsed-v2',
+param([string]$Image='neuroevo:elapsed-v5',
+      [string]$RunRoot='/results/m2-elapsed-v5',
       [string]$Container='neuroevo-m2-elapsed')
 $ErrorActionPreference='Stop'
 $digest=(& docker image inspect $Image --format '{{.Id}}').Trim()

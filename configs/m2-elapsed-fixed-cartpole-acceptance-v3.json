@@ -1,0 +1,84 @@
+{
+  "schema": 1,
+  "id": "m2-elapsed-fixed-cartpole-acceptance-v3",
+  "kind": "acceptance",
+  "workload": "W3-generation",
+  "task": "cartpole",
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "generations": 100000,
+  "episodes": 8,
+  "horizon": 500,
+  "microbatch": 32,
+  "validation_episodes": 32,
+  "heldout_episodes": 20,
+  "finalists": 8,
+  "target": 450,
+  "required_seeds": 3,
+  "checkpoint_every": 500,
+  "budget_seconds_per_seed": 7200,
+  "budget_status": "requires-matching-integrated-G9-pilot",
+  "scenario_policy": "generation-specific",
+  "action": "argmax-first-tie",
+  "adapter": {
+    "population": 128,
+    "inputs": 4,
+    "outputs": 1,
+    "nodes": 32,
+    "edges": 128,
+    "profile": "dag",
+    "mutation": {
+      "conn_add": 0.2,
+      "conn_delete": 0.2,
+      "node_add": 0.1,
+      "node_delete": 0.1
+    },
+    "species": {
+      "species_size": 10,
+      "max_stagnation": 15,
+      "species_elitism": 2,
+      "spawn_number_change_rate": 0.5,
+      "genome_elitism": 2,
+      "survival_threshold": 0.1,
+      "min_species_size": 1,
+      "compatibility_threshold": 2.0,
+      "species_number_calculate_by": "rank"
+    }
+  },
+  "method": "fixed-coordinate-CPPN",
+  "protocol_status": "frozen-not-run",
+  "comparison": "wall stop at 6480 seconds, final selection within 7200-second G9 budget",
+  "decoder": {
+    "schema": 1,
+    "kind": "fixed-coordinate-v1",
+    "inputs": 4,
+    "hidden": 8,
+    "outputs": 2,
+    "recurrent": true,
+    "threshold": 0.3,
+    "max_weight": 5.0,
+    "query_slab": 4096
+  },
+  "history_policy": "jsonl",
+  "calibration": {
+    "pilot_sha256": "1271ea6d9af43aaca4feb3787dad57c5efd6f0759cdfaa00366d20342515f42a",
+    "pilot_image_digest": "sha256:3d44f3fb422d8d449b32d616554b28c861f885551acc511ce230369c3b264e0c",
+    "warm_generation_seconds": 1.074651327999959,
+    "fixed_overhead_seconds": 18.906240733000402,
+    "allowable_generations": 6014.0291227002945,
+    "cap_fraction_of_allowable": 0.947783903886502,
+    "tuning_trials": 0
+  },
+  "elapsed_stop_seconds": 6480,
+  "elapsed_revision": {
+    "reason": "use the same wall cutoff for every method; generation cap is a safety ceiling",
+    "failed_run_budget_record_sha256": "5a6b68007f2aa562e558ce6b1af1610c55cba4d8715634dd93e4077eac7eb04b",
+    "prior_manifest": "m2-elapsed-fixed-cartpole-acceptance-v2",
+    "prior_matching_pilot_sha256": "5e191968e0124c277ff7e148faa580564eb7a6c2e8fa675fab857c35e9495643"
+  }
+}

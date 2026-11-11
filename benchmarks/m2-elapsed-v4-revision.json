@@ -1,0 +1,20 @@
+{
+  "schema": 1,
+  "status": "revised-before-v4-acceptance",
+  "rows": [
+    {
+      "task": "cartpole",
+      "old_cap": 53000,
+      "new_cap": 48000,
+      "failed_pilot_sha256": "953735d853e0cd6f951926e5f3bc2d22647eb8ca425774d001169bb86658b87e",
+      "new_config_sha256": "9d7c6593889ba1f25fe5056ad9202bb86c942c2499c74e98d07626f791999919"
+    },
+    {
+      "task": "memory",
+      "old_cap": 39000,
+      "new_cap": 36000,
+      "failed_pilot_sha256": "852d566b8040e290607eaab673bc1089210b1e98c1b69576217bb84ddf6b3937",
+      "new_config_sha256": "790fe15dd483da583d384f70e766ff141eb4187def31d7109b624ae932c018d3"
+    }
+  ]
+}

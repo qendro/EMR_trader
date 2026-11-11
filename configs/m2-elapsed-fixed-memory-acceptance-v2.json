@@ -1,0 +1,84 @@
+{
+  "schema": 1,
+  "id": "m2-elapsed-fixed-memory-acceptance-v2",
+  "kind": "acceptance",
+  "workload": "W4-memory",
+  "task": "memory",
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "generations": 5200,
+  "episodes": 32,
+  "horizon": 17,
+  "microbatch": 32,
+  "validation_episodes": 64,
+  "heldout_episodes": 256,
+  "finalists": 8,
+  "target": 0.9,
+  "required_seeds": 3,
+  "checkpoint_every": 500,
+  "budget_seconds_per_seed": 7200,
+  "budget_status": "requires-matching-integrated-G9-pilot",
+  "scenario_policy": "generation-specific",
+  "action": "sign-positive-tie",
+  "adapter": {
+    "population": 128,
+    "inputs": 4,
+    "outputs": 1,
+    "nodes": 32,
+    "edges": 128,
+    "profile": "dag",
+    "mutation": {
+      "conn_add": 0.2,
+      "conn_delete": 0.2,
+      "node_add": 0.1,
+      "node_delete": 0.1
+    },
+    "species": {
+      "species_size": 10,
+      "max_stagnation": 15,
+      "species_elitism": 2,
+      "spawn_number_change_rate": 0.5,
+      "genome_elitism": 2,
+      "survival_threshold": 0.1,
+      "min_species_size": 1,
+      "compatibility_threshold": 2.0,
+      "species_number_calculate_by": "rank"
+    }
+  },
+  "shared_protocol": "configs/memory-v1.json",
+  "method": "fixed-coordinate-CPPN",
+  "protocol_status": "frozen-not-run",
+  "comparison": "quality at 6480-second elapsed stop within 7200-second G9 research budget",
+  "decoder": {
+    "schema": 1,
+    "kind": "fixed-coordinate-v1",
+    "inputs": 2,
+    "hidden": 4,
+    "outputs": 1,
+    "recurrent": true,
+    "threshold": 0.3,
+    "max_weight": 5.0,
+    "query_slab": 4096
+  },
+  "history_policy": "jsonl",
+  "calibration": {
+    "pilot_sha256": "3403497d5ec149a6a552951e1feded20ae35872f553cac986fe995de258a67d9",
+    "pilot_image_digest": "sha256:3d44f3fb422d8d449b32d616554b28c861f885551acc511ce230369c3b264e0c",
+    "warm_generation_seconds": 1.1537133525000058,
+    "fixed_overhead_seconds": 19.004681781999977,
+    "allowable_generations": 5601.82108700711,
+    "cap_fraction_of_allowable": 0.9282695607792445,
+    "tuning_trials": 0
+  },
+  "elapsed_stop_seconds": 6480,
+  "elapsed_revision": {
+    "reason": "fixed CartPole seed 0 exceeded 7200 seconds after topology growth; end at a common elapsed cutoff before final selection",
+    "failed_run_budget_record_sha256": "5a6b68007f2aa562e558ce6b1af1610c55cba4d8715634dd93e4077eac7eb04b",
+    "prior_manifest": "m2-elapsed-fixed-memory-acceptance-v1"
+  }
+}

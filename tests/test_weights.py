@@ -117,6 +117,18 @@ def test_weight_streaming_history_resume_discards_uncheckpointed_tail(tmp_path):
     assert all('total_seconds' in r for r in rows)
 
 
+def test_weight_elapsed_stop_selects_last_evaluated_generation(tmp_path):
+    c={**load_config('configs/b0-memory-smoke-v1.json'),
+       'elapsed_stop_seconds':1e-9,'history_policy':'jsonl'}
+    summary,history=run(c,900,tmp_path,{})
+    assert summary['stop_reason']=='elapsed'
+    assert summary['generations']==1
+    assert len(history)==1
+    selection=json.loads((tmp_path/'selection.json').read_text())
+    assert selection['candidate_id'] in selection['finalist_ids']
+    assert (tmp_path/'checkpoint.bin').exists()
+
+
 @pytest.mark.parametrize('changes',[{'mutation_rate':1.1},{'survival_fraction':0},
     {'profile':'synchronous'},{'elite_count':8},{'recurrent':1},{'hidden':1024},{'weight_bound':6}])
 def test_weight_configuration_rejects_unsupported(changes):

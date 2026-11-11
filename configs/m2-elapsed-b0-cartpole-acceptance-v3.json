@@ -1,0 +1,68 @@
+{
+  "schema": 1,
+  "id": "m2-elapsed-b0-cartpole-acceptance-v3",
+  "kind": "acceptance",
+  "workload": "W3-generation",
+  "task": "cartpole",
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "generations": 53000,
+  "episodes": 8,
+  "horizon": 500,
+  "microbatch": 32,
+  "validation_episodes": 32,
+  "heldout_episodes": 20,
+  "finalists": 8,
+  "target": 450,
+  "required_seeds": 3,
+  "checkpoint_every": 500,
+  "budget_seconds_per_seed": 7200,
+  "budget_status": "requires-matching-integrated-G9-pilot",
+  "scenario_policy": "generation-specific",
+  "action": "argmax-first-tie",
+  "adapter": {
+    "schema": 1,
+    "kind": "fixed-weight-v1",
+    "population": 128,
+    "inputs": 4,
+    "hidden": 8,
+    "outputs": 2,
+    "profile": "layered",
+    "recurrent": true,
+    "init_std": 0.5,
+    "mutation_std": 0.15,
+    "mutation_rate": 0.2,
+    "survival_fraction": 0.1,
+    "elite_count": 2,
+    "weight_bound": 5.0
+  },
+  "method": "fixed-topology-weight-only",
+  "comparison": "quality at 6480-second elapsed stop within 7200-second G9 research budget",
+  "history_policy": "jsonl",
+  "calibration": {
+    "pilot_sha256": "b16840175e5f6c4b1d9a1e4f75dcb30e85483f14806ca30136e495493ba3eb89",
+    "pilot_image_digest": "sha256:3d44f3fb422d8d449b32d616554b28c861f885551acc511ce230369c3b264e0c",
+    "warm_generation_seconds": 0.11350787850000188,
+    "fixed_overhead_seconds": 8.755025097999976,
+    "allowable_generations": 57019.12997529676,
+    "cap_fraction_of_allowable": 0.9295126043305462,
+    "tuning_trials": 0
+  },
+  "revision": {
+    "reason": "first matching G9 pilot missed 47900-generation cap after warm-time variation",
+    "failed_pilot_sha256": "c01aed8d1beb5d71d8c75d04e2c9342b66c9556c186cdef44b2e6dded12ecc3c",
+    "failed_allowable_generations": 47622.21704336105,
+    "revised_cap": 45000
+  },
+  "elapsed_stop_seconds": 6480,
+  "elapsed_revision": {
+    "reason": "fixed CartPole seed 0 exceeded 7200 seconds after topology growth; end at a common elapsed cutoff before final selection",
+    "failed_run_budget_record_sha256": "5a6b68007f2aa562e558ce6b1af1610c55cba4d8715634dd93e4077eac7eb04b",
+    "prior_manifest": "m2-elapsed-b0-cartpole-acceptance-v2"
+  }
+}

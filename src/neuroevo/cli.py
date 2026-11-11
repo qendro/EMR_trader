@@ -65,8 +65,19 @@ def main(hardware=None):
             # Includes measured startup/compile, checkpoints and final validation/held-out selection.
             fixed = max(0., summary["wall_seconds"]-max(0,len(history)-2)*warm)
             allowable = .9*(config["budget_seconds_per_seed"]-fixed)/warm
+            elapsed_stop = config.get('elapsed_stop_seconds')
+            if elapsed_stop is None:
+                passes = bool(config['generations'] <= allowable)
+                budget_rule = 'generation-cap-with-ten-percent-reserve'
+            else:
+                # The cap is a safety ceiling. The wall stop, followed by final
+                # selection, controls the budget when generation cost drifts.
+                finalization_reserve = config['budget_seconds_per_seed']-elapsed_stop
+                passes = bool(finalization_reserve >= max(120., 10.*history[-1]['selection_seconds']))
+                budget_rule = 'elapsed-stop-with-finalization-reserve'
             result = {**summary, "fixed_overhead_seconds": fixed, "warm_generation_seconds": warm,
-                      "allowable_generations": allowable, "passes": bool(config["generations"] <= allowable),
+                      "allowable_generations": allowable, "passes": passes,
+                      "pilot_budget_rule": budget_rule,
                       "label": "G9-pilot-not-learning-acceptance", "pilot_seed": summary["seed"]}
             write_json(Path(args.output)/"pilot.json", result)
         else:

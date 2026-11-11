@@ -1,0 +1,43 @@
+{
+  "schema": 1,
+  "status": "frozen-before-v3-acceptance",
+  "failed_run_budget_record_sha256": "5a6b68007f2aa562e558ce6b1af1610c55cba4d8715634dd93e4077eac7eb04b",
+  "rows": [
+    {
+      "method": "b0",
+      "task": "cartpole",
+      "version": "v3",
+      "generation_cap": 53000,
+      "elapsed_stop_seconds": 6480,
+      "allowable_generations": 57019.12997529676,
+      "config_sha256": "88634dda3d87f03f5e790c9bd693716fcc40b43f68f56cd9f1a088d3c2180c43"
+    },
+    {
+      "method": "b0",
+      "task": "memory",
+      "version": "v2",
+      "generation_cap": 39000,
+      "elapsed_stop_seconds": 6480,
+      "allowable_generations": 40169.81944435073,
+      "config_sha256": "e5940243054f119df06f10159e1f20ebf7ea2ea38e87051c2141834881541d82"
+    },
+    {
+      "method": "fixed",
+      "task": "cartpole",
+      "version": "v2",
+      "generation_cap": 5700,
+      "elapsed_stop_seconds": 6480,
+      "allowable_generations": 6014.0291227002945,
+      "config_sha256": "f4268ca458567c3c711e9ba83add41d69208cf33bab960d6d06ebf5c22214039"
+    },
+    {
+      "method": "fixed",
+      "task": "memory",
+      "version": "v2",
+      "generation_cap": 5200,
+      "elapsed_stop_seconds": 6480,
+      "allowable_generations": 5601.82108700711,
+      "config_sha256": "c482d4b2f1852270f0ad81baa324cb2ba3ac03215142e7bb3a39bd6a8a8bdfb8"
+    }
+  ]
+}

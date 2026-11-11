@@ -42,12 +42,34 @@ the seed:
 | Fixed CartPole v1 | 5,700 | 6,120 |
 | Fixed memory v1 | 5,200 | 5,672 |
 
-The long-run controller writes generation history as JSONL and restores it
-from the last checkpoint on resume. This avoids rewriting the entire history
-on every generation. The full acceptance seeds and their quality comparison
-are still pending. Their output root is `/results/m2-elapsed-v2` in the
-`neuroevo-results` Docker volume; `scripts/m2_elapsed_acceptance.py` runs
-one seed at a time and records progress there.
+The first v2 fixed CartPole seed reached generation 4,905, then failed the
+7,200-second budget before its 5,700-generation cap. Its population grew
+from roughly 7 to 30 CPPN nodes, and late generations took roughly 1.7–2.0
+seconds instead of the pilot's 1.07 seconds. Its budget failure, history,
+checkpoint and console log are retained under
+[`m2-elapsed-v2`](results/evidence/m2-elapsed-v2/). This is a failed
+acceptance attempt; it has no held-out selection result.
 
-The calibration runs, first failed cap pilot and both sets of passing final
-pilots are retained under [the hashed evidence index](results/evidence/index.json).
+The revised runner stops after the first completed generation at or past
+6,480 seconds from process start, then performs validation, held-out
+evaluation, checkpointing and reporting within the 7,200-second budget.
+The 100,000-generation field is a safety ceiling; it does not determine
+the comparison endpoint. All four methods use this same rule. The G9 pilot
+for a wall-stopped run checks the 720-second finalization reserve. The
+intermediate v3 B0 caps missed their matching pilots, and the v4 caps passed
+but could finish before the shared elapsed cutoff. Both revisions are
+retained in [the v3 freeze](m2-elapsed-v3-freeze.json),
+[v4 cap revision](m2-elapsed-v4-revision.json) and
+[v5 freeze](m2-elapsed-v5-freeze.json).
+
+The long-run controller writes generation history as JSONL and restores it
+from the last checkpoint on resume. The full v5 acceptance seeds and their
+quality comparison remain pending. Their output root is
+`/results/m2-elapsed-v5` in the `neuroevo-results` Docker volume;
+`scripts/m2_elapsed_acceptance.py` runs one seed at a time and records
+progress there. The four matching v5 pilots pass on image
+`sha256:d4f395ef90f2cbdb5124f4677b40416ceb93f92b157b1b9143154c8cb4a95e64`
+with driver 610.88.
+
+Calibration runs, failed cells, intermediate revisions and passing pilots
+are retained under [the hashed evidence index](results/evidence/index.json).

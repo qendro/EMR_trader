@@ -1,0 +1,8 @@
+{
+  "status": "failed",
+  "method": "fixed",
+  "task": "cartpole",
+  "seed": 0,
+  "exit_code": 1,
+  "log": "/results/m2-elapsed-v2/fixed-cartpole/seed-0/console.log"
+}

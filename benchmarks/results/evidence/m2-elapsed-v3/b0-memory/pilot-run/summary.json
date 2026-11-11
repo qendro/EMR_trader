@@ -1,0 +1,75 @@
+{
+  "config_sha256": "e5940243054f119df06f10159e1f20ebf7ea2ea38e87051c2141834881541d82",
+  "generations": 12,
+  "hardware": {
+    "allocator_fraction": 0.6,
+    "backend": "gpu",
+    "development_mount": false,
+    "devices": [
+      "cuda:0"
+    ],
+    "gpu": [
+      "GPU-84389f80-a576-d373-ecb0-92e972e72dfd",
+      "NVIDIA GeForce RTX 3070",
+      "8192",
+      "610.88"
+    ],
+    "image_digest": "sha256:301bb14f6245f431a69ef8309488fbe0b6194d2d0aa5c1298144b0744838bb4c",
+    "kernel": "6.6.87.2-microsoft-standard-WSL2",
+    "preallocate": false,
+    "precision": "float32",
+    "python": "3.11.14"
+  },
+  "kind": "acceptance",
+  "memory": {
+    "cgroup_current_bytes": 655044608,
+    "cgroup_peak_bytes": 666374144,
+    "cgroup_swap_bytes": 0,
+    "device_allocator": {
+      "bytes_in_use": 18176,
+      "bytes_limit": 5153646387,
+      "bytes_reserved": 0,
+      "largest_alloc_size": 436480,
+      "largest_free_block_bytes": 0,
+      "num_allocs": 17692,
+      "peak_bytes_in_use": 1101056,
+      "peak_bytes_reserved": 0,
+      "peak_pool_bytes": 2097152,
+      "pool_bytes": 2097152
+    },
+    "process_peak_rss_bytes": 968982528
+  },
+  "provenance": {
+    "compatibility_lock_sha256": "a11a7696492404e642f411a817893b984511a7f0da0131318d44173b2741c4d9",
+    "engine_sha256": "616f59e0f962fb88b69d0a763882a183a26ff1fdc25c9f9219be97faf3c80b2d",
+    "lock_sha256": "df89b8faeaefc2cf0a8ad1e723e7b000cbf48496a00b1e2ef0a3bac6fb33bdae",
+    "packages": {
+      "emr-hyperneat": "0.3.0",
+      "gymnax": "0.0.9",
+      "jax": "0.6.1",
+      "jaxlib": "0.6.1",
+      "numpy": "1.26.4",
+      "tensorneat": "0.1.0"
+    },
+    "sources": {
+      "base_image": "python:3.11.14-slim-bookworm@sha256:65a93d69fa75478d554f4ad27c85c1e69fa184956261b4301ebaf6dbb0a3543d",
+      "emr": {
+        "archive_sha256": "2e4e7ec552fd2fb6ebd59e44b8ea89057f9980ef296d4451e22ccb7915bfb59d",
+        "license": "GPL-3.0-or-later (bundled LICENSE)",
+        "sha": "306eb4e67687390bb88131ead6af8bebffa8cee9",
+        "url": "https://github.com/RomainClaret/emr-hyperneat.git"
+      },
+      "schema": 1,
+      "tensorneat": {
+        "archive_sha256": "6776462f279bc6fa2ff9c0bf4adc405732d25681424346c8f5d6f9d7469cda3f",
+        "license": "GPL-3.0-or-later (bundled LICENSE)",
+        "sha": "49c193d546447d5fe2cb4b26f60758d23fc24cb0",
+        "url": "https://github.com/RomainClaret/tensorneat.git"
+      }
+    }
+  },
+  "seed": 900,
+  "stop_reason": "generation-cap",
+  "structural_mutation_observed": false,
+  "wall_seconds": 10.125545959999954
+}

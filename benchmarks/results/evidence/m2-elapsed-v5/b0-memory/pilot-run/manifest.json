@@ -1,0 +1,119 @@
+{
+  "config": {
+    "action": "sign-positive-tie",
+    "adapter": {
+      "elite_count": 2,
+      "hidden": 4,
+      "init_std": 0.5,
+      "inputs": 2,
+      "kind": "fixed-weight-v1",
+      "mutation_rate": 0.2,
+      "mutation_std": 0.15,
+      "outputs": 1,
+      "population": 128,
+      "profile": "layered",
+      "recurrent": true,
+      "schema": 1,
+      "survival_fraction": 0.1,
+      "weight_bound": 5.0
+    },
+    "budget_seconds_per_seed": 7200,
+    "budget_status": "requires-matching-integrated-G9-pilot",
+    "calibration": {
+      "allowable_generations": 40169.81944435073,
+      "cap_fraction_of_allowable": 0.9708781502995965,
+      "fixed_overhead_seconds": 8.329806529999814,
+      "pilot_image_digest": "sha256:3d44f3fb422d8d449b32d616554b28c861f885551acc511ce230369c3b264e0c",
+      "pilot_sha256": "52b4a3df7a3766d86468cabf6ecaa8d7fdea9ceb81c8affbb328bcae847de1f6",
+      "tuning_trials": 0,
+      "warm_generation_seconds": 0.16112851050002064
+    },
+    "checkpoint_every": 500,
+    "comparison": "wall stop at 6480 seconds, final selection within 7200-second G9 budget",
+    "elapsed_revision": {
+      "failed_run_budget_record_sha256": "5a6b68007f2aa562e558ce6b1af1610c55cba4d8715634dd93e4077eac7eb04b",
+      "matching_pilot_failure_sha256": "852d566b8040e290607eaab673bc1089210b1e98c1b69576217bb84ddf6b3937",
+      "pilot_allowable_generations": 37191.84017665619,
+      "prior_manifest": "m2-elapsed-b0-memory-acceptance-v3",
+      "prior_matching_pilot_sha256": "3c51d74191f1793696c30033f75606be81097779a505e334de38b37d6ddc5f18",
+      "reason": "use the same wall cutoff for every method; generation cap is a safety ceiling",
+      "revised_generation_cap": 36000
+    },
+    "elapsed_stop_seconds": 6480,
+    "episodes": 32,
+    "finalists": 8,
+    "generations": 100000,
+    "heldout_episodes": 256,
+    "history_policy": "jsonl",
+    "horizon": 17,
+    "id": "m2-elapsed-b0-memory-acceptance-v4",
+    "kind": "acceptance",
+    "method": "fixed-topology-weight-only",
+    "microbatch": 32,
+    "required_seeds": 3,
+    "scenario_policy": "generation-specific",
+    "schema": 1,
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "shared_protocol": "configs/memory-v1.json",
+    "target": 0.9,
+    "task": "memory",
+    "validation_episodes": 64,
+    "workload": "W4-memory"
+  },
+  "config_sha256": "988f64c85c29e7e80660547de33e014997b20ea802a60cad4fb4caa46c40f9a7",
+  "hardware": {
+    "allocator_fraction": 0.6,
+    "backend": "gpu",
+    "development_mount": false,
+    "devices": [
+      "cuda:0"
+    ],
+    "gpu": [
+      "GPU-84389f80-a576-d373-ecb0-92e972e72dfd",
+      "NVIDIA GeForce RTX 3070",
+      "8192",
+      "610.88"
+    ],
+    "image_digest": "sha256:d4f395ef90f2cbdb5124f4677b40416ceb93f92b157b1b9143154c8cb4a95e64",
+    "kernel": "6.6.87.2-microsoft-standard-WSL2",
+    "preallocate": false,
+    "precision": "float32",
+    "python": "3.11.14"
+  },
+  "provenance": {
+    "compatibility_lock_sha256": "a11a7696492404e642f411a817893b984511a7f0da0131318d44173b2741c4d9",
+    "engine_sha256": "c7c9693590ea17bd2512c9e8da797f08c0b7c0364f6360c71c4c1b8d5cebc4cd",
+    "lock_sha256": "df89b8faeaefc2cf0a8ad1e723e7b000cbf48496a00b1e2ef0a3bac6fb33bdae",
+    "packages": {
+      "emr-hyperneat": "0.3.0",
+      "gymnax": "0.0.9",
+      "jax": "0.6.1",
+      "jaxlib": "0.6.1",
+      "numpy": "1.26.4",
+      "tensorneat": "0.1.0"
+    },
+    "sources": {
+      "base_image": "python:3.11.14-slim-bookworm@sha256:65a93d69fa75478d554f4ad27c85c1e69fa184956261b4301ebaf6dbb0a3543d",
+      "emr": {
+        "archive_sha256": "2e4e7ec552fd2fb6ebd59e44b8ea89057f9980ef296d4451e22ccb7915bfb59d",
+        "license": "GPL-3.0-or-later (bundled LICENSE)",
+        "sha": "306eb4e67687390bb88131ead6af8bebffa8cee9",
+        "url": "https://github.com/RomainClaret/emr-hyperneat.git"
+      },
+      "schema": 1,
+      "tensorneat": {
+        "archive_sha256": "6776462f279bc6fa2ff9c0bf4adc405732d25681424346c8f5d6f9d7469cda3f",
+        "license": "GPL-3.0-or-later (bundled LICENSE)",
+        "sha": "49c193d546447d5fe2cb4b26f60758d23fc24cb0",
+        "url": "https://github.com/RomainClaret/tensorneat.git"
+      }
+    }
+  },
+  "seed": 900
+}

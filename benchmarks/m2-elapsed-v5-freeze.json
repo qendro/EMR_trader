@@ -1,0 +1,42 @@
+{
+  "schema": 1,
+  "status": "frozen-before-v5-acceptance",
+  "rows": [
+    {
+      "method": "b0",
+      "task": "cartpole",
+      "version": "v5",
+      "generation_safety_ceiling": 100000,
+      "elapsed_stop_seconds": 6480,
+      "config_sha256": "c2bd8d24591e418c115412d510a9f33482cf4f5ffa3a0e5e4386ab21a8ef6ad9",
+      "prior_matching_pilot_sha256": "85bb0abd097ba2becff4b117d82364b241d5a6d46cd0d958cb7d962b33c380a1"
+    },
+    {
+      "method": "b0",
+      "task": "memory",
+      "version": "v4",
+      "generation_safety_ceiling": 100000,
+      "elapsed_stop_seconds": 6480,
+      "config_sha256": "988f64c85c29e7e80660547de33e014997b20ea802a60cad4fb4caa46c40f9a7",
+      "prior_matching_pilot_sha256": "3c51d74191f1793696c30033f75606be81097779a505e334de38b37d6ddc5f18"
+    },
+    {
+      "method": "fixed",
+      "task": "cartpole",
+      "version": "v3",
+      "generation_safety_ceiling": 100000,
+      "elapsed_stop_seconds": 6480,
+      "config_sha256": "a960c5ee66788e6744bfcb8fc87a3f2d74eb26666a7b1f8ceca3389b61c259e1",
+      "prior_matching_pilot_sha256": "5e191968e0124c277ff7e148faa580564eb7a6c2e8fa675fab857c35e9495643"
+    },
+    {
+      "method": "fixed",
+      "task": "memory",
+      "version": "v3",
+      "generation_safety_ceiling": 100000,
+      "elapsed_stop_seconds": 6480,
+      "config_sha256": "d6a9919b73f857e93dfbd2497a5c2ba4c34a5f54ebdfa590e971532c961343ef",
+      "prior_matching_pilot_sha256": "0db69f211e5e714c3475d7c4c35c21fc5aada584c72fad3202c86e1d64568631"
+    }
+  ]
+}

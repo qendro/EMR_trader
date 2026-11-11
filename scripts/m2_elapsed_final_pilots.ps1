@@ -1,5 +1,5 @@
-param([string]$Image='neuroevo:elapsed-v1',
-      [string]$RunRoot='/results/m2-elapsed-v1')
+param([string]$Image='neuroevo:elapsed-v5',
+      [string]$RunRoot='/results/m2-elapsed-v5')
 $ErrorActionPreference='Stop'
 $digest=(& docker image inspect $Image --format '{{.Id}}').Trim()
 $common=@('run','--rm','--gpus','all','--memory=6g','--cpus=4',
@@ -11,7 +11,9 @@ $common=@('run','--rm','--gpus','all','--memory=6g','--cpus=4',
     '-e',"NEUROEVO_IMAGE_DIGEST=$digest")
 foreach ($method in @('b0','fixed')) {
     foreach ($task in @('cartpole','memory')) {
-        $version=if ($method -eq 'b0' -and $task -eq 'cartpole') {'v2'} else {'v1'}
+        $version=if ($method -eq 'b0') {
+            if ($task -eq 'cartpole') {'v5'} else {'v4'}
+        } else {'v3'}
         $config="configs/m2-elapsed-$method-$task-acceptance-$version.json"
         $output="$RunRoot/$method-$task"
         & docker @common $Image benchmark --config $config --output $output

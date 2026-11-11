@@ -31,12 +31,12 @@ def atomic_json(path,value):
 
 
 parser=argparse.ArgumentParser()
-parser.add_argument('--output',default='/results/m2-elapsed-v2')
+parser.add_argument('--output',default='/results/m2-elapsed-v5')
 args=parser.parse_args()
 root=Path(args.output)
 image_digest=os.environ['NEUROEVO_IMAGE_DIGEST']
-cells=(('fixed','cartpole','v1'),('b0','cartpole','v2'),
-       ('fixed','memory','v1'),('b0','memory','v1'))
+cells=(('fixed','cartpole','v3'),('b0','cartpole','v5'),
+       ('fixed','memory','v3'),('b0','memory','v4'))
 started=time.time()
 completed_cells=[]
 for method,task,version in cells:
@@ -46,6 +46,7 @@ for method,task,version in cells:
     cell=root/f'{method}-{task}'
     pilot=json.loads((cell/'pilot.json').read_text())
     assert pilot['passes'] and pilot['config_sha256']==digest
+    assert pilot['pilot_budget_rule']=='elapsed-stop-with-finalization-reserve'
     assert pilot['hardware']['image_digest']==image_digest
     assert config['kind']=='acceptance' and config['history_policy']=='jsonl'
     runs=[]
@@ -56,7 +57,9 @@ for method,task,version in cells:
         complete=False
         if summary_path.exists() and selection_path.exists():
             summary=json.loads(summary_path.read_text())
-            complete=(summary['generations']==config['generations'] and
+            complete=(0 < summary['generations'] < config['generations'] and
+                      summary['stop_reason']=='elapsed' and
+                      summary['wall_seconds'] <= config['budget_seconds_per_seed'] and
                       summary['config_sha256']==digest and summary['seed']==seed and
                       summary['hardware']==pilot['hardware'])
         if not complete:
@@ -81,6 +84,12 @@ for method,task,version in cells:
                 raise RuntimeError(f'Elapsed comparison failed: {method} {task} seed {seed}')
         summary=json.loads(summary_path.read_text())
         selection=json.loads(selection_path.read_text())
+        if not (0 < summary['generations'] < config['generations'] and
+                summary['stop_reason']=='elapsed' and
+                summary['wall_seconds'] <= config['budget_seconds_per_seed'] and
+                summary['config_sha256']==digest and summary['seed']==seed and
+                summary['hardware']==pilot['hardware']):
+            raise RuntimeError(f'Invalid elapsed result: {method} {task} seed {seed}')
         runs.append({**summary,'selection':selection})
         print(json.dumps({'event':'complete','method':method,'task':task,
                           'seed':seed,'generations':summary['generations'],
