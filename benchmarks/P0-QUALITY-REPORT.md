@@ -25,12 +25,14 @@ the separate raw 120-step target. The P0 harder-task gate therefore remains
 open. This failed result stays attached to the frozen protocol; it is not
 reinterpreted as a pass because the policies beat random action.
 
-The direct, fixed-substrate and fixed-topology weight comparisons were
-registered before these adaptive scores were available and are queued on
-the same five seeds and held-out protocol. Their results will indicate
-whether the shortfall is specific to adaptive discovery or shared by the
-task and search budget. No tuning or task change is claimed from the
-unfinished comparisons.
+The [completed four-method comparison](P0-COMPARISON-REPORT.md) used the
+same five seeds and held-out protocol. The fixed-topology weight method
+passed with median paired gain 95.27% and a positive 95% seed bootstrap
+interval [88.30%, 96.08%]. Direct and fixed-substrate methods had median
+gains 4.34% and 3.20%. The harder-task quality target is met by the
+weight-only method; adaptive EMR's shortfall remains a method-specific
+research limitation under this frozen budget. No method was silently tuned
+after inspecting these results.
 
 Fifteen [complete champion trajectories](p0-adaptive-trajectories-v1.json)
 (the first three held-out episodes for each seed) were replayed from exported

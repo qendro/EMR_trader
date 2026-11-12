@@ -1,0 +1,147 @@
+{
+  "task": "cartpole-partial",
+  "comparison": "shared-heldout-protocol",
+  "methods": [
+    {
+      "method": "adaptive",
+      "experiment": "p0-partial-cartpole-acceptance-v1",
+      "config_sha256": "cccc000a59434745c8e49ddff21181dd7434b20c6840d018c13245f3efada7e3",
+      "engine_sha256": "0b73aa49464efb5d08fd269c623e4c48b5b9cd88b2a5900e4eb8eb02e08c2269",
+      "heldout_means": [
+        47.0,
+        57.9900016784668,
+        85.30999755859375,
+        59.099998474121094,
+        52.16999816894531
+      ],
+      "quality": {
+        "seeds": 5,
+        "episodes_per_seed": 100,
+        "normalization_scale": 500.0,
+        "per_seed_improvement": [
+          0.04872,
+          0.06864,
+          0.12834,
+          0.07532,
+          0.06512000000000001
+        ],
+        "median_improvement": 0.06864,
+        "bootstrap_95_interval": [
+          0.04872,
+          0.12834
+        ],
+        "bootstrap_unit": "evolution-seed",
+        "bootstrap_samples": 20000,
+        "passes": false
+      },
+      "raw_seed_passes": 0,
+      "passes": false
+    },
+    {
+      "method": "direct",
+      "experiment": "p0-partial-direct-acceptance-v1",
+      "config_sha256": "17ff1d0b9f3df8a4a8db7f6f15f747d69d50d56e6dda5e287e2e0b4b316d1aa7",
+      "engine_sha256": "f49df099a63a1a05de10980481b39128c395b83663a833fe8fda2a6132a3cb6e",
+      "heldout_means": [
+        44.33000183105469,
+        43.84000015258789,
+        44.90999984741211,
+        42.06999969482422,
+        43.599998474121094
+      ],
+      "quality": {
+        "seeds": 5,
+        "episodes_per_seed": 100,
+        "normalization_scale": 500.0,
+        "per_seed_improvement": [
+          0.04338,
+          0.04034,
+          0.04754,
+          0.04126,
+          0.047979999999999995
+        ],
+        "median_improvement": 0.04338,
+        "bootstrap_95_interval": [
+          0.04034,
+          0.047979999999999995
+        ],
+        "bootstrap_unit": "evolution-seed",
+        "bootstrap_samples": 20000,
+        "passes": false
+      },
+      "raw_seed_passes": 0,
+      "passes": false
+    },
+    {
+      "method": "fixed",
+      "experiment": "p0-partial-fixed-acceptance-v1",
+      "config_sha256": "3a2efbb585d4e59d5a4acec7dfc21b6cb26153c07931a0f698eefb828a7937bc",
+      "engine_sha256": "f49df099a63a1a05de10980481b39128c395b83663a833fe8fda2a6132a3cb6e",
+      "heldout_means": [
+        37.22999954223633,
+        38.959999084472656,
+        284.3900146484375,
+        39.689998626708984,
+        35.630001068115234
+      ],
+      "quality": {
+        "seeds": 5,
+        "episodes_per_seed": 100,
+        "normalization_scale": 500.0,
+        "per_seed_improvement": [
+          0.02918,
+          0.03058,
+          0.5265,
+          0.0365,
+          0.03204
+        ],
+        "median_improvement": 0.03204,
+        "bootstrap_95_interval": [
+          0.02918,
+          0.5265
+        ],
+        "bootstrap_unit": "evolution-seed",
+        "bootstrap_samples": 20000,
+        "passes": false
+      },
+      "raw_seed_passes": 1,
+      "passes": false
+    },
+    {
+      "method": "weight",
+      "experiment": "p0-partial-weight-acceptance-v1",
+      "config_sha256": "f35cb073dd4e8f100eeecd07907907ec87510d3603870139f9f3da08c252e0fa",
+      "engine_sha256": "f49df099a63a1a05de10980481b39128c395b83663a833fe8fda2a6132a3cb6e",
+      "heldout_means": [
+        500.0,
+        500.0,
+        462.6199951171875,
+        474.3999938964844,
+        500.0
+      ],
+      "quality": {
+        "seeds": 5,
+        "episodes_per_seed": 100,
+        "normalization_scale": 500.0,
+        "per_seed_improvement": [
+          0.95472,
+          0.95266,
+          0.8829600000000001,
+          0.90592,
+          0.96078
+        ],
+        "median_improvement": 0.95266,
+        "bootstrap_95_interval": [
+          0.8829600000000001,
+          0.96078
+        ],
+        "bootstrap_unit": "evolution-seed",
+        "bootstrap_samples": 20000,
+        "passes": true
+      },
+      "raw_seed_passes": 5,
+      "passes": true
+    }
+  ],
+  "any_method_passes": true
+}

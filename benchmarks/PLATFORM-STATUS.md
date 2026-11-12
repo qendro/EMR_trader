@@ -15,7 +15,7 @@ lines; their measurements are never combined into a single speed ratio.
 | Memory scheduling | [S2 development](S2-DEVELOPMENT-REPORT.md), explicit budget refusal | Implemented; measured scale gate open |
 | 2,048-node, P=256 W6 fixture | [W6 script](../scripts/w6_fixture.py), small CPU check | Per-card full fixture queued |
 | W7 stability | No 15-minute single-process fixed-shape audit | Open |
-| Harder partially observed control | [P0 adaptive report](P0-QUALITY-REPORT.md): median paired gain 6.86%, target 20%; direct/fixed/weight comparisons queued | Adaptive research gate failed; method comparisons open |
+| Harder partially observed control | [P0 four-method comparison](P0-COMPARISON-REPORT.md): weight-only median paired gain 95.27%, adaptive 6.86%, direct 4.34%, fixed 3.20% | Harder-task quality target passed via weight-only; decoder-specific adaptive/direct/fixed limitations retained |
 | M4 G5 and both-card gates | No isolated matched end-to-end CPU/GPU M4 cell | Open |
 | Artifact portability and resume | M1/A2 smoke evidence | Passed for recorded cases; M5 replacement check open |
 | Full cross-backend current-source regression | 116 CPU tests on image | Both GPU profiles open |
