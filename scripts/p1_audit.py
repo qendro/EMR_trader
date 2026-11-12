@@ -2,10 +2,21 @@
 import argparse
 import json
 from pathlib import Path
+import xml.etree.ElementTree as ET
 
 
 def audit(root):
     root=Path(root)
+    tests={}
+    for profile in ('cpu','rtx3070','rtx3060'):
+        document=ET.parse(root/f'results/p1-tests-{profile}.xml')
+        suite=document.getroot().find('testsuite')
+        if suite is None:
+            suite=document.getroot()
+        tests[profile]={name:int(suite.attrib.get(name,0))
+                        for name in ('tests','failures','errors','skipped')}
+    tests_pass=all(row['tests']>=116 and row['failures']==0 and row['errors']==0
+                   for row in tests.values())
     replay={profile:json.loads((root/f'p1-replay-{profile}-v1.json').read_text())
             for profile in ('cpu','rtx3070','rtx3060')}
     actions=[row['actions'] for row in replay.values()]
@@ -21,10 +32,11 @@ def audit(root):
                      selection['heldout_valid'])
     return {'replay_max_abs_error':{name:row['max_abs_error']
                                    for name,row in replay.items()},
+            'regression_tests':tests,
             'replay_actions_identical':same_actions,
             'resume_generations':summary['generations'],
             'resume_history_rows':len(history),
-            'passes':bool(replay_pass and same_actions and resume_pass)}
+            'passes':bool(tests_pass and replay_pass and same_actions and resume_pass)}
 
 
 if __name__=='__main__':

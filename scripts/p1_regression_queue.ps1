@@ -25,7 +25,8 @@ foreach ($profile in @('cpu', 'rtx3070', 'rtx3060')) {
     Write-Output "Running P1 $profile regression suite"
     & docker run --rm @gpuArgs --cpus=4 --memory=6g --shm-size=1g `
         @envArgs -v "${workspace}:/app" -v neuroevo-cache:/cache `
-        neuroevo:m4-p0-comparison-v1 test -q tests --disable-warnings
+        neuroevo:m4-p0-comparison-v1 test -q tests --disable-warnings `
+        --junitxml "benchmarks/results/p1-tests-$profile.xml"
     if ($LASTEXITCODE -ne 0) { throw "P1 $profile regression failed" }
     Write-Output "Replaying P1 artifact on $profile"
     & docker run --rm @gpuArgs --cpus=4 --memory=6g --shm-size=1g `
