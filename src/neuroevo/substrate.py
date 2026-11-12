@@ -10,7 +10,7 @@ def blocks(w_in, w_delay, w_out, mask_in, mask_delay, mask_out,
         raise ValueError("Block weights must be matrices")
     i,h = wi.shape
     o = wo.shape[1]
-    if min(i,h,o) < 1 or wd.shape != (h,h) or wo.shape[0] != h:
+    if min(i,o) < 1 or wd.shape != (h,h) or wo.shape[0] != h:
         raise ValueError("Inconsistent block dimensions")
     n=i+h+o
     weights, masks = [], []
@@ -64,7 +64,7 @@ def from_graph(g):
     i,o=len(g.inputs),len(g.outputs)
     h=len(g.node_ids)-i-o
     n=i+h+o
-    if (g.profile!='layered' or g.k!=1 or h<1 or g.node_ids!=tuple(range(n))
+    if (g.profile!='layered' or g.k!=1 or h<0 or g.node_ids!=tuple(range(n))
             or g.inputs!=tuple(range(i)) or g.outputs!=tuple(range(i+h,n))
             or not np.array_equal(g.response,np.ones(n))
             or not np.array_equal(g.activation,np.array([0]*i+[1]*h+[0]*o))
