@@ -16,6 +16,8 @@ def test_visual_adaptive_config_uses_exact_shared_grid_and_public_api():
     from emr_hyperneat import EMRHyperNEAT
 
     config = load_config('configs/a2-visual-adaptive-diagnostic-v1.json')
+    smoke = load_config('configs/a2-visual-smoke-v1.json')
+    assert smoke['adapter']['population'] == 8
     checked = settings(config['adaptive'])
     assert len(checked['input_coords']) == 25
     assert checked['max_depth'] == 1 and not checked['recurrent']
