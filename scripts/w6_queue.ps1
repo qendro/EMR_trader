@@ -25,4 +25,9 @@ foreach ($card in @(@{name='NVIDIA GeForce RTX 3070'; label='rtx3070'},
         python scripts/w6_fixture.py --output $output
     if ($LASTEXITCODE -ne 0) { throw "W6 failed on $($card.name)" }
 }
+& docker run --rm --entrypoint env -e PYTHONPATH=/app/src -e JAX_PLATFORMS=cpu `
+    -v "${workspace}:/app" neuroevo:m4-p0-comparison-v1 `
+    python scripts/w6_audit.py --results benchmarks/w6-rtx3070-v1.json `
+    benchmarks/w6-rtx3060-v1.json --output benchmarks/w6-v1-audit.json
+if ($LASTEXITCODE -ne 0) { throw 'W6 audit failed' }
 Write-Output 'W6 per-card fixture queue completed.'

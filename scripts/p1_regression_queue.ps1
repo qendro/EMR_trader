@@ -45,4 +45,9 @@ $runArgs = @('--cpus=4', '--memory=6g', '--shm-size=1g',
 if ($LASTEXITCODE -ne 0) { throw 'P1 pre-replacement checkpoint failed' }
 & docker run --rm @runArgs --resume
 if ($LASTEXITCODE -ne 0) { throw 'P1 post-replacement continuation failed' }
+& docker run --rm --entrypoint env -e PYTHONPATH=/app/src -e JAX_PLATFORMS=cpu `
+    -v "${workspace}:/app" neuroevo:m4-p0-comparison-v1 `
+    python scripts/p1_audit.py --benchmarks-root benchmarks `
+    --output benchmarks/p1-crossbackend-v1-audit.json
+if ($LASTEXITCODE -ne 0) { throw 'P1 portability audit failed' }
 Write-Output 'P1 cross-backend regression and replay queue completed.'
