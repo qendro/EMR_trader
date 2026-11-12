@@ -40,3 +40,12 @@ stayed well inside its position limit while the pole angle approached its
 termination threshold. This localizes the observed failures to angular
 balance; the method comparisons are needed before attributing the cause to
 adaptive discovery or the partially observed task itself.
+
+A separate [fixed finite-difference controller](p0-known-solution-v1.json)
+using only the exposed cart position and pole angle scored 500/500 on all
+100 held-out episodes for each of the five seeds. It estimates velocities
+from successive visible observations; it is a diagnostic known solution,
+not an evolved candidate or part of the acceptance count. It confirms that
+the observation restriction and simulator permit sustained control. The
+remaining question is whether the declared evolution methods can discover
+such control within their frozen budgets.
