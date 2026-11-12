@@ -58,3 +58,26 @@ def test_edge_layout_runs_through_shared_population_evaluator():
     b=memory_chunk(q,memory_initial(q,2),obs,cues,delays,times,profile='layered')
     np.testing.assert_array_equal(a.correct,b.correct)
     np.testing.assert_allclose(a.policy,b.policy,atol=2e-5,rtol=2e-5)
+
+
+def test_edge_layout_matches_dense_with_hub_and_disconnected_nodes():
+    hidden=128
+    wi=np.zeros((2,hidden),np.float32)
+    wi[0,:64]=np.float32(.05)
+    wo=np.zeros((hidden,1),np.float32)
+    wo[0,0]=np.float32(.5)
+    wd=np.zeros((hidden,hidden),np.float32)
+    wd[:64,0]=np.float32(.01)  # 64-way incoming hub; node 127 is isolated.
+    wd[0,1]=np.float32(.2)
+    wd[1,0]=np.float32(.03)
+    dense=blocks(wi,wd,wo,wi!=0,wd!=0,wo!=0)
+    edge=from_blocks(dense,int((wd!=0).sum()))
+    a=jnp.zeros(len(dense.node_mask),jnp.float32)
+    b=a
+    for time in range(16):
+        observation=jnp.array([np.sin(time)*.4,.2],jnp.float32)
+        head_a,a=block_step(dense,a,observation)
+        head_b,b=compiled_edge_step(edge,b,observation)
+        np.testing.assert_allclose(head_a,head_b,atol=2e-5,rtol=2e-5)
+        np.testing.assert_allclose(a,b,atol=2e-5,rtol=2e-5)
+    assert float(a[2+127])==0.
