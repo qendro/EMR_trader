@@ -1,0 +1,222 @@
+{
+  "complete_protocol": true,
+  "config": {
+    "action": "argmax-first-tie",
+    "adapter": {
+      "edges": 1024,
+      "inputs": 4,
+      "kind": "adaptive-emr-v1",
+      "nodes": 26,
+      "outputs": 2,
+      "population": 128,
+      "profile": "layered"
+    },
+    "adaptive": {
+      "band_threshold": 0.3,
+      "input_coords": [
+        [
+          -1,
+          -1
+        ],
+        [
+          -0.3333333432674408,
+          -1
+        ],
+        [
+          0.3333333432674408,
+          -1
+        ],
+        [
+          1,
+          -1
+        ]
+      ],
+      "kind": "adaptive-emr-v1",
+      "max_depth": 1,
+      "max_sparse_conns": 512,
+      "max_weight": 8.0,
+      "output_coords": [
+        [
+          -1,
+          1
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "population": 128,
+      "recurrent": true,
+      "schema": 1,
+      "settling_steps": 3,
+      "variance_threshold": 0.03,
+      "weight_threshold": 0.1
+    },
+    "budget_seconds_per_seed": 1200,
+    "budget_status": "requires-matching-integrated-G9-pilot",
+    "checkpoint_every": 50,
+    "discovery_microbatch": 8,
+    "elapsed_stop_seconds": 960,
+    "episodes": 8,
+    "finalists": 8,
+    "generations": 1000,
+    "heldout_episodes": 20,
+    "history_policy": "jsonl",
+    "horizon": 500,
+    "id": "s2-w7-adaptive-stability-v1",
+    "kind": "diagnostic",
+    "method": "S2-bounded-adaptive-long-run",
+    "microbatch": 16,
+    "phenotype_storage_budget_bytes": 50000000,
+    "protocol_status": "frozen-stability-diagnostic",
+    "required_seeds": 3,
+    "rollout_memory_budget_bytes": 67108864,
+    "scenario_policy": "generation-specific",
+    "schema": 1,
+    "seeds": [
+      900
+    ],
+    "target": 450,
+    "task": "cartpole",
+    "validation_episodes": 32,
+    "workload": "W3-generation"
+  },
+  "passed_seeds": 1,
+  "runs": [
+    {
+      "config_sha256": "0aba32b3c9659b66ec46935c33c3ed5b83d3db98d2db42c3aec9d782dce92c67",
+      "generations": 380,
+      "hardware": {
+        "allocator_fraction": 0.6,
+        "backend": "gpu",
+        "development_mount": true,
+        "devices": [
+          "cuda:0"
+        ],
+        "gpu": [
+          "GPU-84389f80-a576-d373-ecb0-92e972e72dfd",
+          "NVIDIA GeForce RTX 3070",
+          "8192",
+          "610.88"
+        ],
+        "image_digest": "not-recorded-development-run",
+        "kernel": "6.6.87.2-microsoft-standard-WSL2",
+        "preallocate": false,
+        "precision": "float32",
+        "python": "3.11.14"
+      },
+      "kind": "diagnostic",
+      "memory": {
+        "cgroup_current_bytes": 1260343296,
+        "cgroup_peak_bytes": 1320226816,
+        "cgroup_swap_bytes": 0,
+        "device_allocator": {
+          "bytes_in_use": 331776,
+          "bytes_limit": 5153646387,
+          "bytes_reserved": 0,
+          "largest_alloc_size": 33554432,
+          "largest_free_block_bytes": 0,
+          "num_allocs": 2600813,
+          "peak_bytes_in_use": 44290048,
+          "peak_bytes_reserved": 0,
+          "peak_pool_bytes": 132120576,
+          "pool_bytes": 132120576
+        },
+        "process_peak_rss_bytes": 1667809280
+      },
+      "provenance": {
+        "compatibility_lock_sha256": "a11a7696492404e642f411a817893b984511a7f0da0131318d44173b2741c4d9",
+        "engine_sha256": "9201dde901592929ee6eedf410bb37d4b49aaa96d07ce1c91420c80478582f67",
+        "lock_sha256": "df89b8faeaefc2cf0a8ad1e723e7b000cbf48496a00b1e2ef0a3bac6fb33bdae",
+        "packages": {
+          "emr-hyperneat": "0.3.0",
+          "gymnax": "0.0.9",
+          "jax": "0.6.1",
+          "jaxlib": "0.6.1",
+          "numpy": "1.26.4",
+          "tensorneat": "0.1.0"
+        },
+        "sources": {
+          "base_image": "python:3.11.14-slim-bookworm@sha256:65a93d69fa75478d554f4ad27c85c1e69fa184956261b4301ebaf6dbb0a3543d",
+          "emr": {
+            "archive_sha256": "2e4e7ec552fd2fb6ebd59e44b8ea89057f9980ef296d4451e22ccb7915bfb59d",
+            "license": "GPL-3.0-or-later (bundled LICENSE)",
+            "sha": "306eb4e67687390bb88131ead6af8bebffa8cee9",
+            "url": "https://github.com/RomainClaret/emr-hyperneat.git"
+          },
+          "schema": 1,
+          "tensorneat": {
+            "archive_sha256": "6776462f279bc6fa2ff9c0bf4adc405732d25681424346c8f5d6f9d7469cda3f",
+            "license": "GPL-3.0-or-later (bundled LICENSE)",
+            "sha": "49c193d546447d5fe2cb4b26f60758d23fc24cb0",
+            "url": "https://github.com/RomainClaret/tensorneat.git"
+          }
+        }
+      },
+      "seed": 900,
+      "selection": {
+        "candidate_id": "seed-900:379:0",
+        "episode_scores": [
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0
+        ],
+        "finalist_ids": [
+          "seed-900:379:0",
+          "seed-900:379:1",
+          "seed-900:379:2",
+          "seed-900:379:3",
+          "seed-900:379:4",
+          "seed-900:379:5",
+          "seed-900:379:6",
+          "seed-900:379:7"
+        ],
+        "finalist_training_scores": [
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0
+        ],
+        "finalist_validation_scores": [
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0
+        ],
+        "heldout_score": 500.0,
+        "heldout_valid": true,
+        "kind": "diagnostic",
+        "passes_learning": true,
+        "validation_score": 500.0
+      },
+      "stop_reason": "elapsed",
+      "structural_mutation_observed": true,
+      "wall_seconds": 966.9532423019991
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "manifest": "s2-w7-adaptive-stability-v1",
+  "generations": 380,
+  "wall_seconds": 966.9532423019991,
+  "warmup_generations": 38,
+  "rollout_signatures_at_warmup": 4,
+  "rollout_signatures_at_last_training_generation": 4,
+  "rollout_signatures_after_final_selection": 8,
+  "new_training_signatures_after_warmup": false,
+  "warm_rss_first_quintile_median": 1570570240,
+  "warm_rss_last_quintile_median": 1585971200,
+  "rss_growth_fraction": 0.00980596703525971,
+  "device_live_first_quintile_median": 344192,
+  "device_live_last_quintile_median": 344192,
+  "device_live_growth_fraction": 0.0,
+  "warm_generation_first_quintile_median_seconds": 2.4366858975045034,
+  "warm_generation_last_quintile_median_seconds": 2.421484626502206,
+  "warm_generation_slowdown_fraction": -0.006238502474966268,
+  "cgroup_swap_bytes": 0,
+  "passes": true
+}
