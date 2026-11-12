@@ -1,0 +1,34 @@
+{
+  "experiment": "p0-partial-cartpole-acceptance-v1",
+  "config_sha256": "cccc000a59434745c8e49ddff21181dd7434b20c6840d018c13245f3efada7e3",
+  "engine_sha256": "0b73aa49464efb5d08fd269c623e4c48b5b9cd88b2a5900e4eb8eb02e08c2269",
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "raw_seed_passes": 0,
+  "paired_quality": {
+    "seeds": 5,
+    "episodes_per_seed": 100,
+    "normalization_scale": 500.0,
+    "per_seed_improvement": [
+      0.04872,
+      0.06864,
+      0.12834,
+      0.07532,
+      0.06512000000000001
+    ],
+    "median_improvement": 0.06864,
+    "bootstrap_95_interval": [
+      0.04872,
+      0.12834
+    ],
+    "bootstrap_unit": "evolution-seed",
+    "bootstrap_samples": 20000,
+    "passes": false
+  },
+  "passes": false
+}

@@ -1,6 +1,7 @@
 """W6 bounded-microbatch irregular and dense-input execution fixtures."""
 import argparse
 import json
+import os
 import time
 
 import jax
@@ -104,11 +105,18 @@ if __name__=='__main__':
     parser.add_argument('--horizon',type=int,default=128)
     parser.add_argument('--microbatch',type=int,default=4)
     args=parser.parse_args()
+    if os.environ.get('CUDA_VISIBLE_DEVICES') and (
+            len(jax.devices())!=1 or jax.devices()[0].platform!='gpu'):
+        raise RuntimeError('W6 selected GPU is unavailable or fell back to CPU')
     cells=[run_cell('edge',args.population,args.hidden,args.edges,4,
                     args.episodes,args.horizon,args.microbatch),
            run_cell('dense',args.population,args.hidden,args.edges,400,
                     args.episodes,args.horizon,args.microbatch)]
     with open(args.output,'w') as output:
-        json.dump({'device':str(jax.devices()[0]),'cells':cells},output,indent=2)
+        json.dump({'device':str(jax.devices()[0]),
+                   'device_kind':jax.devices()[0].device_kind,
+                   'visible_devices':len(jax.devices()),
+                   'cuda_visible_devices':os.environ.get('CUDA_VISIBLE_DEVICES'),
+                   'cells':cells},output,indent=2)
     for cell in cells:
         print(json.dumps({k:v for k,v in cell.items() if k!='memory'}),flush=True)
