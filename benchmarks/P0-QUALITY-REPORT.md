@@ -30,9 +30,9 @@ same five seeds and held-out protocol. The fixed-topology weight method
 passed with median paired gain 95.27% and a positive 95% seed bootstrap
 interval [88.30%, 96.08%]. Direct and fixed-substrate methods had median
 gains 4.34% and 3.20%. The harder-task quality target is met by the
-weight-only method; adaptive EMR's shortfall remains a method-specific
-research limitation under this frozen budget. No method was silently tuned
-after inspecting these results.
+weight-only method; adaptive EMR's shortfall remains an open research
+limitation under its frozen configuration and budget. No method was silently
+tuned after inspecting these results.
 
 Fifteen [complete champion trajectories](p0-adaptive-trajectories-v1.json)
 (the first three held-out episodes for each seed) were replayed from exported
