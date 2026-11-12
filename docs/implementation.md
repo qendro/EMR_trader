@@ -5,6 +5,10 @@ M1's accepted source is retained separately. H0/H1 and B0 are implemented and ve
 
 The sections below record the M1 increment and its original decisions. H0/H1's qualified engine is `e4fbdd7588fd6008455fc109d12996fa21097bd40d07849f83149d2493b113b6`, built and tested as `neuroevo:h1` (image `5c567eb307576b52543497c16f7a6fdaedb333272067b4d774b508dbcc29fd46`). B0/H2's measured learning engine is `90ec21d50ecf68fef4e0c13e526bde40b32fd6c2d4e8b7cb934be`, retained under `benchmarks/reproduction/h2-90ec`. The current W8 engine is `54b32a9f470a556e28c6e537a4b1a5d342ddd15a0a58b993a864392057f1d0e7`, tested with 69 tests on all three profiles. Historical M1 results retain engine `8d3aba65…`, tag `neuroevo:m1-qualified`, and exact source under `benchmarks/reproduction/m1-8d3`. Native checkpoints require their recorded source hash.
 
+The initial [A0 configuration boundary](a0.md) now validates a narrow adaptive
+recipe, translates it through the pinned EMR public config API, and rejects
+unsupported options. Phenotype extraction and adaptive rollout are A1/A2 work.
+
 ## Q0 decisions
 
 Both target cards share this Windows host: RTX 3060 12,288 MiB and RTX 3070 8,192 MiB, driver 591.74. The **RTX 3070 gates progression**. Host RAM is 17,100,693,504 bytes, with six logical CPUs. Docker Desktop exposes approximately 7.7 GiB to Linux; containers use four CPUs and a 6 GiB memory limit. These limits leave Windows headroom and prohibit assuming pooled VRAM. See `benchmarks/results/host-inventory.json`.
