@@ -1,0 +1,34 @@
+{
+  "experiment": "p0-partial-fixed-acceptance-v1",
+  "config_sha256": "3a2efbb585d4e59d5a4acec7dfc21b6cb26153c07931a0f698eefb828a7937bc",
+  "engine_sha256": "f49df099a63a1a05de10980481b39128c395b83663a833fe8fda2a6132a3cb6e",
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "raw_seed_passes": 1,
+  "paired_quality": {
+    "seeds": 5,
+    "episodes_per_seed": 100,
+    "normalization_scale": 500.0,
+    "per_seed_improvement": [
+      0.02918,
+      0.03058,
+      0.5265,
+      0.0365,
+      0.03204
+    ],
+    "median_improvement": 0.03204,
+    "bootstrap_95_interval": [
+      0.02918,
+      0.5265
+    ],
+    "bootstrap_unit": "evolution-seed",
+    "bootstrap_samples": 20000,
+    "passes": false
+  },
+  "passes": false
+}
