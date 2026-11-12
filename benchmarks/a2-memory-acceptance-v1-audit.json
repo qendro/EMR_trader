@@ -1,0 +1,106 @@
+{
+  "image_digest": "sha256:89a3b14f9695910f70f9f060a4013ebca188e890b53ec05365d875649a4fc569",
+  "passed_seeds": 5,
+  "pilot_warm_generation_seconds": 1.6234268984990194,
+  "required_seeds": 3,
+  "schema": 1,
+  "seeds": [
+    {
+      "active_hidden_count_range": [
+        4,
+        20
+      ],
+      "distinct_weighted_graphs": 6519,
+      "heldout_score": 1.0,
+      "heldout_valid": true,
+      "max_phenotype_edges": 460,
+      "max_phenotype_nodes": 23,
+      "min_valid_candidates": 128,
+      "passes_learning": true,
+      "seed": 0,
+      "validation_score": 1.0,
+      "wall_seconds": 494.2687549760012,
+      "warm_decode_median_seconds": 1.4553623464962584,
+      "warm_evolve_median_seconds": 0.016202363498450723,
+      "warm_rollout_median_seconds": 0.16790570599550847
+    },
+    {
+      "active_hidden_count_range": [
+        4,
+        20
+      ],
+      "distinct_weighted_graphs": 6466,
+      "heldout_score": 1.0,
+      "heldout_valid": true,
+      "max_phenotype_edges": 460,
+      "max_phenotype_nodes": 23,
+      "min_valid_candidates": 128,
+      "passes_learning": true,
+      "seed": 1,
+      "validation_score": 1.0,
+      "wall_seconds": 477.1111604030011,
+      "warm_decode_median_seconds": 1.4188969980023103,
+      "warm_evolve_median_seconds": 0.015221003501210362,
+      "warm_rollout_median_seconds": 0.16579489900323097
+    },
+    {
+      "active_hidden_count_range": [
+        4,
+        20
+      ],
+      "distinct_weighted_graphs": 5895,
+      "heldout_score": 1.0,
+      "heldout_valid": true,
+      "max_phenotype_edges": 460,
+      "max_phenotype_nodes": 23,
+      "min_valid_candidates": 128,
+      "passes_learning": true,
+      "seed": 2,
+      "validation_score": 1.0,
+      "wall_seconds": 470.8459786979947,
+      "warm_decode_median_seconds": 1.3767279050007346,
+      "warm_evolve_median_seconds": 0.016430918003607076,
+      "warm_rollout_median_seconds": 0.16718782599491533
+    },
+    {
+      "active_hidden_count_range": [
+        4,
+        20
+      ],
+      "distinct_weighted_graphs": 6407,
+      "heldout_score": 1.0,
+      "heldout_valid": true,
+      "max_phenotype_edges": 460,
+      "max_phenotype_nodes": 23,
+      "min_valid_candidates": 128,
+      "passes_learning": true,
+      "seed": 3,
+      "validation_score": 1.0,
+      "wall_seconds": 469.9673094609898,
+      "warm_decode_median_seconds": 1.3924464324954897,
+      "warm_evolve_median_seconds": 0.01480755300144665,
+      "warm_rollout_median_seconds": 0.16390477949607885
+    },
+    {
+      "active_hidden_count_range": [
+        4,
+        20
+      ],
+      "distinct_weighted_graphs": 5428,
+      "heldout_score": 1.0,
+      "heldout_valid": true,
+      "max_phenotype_edges": 460,
+      "max_phenotype_nodes": 23,
+      "min_valid_candidates": 128,
+      "passes_learning": true,
+      "seed": 4,
+      "validation_score": 1.0,
+      "wall_seconds": 474.6328285139898,
+      "warm_decode_median_seconds": 1.3979190915051731,
+      "warm_evolve_median_seconds": 0.01648488150385674,
+      "warm_rollout_median_seconds": 0.16877139849384548
+    }
+  ],
+  "status": "research-gate-pass",
+  "task": "memory"
+}
