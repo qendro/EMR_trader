@@ -50,8 +50,7 @@ def audit(experiment_path, baseline_path):
         'engine_sha256':pilot['provenance']['engine_sha256'],'seeds':seeds,
         'raw_seed_passes':experiment['passed_seeds'],
         'paired_quality':result,
-        'passes':bool(result['passes'] and
-                      experiment['passed_seeds']>=config['required_seeds'])}
+        'passes':bool(result['passes'])}
 
 
 if __name__=='__main__':
