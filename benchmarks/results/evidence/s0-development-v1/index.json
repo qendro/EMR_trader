@@ -1,0 +1,140 @@
+{
+  "schema": 1,
+  "files": [
+    {
+      "path": "s0-memory-smoke-v1/experiment.json",
+      "bytes": 8679,
+      "sha256": "8cbac00d9367a7801a532c6747b805e7f7bda7d1a81f6c157f0b2de325903cb8"
+    },
+    {
+      "path": "s0-memory-smoke-v1/seed-900/backend-settings.json",
+      "bytes": 529,
+      "sha256": "6574abdb81f9c15eac52f7180157ddf7bc7ff5f2735ab9c81530aba6c8945c4a"
+    },
+    {
+      "path": "s0-memory-smoke-v1/seed-900/champion-genes.npz",
+      "bytes": 512,
+      "sha256": "97a76d6f3d30a0ef0e4d25f36eedffd1ec6d8501a8ec35dc4dab71c02874b7e3"
+    },
+    {
+      "path": "s0-memory-smoke-v1/seed-900/champion.npz",
+      "bytes": 3812,
+      "sha256": "06ae605379ded008bae59622826449320c1999840939005bc35fe62888898480"
+    },
+    {
+      "path": "s0-memory-smoke-v1/seed-900/checkpoint.bin",
+      "bytes": 48355,
+      "sha256": "8d59b30cdf2ec5036f6a4ae573de57cfada3a556db804732550b5973d0802e03"
+    },
+    {
+      "path": "s0-memory-smoke-v1/seed-900/evaluated-winner-genes.npz",
+      "bytes": 512,
+      "sha256": "97a76d6f3d30a0ef0e4d25f36eedffd1ec6d8501a8ec35dc4dab71c02874b7e3"
+    },
+    {
+      "path": "s0-memory-smoke-v1/seed-900/evaluated-winner.npz",
+      "bytes": 3825,
+      "sha256": "134787054b909553f117b282829bae097ce9a9fe8bf32b72dad1fd558d8d4e33"
+    },
+    {
+      "path": "s0-memory-smoke-v1/seed-900/history.json",
+      "bytes": 9793,
+      "sha256": "87de29c3cedf89ab82fa7721c560ea11f06fdfcb0c88bc9952190eb27bae0424"
+    },
+    {
+      "path": "s0-memory-smoke-v1/seed-900/manifest.json",
+      "bytes": 3152,
+      "sha256": "250182ec31bcb397c6108462dba9b0533692c8a03d4431e55d42cea7be1abad9"
+    },
+    {
+      "path": "s0-memory-smoke-v1/seed-900/runtime.json",
+      "bytes": 278,
+      "sha256": "87174d4480396e578d26b0f899e9e6e3bc12b4a6418748ee92d0bf451f56461f"
+    },
+    {
+      "path": "s0-memory-smoke-v1/seed-900/selection.json",
+      "bytes": 3025,
+      "sha256": "07f42ee27f124a76781faff110f1ce8ed6098115d9cb107958b9ba47ed607c4f"
+    },
+    {
+      "path": "s0-memory-smoke-v1/seed-900/summary.json",
+      "bytes": 2049,
+      "sha256": "ba64771a5fffc1dc2b46eb8505e8911315fd570dfc0a58c8f05d7dd5893e9bc4"
+    },
+    {
+      "path": "s0-memory-smoke-v1/seed-900/validation-finalists-genes.npz",
+      "bytes": 809,
+      "sha256": "b87860b0e812c12a7e217f3090ff4c724176d749b9e2c90d106af6575aac3008"
+    },
+    {
+      "path": "s0-cartpole-smoke-v1/experiment.json",
+      "bytes": 4706,
+      "sha256": "2bca03ae7d0f9b5a1e9d5b98360d86bb0877157208c9f5e90f94941f8ab48116"
+    },
+    {
+      "path": "s0-cartpole-smoke-v1/seed-900/backend-settings.json",
+      "bytes": 681,
+      "sha256": "495a4d8d3f21d243646977585bb615526da9382e8510db102428855515c9fbfb"
+    },
+    {
+      "path": "s0-cartpole-smoke-v1/seed-900/champion-genes.npz",
+      "bytes": 510,
+      "sha256": "cf2d61da7f5909256e764a28f78f01f5415b8cfa625bc1dbc0abf5c038ed762f"
+    },
+    {
+      "path": "s0-cartpole-smoke-v1/seed-900/champion.npz",
+      "bytes": 3641,
+      "sha256": "8f55d69bfa46320574adea2d143af884b4e6a5c0a808df92d72ff832f6cc56dc"
+    },
+    {
+      "path": "s0-cartpole-smoke-v1/seed-900/checkpoint.bin",
+      "bytes": 48361,
+      "sha256": "0fad30d69e177dc59fd02e5af5b3273741f1c00cd5279a12fc2a4795ce897c21"
+    },
+    {
+      "path": "s0-cartpole-smoke-v1/seed-900/environment.json",
+      "bytes": 263,
+      "sha256": "803be92ea41d4c494b12a6be8702436b7c9d34d3674869dc8e8e43801b8df321"
+    },
+    {
+      "path": "s0-cartpole-smoke-v1/seed-900/evaluated-winner-genes.npz",
+      "bytes": 513,
+      "sha256": "7dd43c75b4798d6afa60c8c8f5e5220251027736c0f1730c7c19953c74ff1b1c"
+    },
+    {
+      "path": "s0-cartpole-smoke-v1/seed-900/evaluated-winner.npz",
+      "bytes": 4914,
+      "sha256": "6cd0c6ebc2822d28e36de825b4cef2afa5abaaebb2198fcb6e7686a56ac30074"
+    },
+    {
+      "path": "s0-cartpole-smoke-v1/seed-900/history.json",
+      "bytes": 9810,
+      "sha256": "e9f63fc04a8f4a63e8ea87df68d813728ddd1f10cb36a13583832446b84d3c46"
+    },
+    {
+      "path": "s0-cartpole-smoke-v1/seed-900/manifest.json",
+      "bytes": 3284,
+      "sha256": "db6684aa15c0b371d38a3959a806bbb7c138366e53a572d854396b0de86090c9"
+    },
+    {
+      "path": "s0-cartpole-smoke-v1/seed-900/runtime.json",
+      "bytes": 278,
+      "sha256": "87174d4480396e578d26b0f899e9e6e3bc12b4a6418748ee92d0bf451f56461f"
+    },
+    {
+      "path": "s0-cartpole-smoke-v1/seed-900/selection.json",
+      "bytes": 539,
+      "sha256": "fde3c4eb45c607c3dbcf010d5c333bfb2156873657d63c01aea525891d561da4"
+    },
+    {
+      "path": "s0-cartpole-smoke-v1/seed-900/summary.json",
+      "bytes": 2050,
+      "sha256": "27d1d4e4811666232a30dfa8d5a47ee78d2f645035d0aa9ab3cf134d190b257a"
+    },
+    {
+      "path": "s0-cartpole-smoke-v1/seed-900/validation-finalists-genes.npz",
+      "bytes": 806,
+      "sha256": "3c47a73a32971f61f5a6e28f0404bd4d65bbdb4b5c9c3bff69d64fbc4f23617e"
+    }
+  ]
+}

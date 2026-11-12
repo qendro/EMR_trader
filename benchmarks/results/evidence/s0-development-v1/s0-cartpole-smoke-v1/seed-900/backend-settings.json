@@ -1,0 +1,44 @@
+{
+  "adaptive_config": {
+    "band_threshold": 0.3,
+    "input_coords": [
+      [
+        -1,
+        -1
+      ],
+      [
+        -0.3333333432674408,
+        -1
+      ],
+      [
+        0.3333333432674408,
+        -1
+      ],
+      [
+        1,
+        -1
+      ]
+    ],
+    "kind": "adaptive-emr-v1",
+    "max_depth": 1,
+    "max_sparse_conns": 512,
+    "max_weight": 8.0,
+    "output_coords": [
+      [
+        -1,
+        1
+      ],
+      [
+        1,
+        1
+      ]
+    ],
+    "population": 8,
+    "recurrent": true,
+    "schema": 1,
+    "settling_steps": 3,
+    "variance_threshold": 0.03,
+    "weight_threshold": 0.1
+  },
+  "source": "public-EMR-population-substrates"
+}

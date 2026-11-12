@@ -12,6 +12,7 @@ from neuroevo.contracts import stack_plans
 from neuroevo.environments import memory_scenarios
 from neuroevo.evaluation import memory_chunk, memory_initial
 from neuroevo.runtime import block_step
+from neuroevo.packing import route
 
 
 def test_a2_native_evolution_uses_persistent_adaptive_rollout():
@@ -36,7 +37,7 @@ def test_a2_native_evolution_uses_persistent_adaptive_rollout():
     batch = adapter.ask(state, 'a2-test')
     assert len(batch.plans) == len(batch.phenotypes) == config['population']
     assert all(p.plan.w_in.shape[0] == 2 for p in batch.phenotypes)
-    assert all(p.node_mask.shape == batch.plans[0].node_mask.shape for p in batch.plans)
+    assert len(route(batch.plans)) <= len(adapter.bucket_family.widths)
     assert batch.padded_hidden >= max(len(p.grid_indices) for p in batch.phenotypes)
 
     # Padding does not change a phenotype's persistent layered output or state.
@@ -55,11 +56,13 @@ def test_a2_native_evolution_uses_persistent_adaptive_rollout():
                                    np.asarray(cb2[2:2+len(compact.grid_indices)]), atol=2e-6)
 
     obs, cues, delays = memory_scenarios(19, 'train', 0, delays=range(1, 9), repeats=2)
-    packed = stack_plans(batch.plans)
-    result = memory_chunk(packed, memory_initial(packed, 32), obs, cues, delays,
-                          jnp.arange(17), profile='layered')
-    assert np.asarray(result.valid).all()
-    scores = np.asarray(result.correct, np.float32).mean(axis=1)
+    scores = np.empty(config['population'], np.float32)
+    for _, indices in route(batch.plans):
+        packed = stack_plans([batch.plans[i] for i in indices])
+        result = memory_chunk(packed, memory_initial(packed, 32), obs, cues, delays,
+                              jnp.arange(17), profile='layered')
+        assert np.asarray(result.valid).all()
+        scores[list(indices)] = np.asarray(result.correct, np.float32).mean(axis=1)
     next_state, removed = adapter.tell(state, batch, batch.ids, scores)
     assert removed == []
     assert int(next_state.generation) == int(state.generation) + 1

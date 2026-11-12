@@ -8,7 +8,7 @@ import numpy as np
 
 from neuroevo.adapters.emr import translate
 from neuroevo.adapters.emr_phenotype import extract_public
-from neuroevo.substrate import blocks
+from neuroevo.packing import BucketFamily
 
 
 @dataclass(frozen=True)
@@ -22,36 +22,18 @@ class AdaptiveBatch:
     padded_hidden: int
 
 
-def pad_population(phenotypes, node_capacity):
-    """Give variable active sets one bounded block signature for this generation."""
+def pad_population(phenotypes, node_capacity, *, family=None):
+    """Route each phenotype to its fixed width bucket; preserve input order."""
     if not phenotypes:
         raise ValueError('Empty adaptive population')
     inputs = phenotypes[0].plan.w_in.shape[0]
     outputs = phenotypes[0].plan.w_out.shape[1]
-    counts = [len(p.grid_indices) for p in phenotypes]
-    maximum = max(counts)
-    available = node_capacity - inputs - outputs
-    if maximum > available:
-        raise OverflowError('Adaptive population exceeds node capacity')
-    width = min(available, 1 << (maximum-1).bit_length()) if maximum else 0
-    result = []
-    for phenotype, count in zip(phenotypes, counts):
-        p = phenotype.plan
-        if p.w_in.shape[0] != inputs or p.w_out.shape[1] != outputs:
-            raise ValueError('Adaptive population has mixed task interfaces')
-        wi = np.zeros((inputs, width), np.float32)
-        wd = np.zeros((width, width), np.float32)
-        wo = np.zeros((width, outputs), np.float32)
-        mi = np.zeros(wi.shape, bool)
-        md = np.zeros(wd.shape, bool)
-        mo = np.zeros(wo.shape, bool)
-        wi[:, :count], wd[:count, :count], wo[:count] = p.w_in, p.w_delay, p.w_out
-        mi[:, :count], md[:count, :count], mo[:count] = p.mask_in, p.mask_delay, p.mask_out
-        padded = blocks(wi, wd, wo, mi, md, mo)
-        node_mask = np.concatenate((np.ones(inputs, bool),
-                                    np.arange(width) < count, np.ones(outputs, bool)))
-        result.append(padded._replace(node_mask=node_mask))
-    return tuple(result), width
+    family = family or BucketFamily.create(inputs, outputs, node_capacity)
+    if (family.inputs, family.outputs)!=(inputs, outputs) or \
+            family.max_width != node_capacity-inputs-outputs:
+        raise ValueError('Adaptive bucket family does not match task capacity')
+    result=tuple(family.pack(p) for p in phenotypes)
+    return result, max(p.w_in.shape[1] for p in result)
 
 
 class EMREvolution:
@@ -63,6 +45,8 @@ class EMREvolution:
         self.config = dict(config)
         self.node_capacity = node_capacity
         self.edge_capacity = edge_capacity
+        self.bucket_family = BucketFamily.create(len(config['input_coords']),
+                                                 len(config['output_coords']), node_capacity)
         self.problem = problem
         self.algo = EMRHyperNEAT()
         self.native_config = self.algo.create_config(translate(config, q2_manifest))
@@ -92,13 +76,20 @@ class EMREvolution:
         phenotypes = tuple(extract_public(substrate, i, generation,
             node_capacity=self.node_capacity, edge_capacity=self.edge_capacity)
             for i in range(len(nodes)))
-        plans, width = pad_population(phenotypes, self.node_capacity)
+        plans, width = pad_population(phenotypes, self.node_capacity,
+                                      family=self.bucket_family)
         ids = tuple(f'{run_id}:{generation}:{i}' for i in range(len(nodes)))
         digest = hashlib.sha256(nodes.tobytes()+conns.tobytes()).hexdigest()
         token = hashlib.sha256(('|'.join(ids)+digest).encode()).hexdigest()
         nodes.flags.writeable = conns.flags.writeable = False
         self.pending = (token, ids)
         return AdaptiveBatch(token, ids, nodes, conns, phenotypes, plans, width)
+
+    def promote_node_capacity(self, new_capacity):
+        if self.pending is not None:
+            raise ValueError('Cannot promote capacity while a population is pending')
+        self.bucket_family = self.bucket_family.promote(new_capacity)
+        self.node_capacity = new_capacity
 
     def tell(self, state, batch, ids, scores):
         if self.pending != (batch.token, tuple(ids)) or tuple(ids) != batch.ids:

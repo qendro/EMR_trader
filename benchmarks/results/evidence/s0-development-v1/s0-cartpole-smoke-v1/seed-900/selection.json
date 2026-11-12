@@ -1,0 +1,36 @@
+{
+  "candidate_id": "seed-900:2:0",
+  "episode_scores": [
+    45.0,
+    31.0,
+    34.0,
+    34.0,
+    45.0,
+    39.0,
+    50.0,
+    61.0
+  ],
+  "finalist_ids": [
+    "seed-900:2:1",
+    "seed-900:2:0",
+    "seed-900:2:2",
+    "seed-900:2:4"
+  ],
+  "finalist_training_scores": [
+    60.75,
+    46.0,
+    46.0,
+    40.75
+  ],
+  "finalist_validation_scores": [
+    43.125,
+    45.625,
+    45.625,
+    26.75
+  ],
+  "heldout_score": 42.375,
+  "heldout_valid": true,
+  "kind": "smoke",
+  "passes_learning": false,
+  "validation_score": 45.625
+}

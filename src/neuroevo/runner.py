@@ -14,6 +14,7 @@ from .planning import plan
 from .environments import cartpole, memory_scenarios
 from .evaluation import (make_cartpole_rollout, evaluate_population, memory_chunk, memory_initial, visual_chunk)
 from .contracts import stack_plans
+from .packing import route as route_buckets
 from .randomness import key
 
 
@@ -185,6 +186,11 @@ def run(config, seed, directory, hardware, *, resume=False, stop_after=None, pil
         # A checkpoint is the committed state. Discard any later JSONL rows on resume.
         atomic_write(directory/'history.jsonl',b''.join(canonical(row)+b'\n' for row in history))
     profile = 'layered' if decoder is not None or adaptive else config["adapter"]["profile"]
+    def partitions(plans):
+        if adaptive:
+            return [(indices,[plans[i] for i in indices])
+                    for _,indices in route_buckets(plans)]
+        return [(tuple(range(len(plans))),plans)]
     if config["task"] == "cartpole":
         env, params = cartpole()
         write_json(directory/"environment.json", {k:np.asarray(v).tolist() for k,v in vars(params).items()})
@@ -192,22 +198,29 @@ def run(config, seed, directory, hardware, *, resume=False, stop_after=None, pil
         shared = jnp.zeros((config["horizon"], 4), jnp.float32)
         def evaluate(plans, namespace, generation, episodes):
             keys = jnp.stack([key(seed, namespace, generation, e) for e in range(episodes)])
-            result = evaluate_population(plans, evaluator, keys, shared, config["microbatch"])
-            return result[0].mean(axis=1), result[4].all(axis=1), result[0]
+            scores=np.empty((len(plans),episodes),np.float32)
+            valid=np.empty(len(plans),bool)
+            for indices,part in partitions(plans):
+                result=evaluate_population(part,evaluator,keys,shared,config["microbatch"])
+                scores[list(indices)]=result[0]
+                valid[list(indices)]=result[4].all(axis=1)
+            return scores.mean(axis=1), valid, scores
     elif config["task"] == "memory":
         def evaluate(plans, namespace, generation, episodes):
             delays = range(9, 17) if namespace == "generalization" else range(1, 9)
             obs, cues, ds = memory_scenarios(seed, namespace, generation, delays=delays, repeats=episodes//16)
-            summaries, validity = [], []
-            for start in range(0, len(plans), config["microbatch"]):
-                part = plans[start:start+config["microbatch"]]
-                packed = stack_plans(part+[part[0]]*(config["microbatch"]-len(part)))
-                final = memory_chunk(packed, memory_initial(packed, episodes), obs, cues, ds,
-                                     jnp.arange(17), profile=profile)
-                summaries.extend(np.asarray(final.correct[:len(part)]))
-                validity.extend(np.asarray(final.valid[:len(part)]).all(axis=1))
-            scores = np.asarray(summaries, np.float32)
-            return scores.mean(axis=1), np.array(validity), scores
+            scores=np.empty((len(plans),episodes),np.float32)
+            valid=np.empty(len(plans),bool)
+            for indices,group in partitions(plans):
+                for start in range(0,len(group),config['microbatch']):
+                    part=group[start:start+config['microbatch']]
+                    packed=stack_plans(part+[part[0]]*(config['microbatch']-len(part)))
+                    final=memory_chunk(packed,memory_initial(packed,episodes),obs,cues,ds,
+                                       jnp.arange(17),profile=profile)
+                    selected=list(indices[start:start+len(part)])
+                    scores[selected]=np.asarray(final.correct[:len(part)])
+                    valid[selected]=np.asarray(final.valid[:len(part)]).all(axis=1)
+            return scores.mean(axis=1),valid,scores
     else:
         from .visual import visual_scenarios, TRAIN_POSITIONS, HELDOUT_POSITIONS
         write_json(directory/'environment.json', {'grid':[5,5], 'stroke_length':3,
@@ -216,15 +229,17 @@ def run(config, seed, directory, hardware, *, resume=False, stop_after=None, pil
             'one_step':True})
         def evaluate(plans, namespace, generation, episodes):
             obs, labels, _ = visual_scenarios(seed,namespace,generation,episodes)
-            summaries, validity = [], []
-            for start in range(0,len(plans),config['microbatch']):
-                part=plans[start:start+config['microbatch']]
-                packed=stack_plans(part+[part[0]]*(config['microbatch']-len(part)))
-                correct, valid=visual_chunk(packed,obs,labels,profile=profile)
-                summaries.extend(np.asarray(correct[:len(part)]))
-                validity.extend(np.asarray(valid[:len(part)]))
-            scores=np.asarray(summaries,np.float32)
-            return scores.mean(axis=1),np.asarray(validity,bool),scores
+            scores=np.empty((len(plans),episodes),np.float32)
+            validity=np.empty(len(plans),bool)
+            for indices,group in partitions(plans):
+                for start in range(0,len(group),config['microbatch']):
+                    part=group[start:start+config['microbatch']]
+                    packed=stack_plans(part+[part[0]]*(config['microbatch']-len(part)))
+                    correct,valid=visual_chunk(packed,obs,labels,profile=profile)
+                    selected=list(indices[start:start+len(part)])
+                    scores[selected]=np.asarray(correct[:len(part)])
+                    validity[selected]=np.asarray(valid[:len(part)])
+            return scores.mean(axis=1),validity,scores
     limit = min(config["generations"], stop_after or config["generations"])
     stopped_for_elapsed = False
     for generation in range(int(state.generation), limit):
@@ -350,6 +365,9 @@ def run(config, seed, directory, hardware, *, resume=False, stop_after=None, pil
             row['adaptive_graphs']=[{k:s[k] for k in ('active_hidden_nodes','input_edges',
                 'output_edges','recurrent_edges','expressed_edges','graph_sha256')}
                 for s in decoded_stats]
+            row['bucket_signatures']=[{'inputs':sig[0],'hidden_width':sig[1],
+                'outputs':sig[2],'candidates':len(indices)}
+                for sig,indices in route_buckets(plans)]
         history.append(row)
         row["total_seconds"] = time.perf_counter()-gen_start
         if int(state.generation) % config["checkpoint_every"] == 0 or final_generation:
