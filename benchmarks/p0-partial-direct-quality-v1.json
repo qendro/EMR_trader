@@ -1,0 +1,34 @@
+{
+  "experiment": "p0-partial-direct-acceptance-v1",
+  "config_sha256": "17ff1d0b9f3df8a4a8db7f6f15f747d69d50d56e6dda5e287e2e0b4b316d1aa7",
+  "engine_sha256": "f49df099a63a1a05de10980481b39128c395b83663a833fe8fda2a6132a3cb6e",
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "raw_seed_passes": 0,
+  "paired_quality": {
+    "seeds": 5,
+    "episodes_per_seed": 100,
+    "normalization_scale": 500.0,
+    "per_seed_improvement": [
+      0.04338,
+      0.04034,
+      0.04754,
+      0.04126,
+      0.047979999999999995
+    ],
+    "median_improvement": 0.04338,
+    "bootstrap_95_interval": [
+      0.04034,
+      0.047979999999999995
+    ],
+    "bootstrap_unit": "evolution-seed",
+    "bootstrap_samples": 20000,
+    "passes": false
+  },
+  "passes": false
+}
