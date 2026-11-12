@@ -1,6 +1,6 @@
 # Standalone neuroevolution platform
 
-The first stateful implementation is in `src/neuroevo`, with a pinned Linux Docker environment, contract/differential tests, a TensorNEAT adapter, memory and CartPole evaluation, checkpoints and portable inference. Milestone acceptance remains separate from implementation. See the [implementation record](docs/implementation.md) for measured results and open gates.
+The first stateful implementation is in `src/neuroevo`, with a pinned Linux Docker environment, contract/differential tests, a TensorNEAT adapter, memory and CartPole evaluation, checkpoints and portable inference. Milestone acceptance remains separate from implementation. See the [acceptance ledger](benchmarks/PLATFORM-STATUS.md), [capability matrix](docs/capabilities.md), and [portability guide](docs/portability.md) for measured results and open gates.
 
 M1's required gates passed on its retained source: 44 tests on CPU and each GPU, five of five CartPole seeds at 500/500 on every profile, exact native CPU resume, and portable replay. The [M1 benchmark report](benchmarks/REPORT.md) retains failures and timing variation.
 

@@ -1,0 +1,23 @@
+# Checkpoint and phenotype portability
+
+Run experiments inside the pinned Docker image with a persistent result
+mount. Each seed directory records its manifest, backend settings, selected
+finalists, history, native checkpoint, and both evaluated-winner and champion
+phenotypes. The evaluated winner is written before reproduction changes the
+native population. The final champion is chosen on validation episodes and
+evaluated once on the held-out namespace.
+
+To continue a native run, use the same image, config, seed and result directory
+with `run --resume`. The runner checks the config hash and source provenance
+before loading `checkpoint.bin`; it discards JSONL rows newer than the last
+checkpoint. A different source version must be treated as a new experiment.
+
+For inference, use `replay --phenotype <champion.npz> --output <report.json>`.
+The exported phenotype contains weights, masks, node IDs, profile and action
+metadata. Replay compares 128 carried steps against the float64 NumPy
+reference and checks that TensorNEAT/EMR are not imported. This tests the
+portable policy artifact independently of the native evolution checkpoint.
+
+The current [acceptance ledger](../benchmarks/PLATFORM-STATUS.md) distinguishes
+existing M1/A2 replay and resume checks from the outstanding M5
+container-replacement and both-GPU portability gate.
