@@ -11,6 +11,7 @@ import numpy as np
 
 from neuroevo.contracts import BlockPlan
 from neuroevo.substrate import blocks, to_graph
+from neuroevo.packing import index_map
 
 
 @dataclass(frozen=True)
@@ -100,7 +101,7 @@ def _extract(index, positions, masks, w1, w2, sparse, recurrent, inputs, outputs
         raise RuntimeError('Pinned EMR grid layout changed')
     total = positions.shape[0]
     mask = _row(masks, index, (total,), np.dtype('bool'), 'mask')
-    active = np.flatnonzero(mask).astype(np.int32)
+    active, compact = index_map(np.flatnonzero(mask).astype(np.int32), total)
     if inputs + len(active) + outputs > node_capacity:
         raise OverflowError('EMR phenotype exceeds node capacity')
     wi_full = _row(w1, index, (inputs, total), np.dtype('float32'), 'W1')
@@ -122,8 +123,6 @@ def _extract(index, positions, masks, w1, w2, sparse, recurrent, inputs, outputs
         weight = _row(sparse.weights, index, valid.shape, np.dtype('float32'), 'recurrent weight')
         if int(n_valid) != int(valid.sum()) or not np.isfinite(weight[valid]).all():
             raise RuntimeError('Pinned EMR recurrent edge cache is inconsistent')
-        compact = np.full(total, -1, np.int32)
-        compact[active] = np.arange(len(active), dtype=np.int32)
         for src, dst, value in zip(source[valid], target[valid], weight[valid]):
             if src < 0 or src >= total or dst < 0 or dst >= total or compact[src] < 0 or compact[dst] < 0:
                 raise RuntimeError('EMR recurrent edge refers to an inactive or invalid position')
