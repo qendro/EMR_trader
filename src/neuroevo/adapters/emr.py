@@ -34,7 +34,7 @@ def _coordinates(value, name, maximum, y):
     except (TypeError, ValueError, OverflowError) as error:
         raise ValueError(f'Invalid adaptive {name}') from error
     if (not np.isfinite(points).all() or np.any(np.abs(points) > 1) or
-            not np.all(points[:, 1] == y) or
+            (y is not None and not np.all(points[:, 1] == y)) or
             len(np.unique(points, axis=0)) != len(points)):
         raise ValueError(f'Invalid adaptive {name}')
     return points.tolist()
@@ -43,17 +43,28 @@ def _coordinates(value, name, maximum, y):
 def settings(config):
     if type(config) is not dict or type(config.get('schema')) is not int or \
             config['schema'] != 1 or \
-            config.get('kind') != 'adaptive-emr-v1' or type(config.get('recurrent')) is not bool:
+            config.get('kind') not in ('adaptive-emr-v1','adaptive-emr-visual-v2') or \
+            type(config.get('recurrent')) is not bool:
         raise ValueError('Unsupported adaptive decoder schema')
+    visual=config['kind']=='adaptive-emr-visual-v2'
+    if visual and config['recurrent']:
+        raise ValueError('Adaptive visual profile is feed-forward only')
     expected = COMMON | (RECURRENT if config['recurrent'] else set())
     if set(config) != expected:
         raise ValueError('Unsupported adaptive option or missing required option')
-    for name, maximum in (('population', 128), ('max_depth', 4)):
+    for name, maximum in (('population', 128), ('max_depth', 2 if visual else 4)):
         if type(config[name]) is not int or not 1 <= config[name] <= maximum:
             raise ValueError(f'Invalid adaptive {name}')
     checked = dict(config)
-    checked['input_coords'] = _coordinates(config['input_coords'], 'input coordinates', 4, -1)
+    checked['input_coords'] = _coordinates(config['input_coords'], 'input coordinates',
+                                             25 if visual else 4, None if visual else -1)
+    if visual:
+        expected=[[-1. + x/2., -1. + y/2.] for y in range(5) for x in range(5)]
+        if checked['input_coords']!=expected:
+            raise ValueError('Adaptive visual profile requires the frozen 5x5 coordinates')
     checked['output_coords'] = _coordinates(config['output_coords'], 'output coordinates', 2, 1)
+    if visual and checked['output_coords']!=[[0.0,1.0]]:
+        raise ValueError('Adaptive visual profile requires its single output coordinate')
     checked['variance_threshold'] = _number(config['variance_threshold'],
                                             'variance threshold', 0, 1, upper_open=True)
     checked['weight_threshold'] = _number(config['weight_threshold'],

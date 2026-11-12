@@ -93,6 +93,8 @@ def load_config(path):
         if decoder is not None and (decoder['kind']!='fixed-coordinate-v2' or
                                     decoder['input_coordinates']!=input_coordinates()):
             raise ValueError('Visual fixed decoder requires the frozen 5x5 coordinates')
+        if adaptive and config['adaptive']['kind']!='adaptive-emr-visual-v2':
+            raise ValueError('Visual adaptive decoder requires its 5x5 profile')
     return config
 
 
