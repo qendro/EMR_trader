@@ -31,3 +31,12 @@ the same five seeds and held-out protocol. Their results will indicate
 whether the shortfall is specific to adaptive discovery or shared by the
 task and search budget. No tuning or task change is claimed from the
 unfinished comparisons.
+
+Fifteen [complete champion trajectories](p0-adaptive-trajectories-v1.json)
+(the first three held-out episodes for each seed) were replayed from exported
+phenotypes, and every return matched the saved held-out episode score. Their
+lengths ranged from 36 to 132 steps. In these inspected episodes, the cart
+stayed well inside its position limit while the pole angle approached its
+termination threshold. This localizes the observed failures to angular
+balance; the method comparisons are needed before attributing the cause to
+adaptive discovery or the partially observed task itself.
