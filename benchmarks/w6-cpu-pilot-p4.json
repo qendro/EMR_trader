@@ -1,0 +1,58 @@
+{
+  "device": "TFRT_CPU_0",
+  "device_kind": "cpu",
+  "visible_devices": 1,
+  "cuda_visible_devices": null,
+  "cells": [
+    {
+      "layout": "edge",
+      "population": 8,
+      "hidden": 2043,
+      "inputs": 4,
+      "episodes": 4,
+      "horizon": 128,
+      "carry_steps": 1,
+      "microbatch": 4,
+      "active_nodes_per_graph": 2048,
+      "min_active_edges": 32768,
+      "max_active_edges": 32768,
+      "compiled_signatures": 1,
+      "new_signatures_after_first_chunk": 0,
+      "first_chunk_seconds": 0.27671006800665054,
+      "warm_chunk_median_seconds": 0.10114331000659149,
+      "total_chunk_seconds": 0.37785337801324204,
+      "memory": {
+        "process_peak_rss_bytes": 499638272,
+        "cgroup_peak_bytes": 214814720,
+        "cgroup_current_bytes": 214814720,
+        "cgroup_swap_bytes": 0,
+        "device_allocator": null
+      }
+    },
+    {
+      "layout": "dense",
+      "population": 8,
+      "hidden": 1647,
+      "inputs": 400,
+      "episodes": 4,
+      "horizon": 128,
+      "carry_steps": 1,
+      "microbatch": 4,
+      "active_nodes_per_graph": 2048,
+      "min_active_edges": 693215,
+      "max_active_edges": 693215,
+      "compiled_signatures": 1,
+      "new_signatures_after_first_chunk": 0,
+      "first_chunk_seconds": 0.645376265005325,
+      "warm_chunk_median_seconds": 0.4972310419980204,
+      "total_chunk_seconds": 1.1426073070033453,
+      "memory": {
+        "process_peak_rss_bytes": 830332928,
+        "cgroup_peak_bytes": 546271232,
+        "cgroup_current_bytes": 546271232,
+        "cgroup_swap_bytes": 0,
+        "device_allocator": null
+      }
+    }
+  ]
+}

@@ -15,9 +15,14 @@ chunks introduced no new signature.
 | RTX 3060 | Edge recurrent | 4 / 2,043 / 1 | 32,768 | 30.33 ms | 851 MB | 0 |
 | RTX 3060 | Dense substrate | 400 / 1,647 / 1 | 693,215 | 104.93 ms | 1,317 MB | 0 |
 
+The same-shape [CPU/GPU stage comparison](w6-cpu-gpu-ratio-v1.json) used
+population-8 pilots and warm four-agent chunks. GPU/CPU speedups were 4.12x
+(edge) and 3.45x (dense) on the RTX 3070, and 3.44x (edge) and 4.74x
+(dense) on the RTX 3060. These ratios cover rollout execution only; they
+do not satisfy the full-generation M4 G5 policy.
+
 The dense fixture's edge count exceeds 32,768 because its fully connected
 400-wide input and output blocks are deliberately outside the sparse
 irregular cap. These are declared synthetic execution fixtures, not evolved
 EMR phenotypes. The evolved feasible envelope and full-generation CPU/GPU
-speed ratio are measured separately in M4 G5. A same-shape CPU W6 stage
-probe is queued for the reported rollout ratio.
+speed ratio are measured separately in M4 G5.

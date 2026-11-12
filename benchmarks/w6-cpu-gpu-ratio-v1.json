@@ -1,0 +1,33 @@
+{
+  "label": "W6-stage-only-not-M4-G5",
+  "rows": [
+    {
+      "device_kind": "NVIDIA GeForce RTX 3070",
+      "layout": "edge",
+      "cpu_warm_chunk_seconds": 0.10114331000659149,
+      "gpu_warm_chunk_seconds": 0.024559723999118432,
+      "gpu_speedup_over_cpu": 4.118259228410793
+    },
+    {
+      "device_kind": "NVIDIA GeForce RTX 3070",
+      "layout": "dense",
+      "cpu_warm_chunk_seconds": 0.4972310419980204,
+      "gpu_warm_chunk_seconds": 0.14410501599195413,
+      "gpu_speedup_over_cpu": 3.450476991208845
+    },
+    {
+      "device_kind": "NVIDIA GeForce RTX 3060",
+      "layout": "edge",
+      "cpu_warm_chunk_seconds": 0.10114331000659149,
+      "gpu_warm_chunk_seconds": 0.02937751600984484,
+      "gpu_speedup_over_cpu": 3.44288162323516
+    },
+    {
+      "device_kind": "NVIDIA GeForce RTX 3060",
+      "layout": "dense",
+      "cpu_warm_chunk_seconds": 0.4972310419980204,
+      "gpu_warm_chunk_seconds": 0.10484530001122039,
+      "gpu_speedup_over_cpu": 4.7425210471504915
+    }
+  ]
+}
