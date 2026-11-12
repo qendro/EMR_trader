@@ -5,11 +5,11 @@ from pathlib import Path
 import statistics
 
 
-def audit(root):
+def audit(root,prefix='m4-g5'):
     root=Path(root)
     rows={}
     for profile in ('cpu','rtx3070','rtx3060'):
-        rows[profile]=[json.loads((root/f'm4-g5-{profile}-rep{rep}'/'pilot.json').read_text())
+        rows[profile]=[json.loads((root/f'{prefix}-{profile}-rep{rep}'/'pilot.json').read_text())
                        for rep in (1,2,3)]
     all_rows=[row for runs in rows.values() for row in runs]
     if len({row['config_sha256'] for row in all_rows})!=1 or \
@@ -39,6 +39,7 @@ def audit(root):
 if __name__=='__main__':
     parser=argparse.ArgumentParser()
     parser.add_argument('--root',required=True)
+    parser.add_argument('--prefix',default='m4-g5')
     parser.add_argument('--output',required=True)
     args=parser.parse_args()
-    Path(args.output).write_text(json.dumps(audit(args.root),indent=2)+'\n')
+    Path(args.output).write_text(json.dumps(audit(args.root,args.prefix),indent=2)+'\n')
