@@ -1,0 +1,80 @@
+{
+  "device": "cuda:0",
+  "device_kind": "NVIDIA GeForce RTX 3070",
+  "visible_devices": 1,
+  "cuda_visible_devices": "GPU-84389f80-a576-d373-ecb0-92e972e72dfd",
+  "cells": [
+    {
+      "layout": "edge",
+      "population": 8,
+      "hidden": 2043,
+      "inputs": 4,
+      "episodes": 4,
+      "horizon": 128,
+      "carry_steps": 1,
+      "microbatch": 4,
+      "active_nodes_per_graph": 2048,
+      "min_active_edges": 32768,
+      "max_active_edges": 32768,
+      "compiled_signatures": 1,
+      "new_signatures_after_first_chunk": 0,
+      "first_chunk_seconds": 0.6023535620042821,
+      "warm_chunk_median_seconds": 0.024559723999118432,
+      "total_chunk_seconds": 0.6269132860034006,
+      "memory": {
+        "process_peak_rss_bytes": 849731584,
+        "cgroup_peak_bytes": 534732800,
+        "cgroup_current_bytes": 534732800,
+        "cgroup_swap_bytes": 0,
+        "device_allocator": {
+          "num_allocs": 27,
+          "bytes_in_use": 139264,
+          "peak_bytes_in_use": 3761920,
+          "largest_alloc_size": 1377536,
+          "bytes_limit": 6442057728,
+          "bytes_reserved": 0,
+          "peak_bytes_reserved": 0,
+          "largest_free_block_bytes": 0,
+          "pool_bytes": 6291456,
+          "peak_pool_bytes": 6291456
+        }
+      }
+    },
+    {
+      "layout": "dense",
+      "population": 8,
+      "hidden": 1647,
+      "inputs": 400,
+      "episodes": 4,
+      "horizon": 128,
+      "carry_steps": 1,
+      "microbatch": 4,
+      "active_nodes_per_graph": 2048,
+      "min_active_edges": 693215,
+      "max_active_edges": 693215,
+      "compiled_signatures": 1,
+      "new_signatures_after_first_chunk": 0,
+      "first_chunk_seconds": 0.44637751900881995,
+      "warm_chunk_median_seconds": 0.14410501599195413,
+      "total_chunk_seconds": 0.5904825350007741,
+      "memory": {
+        "process_peak_rss_bytes": 1235902464,
+        "cgroup_peak_bytes": 921690112,
+        "cgroup_current_bytes": 921690112,
+        "cgroup_swap_bytes": 0,
+        "device_allocator": {
+          "num_allocs": 50,
+          "bytes_in_use": 950272,
+          "peak_bytes_in_use": 156346880,
+          "largest_alloc_size": 67108864,
+          "bytes_limit": 6442057728,
+          "bytes_reserved": 0,
+          "peak_bytes_reserved": 0,
+          "largest_free_block_bytes": 0,
+          "pool_bytes": 157286400,
+          "peak_pool_bytes": 157286400
+        }
+      }
+    }
+  ]
+}

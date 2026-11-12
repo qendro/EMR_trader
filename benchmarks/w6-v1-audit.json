@@ -1,0 +1,29 @@
+{
+  "cards": [
+    {
+      "path": "benchmarks/w6-rtx3070-v1.json",
+      "device_kind": "NVIDIA GeForce RTX 3070",
+      "cuda_visible_devices": "GPU-84389f80-a576-d373-ecb0-92e972e72dfd",
+      "edge_active_edges": 32768,
+      "dense_active_edges": 693215,
+      "edge_warm_chunk_seconds": 0.02474802099459339,
+      "dense_warm_chunk_seconds": 0.09038649599824566,
+      "passes": true,
+      "pilot_path": "benchmarks/w6-rtx3070-pilot-p4.json",
+      "pilot_passes": true
+    },
+    {
+      "path": "benchmarks/w6-rtx3060-v1.json",
+      "device_kind": "NVIDIA GeForce RTX 3060",
+      "cuda_visible_devices": "GPU-d7c4073b-c643-21ed-3d64-35a73d3d7a72",
+      "edge_active_edges": 32768,
+      "dense_active_edges": 693215,
+      "edge_warm_chunk_seconds": 0.030333764996612445,
+      "dense_warm_chunk_seconds": 0.10493037800188176,
+      "passes": true,
+      "pilot_path": "benchmarks/w6-rtx3060-pilot-p4.json",
+      "pilot_passes": true
+    }
+  ],
+  "passes": true
+}

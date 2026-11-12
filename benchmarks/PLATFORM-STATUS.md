@@ -13,7 +13,7 @@ lines; their measurements are never combined into a single speed ratio.
 | Adaptive topology packing | [S0 development](S0-DEVELOPMENT-REPORT.md) and lossless tests | Implemented; long compilation gate open |
 | Sparse alternate runtime | [S1 decision](S1-DECISION.md), parity tests and opt-in execution | Implemented; dense remains default |
 | Memory scheduling | [S2 development](S2-DEVELOPMENT-REPORT.md), explicit budget refusal | Implemented; measured scale gate open |
-| 2,048-node, P=256 W6 fixture | [W6 script](../scripts/w6_fixture.py), small CPU check | Per-card full fixture queued |
+| 2,048-node, P=256 W6 fixture | [W6 scale report](W6-SCALE-REPORT.md): both GPUs passed piloted sparse and 400-input dense fixtures without swap | Synthetic scale gate passed on both cards; evolved envelope remains separate |
 | W7 stability | No 15-minute single-process fixed-shape audit | Open |
 | Harder partially observed control | [P0 four-method comparison](P0-COMPARISON-REPORT.md): weight-only median paired gain 95.27%, adaptive 6.86%, direct 4.34%, fixed 3.20% | Harder-task quality target passed via weight-only; decoder-specific adaptive/direct/fixed limitations retained |
 | M4 G5 and both-card gates | No isolated matched end-to-end CPU/GPU M4 cell | Open |

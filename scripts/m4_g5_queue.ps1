@@ -10,6 +10,19 @@ while (-not (Test-Path $log) -or -not (Select-String -Path $log -Pattern 'W7 sta
     }
     Start-Sleep -Seconds 30
 }
+Write-Output 'Running same-shape W6 CPU stage probe'
+& docker run --rm --cpus=4 --memory=6g --shm-size=1g `
+    --entrypoint env -e PYTHONPATH=/app/src -e JAX_PLATFORMS=cpu `
+    -v "${workspace}:/app" neuroevo:m4-p0-comparison-v1 `
+    python scripts/w6_fixture.py --population 8 --microbatch 4 `
+    --output benchmarks/w6-cpu-pilot-p4.json
+if ($LASTEXITCODE -ne 0) { throw 'W6 CPU stage probe failed' }
+& docker run --rm --entrypoint env -e PYTHONPATH=/app/src -e JAX_PLATFORMS=cpu `
+    -v "${workspace}:/app" neuroevo:m4-p0-comparison-v1 `
+    python scripts/w6_ratio.py --cpu benchmarks/w6-cpu-pilot-p4.json `
+    --gpu benchmarks/w6-rtx3070-pilot-p4.json benchmarks/w6-rtx3060-pilot-p4.json `
+    --output benchmarks/w6-cpu-gpu-ratio-v1.json
+if ($LASTEXITCODE -ne 0) { throw 'W6 CPU/GPU stage ratio failed' }
 foreach ($profile in @('cpu', 'rtx3070', 'rtx3060')) {
     for ($rep = 1; $rep -le 3; $rep++) {
         $output = "benchmarks/results/m4-g5-$profile-rep$rep"
