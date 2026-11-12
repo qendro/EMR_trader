@@ -84,7 +84,8 @@ def run_cell(layout, population, hidden, edges, inputs, episodes, horizon, micro
         if compiled_after_first is None:
             compiled_after_first=rollout._cache_size()
     return {'layout':layout,'population':population,'hidden':hidden,'inputs':inputs,
-            'episodes':episodes,'horizon':horizon,'microbatch':microbatch,
+            'episodes':episodes,'horizon':horizon,'carry_steps':1,
+            'microbatch':microbatch,
             'active_nodes_per_graph':inputs+hidden+1,
             'min_active_edges':min(active_edges),'max_active_edges':max(active_edges),
             'compiled_signatures':rollout._cache_size()-compiled_before,
@@ -99,18 +100,20 @@ if __name__=='__main__':
     parser=argparse.ArgumentParser()
     parser.add_argument('--output',required=True)
     parser.add_argument('--population',type=int,default=256)
-    parser.add_argument('--hidden',type=int,default=2048)
+    parser.add_argument('--nodes',type=int,default=2048)
     parser.add_argument('--edges',type=int,default=32768)
     parser.add_argument('--episodes',type=int,default=4)
     parser.add_argument('--horizon',type=int,default=128)
     parser.add_argument('--microbatch',type=int,default=4)
     args=parser.parse_args()
+    if args.nodes <= 401:
+        raise ValueError('W6 node count must fit the 400-input dense fixture')
     if os.environ.get('CUDA_VISIBLE_DEVICES') and (
             len(jax.devices())!=1 or jax.devices()[0].platform!='gpu'):
         raise RuntimeError('W6 selected GPU is unavailable or fell back to CPU')
-    cells=[run_cell('edge',args.population,args.hidden,args.edges,4,
+    cells=[run_cell('edge',args.population,args.nodes-5,args.edges,4,
                     args.episodes,args.horizon,args.microbatch),
-           run_cell('dense',args.population,args.hidden,args.edges,400,
+           run_cell('dense',args.population,args.nodes-401,args.edges,400,
                     args.episodes,args.horizon,args.microbatch)]
     with open(args.output,'w') as output:
         json.dump({'device':str(jax.devices()[0]),

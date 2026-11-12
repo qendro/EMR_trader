@@ -1,0 +1,56 @@
+{
+  "device": "TFRT_CPU_0",
+  "device_kind": "cpu",
+  "visible_devices": 1,
+  "cuda_visible_devices": null,
+  "cells": [
+    {
+      "layout": "edge",
+      "population": 8,
+      "hidden": 412,
+      "inputs": 4,
+      "episodes": 2,
+      "horizon": 8,
+      "microbatch": 4,
+      "active_nodes_per_graph": 417,
+      "min_active_edges": 900,
+      "max_active_edges": 900,
+      "compiled_signatures": 1,
+      "new_signatures_after_first_chunk": 0,
+      "first_chunk_seconds": 0.38622183199913707,
+      "warm_chunk_median_seconds": 0.00045724799565505236,
+      "total_chunk_seconds": 0.3866790799947921,
+      "memory": {
+        "process_peak_rss_bytes": 488329216,
+        "cgroup_peak_bytes": 202997760,
+        "cgroup_current_bytes": 202993664,
+        "cgroup_swap_bytes": 0,
+        "device_allocator": null
+      }
+    },
+    {
+      "layout": "dense",
+      "population": 8,
+      "hidden": 16,
+      "inputs": 400,
+      "episodes": 2,
+      "horizon": 8,
+      "microbatch": 4,
+      "active_nodes_per_graph": 417,
+      "min_active_edges": 6672,
+      "max_active_edges": 6672,
+      "compiled_signatures": 1,
+      "new_signatures_after_first_chunk": 0,
+      "first_chunk_seconds": 0.19113160799315665,
+      "warm_chunk_median_seconds": 0.00048595199768897146,
+      "total_chunk_seconds": 0.19161755999084562,
+      "memory": {
+        "process_peak_rss_bytes": 493309952,
+        "cgroup_peak_bytes": 208515072,
+        "cgroup_current_bytes": 208486400,
+        "cgroup_swap_bytes": 0,
+        "device_allocator": null
+      }
+    }
+  ]
+}
