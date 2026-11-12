@@ -34,6 +34,7 @@ def main(hardware=None):
     p.add_argument("--mode", choices=["feedforward", "recurrent"], required=True)
     p.add_argument("--seed", type=int, default=700)
     p.add_argument("--smoke", action="store_true")
+    p.add_argument("--stage-probe", action="store_true")
     p.add_argument("--output", required=True)
     p = sub.add_parser("replay")
     p.add_argument("--phenotype", required=True)
@@ -52,7 +53,8 @@ def main(hardware=None):
         write_json(args.output, replay(args.phenotype, hardware))
     elif args.command == "upstream":
         from .upstream import screen
-        screen(json.loads(Path(args.manifest).read_text()),args.seed,args.mode,args.output,hardware,args.smoke)
+        screen(json.loads(Path(args.manifest).read_text()),args.seed,args.mode,args.output,hardware,
+               args.smoke,args.stage_probe)
     else:
         from .runner import run, load_config
         config = load_config(args.config)

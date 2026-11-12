@@ -1,0 +1,30 @@
+{
+  "cold_initialize_generation_seconds": 25.663256814994384,
+  "hardware": {
+    "allocator_fraction": 0.6,
+    "backend": "gpu",
+    "development_mount": false,
+    "devices": [
+      "cuda:0"
+    ],
+    "gpu": [
+      "GPU-84389f80-a576-d373-ecb0-92e972e72dfd",
+      "NVIDIA GeForce RTX 3070",
+      "8192",
+      "610.88"
+    ],
+    "image_digest": "not-recorded-development-run",
+    "kernel": "6.6.87.2-microsoft-standard-WSL2",
+    "preallocate": false,
+    "precision": "float32",
+    "python": "3.11.14"
+  },
+  "peak_cgroup_memory_bytes": 1385295872,
+  "peak_device_pool_bytes": 2097152,
+  "peak_process_rss_bytes": 1645961216,
+  "resource_gate": "requires-external-GPU-and-peak-memory-audit",
+  "stage_gate": "synchronized-probe-measured-pending-audit",
+  "status": "smoke-completed",
+  "timing_pass": true,
+  "warm_median_seconds": 16.74320676800562
+}

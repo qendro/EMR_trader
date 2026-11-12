@@ -71,14 +71,16 @@ def _population_sizes(algo, population, mode):
             'total_edges_per_genome':(input_edges+output_edges+recurrent_edges).tolist()}
 
 
-def screen(manifest, seed, mode, output, hardware, smoke=False):
+def screen(manifest, seed, mode, output, hardware, smoke=False, stage_probe=False):
     from emr_hyperneat import EMRHyperNEAT
     from .runner import provenance
     root = Path(output)
     root.mkdir(parents=True, exist_ok=True)
     write_json(root/"manifest.json", {"manifest": manifest, "hardware": hardware,
                                     "provenance": provenance(), "seed": seed, "mode": mode,
-                                    "label": "smoke" if smoke else "Q2-screening"})
+                                    "label": "stage-probe-smoke" if stage_probe and smoke else
+                                             "Q2-stage-probe" if stage_probe else
+                                             "smoke" if smoke else "Q2-screening"})
     ds = manifest["dataset"]
     inputs = np.random.Generator(np.random.PCG64(ds["seed"])).uniform(-1,1,(ds["samples"],4)).astype(np.float32)
     targets = (inputs[:,:2]+np.float32(1))/np.float32(2)
@@ -109,6 +111,11 @@ def screen(manifest, seed, mode, output, hardware, smoke=False):
                      "hidden_activation":"tanh","output_activation":"sigmoid"},
         "neat_mutation":c["mutation"],"neat_species":c["species"],"neat_selection":c["selection"]}}}
     algo=EMRHyperNEAT()
+    if stage_probe:
+        from emr_hyperneat.engine import generation_mixin
+        from .stage_probe import SynchronizedStageClock
+        stage_clock=SynchronizedStageClock()
+        original_generation_time=generation_mixin.time
     def timeout():
         write_json(root/"failure.json", {"status":"over-budget", "phase":"cold-initialize-first-generation",
                                         "maximum_seconds":m["maximum_cold_seconds"]})
@@ -123,7 +130,15 @@ def screen(manifest, seed, mode, output, hardware, smoke=False):
         cold_generations=1 if smoke else m["cold_generations"]
         for generation in range(2 if smoke else cold_generations+m["warm_generations"]):
             start=time.perf_counter()
-            state,metrics=algo.run_generation(state,Problem(),verbose=False)
+            if stage_probe:
+                stage_clock.records=[]
+                generation_mixin.time=stage_clock
+            try:
+                state,metrics=algo.run_generation(state,Problem(),verbose=False)
+            finally:
+                if stage_probe:
+                    generation_mixin.time=original_generation_time
+            stage_sync_records=list(stage_clock.records) if stage_probe else None
             jax.block_until_ready(state)
             elapsed=time.perf_counter()-start
             cold_total=time.perf_counter()-begin if generation < cold_generations else cold_total
@@ -140,7 +155,9 @@ def screen(manifest, seed, mode, output, hardware, smoke=False):
                  "device_memory":device_memory,
                  "resources":resources,"population_sizes":sizes,
                  "observation_seconds_excluding_persistence":observation_seconds,
-                 "stage_timing_status":"upstream-dispatch-times-not-isolated-synchronized-stages",
+                 "stage_timing_status":("synchronized-live-array-boundaries" if stage_probe else
+                                        "upstream-dispatch-times-not-isolated-synchronized-stages"),
+                 "stage_sync_records":stage_sync_records,
                  "metrics":metric_values}
             rows.append(row)
             write_json(root/"generations.json",rows)
@@ -155,7 +172,8 @@ def screen(manifest, seed, mode, output, hardware, smoke=False):
                 "warm_median_seconds":warm,"timing_pass":warm <= m["maximum_warm_median_seconds"],
                 "cold_initialize_generation_seconds":cold_total,
                 "resource_gate":"requires-external-GPU-and-peak-memory-audit",
-                "stage_gate":"requires-synchronized-isolated-stage-probe",
+                "stage_gate":("synchronized-probe-measured-pending-audit" if stage_probe else
+                              "requires-synchronized-isolated-stage-probe"),
                 "peak_process_rss_bytes":max(r['resources']['process_peak_rss_bytes'] for r in rows),
                 "peak_cgroup_memory_bytes":max(r['resources']['cgroup_memory_peak_bytes'] or 0 for r in rows),
                 "peak_device_pool_bytes":max((r['device_memory'] or {}).get('peak_pool_bytes',0) for r in rows),

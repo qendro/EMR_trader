@@ -64,7 +64,8 @@ def cold_completed(logs, last_cold_generation):
     return False
 
 
-def run_cell(image, digest, manifest, manifest_hash, root, profile, mode, seed):
+def run_cell(image, digest, manifest, manifest_hash, root, profile, mode, seed,
+             stage_probe=False):
     run_name = Path(root).name
     name = f'{run_name}-{profile}-{mode}-{seed}'
     output = f'{root}/{profile}-{mode}-{seed}'
@@ -90,6 +91,8 @@ def run_cell(image, digest, manifest, manifest_hash, root, profile, mode, seed):
         '-e', f'JAX_COMPILATION_CACHE_DIR={cache}', image, 'upstream',
         '--manifest', 'configs/q2-capacity-v2.json', '--mode', mode,
         '--seed', str(seed), '--output', output]
+    if stage_probe:
+        argv.append('--stage-probe')
     physical_baseline = gpu_memory(gpu_name)
     started = time.monotonic()
     command(argv)
@@ -135,6 +138,7 @@ def run_cell(image, digest, manifest, manifest_hash, root, profile, mode, seed):
     console = command(['docker', 'logs', name], check=False)
     used = [s['physical_used_mib'] for s in samples if s['physical_used_mib'] is not None]
     result = {'profile': profile, 'mode': mode, 'seed': seed,
+        'stage_probe': stage_probe,
         'manifest_sha256': manifest_hash, 'image_digest': digest,
         'container': name, 'output': output, 'cache': cache,
         'exit_code': state['ExitCode'], 'oom_killed': state['OOMKilled'],
@@ -156,12 +160,17 @@ def run_cell(image, digest, manifest, manifest_hash, root, profile, mode, seed):
 
 def main():
     p = argparse.ArgumentParser()
-    p.add_argument('--image', default='neuroevo:q2-capacity-v2')
+    p.add_argument('--image')
     p.add_argument('--manifest', default='configs/q2-capacity-v2.json')
-    p.add_argument('--run-root', default='/results/q2-capacity-v2')
+    p.add_argument('--run-root')
     p.add_argument('--profiles', nargs='+', choices=tuple(GPU), default=list(GPU))
     p.add_argument('--dry-run', action='store_true')
+    p.add_argument('--stage-probe', action='store_true')
     args = p.parse_args()
+    if args.image is None:
+        args.image = 'neuroevo:q2-stage-v1' if args.stage_probe else 'neuroevo:q2-capacity-v2'
+    if args.run_root is None:
+        args.run_root = '/results/q2-stage-v1' if args.stage_probe else '/results/q2-capacity-v2'
     if not args.run_root.startswith('/results/') or '..' in Path(args.run_root).parts:
         raise ValueError('Q2 run root must be a directory inside /results')
     manifest_bytes = Path(args.manifest).read_bytes()
@@ -176,7 +185,7 @@ def main():
         print(json.dumps({'image': args.image, 'run_root': args.run_root,
             'manifest_sha256': hashlib.sha256(manifest_bytes).hexdigest(),
             'cold_deadline_seconds': manifest['maximum_cold_seconds'],
-            'cells': cells}, indent=2))
+            'stage_probe': args.stage_probe, 'cells': cells}, indent=2))
         return
     active = command(['docker', 'ps', '--filter', 'name=^/neuroevo-m2-elapsed$',
                       '--format', '{{.Names}}']).stdout.strip()
@@ -192,7 +201,8 @@ def main():
     results = []
     for profile, mode, seed in cells:
         results.append(run_cell(args.image, digest, manifest,
-            hashlib.sha256(manifest_bytes).hexdigest(), args.run_root, profile, mode, seed))
+            hashlib.sha256(manifest_bytes).hexdigest(), args.run_root, profile, mode, seed,
+            args.stage_probe))
     print(json.dumps({'complete_cells':sum(r['exit_code']==0 for r in results),
                       'total_cells':len(results)}), flush=True)
 

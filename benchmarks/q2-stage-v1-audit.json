@@ -1,0 +1,451 @@
+{
+  "schema": 1,
+  "status": "synchronized-stage-probe-pass",
+  "manifest_sha256": "31361263e585d85720fd3c30022b1837d6c93d847bac1e6ddbfe34e8baafaa4d",
+  "cells": [
+    {
+      "cell": "rtx3070-feedforward-700",
+      "status": "pass",
+      "errors": [],
+      "dataset_sha256": "c7c19b545fc787d482a4109758e84926dfe6544f07ad04857b166182c0ecc535",
+      "stage_seconds": {
+        "step0_cppn_ask_transform": {
+          "median": 0.0022732690049451776,
+          "p95": 0.003136858544894494
+        },
+        "step1_cppn_queries": {
+          "median": 0.08455434600909939,
+          "p95": 0.24279851780229336
+        },
+        "step2_variance_masks": {
+          "median": 0.01673149550333619,
+          "p95": 0.021832760250254064
+        },
+        "step3_phase2_discovery": {
+          "median": 0.0,
+          "p95": 0.0
+        },
+        "step4_build_matrices": {
+          "median": 0.0035171619965694845,
+          "p95": 0.0062651416439621225
+        },
+        "step5_evaluation": {
+          "median": 0.004913966004096437,
+          "p95": 0.006542442455975105
+        },
+        "step6_neat_evolution": {
+          "median": 0.003767230002267752,
+          "p95": 0.0067300659007742064
+        }
+      },
+      "unattributed_generation_seconds_median": 0.02751529849047074
+    },
+    {
+      "cell": "rtx3070-feedforward-701",
+      "status": "pass",
+      "errors": [],
+      "dataset_sha256": "c7c19b545fc787d482a4109758e84926dfe6544f07ad04857b166182c0ecc535",
+      "stage_seconds": {
+        "step0_cppn_ask_transform": {
+          "median": 0.002053846503258683,
+          "p95": 0.003571624250616877
+        },
+        "step1_cppn_queries": {
+          "median": 0.08231468299345579,
+          "p95": 0.18128513009723957
+        },
+        "step2_variance_masks": {
+          "median": 0.01739028150041122,
+          "p95": 0.019712077953590777
+        },
+        "step3_phase2_discovery": {
+          "median": 0.0,
+          "p95": 0.0
+        },
+        "step4_build_matrices": {
+          "median": 0.0033658894972177222,
+          "p95": 0.0038028610993933393
+        },
+        "step5_evaluation": {
+          "median": 0.00523672850249568,
+          "p95": 0.006833888254186604
+        },
+        "step6_neat_evolution": {
+          "median": 0.0035651460057124496,
+          "p95": 0.004716533757164142
+        }
+      },
+      "unattributed_generation_seconds_median": 0.023653200492844917
+    },
+    {
+      "cell": "rtx3070-feedforward-702",
+      "status": "pass",
+      "errors": [],
+      "dataset_sha256": "c7c19b545fc787d482a4109758e84926dfe6544f07ad04857b166182c0ecc535",
+      "stage_seconds": {
+        "step0_cppn_ask_transform": {
+          "median": 0.002112667993060313,
+          "p95": 0.0037342322961194433
+        },
+        "step1_cppn_queries": {
+          "median": 0.08651614349946612,
+          "p95": 0.1939485778551896
+        },
+        "step2_variance_masks": {
+          "median": 0.016446809997432865,
+          "p95": 0.020277395748416888
+        },
+        "step3_phase2_discovery": {
+          "median": 0.0,
+          "p95": 0.0
+        },
+        "step4_build_matrices": {
+          "median": 0.0036681424971902743,
+          "p95": 0.004266909755097003
+        },
+        "step5_evaluation": {
+          "median": 0.00539872999797808,
+          "p95": 0.006789925802877404
+        },
+        "step6_neat_evolution": {
+          "median": 0.004439353993802797,
+          "p95": 0.00851798879666603
+        }
+      },
+      "unattributed_generation_seconds_median": 0.027239920003921725
+    },
+    {
+      "cell": "rtx3070-recurrent-700",
+      "status": "pass",
+      "errors": [],
+      "dataset_sha256": "c7c19b545fc787d482a4109758e84926dfe6544f07ad04857b166182c0ecc535",
+      "stage_seconds": {
+        "step0_cppn_ask_transform": {
+          "median": 0.00313321750581963,
+          "p95": 0.003630351741594495
+        },
+        "step1_cppn_queries": {
+          "median": 0.10053712749504484,
+          "p95": 0.1951596098013395
+        },
+        "step2_variance_masks": {
+          "median": 0.01802790100191487,
+          "p95": 0.01939732625251054
+        },
+        "step3_phase2_discovery": {
+          "median": 0.1403479904984124,
+          "p95": 0.17960849530500123
+        },
+        "step4_build_matrices": {
+          "median": 0.0034453394982847385,
+          "p95": 0.004211052402388304
+        },
+        "step5_evaluation": {
+          "median": 0.018765352499030996,
+          "p95": 0.21325526100117678
+        },
+        "step6_neat_evolution": {
+          "median": 0.004507713005295955,
+          "p95": 0.008797530154697596
+        }
+      },
+      "unattributed_generation_seconds_median": 0.036271065480832476
+    },
+    {
+      "cell": "rtx3070-recurrent-701",
+      "status": "pass",
+      "errors": [],
+      "dataset_sha256": "c7c19b545fc787d482a4109758e84926dfe6544f07ad04857b166182c0ecc535",
+      "stage_seconds": {
+        "step0_cppn_ask_transform": {
+          "median": 0.0026566105007077567,
+          "p95": 0.006954901048447931
+        },
+        "step1_cppn_queries": {
+          "median": 0.10959353300131625,
+          "p95": 0.22043102115203492
+        },
+        "step2_variance_masks": {
+          "median": 0.0164161935026641,
+          "p95": 0.017915204199380242
+        },
+        "step3_phase2_discovery": {
+          "median": 0.14026213900069706,
+          "p95": 0.15279775735398288
+        },
+        "step4_build_matrices": {
+          "median": 0.0033714040037011728,
+          "p95": 0.0038396971474867316
+        },
+        "step5_evaluation": {
+          "median": 0.01932608350762166,
+          "p95": 0.4294710425565425
+        },
+        "step6_neat_evolution": {
+          "median": 0.00418880349752726,
+          "p95": 0.009018824560189384
+        }
+      },
+      "unattributed_generation_seconds_median": 0.03476765200321097
+    },
+    {
+      "cell": "rtx3070-recurrent-702",
+      "status": "pass",
+      "errors": [],
+      "dataset_sha256": "c7c19b545fc787d482a4109758e84926dfe6544f07ad04857b166182c0ecc535",
+      "stage_seconds": {
+        "step0_cppn_ask_transform": {
+          "median": 0.0028220089952810667,
+          "p95": 0.0038875727987033306
+        },
+        "step1_cppn_queries": {
+          "median": 0.11623912450158969,
+          "p95": 0.21870319594818266
+        },
+        "step2_variance_masks": {
+          "median": 0.01802486200176645,
+          "p95": 0.020238420603709527
+        },
+        "step3_phase2_discovery": {
+          "median": 0.1522102439921582,
+          "p95": 0.17757503204775277
+        },
+        "step4_build_matrices": {
+          "median": 0.0034813959937309846,
+          "p95": 0.005219333292916415
+        },
+        "step5_evaluation": {
+          "median": 0.019085471009020694,
+          "p95": 0.21127846950330384
+        },
+        "step6_neat_evolution": {
+          "median": 0.004134781505854335,
+          "p95": 0.007627118349773809
+        }
+      },
+      "unattributed_generation_seconds_median": 0.03706692900595954
+    },
+    {
+      "cell": "rtx3060-feedforward-700",
+      "status": "pass",
+      "errors": [],
+      "dataset_sha256": "c7c19b545fc787d482a4109758e84926dfe6544f07ad04857b166182c0ecc535",
+      "stage_seconds": {
+        "step0_cppn_ask_transform": {
+          "median": 0.0017692395049380139,
+          "p95": 0.0056327106547541875
+        },
+        "step1_cppn_queries": {
+          "median": 0.1032115834968863,
+          "p95": 0.29430361189515647
+        },
+        "step2_variance_masks": {
+          "median": 0.017372581001836807,
+          "p95": 0.023555819450848503
+        },
+        "step3_phase2_discovery": {
+          "median": 0.0,
+          "p95": 0.0
+        },
+        "step4_build_matrices": {
+          "median": 0.003499877500871662,
+          "p95": 0.004201668199675624
+        },
+        "step5_evaluation": {
+          "median": 0.006112460003350861,
+          "p95": 0.007677719351340782
+        },
+        "step6_neat_evolution": {
+          "median": 0.003702337999129668,
+          "p95": 0.00744123690892593
+        }
+      },
+      "unattributed_generation_seconds_median": 0.025371737508976366
+    },
+    {
+      "cell": "rtx3060-feedforward-701",
+      "status": "pass",
+      "errors": [],
+      "dataset_sha256": "c7c19b545fc787d482a4109758e84926dfe6544f07ad04857b166182c0ecc535",
+      "stage_seconds": {
+        "step0_cppn_ask_transform": {
+          "median": 0.002816838496073615,
+          "p95": 0.004610949147172505
+        },
+        "step1_cppn_queries": {
+          "median": 0.11135000950889662,
+          "p95": 0.2526998278030076
+        },
+        "step2_variance_masks": {
+          "median": 0.01671356950100744,
+          "p95": 0.037373048557492405
+        },
+        "step3_phase2_discovery": {
+          "median": 0.0,
+          "p95": 0.0
+        },
+        "step4_build_matrices": {
+          "median": 0.0034506314987083897,
+          "p95": 0.006603647196607195
+        },
+        "step5_evaluation": {
+          "median": 0.00511334250040818,
+          "p95": 0.0077975321531994265
+        },
+        "step6_neat_evolution": {
+          "median": 0.003996518003987148,
+          "p95": 0.006543723047798265
+        }
+      },
+      "unattributed_generation_seconds_median": 0.02723337349743815
+    },
+    {
+      "cell": "rtx3060-feedforward-702",
+      "status": "pass",
+      "errors": [],
+      "dataset_sha256": "c7c19b545fc787d482a4109758e84926dfe6544f07ad04857b166182c0ecc535",
+      "stage_seconds": {
+        "step0_cppn_ask_transform": {
+          "median": 0.002010707503359299,
+          "p95": 0.004442768744775094
+        },
+        "step1_cppn_queries": {
+          "median": 0.10596519750833977,
+          "p95": 0.20242453415194162
+        },
+        "step2_variance_masks": {
+          "median": 0.01652533799642697,
+          "p95": 0.021516251401772022
+        },
+        "step3_phase2_discovery": {
+          "median": 0.0,
+          "p95": 0.0
+        },
+        "step4_build_matrices": {
+          "median": 0.003403632996196393,
+          "p95": 0.004445664248487446
+        },
+        "step5_evaluation": {
+          "median": 0.005454842998005915,
+          "p95": 0.008782337696175087
+        },
+        "step6_neat_evolution": {
+          "median": 0.004215726999973413,
+          "p95": 0.011260345846676487
+        }
+      },
+      "unattributed_generation_seconds_median": 0.024403011993854307
+    },
+    {
+      "cell": "rtx3060-recurrent-700",
+      "status": "pass",
+      "errors": [],
+      "dataset_sha256": "c7c19b545fc787d482a4109758e84926dfe6544f07ad04857b166182c0ecc535",
+      "stage_seconds": {
+        "step0_cppn_ask_transform": {
+          "median": 0.003290066495537758,
+          "p95": 0.004439968599763232
+        },
+        "step1_cppn_queries": {
+          "median": 0.11827050400461303,
+          "p95": 0.21629216630244613
+        },
+        "step2_variance_masks": {
+          "median": 0.01887520800664788,
+          "p95": 0.020527011353260603
+        },
+        "step3_phase2_discovery": {
+          "median": 0.14391461249033455,
+          "p95": 0.18158899914851645
+        },
+        "step4_build_matrices": {
+          "median": 0.003784193002502434,
+          "p95": 0.004553116004535695
+        },
+        "step5_evaluation": {
+          "median": 0.02353749450412579,
+          "p95": 0.21472764599820912
+        },
+        "step6_neat_evolution": {
+          "median": 0.004506577497522812,
+          "p95": 0.01821340655151288
+        }
+      },
+      "unattributed_generation_seconds_median": 0.038618809026957024
+    },
+    {
+      "cell": "rtx3060-recurrent-701",
+      "status": "pass",
+      "errors": [],
+      "dataset_sha256": "c7c19b545fc787d482a4109758e84926dfe6544f07ad04857b166182c0ecc535",
+      "stage_seconds": {
+        "step0_cppn_ask_transform": {
+          "median": 0.003309495499706827,
+          "p95": 0.0047231771102815385
+        },
+        "step1_cppn_queries": {
+          "median": 0.12934759100608062,
+          "p95": 0.2845858345033773
+        },
+        "step2_variance_masks": {
+          "median": 0.017380664503434673,
+          "p95": 0.018366643294575623
+        },
+        "step3_phase2_discovery": {
+          "median": 0.14722006400552345,
+          "p95": 0.15533483965336928
+        },
+        "step4_build_matrices": {
+          "median": 0.0036715734895551577,
+          "p95": 0.004904205652564995
+        },
+        "step5_evaluation": {
+          "median": 0.023472082502848934,
+          "p95": 0.4124279050025506
+        },
+        "step6_neat_evolution": {
+          "median": 0.004719023505458608,
+          "p95": 0.007611425005597994
+        }
+      },
+      "unattributed_generation_seconds_median": 0.03655450799851678
+    },
+    {
+      "cell": "rtx3060-recurrent-702",
+      "status": "pass",
+      "errors": [],
+      "dataset_sha256": "c7c19b545fc787d482a4109758e84926dfe6544f07ad04857b166182c0ecc535",
+      "stage_seconds": {
+        "step0_cppn_ask_transform": {
+          "median": 0.003014620000612922,
+          "p95": 0.00426595530443592
+        },
+        "step1_cppn_queries": {
+          "median": 0.12339722699834965,
+          "p95": 0.2663912734540643
+        },
+        "step2_variance_masks": {
+          "median": 0.0167472480025026,
+          "p95": 0.0214047112960543
+        },
+        "step3_phase2_discovery": {
+          "median": 0.16352001750055933,
+          "p95": 0.19379090435541
+        },
+        "step4_build_matrices": {
+          "median": 0.0035085975032416172,
+          "p95": 0.004611266004212665
+        },
+        "step5_evaluation": {
+          "median": 0.022383611496479716,
+          "p95": 0.21542624330613724
+        },
+        "step6_neat_evolution": {
+          "median": 0.004077229008544236,
+          "p95": 0.007564669950807
+        }
+      },
+      "unattributed_generation_seconds_median": 0.03597362799337134
+    }
+  ]
+}

@@ -29,7 +29,8 @@ dataset across cells. Recurrent seed 702 reached 15,104 hidden connections on
 both cards, exceeding the original 10,000 cap without exceeding the separately
 frozen 32,768 cap.
 
-The upstream `step_timings` are dispatch intervals and do not isolate and
-synchronize each stage. **The stage-timing requirement remains open.** This
-screen also uses independent samples and does not demonstrate an adaptive
-platform rollout or close the incomplete M2 fixed-time comparison.
+The upstream `step_timings` in this screen are dispatch intervals. A separately
+measured [synchronized stage probe](Q2-STAGE-REPORT.md) now covers all 12 cells
+and passes its audit. This screen uses independent samples and does not
+demonstrate an adaptive platform rollout or close the incomplete M2 fixed-time
+comparison.

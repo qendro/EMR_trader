@@ -1,5 +1,23 @@
 # Dated implementation decisions
 
+## 2026-11-12: Q2 declared capacity passes; A0 may start
+
+The separately frozen depth-4, P=128 Q2 capacity promotion used a 32,768-slot
+recurrent cap with refusal on overflow. Its [capacity/resource report](../benchmarks/Q2-CAPACITY-REPORT.md)
+and [synchronized stage report](../benchmarks/Q2-STAGE-REPORT.md) each pass all
+12 cells: both GPUs, feedforward and recurrent modes, and seeds 700–702. The
+largest discovered recurrent population member had 15,104 hidden connections.
+Cold, warm, host-memory and GPU-memory ceilings passed. The stage probe used
+the same frozen workload and matched every capacity cell's fitness and graph
+sizes; its synchronized per-stage warm medians and p95 values are retained.
+
+Q2's upstream feasibility screening criterion is therefore **passed for this
+declared envelope**. This decision permits adaptive adapter work A0. It does
+not claim that upstream independent-sample timing is the integrated research
+budget, that adaptive rollout has been implemented, or that the interrupted
+17/20-seed M2 fixed-time comparison is complete. The original 10,000-slot
+failures remain in the evidence.
+
 ## 2026-11-10: H0/H1 layered and fixed-coordinate increment
 
 H0/H1 are implemented with a concrete single-hidden role-block schema alongside the general mixed-delay graph plan. Fixed queries, virtual bias, coordinate order, strict threshold equality and independent genotype/phenotype capacities are frozen in the H1 manifests. Native TensorNEAT evolution is unchanged; the existing controller archives compact CPPN genes plus the decoded phenotype before tell. M1's exact source/image remain retained, and its checkpoint provenance is not relabelled as H1.
