@@ -23,6 +23,10 @@ def audit(run_dir):
     device_first=np.median(device[:max(1,len(device)//5)]) if len(device) else np.nan
     device_last=np.median(device[-max(1,len(device)//5):]) if len(device) else np.nan
     device_growth=float(device_last/device_first-1) if device_first>0 else float('inf')
+    durations=np.array([row['total_seconds']-row['selection_seconds']
+                        for row in history[warmup:-1]],np.float64)
+    duration_first=np.median(durations[:max(1,len(durations)//5)]) if len(durations) else np.nan
+    duration_last=np.median(durations[-max(1,len(durations)//5):]) if len(durations) else np.nan
     # Final-generation validation/held-out shapes may compile separately.
     fixed=bool(len(set(signatures[warmup:-1]))<=1)
     no_swap=summary['memory']['cgroup_swap_bytes']==0
@@ -38,6 +42,10 @@ def audit(run_dir):
         'device_live_first_quintile_median':int(device_first) if np.isfinite(device_first) else None,
         'device_live_last_quintile_median':int(device_last) if np.isfinite(device_last) else None,
         'device_live_growth_fraction':device_growth if np.isfinite(device_growth) else None,
+        'warm_generation_first_quintile_median_seconds':float(duration_first),
+        'warm_generation_last_quintile_median_seconds':float(duration_last),
+        'warm_generation_slowdown_fraction':float(duration_last/duration_first-1)
+            if duration_first>0 else None,
         'cgroup_swap_bytes':summary['memory']['cgroup_swap_bytes'],
         'passes':bool(generations>=100 and summary['wall_seconds']>=900 and
                       fixed and growth<.10 and device_growth<.10 and no_swap)}
