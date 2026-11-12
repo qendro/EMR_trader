@@ -1,0 +1,308 @@
+[
+  {
+    "adaptive_graphs": [
+      {
+        "active_hidden_nodes": 4,
+        "expressed_edges": 28,
+        "graph_sha256": "3012e96a063b2f72962532e668b54031b58aa5bda24a8b55399eaf1660cade22",
+        "input_edges": 8,
+        "output_edges": 4,
+        "recurrent_edges": 16
+      },
+      {
+        "active_hidden_nodes": 8,
+        "expressed_edges": 88,
+        "graph_sha256": "1ba716897ae827458a0f14b96298512d47639fc789957a27f445ddfb26c6d715",
+        "input_edges": 16,
+        "output_edges": 8,
+        "recurrent_edges": 64
+      },
+      {
+        "active_hidden_nodes": 20,
+        "expressed_edges": 450,
+        "graph_sha256": "3de6543a86614a62215babd09d823a5afbe54cf42ba2d2b54e0a953a66a768a9",
+        "input_edges": 40,
+        "output_edges": 20,
+        "recurrent_edges": 390
+      },
+      {
+        "active_hidden_nodes": 16,
+        "expressed_edges": 295,
+        "graph_sha256": "27e75a0f4a85ede692522a226848f0669a487c79fb3e17a0c605088bbc95c539",
+        "input_edges": 32,
+        "output_edges": 16,
+        "recurrent_edges": 247
+      },
+      {
+        "active_hidden_nodes": 4,
+        "expressed_edges": 28,
+        "graph_sha256": "587fb4eb6b11b3c7d45121edcaaa3c05bc432d6b34005948a62e23f8055f501a",
+        "input_edges": 8,
+        "output_edges": 4,
+        "recurrent_edges": 16
+      },
+      {
+        "active_hidden_nodes": 4,
+        "expressed_edges": 28,
+        "graph_sha256": "85a75726a2c5cb789773eefbef8e369fb7914c00436affbbd5c27f45ddfe6ab3",
+        "input_edges": 8,
+        "output_edges": 4,
+        "recurrent_edges": 16
+      },
+      {
+        "active_hidden_nodes": 12,
+        "expressed_edges": 173,
+        "graph_sha256": "6393851ed3a5564645c978f109ef2f3896d88c80597aea4efcce0db513d5c429",
+        "input_edges": 24,
+        "output_edges": 12,
+        "recurrent_edges": 137
+      },
+      {
+        "active_hidden_nodes": 4,
+        "expressed_edges": 28,
+        "graph_sha256": "a0dd4cf05d3aadec732423230b1b0dd62b878ffdf99481abd3f9e77193fc58bc",
+        "input_edges": 8,
+        "output_edges": 4,
+        "recurrent_edges": 16
+      }
+    ],
+    "best": 1.0,
+    "cppn_queries_total": 1408,
+    "decode_errors": {},
+    "decode_plan_seconds": 7.044972756993957,
+    "device_memory": {
+      "bytes_in_use": 59904,
+      "bytes_limit": 5153646387,
+      "bytes_reserved": 0,
+      "largest_alloc_size": 33554432,
+      "largest_free_block_bytes": 0,
+      "num_allocs": 1554,
+      "peak_bytes_in_use": 53301504,
+      "peak_bytes_reserved": 0,
+      "peak_pool_bytes": 73400320,
+      "pool_bytes": 73400320
+    },
+    "edges_max": 5,
+    "evolve_seconds": 16.43336465601169,
+    "generation": 0,
+    "mean": 0.6328125,
+    "nodes_max": 6,
+    "observer_signatures": 1,
+    "phenotype_edges_max": 450,
+    "phenotype_host_bytes_total": 6040,
+    "phenotype_nodes_max": 23,
+    "rollout_seconds": 1.8372359969944227,
+    "rollout_signatures": 1,
+    "rss_bytes": 1615851520,
+    "selection_seconds": 0.0,
+    "species": 1,
+    "stagnation_removed": [],
+    "tell_signatures": 1,
+    "total_seconds": 25.386796688995673,
+    "valid": 8
+  },
+  {
+    "adaptive_graphs": [
+      {
+        "active_hidden_nodes": 16,
+        "expressed_edges": 295,
+        "graph_sha256": "27e75a0f4a85ede692522a226848f0669a487c79fb3e17a0c605088bbc95c539",
+        "input_edges": 32,
+        "output_edges": 16,
+        "recurrent_edges": 247
+      },
+      {
+        "active_hidden_nodes": 8,
+        "expressed_edges": 88,
+        "graph_sha256": "1ba716897ae827458a0f14b96298512d47639fc789957a27f445ddfb26c6d715",
+        "input_edges": 16,
+        "output_edges": 8,
+        "recurrent_edges": 64
+      },
+      {
+        "active_hidden_nodes": 4,
+        "expressed_edges": 28,
+        "graph_sha256": "85a75726a2c5cb789773eefbef8e369fb7914c00436affbbd5c27f45ddfe6ab3",
+        "input_edges": 8,
+        "output_edges": 4,
+        "recurrent_edges": 16
+      },
+      {
+        "active_hidden_nodes": 12,
+        "expressed_edges": 173,
+        "graph_sha256": "6393851ed3a5564645c978f109ef2f3896d88c80597aea4efcce0db513d5c429",
+        "input_edges": 24,
+        "output_edges": 12,
+        "recurrent_edges": 137
+      },
+      {
+        "active_hidden_nodes": 4,
+        "expressed_edges": 28,
+        "graph_sha256": "587fb4eb6b11b3c7d45121edcaaa3c05bc432d6b34005948a62e23f8055f501a",
+        "input_edges": 8,
+        "output_edges": 4,
+        "recurrent_edges": 16
+      },
+      {
+        "active_hidden_nodes": 20,
+        "expressed_edges": 450,
+        "graph_sha256": "3de6543a86614a62215babd09d823a5afbe54cf42ba2d2b54e0a953a66a768a9",
+        "input_edges": 40,
+        "output_edges": 20,
+        "recurrent_edges": 390
+      },
+      {
+        "active_hidden_nodes": 4,
+        "expressed_edges": 28,
+        "graph_sha256": "3012e96a063b2f72962532e668b54031b58aa5bda24a8b55399eaf1660cade22",
+        "input_edges": 8,
+        "output_edges": 4,
+        "recurrent_edges": 16
+      },
+      {
+        "active_hidden_nodes": 4,
+        "expressed_edges": 28,
+        "graph_sha256": "a0dd4cf05d3aadec732423230b1b0dd62b878ffdf99481abd3f9e77193fc58bc",
+        "input_edges": 8,
+        "output_edges": 4,
+        "recurrent_edges": 16
+      }
+    ],
+    "best": 1.0,
+    "cppn_queries_total": 1408,
+    "decode_errors": {},
+    "decode_plan_seconds": 2.916286576000857,
+    "device_memory": {
+      "bytes_in_use": 64256,
+      "bytes_limit": 5153646387,
+      "bytes_reserved": 0,
+      "largest_alloc_size": 33554432,
+      "largest_free_block_bytes": 0,
+      "num_allocs": 2754,
+      "peak_bytes_in_use": 53301504,
+      "peak_bytes_reserved": 0,
+      "peak_pool_bytes": 73400320,
+      "pool_bytes": 73400320
+    },
+    "edges_max": 5,
+    "evolve_seconds": 16.157047355009126,
+    "generation": 1,
+    "mean": 0.63671875,
+    "nodes_max": 6,
+    "observer_signatures": 2,
+    "phenotype_edges_max": 450,
+    "phenotype_host_bytes_total": 6040,
+    "phenotype_nodes_max": 23,
+    "rollout_seconds": 0.12643908000609372,
+    "rollout_signatures": 1,
+    "rss_bytes": 1728036864,
+    "selection_seconds": 0.0,
+    "species": 1,
+    "stagnation_removed": [],
+    "tell_signatures": 2,
+    "total_seconds": 19.275973501004046,
+    "valid": 8
+  },
+  {
+    "adaptive_graphs": [
+      {
+        "active_hidden_nodes": 8,
+        "expressed_edges": 88,
+        "graph_sha256": "1ba716897ae827458a0f14b96298512d47639fc789957a27f445ddfb26c6d715",
+        "input_edges": 16,
+        "output_edges": 8,
+        "recurrent_edges": 64
+      },
+      {
+        "active_hidden_nodes": 16,
+        "expressed_edges": 295,
+        "graph_sha256": "27e75a0f4a85ede692522a226848f0669a487c79fb3e17a0c605088bbc95c539",
+        "input_edges": 32,
+        "output_edges": 16,
+        "recurrent_edges": 247
+      },
+      {
+        "active_hidden_nodes": 4,
+        "expressed_edges": 28,
+        "graph_sha256": "85a75726a2c5cb789773eefbef8e369fb7914c00436affbbd5c27f45ddfe6ab3",
+        "input_edges": 8,
+        "output_edges": 4,
+        "recurrent_edges": 16
+      },
+      {
+        "active_hidden_nodes": 12,
+        "expressed_edges": 173,
+        "graph_sha256": "6393851ed3a5564645c978f109ef2f3896d88c80597aea4efcce0db513d5c429",
+        "input_edges": 24,
+        "output_edges": 12,
+        "recurrent_edges": 137
+      },
+      {
+        "active_hidden_nodes": 4,
+        "expressed_edges": 28,
+        "graph_sha256": "3012e96a063b2f72962532e668b54031b58aa5bda24a8b55399eaf1660cade22",
+        "input_edges": 8,
+        "output_edges": 4,
+        "recurrent_edges": 16
+      },
+      {
+        "active_hidden_nodes": 20,
+        "expressed_edges": 450,
+        "graph_sha256": "3de6543a86614a62215babd09d823a5afbe54cf42ba2d2b54e0a953a66a768a9",
+        "input_edges": 40,
+        "output_edges": 20,
+        "recurrent_edges": 390
+      },
+      {
+        "active_hidden_nodes": 4,
+        "expressed_edges": 28,
+        "graph_sha256": "587fb4eb6b11b3c7d45121edcaaa3c05bc432d6b34005948a62e23f8055f501a",
+        "input_edges": 8,
+        "output_edges": 4,
+        "recurrent_edges": 16
+      },
+      {
+        "active_hidden_nodes": 4,
+        "expressed_edges": 28,
+        "graph_sha256": "a0dd4cf05d3aadec732423230b1b0dd62b878ffdf99481abd3f9e77193fc58bc",
+        "input_edges": 8,
+        "output_edges": 4,
+        "recurrent_edges": 16
+      }
+    ],
+    "best": 1.0,
+    "cppn_queries_total": 1408,
+    "decode_errors": {},
+    "decode_plan_seconds": 0.37704908099840395,
+    "device_memory": {
+      "bytes_in_use": 59904,
+      "bytes_limit": 5153646387,
+      "bytes_reserved": 0,
+      "largest_alloc_size": 33554432,
+      "largest_free_block_bytes": 0,
+      "num_allocs": 13482,
+      "peak_bytes_in_use": 53303552,
+      "peak_bytes_reserved": 0,
+      "peak_pool_bytes": 73400320,
+      "pool_bytes": 73400320
+    },
+    "edges_max": 5,
+    "evolve_seconds": 0.007922345990664326,
+    "generation": 2,
+    "mean": 0.640625,
+    "nodes_max": 6,
+    "observer_signatures": 2,
+    "phenotype_edges_max": 450,
+    "phenotype_host_bytes_total": 6040,
+    "phenotype_nodes_max": 23,
+    "rollout_seconds": 0.12237784400349483,
+    "rollout_signatures": 3,
+    "rss_bytes": 1729609728,
+    "selection_seconds": 4.387887664997834,
+    "species": 1,
+    "stagnation_removed": [],
+    "tell_signatures": 2,
+    "total_seconds": 4.965879344003042,
+    "valid": 8
+  }
+]

@@ -1,0 +1,560 @@
+{
+  "schema": 1,
+  "files": [
+    {
+      "path": "a2-memory-smoke-v1/seed-900/backend-settings.json",
+      "bytes": 529,
+      "sha256": "54b8f715f1c3104bc27ddc963780600feec8629e76b93445a2c2d5ab0a242565"
+    },
+    {
+      "path": "a2-memory-smoke-v1/seed-900/manifest.json",
+      "bytes": 3152,
+      "sha256": "1e3ca35fd8e3c95e5bf1f11e3104aa7c6c8c90b54677be08530d218e290cdf65"
+    },
+    {
+      "path": "a2-memory-smoke-v1/seed-900/runtime.json",
+      "bytes": 278,
+      "sha256": "87174d4480396e578d26b0f899e9e6e3bc12b4a6418748ee92d0bf451f56461f"
+    },
+    {
+      "path": "a2-memory-cpu-final-v2/experiment.json",
+      "bytes": 8679,
+      "sha256": "b402364657716a3d4a2240f90f7d6ae49b597738c53a22889a0851b992c97ae4"
+    },
+    {
+      "path": "a2-memory-cpu-final-v2/seed-900/backend-settings.json",
+      "bytes": 529,
+      "sha256": "6574abdb81f9c15eac52f7180157ddf7bc7ff5f2735ab9c81530aba6c8945c4a"
+    },
+    {
+      "path": "a2-memory-cpu-final-v2/seed-900/champion-genes.npz",
+      "bytes": 512,
+      "sha256": "97a76d6f3d30a0ef0e4d25f36eedffd1ec6d8501a8ec35dc4dab71c02874b7e3"
+    },
+    {
+      "path": "a2-memory-cpu-final-v2/seed-900/champion.npz",
+      "bytes": 3812,
+      "sha256": "40b367128f3754253055245ec1510aeba782612da9dd7a4bf92773d5c8abb5d1"
+    },
+    {
+      "path": "a2-memory-cpu-final-v2/seed-900/checkpoint.bin",
+      "bytes": 48034,
+      "sha256": "c348cdfaa5c4b7e24db79c94ced06fe9920fbe77760f42269dffb5ec76e0dcac"
+    },
+    {
+      "path": "a2-memory-cpu-final-v2/seed-900/evaluated-winner-genes.npz",
+      "bytes": 512,
+      "sha256": "97a76d6f3d30a0ef0e4d25f36eedffd1ec6d8501a8ec35dc4dab71c02874b7e3"
+    },
+    {
+      "path": "a2-memory-cpu-final-v2/seed-900/evaluated-winner.npz",
+      "bytes": 3824,
+      "sha256": "803c1ba95f8e5a6a1c96ff3b8f50374201c9404b3f36035b784fde01696a0f41"
+    },
+    {
+      "path": "a2-memory-cpu-final-v2/seed-900/history.json",
+      "bytes": 8357,
+      "sha256": "60afb932923a0f96ab383ff8c1d4ee6099c3bf4ff462f739222edf7997891c48"
+    },
+    {
+      "path": "a2-memory-cpu-final-v2/seed-900/manifest.json",
+      "bytes": 3152,
+      "sha256": "eea80e366e489fc3017e833a56c3a19cb599b4b4e1e2f0518a3f5e3d782a20e5"
+    },
+    {
+      "path": "a2-memory-cpu-final-v2/seed-900/runtime.json",
+      "bytes": 278,
+      "sha256": "87174d4480396e578d26b0f899e9e6e3bc12b4a6418748ee92d0bf451f56461f"
+    },
+    {
+      "path": "a2-memory-cpu-final-v2/seed-900/selection.json",
+      "bytes": 3025,
+      "sha256": "07f42ee27f124a76781faff110f1ce8ed6098115d9cb107958b9ba47ed607c4f"
+    },
+    {
+      "path": "a2-memory-cpu-final-v2/seed-900/summary.json",
+      "bytes": 2049,
+      "sha256": "af7844b8f4e0b7aba85d163086bc5cf07d3de6cdcf873200a5ad3ac10f747555"
+    },
+    {
+      "path": "a2-memory-cpu-final-v2/seed-900/validation-finalists-genes.npz",
+      "bytes": 809,
+      "sha256": "b87860b0e812c12a7e217f3090ff4c724176d749b9e2c90d106af6575aac3008"
+    },
+    {
+      "path": "a2-memory-gpu-smoke-v2/experiment.json",
+      "bytes": 9165,
+      "sha256": "1d1f0bc8e1ba12dd8e43e23e1dc93664a14ab8af4a757f96e62aa3311b07c8ca"
+    },
+    {
+      "path": "a2-memory-gpu-smoke-v2/seed-900/backend-settings.json",
+      "bytes": 529,
+      "sha256": "6574abdb81f9c15eac52f7180157ddf7bc7ff5f2735ab9c81530aba6c8945c4a"
+    },
+    {
+      "path": "a2-memory-gpu-smoke-v2/seed-900/champion-genes.npz",
+      "bytes": 512,
+      "sha256": "97a76d6f3d30a0ef0e4d25f36eedffd1ec6d8501a8ec35dc4dab71c02874b7e3"
+    },
+    {
+      "path": "a2-memory-gpu-smoke-v2/seed-900/champion.npz",
+      "bytes": 3809,
+      "sha256": "a0b51dfc227dd95cc98c26780439280cefd5cb36d3da3b4e5e5d52690610ec5c"
+    },
+    {
+      "path": "a2-memory-gpu-smoke-v2/seed-900/checkpoint.bin",
+      "bytes": 48706,
+      "sha256": "b398bc012722cbe1d84b825b43ec087264d7487b897ac7d89032bf3b11b6fb3c"
+    },
+    {
+      "path": "a2-memory-gpu-smoke-v2/seed-900/evaluated-winner-genes.npz",
+      "bytes": 512,
+      "sha256": "97a76d6f3d30a0ef0e4d25f36eedffd1ec6d8501a8ec35dc4dab71c02874b7e3"
+    },
+    {
+      "path": "a2-memory-gpu-smoke-v2/seed-900/evaluated-winner.npz",
+      "bytes": 3821,
+      "sha256": "f4ee79d46541fd9087aac0de6e7f710320157542326414f92c475da46ce80c83"
+    },
+    {
+      "path": "a2-memory-gpu-smoke-v2/seed-900/history.json",
+      "bytes": 9337,
+      "sha256": "6a084c0fd6b3bb9f4b4cb64b288ce7638c75c38a15ff2d9f0484813444544854"
+    },
+    {
+      "path": "a2-memory-gpu-smoke-v2/seed-900/manifest.json",
+      "bytes": 3247,
+      "sha256": "ae149860e7edd44dba3580bb8f4dc0d89960d98bdd6c0e6facf9e6383c0fb30c"
+    },
+    {
+      "path": "a2-memory-gpu-smoke-v2/seed-900/runtime.json",
+      "bytes": 317,
+      "sha256": "75be36ce7703bf5e35d12d128a508ad59a344ab0b7471d048c4aa2e82ec23f2a"
+    },
+    {
+      "path": "a2-memory-gpu-smoke-v2/seed-900/selection.json",
+      "bytes": 3025,
+      "sha256": "07f42ee27f124a76781faff110f1ce8ed6098115d9cb107958b9ba47ed607c4f"
+    },
+    {
+      "path": "a2-memory-gpu-smoke-v2/seed-900/summary.json",
+      "bytes": 2471,
+      "sha256": "d687102799f3c216e7cd409e6709ef34c09390bb7b8cf0f840d42db41689c7c2"
+    },
+    {
+      "path": "a2-memory-gpu-smoke-v2/seed-900/validation-finalists-genes.npz",
+      "bytes": 809,
+      "sha256": "d287441f0bed2ee55ffb0f1776051659d99f66503dfed918ea2f79767db729cf"
+    },
+    {
+      "path": "a2-cartpole-cpu-final-v1/experiment.json",
+      "bytes": 4707,
+      "sha256": "935ddc65c92c133feb2f0ffb082116b2be052c0ae7f7964145ec59075470d0f4"
+    },
+    {
+      "path": "a2-cartpole-cpu-final-v1/seed-900/backend-settings.json",
+      "bytes": 681,
+      "sha256": "495a4d8d3f21d243646977585bb615526da9382e8510db102428855515c9fbfb"
+    },
+    {
+      "path": "a2-cartpole-cpu-final-v1/seed-900/champion-genes.npz",
+      "bytes": 510,
+      "sha256": "cf2d61da7f5909256e764a28f78f01f5415b8cfa625bc1dbc0abf5c038ed762f"
+    },
+    {
+      "path": "a2-cartpole-cpu-final-v1/seed-900/champion.npz",
+      "bytes": 3641,
+      "sha256": "b756013a1d2ceccf4b3fe864c0e7d2c9dadb7ee9575407a556c14c416a048b17"
+    },
+    {
+      "path": "a2-cartpole-cpu-final-v1/seed-900/checkpoint.bin",
+      "bytes": 48040,
+      "sha256": "a5ddee1e34f9af735bd9334fdec28996ab7f598fdca85010d27d9bdda4c863b0"
+    },
+    {
+      "path": "a2-cartpole-cpu-final-v1/seed-900/environment.json",
+      "bytes": 263,
+      "sha256": "803be92ea41d4c494b12a6be8702436b7c9d34d3674869dc8e8e43801b8df321"
+    },
+    {
+      "path": "a2-cartpole-cpu-final-v1/seed-900/evaluated-winner-genes.npz",
+      "bytes": 513,
+      "sha256": "7dd43c75b4798d6afa60c8c8f5e5220251027736c0f1730c7c19953c74ff1b1c"
+    },
+    {
+      "path": "a2-cartpole-cpu-final-v1/seed-900/evaluated-winner.npz",
+      "bytes": 4913,
+      "sha256": "1f28e01d64613402139d28269b5ba7b36a65675c1661e0750418ecb882523fbb"
+    },
+    {
+      "path": "a2-cartpole-cpu-final-v1/seed-900/history.json",
+      "bytes": 8377,
+      "sha256": "acd9ec06e3f044e75b179d0fcc4b8ea5b23e607345683f9a96d2b389f6446ac7"
+    },
+    {
+      "path": "a2-cartpole-cpu-final-v1/seed-900/manifest.json",
+      "bytes": 3284,
+      "sha256": "f0f8c848495b933ddd26252b8ecb8df3bb554f1464ca068b7f53e0199cdf8967"
+    },
+    {
+      "path": "a2-cartpole-cpu-final-v1/seed-900/runtime.json",
+      "bytes": 278,
+      "sha256": "87174d4480396e578d26b0f899e9e6e3bc12b4a6418748ee92d0bf451f56461f"
+    },
+    {
+      "path": "a2-cartpole-cpu-final-v1/seed-900/selection.json",
+      "bytes": 539,
+      "sha256": "fde3c4eb45c607c3dbcf010d5c333bfb2156873657d63c01aea525891d561da4"
+    },
+    {
+      "path": "a2-cartpole-cpu-final-v1/seed-900/summary.json",
+      "bytes": 2051,
+      "sha256": "2e5a91f103ac0e619732a8568a279fed58e8afc793954f7fb707b6e04e5d4312"
+    },
+    {
+      "path": "a2-cartpole-cpu-final-v1/seed-900/validation-finalists-genes.npz",
+      "bytes": 806,
+      "sha256": "3c47a73a32971f61f5a6e28f0404bd4d65bbdb4b5c9c3bff69d64fbc4f23617e"
+    },
+    {
+      "path": "a2-cartpole-gpu-smoke-v1/experiment.json",
+      "bytes": 5191,
+      "sha256": "c334e4ec5a8f54284537b009487a89f9f0801cc955bd713d00b7e03d1f4ca9cb"
+    },
+    {
+      "path": "a2-cartpole-gpu-smoke-v1/seed-900/backend-settings.json",
+      "bytes": 681,
+      "sha256": "495a4d8d3f21d243646977585bb615526da9382e8510db102428855515c9fbfb"
+    },
+    {
+      "path": "a2-cartpole-gpu-smoke-v1/seed-900/champion-genes.npz",
+      "bytes": 510,
+      "sha256": "02a96ed82f0cbbf3f2549e9e03a7ba4d3facbd764a4ef7c6ce8e1c193aadac0d"
+    },
+    {
+      "path": "a2-cartpole-gpu-smoke-v1/seed-900/champion.npz",
+      "bytes": 3641,
+      "sha256": "eda39f0874568cd5acad1f6f88de05743d8dc44b34779113d2996238bbddead4"
+    },
+    {
+      "path": "a2-cartpole-gpu-smoke-v1/seed-900/checkpoint.bin",
+      "bytes": 48718,
+      "sha256": "49d5adb90858e674dea9da125eb219a838ab27c835195710f7c0f249ed66a7ae"
+    },
+    {
+      "path": "a2-cartpole-gpu-smoke-v1/seed-900/environment.json",
+      "bytes": 263,
+      "sha256": "803be92ea41d4c494b12a6be8702436b7c9d34d3674869dc8e8e43801b8df321"
+    },
+    {
+      "path": "a2-cartpole-gpu-smoke-v1/seed-900/evaluated-winner-genes.npz",
+      "bytes": 513,
+      "sha256": "7e6b14d8f2ecd9db8790f9801f151fa094f8590a1aa23ab4e657d4fa853bfb29"
+    },
+    {
+      "path": "a2-cartpole-gpu-smoke-v1/seed-900/evaluated-winner.npz",
+      "bytes": 4909,
+      "sha256": "10083a8a8bd2a21ea0ce88b5409b4a52ea70793cd2ea75275aa32512809eeacd"
+    },
+    {
+      "path": "a2-cartpole-gpu-smoke-v1/seed-900/history.json",
+      "bytes": 9352,
+      "sha256": "7b1710f00b3d477f3179bae81967ea5db463c9fbd403e9acd81dd3d073303c9d"
+    },
+    {
+      "path": "a2-cartpole-gpu-smoke-v1/seed-900/manifest.json",
+      "bytes": 3379,
+      "sha256": "478460f4e938090c9ab3e405ed8e443cf372941f03ac69eaeed1fc8cfab89b9f"
+    },
+    {
+      "path": "a2-cartpole-gpu-smoke-v1/seed-900/runtime.json",
+      "bytes": 317,
+      "sha256": "bdad8418149c296c65f412d61db36f7cdede1c743ddb08d5d3cf01219c8bb13f"
+    },
+    {
+      "path": "a2-cartpole-gpu-smoke-v1/seed-900/selection.json",
+      "bytes": 539,
+      "sha256": "fde3c4eb45c607c3dbcf010d5c333bfb2156873657d63c01aea525891d561da4"
+    },
+    {
+      "path": "a2-cartpole-gpu-smoke-v1/seed-900/summary.json",
+      "bytes": 2471,
+      "sha256": "d07603ac33e8cd8434be428b190f555f3c6337b41a0521a8640a05da1f7f5c30"
+    },
+    {
+      "path": "a2-cartpole-gpu-smoke-v1/seed-900/validation-finalists-genes.npz",
+      "bytes": 806,
+      "sha256": "69f52136de6fcea781f94615082cc1d99fb29b75b86f381e9863c80197411cf8"
+    },
+    {
+      "path": "a2-memory-full-v3/experiment.json",
+      "bytes": 8678,
+      "sha256": "c6bce8b4a8bf0f559a278976f63004a6817c9f480de677510f8ddddd2eb7850d"
+    },
+    {
+      "path": "a2-memory-full-v3/replay.json",
+      "bytes": 1375,
+      "sha256": "04ed297ae650a1b671f37139a27189a02d5433786edd0c97541d5d909eb06986"
+    },
+    {
+      "path": "a2-memory-full-v3/seed-900/backend-settings.json",
+      "bytes": 529,
+      "sha256": "6574abdb81f9c15eac52f7180157ddf7bc7ff5f2735ab9c81530aba6c8945c4a"
+    },
+    {
+      "path": "a2-memory-full-v3/seed-900/champion-genes.npz",
+      "bytes": 512,
+      "sha256": "97a76d6f3d30a0ef0e4d25f36eedffd1ec6d8501a8ec35dc4dab71c02874b7e3"
+    },
+    {
+      "path": "a2-memory-full-v3/seed-900/champion.npz",
+      "bytes": 3812,
+      "sha256": "9e3b47320881de4fa53ad2e5ae978d9eb01f3665e5f9c928dc85605e5f3e524a"
+    },
+    {
+      "path": "a2-memory-full-v3/seed-900/checkpoint.bin",
+      "bytes": 46365,
+      "sha256": "2cc753f890da69737388e23e36a97086c18e8c11e5b9d7cffd6e080ddab165b8"
+    },
+    {
+      "path": "a2-memory-full-v3/seed-900/evaluated-winner-genes.npz",
+      "bytes": 512,
+      "sha256": "97a76d6f3d30a0ef0e4d25f36eedffd1ec6d8501a8ec35dc4dab71c02874b7e3"
+    },
+    {
+      "path": "a2-memory-full-v3/seed-900/evaluated-winner.npz",
+      "bytes": 3824,
+      "sha256": "8a41f37343e9eb700476cca1cc8e4430940e280f032ed23c03aa5582944d6bce"
+    },
+    {
+      "path": "a2-memory-full-v3/seed-900/history.json",
+      "bytes": 6150,
+      "sha256": "82a13a0dbd6be7778fcd1bdaa20ee2ab32d83b30208124f68758a60efa575aec"
+    },
+    {
+      "path": "a2-memory-full-v3/seed-900/manifest.json",
+      "bytes": 3152,
+      "sha256": "e40374480195463c4eb86aa252a201379967e846a88397674a0d2cb9782f6e55"
+    },
+    {
+      "path": "a2-memory-full-v3/seed-900/runtime.json",
+      "bytes": 278,
+      "sha256": "87174d4480396e578d26b0f899e9e6e3bc12b4a6418748ee92d0bf451f56461f"
+    },
+    {
+      "path": "a2-memory-full-v3/seed-900/selection.json",
+      "bytes": 3025,
+      "sha256": "07f42ee27f124a76781faff110f1ce8ed6098115d9cb107958b9ba47ed607c4f"
+    },
+    {
+      "path": "a2-memory-full-v3/seed-900/summary.json",
+      "bytes": 2048,
+      "sha256": "69024664758f4fbf41920684279d85dd880ea2641187fe7aed2b7a375280a106"
+    },
+    {
+      "path": "a2-memory-full-v3/seed-900/validation-finalists-genes.npz",
+      "bytes": 809,
+      "sha256": "b87860b0e812c12a7e217f3090ff4c724176d749b9e2c90d106af6575aac3008"
+    },
+    {
+      "path": "a2-memory-resume-v2/experiment.json",
+      "bytes": 8678,
+      "sha256": "f2fc983e385e20b085beb20d8d1a5de7e8070cba282427d10d14317646d41cd8"
+    },
+    {
+      "path": "a2-memory-resume-v2/seed-900/backend-settings.json",
+      "bytes": 529,
+      "sha256": "6574abdb81f9c15eac52f7180157ddf7bc7ff5f2735ab9c81530aba6c8945c4a"
+    },
+    {
+      "path": "a2-memory-resume-v2/seed-900/champion-genes.npz",
+      "bytes": 512,
+      "sha256": "97a76d6f3d30a0ef0e4d25f36eedffd1ec6d8501a8ec35dc4dab71c02874b7e3"
+    },
+    {
+      "path": "a2-memory-resume-v2/seed-900/champion.npz",
+      "bytes": 3812,
+      "sha256": "9e3b47320881de4fa53ad2e5ae978d9eb01f3665e5f9c928dc85605e5f3e524a"
+    },
+    {
+      "path": "a2-memory-resume-v2/seed-900/checkpoint.bin",
+      "bytes": 47049,
+      "sha256": "a2291120d9a21d859ef6af03eaf76059cd241a2153302444a346845385ca0aec"
+    },
+    {
+      "path": "a2-memory-resume-v2/seed-900/evaluated-winner-genes.npz",
+      "bytes": 512,
+      "sha256": "97a76d6f3d30a0ef0e4d25f36eedffd1ec6d8501a8ec35dc4dab71c02874b7e3"
+    },
+    {
+      "path": "a2-memory-resume-v2/seed-900/evaluated-winner.npz",
+      "bytes": 3824,
+      "sha256": "8a41f37343e9eb700476cca1cc8e4430940e280f032ed23c03aa5582944d6bce"
+    },
+    {
+      "path": "a2-memory-resume-v2/seed-900/history.json",
+      "bytes": 6167,
+      "sha256": "8dccee6074e6d9055b988991fbbd536d5dfa73f7cf85d12f2d9afe4ec2840ace"
+    },
+    {
+      "path": "a2-memory-resume-v2/seed-900/manifest.json",
+      "bytes": 3152,
+      "sha256": "e40374480195463c4eb86aa252a201379967e846a88397674a0d2cb9782f6e55"
+    },
+    {
+      "path": "a2-memory-resume-v2/seed-900/runtime.json",
+      "bytes": 278,
+      "sha256": "87174d4480396e578d26b0f899e9e6e3bc12b4a6418748ee92d0bf451f56461f"
+    },
+    {
+      "path": "a2-memory-resume-v2/seed-900/selection.json",
+      "bytes": 3025,
+      "sha256": "07f42ee27f124a76781faff110f1ce8ed6098115d9cb107958b9ba47ed607c4f"
+    },
+    {
+      "path": "a2-memory-resume-v2/seed-900/summary.json",
+      "bytes": 2048,
+      "sha256": "b6f6054513842c2d486b4263a4cb2f9a75230f790eb9415f1a15597b3441c7cb"
+    },
+    {
+      "path": "a2-memory-resume-v2/seed-900/validation-finalists-genes.npz",
+      "bytes": 809,
+      "sha256": "b87860b0e812c12a7e217f3090ff4c724176d749b9e2c90d106af6575aac3008"
+    },
+    {
+      "path": "a2-memory-acceptance-v1-rtx3070-image/pilot-run/backend-settings.json",
+      "bytes": 531,
+      "sha256": "58e82decd1ecc3e9514d27a55dcf7177fad3d659f49569b37e9a6ea7b4e4e8f2"
+    },
+    {
+      "path": "a2-memory-acceptance-v1-rtx3070-image/pilot-run/champion-genes.npz",
+      "bytes": 498,
+      "sha256": "db8dd0923832c7dd95d0d965023a1c7e1941413162d060d4ad17584378cc847c"
+    },
+    {
+      "path": "a2-memory-acceptance-v1-rtx3070-image/pilot-run/champion.npz",
+      "bytes": 3489,
+      "sha256": "20c222ee72a0e04a921c84edba41b292b251bf193b0b95d2194264dccbf4f242"
+    },
+    {
+      "path": "a2-memory-acceptance-v1-rtx3070-image/pilot-run/checkpoint.bin",
+      "bytes": 457369,
+      "sha256": "4466ff983952ce0d253c77636eed7270912d22b259bf8d9e990a30444660c784"
+    },
+    {
+      "path": "a2-memory-acceptance-v1-rtx3070-image/pilot-run/evaluated-winner-genes.npz",
+      "bytes": 498,
+      "sha256": "db8dd0923832c7dd95d0d965023a1c7e1941413162d060d4ad17584378cc847c"
+    },
+    {
+      "path": "a2-memory-acceptance-v1-rtx3070-image/pilot-run/evaluated-winner.npz",
+      "bytes": 3501,
+      "sha256": "cf0aecb4d3bddab62f01700ca0e814d75b8cf8111041eacda33ab95b6329d194"
+    },
+    {
+      "path": "a2-memory-acceptance-v1-rtx3070-image/pilot-run/history.json",
+      "bytes": 407973,
+      "sha256": "0707595f9cc184135f72a4b04989c5086ad1ddacf792d1b2710da2074828d5f1"
+    },
+    {
+      "path": "a2-memory-acceptance-v1-rtx3070-image/pilot-run/manifest.json",
+      "bytes": 3369,
+      "sha256": "8ede8e565aab054c8aad5e20ffa3402d1f1eabc83398cecd638efd449d3c3a36"
+    },
+    {
+      "path": "a2-memory-acceptance-v1-rtx3070-image/pilot-run/runtime.json",
+      "bytes": 317,
+      "sha256": "e7222c0f9e5b0590e78f0f58e7d7d0a9cf13d929e9fbaca5dd0940bd61d05f9e"
+    },
+    {
+      "path": "a2-memory-acceptance-v1-rtx3070-image/pilot-run/selection.json",
+      "bytes": 3181,
+      "sha256": "02179d3640d8b3db3a12fc3f241882f950f1130fae0175eef81de967a9d6bb3e"
+    },
+    {
+      "path": "a2-memory-acceptance-v1-rtx3070-image/pilot-run/summary.json",
+      "bytes": 2538,
+      "sha256": "55c92a85b421d29c00570843cab62380d886f0344b6821d750d72909121d2da5"
+    },
+    {
+      "path": "a2-memory-acceptance-v1-rtx3070-image/pilot-run/validation-finalists-genes.npz",
+      "bytes": 1070,
+      "sha256": "d15424ff649911da1c90052b0b28abb88f7a1a90f461da9ce9eb44862fac173c"
+    },
+    {
+      "path": "a2-memory-acceptance-v1-rtx3070-image/pilot.json",
+      "bytes": 2834,
+      "sha256": "f883128fb4fdff7280060535b975fa7ee13dd2c282ccf068b3ecb1427f6919a1"
+    },
+    {
+      "path": "a2-cartpole-acceptance-v1-rtx3070-image/pilot-run/backend-settings.json",
+      "bytes": 683,
+      "sha256": "2bdc3453271ab4ec4d85926f2d77376f21f0f3a6fc476d9b407c5dad1f2d7c90"
+    },
+    {
+      "path": "a2-cartpole-acceptance-v1-rtx3070-image/pilot-run/champion-genes.npz",
+      "bytes": 513,
+      "sha256": "212f0ea7410b79d69b392d7eae71537f540edbe23be37f30f9b8b4c49c88253e"
+    },
+    {
+      "path": "a2-cartpole-acceptance-v1-rtx3070-image/pilot-run/champion.npz",
+      "bytes": 3630,
+      "sha256": "410dd3adc27b7058b718cff38117a31665d076d3da5806f1a02476d6c51dfacc"
+    },
+    {
+      "path": "a2-cartpole-acceptance-v1-rtx3070-image/pilot-run/checkpoint.bin",
+      "bytes": 457454,
+      "sha256": "c19fa2a776ad6cca8e93abd60f5535addbae9ab27d214b576c8d30253c8bc0a4"
+    },
+    {
+      "path": "a2-cartpole-acceptance-v1-rtx3070-image/pilot-run/environment.json",
+      "bytes": 263,
+      "sha256": "803be92ea41d4c494b12a6be8702436b7c9d34d3674869dc8e8e43801b8df321"
+    },
+    {
+      "path": "a2-cartpole-acceptance-v1-rtx3070-image/pilot-run/evaluated-winner-genes.npz",
+      "bytes": 513,
+      "sha256": "212f0ea7410b79d69b392d7eae71537f540edbe23be37f30f9b8b4c49c88253e"
+    },
+    {
+      "path": "a2-cartpole-acceptance-v1-rtx3070-image/pilot-run/evaluated-winner.npz",
+      "bytes": 3644,
+      "sha256": "9f4395419b87aa8b5860195d859e33a340e2f50ecf7e20ace1ee5111e103812d"
+    },
+    {
+      "path": "a2-cartpole-acceptance-v1-rtx3070-image/pilot-run/history.json",
+      "bytes": 410608,
+      "sha256": "93110e5f1140c74d77d6b4b22ea0995013936eaabecf8411614410a7bff630cb"
+    },
+    {
+      "path": "a2-cartpole-acceptance-v1-rtx3070-image/pilot-run/manifest.json",
+      "bytes": 3503,
+      "sha256": "2f33cd31fa344a1325a511dcb129a866a59f3834e9070f046325cb9c3ab27c15"
+    },
+    {
+      "path": "a2-cartpole-acceptance-v1-rtx3070-image/pilot-run/runtime.json",
+      "bytes": 317,
+      "sha256": "e7222c0f9e5b0590e78f0f58e7d7d0a9cf13d929e9fbaca5dd0940bd61d05f9e"
+    },
+    {
+      "path": "a2-cartpole-acceptance-v1-rtx3070-image/pilot-run/selection.json",
+      "bytes": 919,
+      "sha256": "7a377bf9a0bcc60be8b21543fb6582e90bb872372412afcb6b05534b9fbb4fda"
+    },
+    {
+      "path": "a2-cartpole-acceptance-v1-rtx3070-image/pilot-run/summary.json",
+      "bytes": 2540,
+      "sha256": "bf314d7d9ff54b18df2b77f3ef485895a4bc805b1ed2b3f45c6afbaa1a2bd634"
+    },
+    {
+      "path": "a2-cartpole-acceptance-v1-rtx3070-image/pilot-run/validation-finalists-genes.npz",
+      "bytes": 1242,
+      "sha256": "63f47805d18cde97506087eea125a66673ae0525745810ff34dc6f35381838e8"
+    },
+    {
+      "path": "a2-cartpole-acceptance-v1-rtx3070-image/pilot.json",
+      "bytes": 2835,
+      "sha256": "1ec2cecaf9789dfdbaf21ac9b31d18eb68064a6aca95bc2de278aebadb4cbb74"
+    }
+  ]
+}

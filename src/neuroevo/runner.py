@@ -42,7 +42,8 @@ def load_config(path):
     expected={"cartpole":(4,2,"argmax-first-tie"),"memory":(2,1,"sign-positive-tie"),
               "visual":(25,1,"sign-positive-tie")}[config["task"]]
     baseline=config['adapter'].get('kind')=='fixed-weight-v1'
-    if config['adapter'].get('kind') not in (None,'fixed-weight-v1'):
+    adaptive=config['adapter'].get('kind')=='adaptive-emr-v1'
+    if config['adapter'].get('kind') not in (None,'fixed-weight-v1','adaptive-emr-v1'):
         raise ValueError('Unknown evolution adapter')
     if baseline:
         from .adapters.weights import settings as weight_settings
@@ -50,6 +51,14 @@ def load_config(path):
         if config.get('decoder') is not None:
             raise ValueError('Weight-only baseline cannot also have a CPPN decoder')
     decoder=config.get('decoder')
+    if adaptive:
+        from .adapters.emr import settings as adaptive_settings
+        a=adaptive_settings(config['adaptive'])
+        if (decoder is not None or config['adapter']['profile']!='layered' or
+                config['adapter']['population']!=a['population'] or
+                config['adapter']['inputs']!=len(a['input_coords']) or
+                config['adapter']['outputs']!=len(a['output_coords'])):
+            raise ValueError('Adaptive EMR task interface or decoder conflicts with A0')
     if decoder is not None:
         from .fixed import settings
         decoder=settings(decoder)
@@ -109,14 +118,34 @@ def run(config, seed, directory, hardware, *, resume=False, stop_after=None, pil
         "cuda_visible_devices":os.environ.get("CUDA_VISIBLE_DEVICES"),
         "planning":"host-NumPy-once-per-generation","rollout":"compiled-JAX-scan"})
     baseline=config['adapter'].get('kind')=='fixed-weight-v1'
+    adaptive=config['adapter'].get('kind')=='adaptive-emr-v1'
     if baseline:
         from .adapters.weights import WeightAdapter
         adapter=WeightAdapter(config['adapter'])
+    elif adaptive:
+        from .adapters.emr_evolution import EMREvolution
+        task_inputs,task_outputs=config['adapter']['inputs'],config['adapter']['outputs']
+        class Problem:
+            input_shape=(task_inputs,)
+            output_shape=(task_outputs,)
+            jitable=True
+            use_bias=False
+            is_exhaustive_dataset=False
+            def get_data(self):
+                return [(np.zeros(task_inputs,np.float32).tolist(),
+                         np.zeros(task_outputs,np.float32).tolist()),
+                        (np.ones(task_inputs,np.float32).tolist(),
+                         np.ones(task_outputs,np.float32).tolist())]
+        adapter=EMREvolution(config['adaptive'],
+            json.loads(Path('configs/q2-capacity-v2.json').read_text()),Problem(),
+            node_capacity=config['adapter']['nodes'],edge_capacity=config['adapter']['edges'])
     else:
         from .adapters.tensorneat import TensorNEATAdapter
         adapter=TensorNEATAdapter(config["adapter"])
     decoder=None
-    interpretation=adapter.interpretation() if baseline else {}
+    interpretation=(adapter.interpretation() if baseline else
+                    {'adaptive_config':config['adaptive'],'source':'public-EMR-population-substrates'}
+                    if adaptive else {})
     def genes(batch,index):
         return {'weights':batch.weights[index]} if baseline else {'nodes':batch.nodes[index],'conns':batch.conns[index]}
     if config.get('decoder') is not None:
@@ -135,13 +164,15 @@ def run(config, seed, directory, hardware, *, resume=False, stop_after=None, pil
                 return v
             return np.asarray(v).tolist()
         return {k:value(v) for k,v in vars(obj).items() if not k.startswith("_")}
-    write_json(directory/"backend-settings.json", interpretation if baseline else {
+    write_json(directory/"backend-settings.json", interpretation if baseline or adaptive else {
         "node_gene":settings(adapter.genome.node_gene),"conn_gene":settings(adapter.genome.conn_gene),
         "mutation":settings(adapter.genome.mutation),"input_transform":None,"output_transform":None,
         "network_type":adapter.genome.network_type,
         "gene_identity":"native-node-keys-and-connection-endpoint-pairs"})
     history, archive, previous_wall = [], None, 0.
     if resume:
+        if adaptive:
+            adapter.initialize(seed)  # Rebuild native compiled ask/tell before loading state.
         saved = load_checkpoint(directory/"checkpoint.bin", {**config, "run_seed": seed}, source)
         state, history, archive = saved["state"], saved["history"], saved["champion"]
         previous_wall = saved["elapsed_seconds"]
@@ -151,7 +182,7 @@ def run(config, seed, directory, hardware, *, resume=False, stop_after=None, pil
     if streaming_history:
         # A checkpoint is the committed state. Discard any later JSONL rows on resume.
         atomic_write(directory/'history.jsonl',b''.join(canonical(row)+b'\n' for row in history))
-    profile = 'layered' if decoder is not None else config["adapter"]["profile"]
+    profile = 'layered' if decoder is not None or adaptive else config["adapter"]["profile"]
     if config["task"] == "cartpole":
         env, params = cartpole()
         write_json(directory/"environment.json", {k:np.asarray(v).tolist() for k,v in vars(params).items()})
@@ -198,20 +229,41 @@ def run(config, seed, directory, hardware, *, resume=False, stop_after=None, pil
         gen_start = time.perf_counter()
         batch = adapter.ask(state, f"seed-{seed}")
         plans, decode_valid, errors, decoded_stats = [], [], [], []
-        candidates=((w,None) for w in batch.weights) if baseline else zip(batch.nodes,batch.conns)
-        for nodes, conns in candidates:
-            try:
-                p = (adapter.decode(nodes) if baseline else decoder.decode(nodes,conns) if decoder is not None else
-                     plan(adapter.decode(nodes, conns), config["adapter"]["nodes"], config["adapter"]["edges"]))
-                plans.append(p)
-                decode_valid.append(True)
-                errors.append(None)
-                if decoder is not None:
-                    decoded_stats.append(dict(decoder.last_stats))
-            except ValueError as error:
-                plans.append(None)
-                decode_valid.append(False)
-                errors.append(str(error))
+        if adaptive:
+            plans=list(batch.plans)
+            decode_valid=[True]*len(plans)
+            errors=[None]*len(plans)
+            positions=4*(4**(config['adaptive']['max_depth']+1)-1)//3
+            def adaptive_stats(p):
+                graph=p.graph()
+                digest=hashlib.sha256(canonical({'grid_indices':p.grid_indices.tolist(),
+                    'edges':graph.edges})).hexdigest()
+                return {'phenotype_nodes':len(p.plan.node_mask),
+                        'active_hidden_nodes':len(p.grid_indices),
+                        'expressed_edges':len(graph.edges),
+                        'recurrent_edges':int(p.plan.mask_delay.sum()),
+                        'input_edges':int(p.plan.mask_in.sum()),
+                        'output_edges':int(p.plan.mask_out.sum()),
+                        'graph_sha256':digest,
+                        'queries':positions*(config['adapter']['inputs']+config['adapter']['outputs'])+
+                                  (len(p.grid_indices)**2 if config['adaptive']['recurrent'] else 0),
+                        'host_array_bytes':sum(np.asarray(v).nbytes for v in p.plan[:8])}
+            decoded_stats=[adaptive_stats(p) for p in batch.phenotypes]
+        else:
+            candidates=((w,None) for w in batch.weights) if baseline else zip(batch.nodes,batch.conns)
+            for nodes, conns in candidates:
+                try:
+                    p = (adapter.decode(nodes) if baseline else decoder.decode(nodes,conns) if decoder is not None else
+                         plan(adapter.decode(nodes, conns), config["adapter"]["nodes"], config["adapter"]["edges"]))
+                    plans.append(p)
+                    decode_valid.append(True)
+                    errors.append(None)
+                    if decoder is not None:
+                        decoded_stats.append(dict(decoder.last_stats))
+                except ValueError as error:
+                    plans.append(None)
+                    decode_valid.append(False)
+                    errors.append(str(error))
         if not any(decode_valid):
             write_json(directory/"failure.json", {"generation": generation, "errors": errors})
             raise ValueError("Entire population failed decoding")
@@ -229,7 +281,7 @@ def run(config, seed, directory, hardware, *, resume=False, stop_after=None, pil
         winner = int(np.argmax(scores))
         # Persist evaluated genes AND phenotype before reproduction can change slot contents.
         archive = {"id": batch.ids[winner], "score": float(scores[winner]),**genes(batch,winner)}
-        export(directory/"evaluated-winner.npz", plans[winner], profile,
+        export(directory/"evaluated-winner.npz", batch.phenotypes[winner].plan if adaptive else plans[winner], profile,
                {"candidate_id": archive["id"], "training_score": archive["score"],
                 "action": config["action"], "provenance": source,**interpretation})
         atomic_genes(directory/"evaluated-winner-genes.npz", archive)
@@ -260,7 +312,7 @@ def run(config, seed, directory, hardware, *, resume=False, stop_after=None, pil
                 result.update(generalization_score=float(gs[0]), generalization_valid=bool(gv[0]),
                               generalization_by_delay=ge[0].reshape(8, -1).mean(axis=1).tolist(),
                               interpolation_by_delay=episode_scores[0].reshape(8, -1).mean(axis=1).tolist())
-            export(directory/"champion.npz", plans[champion], profile,
+            export(directory/"champion.npz", batch.phenotypes[champion].plan if adaptive else plans[champion], profile,
                    {"action": config["action"], "candidate_id": batch.ids[champion], "provenance": source,**interpretation})
             atomic_genes(directory/"champion-genes.npz",genes(batch,champion))
             write_json(directory/"selection.json", result)
@@ -292,6 +344,10 @@ def run(config, seed, directory, hardware, *, resume=False, stop_after=None, pil
                        phenotype_edges_max=max(s['expressed_edges'] for s in decoded_stats),
                        cppn_queries_total=sum(s['queries'] for s in decoded_stats),
                        phenotype_host_bytes_total=sum(s['host_array_bytes'] for s in decoded_stats))
+        if adaptive:
+            row['adaptive_graphs']=[{k:s[k] for k in ('active_hidden_nodes','input_edges',
+                'output_edges','recurrent_edges','expressed_edges','graph_sha256')}
+                for s in decoded_stats]
         history.append(row)
         row["total_seconds"] = time.perf_counter()-gen_start
         if int(state.generation) % config["checkpoint_every"] == 0 or final_generation:

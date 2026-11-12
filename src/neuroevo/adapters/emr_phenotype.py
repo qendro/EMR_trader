@@ -5,6 +5,7 @@ This is a version-locked seam to the pinned EMR generation caches. Its public
 represent the population whose fitness was just recorded.
 """
 from dataclasses import dataclass
+from types import SimpleNamespace
 
 import numpy as np
 
@@ -45,10 +46,6 @@ def extract_evaluated(algo, index, *, node_capacity, edge_capacity):
     """
     from emr_hyperneat.emrhyperneat_base import get_hierarchical_grid
 
-    if type(index) is not int or type(node_capacity) is not int or type(edge_capacity) is not int:
-        raise ValueError('Index and capacities must be integers')
-    if node_capacity < 1 or edge_capacity < 1:
-        raise ValueError('Capacities must be positive')
     record = getattr(algo, '_last_eval', None)
     if not isinstance(record, dict) or 'generation' not in record:
         raise RuntimeError('No evaluated EMR generation is available')
@@ -60,27 +57,60 @@ def extract_evaluated(algo, index, *, node_capacity, edge_capacity):
     positions = np.asarray(get_hierarchical_grid(algo.max_depth).all_positions)
     if positions.ndim != 2 or positions.shape[1] != 2 or not np.isfinite(positions).all():
         raise RuntimeError('Pinned EMR grid layout changed')
+    recurrent = bool(getattr(getattr(algo, 'extended_config', None),
+                             'allow_hidden_to_hidden', False))
+    return _extract(index, positions, algo._cached_masks_A, algo._cached_W1,
+                    algo._cached_W2, algo._cached_sparse_hh, recurrent,
+                    len(algo.substrate_input_coords), len(algo.substrate_output_coords),
+                    int(algo.activate_time) if recurrent else 1,
+                    int(record['generation']), node_capacity, edge_capacity)
+
+
+def extract_public(substrate, index, generation, *, node_capacity, edge_capacity):
+    """Convert a public `population_substrates(state)` member before scoring it."""
+    c = substrate.config
+    if (c.activation_mode != 'disabled' or c.aggregation_mode != 'disabled' or
+            c.hidden_activation != 'tanh' or c.output_activation != 'sigmoid' or
+            c.hh_aggregation_mode != 'sum' or c.hh_activation_mode != 'every_iteration' or
+            c.settling_rule != 'emr' or c.neuromodulation is not None):
+        raise ValueError('Public EMR substrate uses an unsupported function mode')
+    sparse = None
+    if c.hidden_to_hidden:
+        sparse = SimpleNamespace(from_indices=substrate.hh_from, to_indices=substrate.hh_to,
+                                 weights=substrate.hh_weights, valid_mask=substrate.hh_valid,
+                                 num_valid=np.asarray(substrate.hh_valid).sum(axis=1).astype(np.int32)
+                                 if substrate.hh_valid is not None else None)
+    elif any(getattr(substrate, name) is not None for name in
+             ('hh_from', 'hh_to', 'hh_weights', 'hh_valid')):
+        raise RuntimeError('Unexpected recurrent fields in feed-forward substrate')
+    positions = np.asarray(substrate.positions)
+    return _extract(index, positions, substrate.mask, substrate.W1, substrate.W2,
+                    sparse, c.hidden_to_hidden, len(c.input_coords), len(c.output_coords),
+                    int(c.activate_time) if c.hidden_to_hidden else 1,
+                    generation, node_capacity, edge_capacity)
+
+
+def _extract(index, positions, masks, w1, w2, sparse, recurrent, inputs, outputs,
+             steps, generation, node_capacity, edge_capacity):
+    if type(index) is not int or type(node_capacity) is not int or type(edge_capacity) is not int:
+        raise ValueError('Index and capacities must be integers')
+    if node_capacity < 1 or edge_capacity < 1:
+        raise ValueError('Capacities must be positive')
+    if positions.ndim != 2 or positions.shape[1] != 2 or not np.isfinite(positions).all():
+        raise RuntimeError('Pinned EMR grid layout changed')
     total = positions.shape[0]
-    mask = _row(getattr(algo, '_cached_masks_A', None), index, (total,),
-                np.dtype('bool'), 'mask')
+    mask = _row(masks, index, (total,), np.dtype('bool'), 'mask')
     active = np.flatnonzero(mask).astype(np.int32)
-    inputs = len(algo.substrate_input_coords)
-    outputs = len(algo.substrate_output_coords)
     if inputs + len(active) + outputs > node_capacity:
         raise OverflowError('EMR phenotype exceeds node capacity')
-    wi_full = _row(getattr(algo, '_cached_W1', None), index, (inputs, total),
-                   np.dtype('float32'), 'W1')
-    wo_full = _row(getattr(algo, '_cached_W2', None), index, (total, outputs),
-                   np.dtype('float32'), 'W2')
+    wi_full = _row(w1, index, (inputs, total), np.dtype('float32'), 'W1')
+    wo_full = _row(w2, index, (total, outputs), np.dtype('float32'), 'W2')
     if (not np.isfinite(wi_full).all() or not np.isfinite(wo_full).all() or
             np.any(wi_full[:, ~mask] != 0) or np.any(wo_full[~mask] != 0)):
         raise RuntimeError('Pinned EMR weight cache contains invalid or inactive weights')
     wi, wo = wi_full[:, active], wo_full[active]
     delay = np.zeros((len(active), len(active)), np.float32)
     delay_mask = np.zeros(delay.shape, bool)
-    recurrent = bool(getattr(getattr(algo, 'extended_config', None),
-                             'allow_hidden_to_hidden', False))
-    sparse = getattr(algo, '_cached_sparse_hh', None)
     if recurrent:
         if sparse is None:
             raise RuntimeError('Pinned EMR recurrent edge cache unavailable')
@@ -108,11 +138,10 @@ def extract_evaluated(algo, index, *, node_capacity, edge_capacity):
     if edges > edge_capacity:
         raise OverflowError('EMR phenotype exceeds edge capacity')
     plan = blocks(wi, delay, wo, wi != 0, delay_mask, wo != 0)
-    steps = int(algo.activate_time) if recurrent else 1
     if steps < 1:
         raise RuntimeError('Invalid EMR settling step count')
     return EvaluatedPhenotype(plan, active, positions[active].copy(), steps,
-                              int(record['generation']))
+                              int(generation))
 
 
 def settled_reference(phenotype, observations):

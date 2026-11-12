@@ -1,0 +1,70 @@
+{
+  "acceptance": false,
+  "backend_parity": "exact-quality-selection-and-per-genome-topology-counts",
+  "cells": 4,
+  "schema": 1,
+  "status": "development-smoke-pass",
+  "tasks": {
+    "cartpole": {
+      "active_hidden_counts": [
+        4,
+        8,
+        12,
+        16,
+        20
+      ],
+      "cpu_warm_decode_median_seconds": 0.928876976002357,
+      "cpu_warm_rollout_median_seconds": 0.016634232008073013,
+      "distinct_graphs": 8,
+      "exact_weighted_graph_digests_match": false,
+      "expressed_edge_counts": [
+        39,
+        40,
+        112,
+        209,
+        342,
+        510
+      ],
+      "gpu_warm_decode_median_seconds": 1.5471576655036188,
+      "gpu_warm_rollout_median_seconds": 0.06965451200085226,
+      "heldout_score": 42.375,
+      "heldout_valid": true,
+      "total_cppn_queries": 5664,
+      "training_best_by_generation": [
+        68.0,
+        50.5,
+        60.75
+      ]
+    },
+    "memory": {
+      "active_hidden_counts": [
+        4,
+        8,
+        12,
+        16,
+        20
+      ],
+      "cpu_warm_decode_median_seconds": 0.8873439630042412,
+      "cpu_warm_rollout_median_seconds": 0.041185694994055666,
+      "distinct_graphs": 8,
+      "exact_weighted_graph_digests_match": false,
+      "expressed_edge_counts": [
+        28,
+        88,
+        173,
+        295,
+        450
+      ],
+      "gpu_warm_decode_median_seconds": 1.6466678284996306,
+      "gpu_warm_rollout_median_seconds": 0.12440846200479427,
+      "heldout_score": 1.0,
+      "heldout_valid": true,
+      "total_cppn_queries": 4224,
+      "training_best_by_generation": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    }
+  }
+}

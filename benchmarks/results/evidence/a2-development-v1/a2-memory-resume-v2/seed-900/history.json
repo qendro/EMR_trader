@@ -1,0 +1,251 @@
+[
+  {
+    "adaptive_graphs": [
+      {
+        "active_hidden_nodes": 4,
+        "expressed_edges": 28,
+        "input_edges": 8,
+        "output_edges": 4,
+        "recurrent_edges": 16
+      },
+      {
+        "active_hidden_nodes": 8,
+        "expressed_edges": 88,
+        "input_edges": 16,
+        "output_edges": 8,
+        "recurrent_edges": 64
+      },
+      {
+        "active_hidden_nodes": 20,
+        "expressed_edges": 450,
+        "input_edges": 40,
+        "output_edges": 20,
+        "recurrent_edges": 390
+      },
+      {
+        "active_hidden_nodes": 16,
+        "expressed_edges": 295,
+        "input_edges": 32,
+        "output_edges": 16,
+        "recurrent_edges": 247
+      },
+      {
+        "active_hidden_nodes": 4,
+        "expressed_edges": 28,
+        "input_edges": 8,
+        "output_edges": 4,
+        "recurrent_edges": 16
+      },
+      {
+        "active_hidden_nodes": 4,
+        "expressed_edges": 28,
+        "input_edges": 8,
+        "output_edges": 4,
+        "recurrent_edges": 16
+      },
+      {
+        "active_hidden_nodes": 12,
+        "expressed_edges": 173,
+        "input_edges": 24,
+        "output_edges": 12,
+        "recurrent_edges": 137
+      },
+      {
+        "active_hidden_nodes": 4,
+        "expressed_edges": 28,
+        "input_edges": 8,
+        "output_edges": 4,
+        "recurrent_edges": 16
+      }
+    ],
+    "best": 1.0,
+    "cppn_queries_total": 1408,
+    "decode_errors": {},
+    "decode_plan_seconds": 4.131384053005604,
+    "device_memory": null,
+    "edges_max": 5,
+    "evolve_seconds": 6.712605709006311,
+    "generation": 0,
+    "mean": 0.6328125,
+    "nodes_max": 6,
+    "observer_signatures": 1,
+    "phenotype_edges_max": 450,
+    "phenotype_host_bytes_total": 6040,
+    "phenotype_nodes_max": 23,
+    "rollout_seconds": 0.9091428289975738,
+    "rollout_signatures": 3,
+    "rss_bytes": 1187610624,
+    "selection_seconds": 1.9105805300059728,
+    "species": 1,
+    "stagnation_removed": [],
+    "tell_signatures": 1,
+    "total_seconds": 13.698159448002116,
+    "valid": 8
+  },
+  {
+    "adaptive_graphs": [
+      {
+        "active_hidden_nodes": 16,
+        "expressed_edges": 295,
+        "input_edges": 32,
+        "output_edges": 16,
+        "recurrent_edges": 247
+      },
+      {
+        "active_hidden_nodes": 8,
+        "expressed_edges": 88,
+        "input_edges": 16,
+        "output_edges": 8,
+        "recurrent_edges": 64
+      },
+      {
+        "active_hidden_nodes": 4,
+        "expressed_edges": 28,
+        "input_edges": 8,
+        "output_edges": 4,
+        "recurrent_edges": 16
+      },
+      {
+        "active_hidden_nodes": 12,
+        "expressed_edges": 173,
+        "input_edges": 24,
+        "output_edges": 12,
+        "recurrent_edges": 137
+      },
+      {
+        "active_hidden_nodes": 4,
+        "expressed_edges": 28,
+        "input_edges": 8,
+        "output_edges": 4,
+        "recurrent_edges": 16
+      },
+      {
+        "active_hidden_nodes": 20,
+        "expressed_edges": 450,
+        "input_edges": 40,
+        "output_edges": 20,
+        "recurrent_edges": 390
+      },
+      {
+        "active_hidden_nodes": 4,
+        "expressed_edges": 28,
+        "input_edges": 8,
+        "output_edges": 4,
+        "recurrent_edges": 16
+      },
+      {
+        "active_hidden_nodes": 4,
+        "expressed_edges": 28,
+        "input_edges": 8,
+        "output_edges": 4,
+        "recurrent_edges": 16
+      }
+    ],
+    "best": 1.0,
+    "cppn_queries_total": 1408,
+    "decode_errors": {},
+    "decode_plan_seconds": 3.9568052839895245,
+    "device_memory": null,
+    "edges_max": 5,
+    "evolve_seconds": 6.491039478001767,
+    "generation": 1,
+    "mean": 0.63671875,
+    "nodes_max": 6,
+    "observer_signatures": 1,
+    "phenotype_edges_max": 450,
+    "phenotype_host_bytes_total": 6040,
+    "phenotype_nodes_max": 23,
+    "rollout_seconds": 0.8786720649950439,
+    "rollout_signatures": 1,
+    "rss_bytes": 1132273664,
+    "selection_seconds": 0.0,
+    "species": 1,
+    "stagnation_removed": [],
+    "tell_signatures": 1,
+    "total_seconds": 11.395629906997783,
+    "valid": 8
+  },
+  {
+    "adaptive_graphs": [
+      {
+        "active_hidden_nodes": 8,
+        "expressed_edges": 88,
+        "input_edges": 16,
+        "output_edges": 8,
+        "recurrent_edges": 64
+      },
+      {
+        "active_hidden_nodes": 16,
+        "expressed_edges": 295,
+        "input_edges": 32,
+        "output_edges": 16,
+        "recurrent_edges": 247
+      },
+      {
+        "active_hidden_nodes": 4,
+        "expressed_edges": 28,
+        "input_edges": 8,
+        "output_edges": 4,
+        "recurrent_edges": 16
+      },
+      {
+        "active_hidden_nodes": 12,
+        "expressed_edges": 173,
+        "input_edges": 24,
+        "output_edges": 12,
+        "recurrent_edges": 137
+      },
+      {
+        "active_hidden_nodes": 4,
+        "expressed_edges": 28,
+        "input_edges": 8,
+        "output_edges": 4,
+        "recurrent_edges": 16
+      },
+      {
+        "active_hidden_nodes": 20,
+        "expressed_edges": 450,
+        "input_edges": 40,
+        "output_edges": 20,
+        "recurrent_edges": 390
+      },
+      {
+        "active_hidden_nodes": 4,
+        "expressed_edges": 28,
+        "input_edges": 8,
+        "output_edges": 4,
+        "recurrent_edges": 16
+      },
+      {
+        "active_hidden_nodes": 4,
+        "expressed_edges": 28,
+        "input_edges": 8,
+        "output_edges": 4,
+        "recurrent_edges": 16
+      }
+    ],
+    "best": 1.0,
+    "cppn_queries_total": 1408,
+    "decode_errors": {},
+    "decode_plan_seconds": 0.22788305599533487,
+    "device_memory": null,
+    "edges_max": 5,
+    "evolve_seconds": 0.0032826339884195477,
+    "generation": 2,
+    "mean": 0.640625,
+    "nodes_max": 6,
+    "observer_signatures": 1,
+    "phenotype_edges_max": 450,
+    "phenotype_host_bytes_total": 6040,
+    "phenotype_nodes_max": 23,
+    "rollout_seconds": 0.042065179004566744,
+    "rollout_signatures": 3,
+    "rss_bytes": 1135140864,
+    "selection_seconds": 1.8774056510010269,
+    "species": 1,
+    "stagnation_removed": [],
+    "tell_signatures": 1,
+    "total_seconds": 2.220764641999267,
+    "valid": 8
+  }
+]
