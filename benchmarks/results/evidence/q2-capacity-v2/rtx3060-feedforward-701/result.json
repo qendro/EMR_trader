@@ -1,0 +1,30 @@
+{
+  "cold_initialize_generation_seconds": 48.2672957169998,
+  "hardware": {
+    "allocator_fraction": 0.6,
+    "backend": "gpu",
+    "development_mount": false,
+    "devices": [
+      "cuda:0"
+    ],
+    "gpu": [
+      "GPU-d7c4073b-c643-21ed-3d64-35a73d3d7a72",
+      "NVIDIA GeForce RTX 3060",
+      "12288",
+      "610.88"
+    ],
+    "image_digest": "sha256:03c1f0dcd1638ad0ccad2f0a7693ca5db190bc3827560be640f30aa38713f19a",
+    "kernel": "6.6.87.2-microsoft-standard-WSL2",
+    "preallocate": false,
+    "precision": "float32",
+    "python": "3.11.14"
+  },
+  "peak_cgroup_memory_bytes": 1464684544,
+  "peak_device_pool_bytes": 274726912,
+  "peak_process_rss_bytes": 1723072512,
+  "resource_gate": "requires-external-GPU-and-peak-memory-audit",
+  "stage_gate": "requires-synchronized-isolated-stage-probe",
+  "status": "measured",
+  "timing_pass": true,
+  "warm_median_seconds": 0.16169551799976034
+}

@@ -16285,6 +16285,386 @@
       "path": "w8-v2/rtx3070.json",
       "bytes": 2915,
       "sha256": "21123cb5b00a309ea540258762efaabfa4506c584d8c45df01b39b09e789c3a3"
+    },
+    {
+      "path": "q2-capacity-v2/rtx3060-feedforward-700/console.log",
+      "bytes": 883,
+      "sha256": "d8ee8edc22c7ed618dc3073eecfe2cd5e4451594fc9340f260caf59229a58934"
+    },
+    {
+      "path": "q2-capacity-v2/rtx3060-feedforward-700/dataset.npz",
+      "bytes": 2048,
+      "sha256": "c7c19b545fc787d482a4109758e84926dfe6544f07ad04857b166182c0ecc535"
+    },
+    {
+      "path": "q2-capacity-v2/rtx3060-feedforward-700/generations.json",
+      "bytes": 125916,
+      "sha256": "150db04d13a460812cf4efcd1585a8ab803db42cbb706f791ab3c8431f32c919"
+    },
+    {
+      "path": "q2-capacity-v2/rtx3060-feedforward-700/launcher.json",
+      "bytes": 4909,
+      "sha256": "e8f0bd426952c8db30eaac006d06b051bd66ad844b87cbf027ec0ed226b951ee"
+    },
+    {
+      "path": "q2-capacity-v2/rtx3060-feedforward-700/manifest.json",
+      "bytes": 5616,
+      "sha256": "365458446da991adbfc78229b4505f9c50ad0fa4004c313892e99258a4932e39"
+    },
+    {
+      "path": "q2-capacity-v2/rtx3060-feedforward-700/result.json",
+      "bytes": 904,
+      "sha256": "30c69e87f00f37d21cebe58f18c0e98f9fc81cf56bba6f2ee381e296fd94e743"
+    },
+    {
+      "path": "q2-capacity-v2/rtx3060-feedforward-701/console.log",
+      "bytes": 886,
+      "sha256": "59d71845c3bfc09588825a46956a91417b189331ad28cea95368a07f1a588e37"
+    },
+    {
+      "path": "q2-capacity-v2/rtx3060-feedforward-701/dataset.npz",
+      "bytes": 2048,
+      "sha256": "c7c19b545fc787d482a4109758e84926dfe6544f07ad04857b166182c0ecc535"
+    },
+    {
+      "path": "q2-capacity-v2/rtx3060-feedforward-701/generations.json",
+      "bytes": 126629,
+      "sha256": "b00301c202a95911ce63ebdfffc36d1ad664395b796f3126f07742ef65adfebc"
+    },
+    {
+      "path": "q2-capacity-v2/rtx3060-feedforward-701/launcher.json",
+      "bytes": 4911,
+      "sha256": "f3e92eecec73addce6be6a62a9a96568e93b944908770a1f31b990312267357e"
+    },
+    {
+      "path": "q2-capacity-v2/rtx3060-feedforward-701/manifest.json",
+      "bytes": 5616,
+      "sha256": "823a190eae1699735f8134c79967fb920ff98efc205f100e7af50879d1838fba"
+    },
+    {
+      "path": "q2-capacity-v2/rtx3060-feedforward-701/result.json",
+      "bytes": 904,
+      "sha256": "78346df5bfec02d59e722479f6349717624bd4b4a9466fb9bd9cecc99e9ea79c"
+    },
+    {
+      "path": "q2-capacity-v2/rtx3060-feedforward-702/console.log",
+      "bytes": 880,
+      "sha256": "596b1a67d56d9a263c463cce3cc986391d23341227e424ec71a5b00c05ea51fd"
+    },
+    {
+      "path": "q2-capacity-v2/rtx3060-feedforward-702/dataset.npz",
+      "bytes": 2048,
+      "sha256": "c7c19b545fc787d482a4109758e84926dfe6544f07ad04857b166182c0ecc535"
+    },
+    {
+      "path": "q2-capacity-v2/rtx3060-feedforward-702/generations.json",
+      "bytes": 126163,
+      "sha256": "acf4524160ffca882f5d926ca884f2988f51d3f24333620ae6d201cf3fd924bb"
+    },
+    {
+      "path": "q2-capacity-v2/rtx3060-feedforward-702/launcher.json",
+      "bytes": 4918,
+      "sha256": "a4100827dc3c6530b4715d6ba56895b935598d0df53e57be140878d6baaf421a"
+    },
+    {
+      "path": "q2-capacity-v2/rtx3060-feedforward-702/manifest.json",
+      "bytes": 5616,
+      "sha256": "f71caf364a30f392123c80ed35464bb268ed743043634cd103e022376bef2325"
+    },
+    {
+      "path": "q2-capacity-v2/rtx3060-feedforward-702/result.json",
+      "bytes": 904,
+      "sha256": "34ab7d105ffcc7b0228d0ba2b60e9900d50339808c8e30d265059d64c91f1d58"
+    },
+    {
+      "path": "q2-capacity-v2/rtx3060-recurrent-700/console.log",
+      "bytes": 1248,
+      "sha256": "b94e77a276bae91a20fee1b65b3244320e04db8708d1f501d3bde9fe1dcd9008"
+    },
+    {
+      "path": "q2-capacity-v2/rtx3060-recurrent-700/dataset.npz",
+      "bytes": 2048,
+      "sha256": "c7c19b545fc787d482a4109758e84926dfe6544f07ad04857b166182c0ecc535"
+    },
+    {
+      "path": "q2-capacity-v2/rtx3060-recurrent-700/generations.json",
+      "bytes": 131253,
+      "sha256": "944744fd79786dea48ace1d898d8e3f822465e48ccc9d3685bdfd2ddd21f5c49"
+    },
+    {
+      "path": "q2-capacity-v2/rtx3060-recurrent-700/launcher.json",
+      "bytes": 7542,
+      "sha256": "63d639b2fe6737387c8c43b1c90166226f53459b12b114c1254cd5774acc627f"
+    },
+    {
+      "path": "q2-capacity-v2/rtx3060-recurrent-700/manifest.json",
+      "bytes": 5614,
+      "sha256": "b846f2d9b2187efe8cc17e5d6039695c9d42169c93b4b505f1ed6a2e549972db"
+    },
+    {
+      "path": "q2-capacity-v2/rtx3060-recurrent-700/result.json",
+      "bytes": 905,
+      "sha256": "690e9cdf61a797d466ad875c3bd0967d0d2f127ed5056e10494e9069d6ef33e7"
+    },
+    {
+      "path": "q2-capacity-v2/rtx3060-recurrent-701/console.log",
+      "bytes": 1252,
+      "sha256": "38daf20ce33b189aae0292f3cba8d7cca0cea5850fcf5d21cc4951a2f3674155"
+    },
+    {
+      "path": "q2-capacity-v2/rtx3060-recurrent-701/dataset.npz",
+      "bytes": 2048,
+      "sha256": "c7c19b545fc787d482a4109758e84926dfe6544f07ad04857b166182c0ecc535"
+    },
+    {
+      "path": "q2-capacity-v2/rtx3060-recurrent-701/generations.json",
+      "bytes": 131477,
+      "sha256": "198d6e7e4897114834355aeb45c295ec6ccc9163d02892d5069803d7d9e398dd"
+    },
+    {
+      "path": "q2-capacity-v2/rtx3060-recurrent-701/launcher.json",
+      "bytes": 7363,
+      "sha256": "c3d9899c29015196a389414bbaa761ddb0834959ba359206301a9808c7983e95"
+    },
+    {
+      "path": "q2-capacity-v2/rtx3060-recurrent-701/manifest.json",
+      "bytes": 5614,
+      "sha256": "cfca323a5966d824ffddc459d890856195f3214564a6055101903e455728fa34"
+    },
+    {
+      "path": "q2-capacity-v2/rtx3060-recurrent-701/result.json",
+      "bytes": 905,
+      "sha256": "306004d8eda2dedd846e51e4c8f51eec51612e63d88482d0dc19a5dd91ed6a59"
+    },
+    {
+      "path": "q2-capacity-v2/rtx3060-recurrent-702/console.log",
+      "bytes": 1251,
+      "sha256": "3d93ad8ffa14456b1423fbec9cbd5cef471e217066b8626cf4e09b885c7f4b88"
+    },
+    {
+      "path": "q2-capacity-v2/rtx3060-recurrent-702/dataset.npz",
+      "bytes": 2048,
+      "sha256": "c7c19b545fc787d482a4109758e84926dfe6544f07ad04857b166182c0ecc535"
+    },
+    {
+      "path": "q2-capacity-v2/rtx3060-recurrent-702/generations.json",
+      "bytes": 130918,
+      "sha256": "b2ab735b572ed75efd0e5b9cb5a7a6e6ee1a2b1c2f6ab605790f28e9647d307e"
+    },
+    {
+      "path": "q2-capacity-v2/rtx3060-recurrent-702/launcher.json",
+      "bytes": 6856,
+      "sha256": "b99b6588650b1e2e4f66476f9689f97906c523e84c6796caf5de94fe53a0235d"
+    },
+    {
+      "path": "q2-capacity-v2/rtx3060-recurrent-702/manifest.json",
+      "bytes": 5614,
+      "sha256": "ee08adddec83f5671bf23fa8b47123a3aab0d809a460144938aa19fb3c3f31be"
+    },
+    {
+      "path": "q2-capacity-v2/rtx3060-recurrent-702/result.json",
+      "bytes": 905,
+      "sha256": "d26a3f65f299c4f60b2af0e66ce215f4d89b4b3dbe3c3ddb0ac95e9b7934cb21"
+    },
+    {
+      "path": "q2-capacity-v2/rtx3070-feedforward-700/console.log",
+      "bytes": 884,
+      "sha256": "d7023ea7bac57d247725f4fbd34266e1be20d72003abe1520752dfb71771a765"
+    },
+    {
+      "path": "q2-capacity-v2/rtx3070-feedforward-700/dataset.npz",
+      "bytes": 2048,
+      "sha256": "c7c19b545fc787d482a4109758e84926dfe6544f07ad04857b166182c0ecc535"
+    },
+    {
+      "path": "q2-capacity-v2/rtx3070-feedforward-700/generations.json",
+      "bytes": 125911,
+      "sha256": "eff8d7b6930d2fd24c49dbab1afa968dc84fab76b7e18c20127177d474002f3a"
+    },
+    {
+      "path": "q2-capacity-v2/rtx3070-feedforward-700/launcher.json",
+      "bytes": 5079,
+      "sha256": "69915596d2de2036d01f64d6ffb9bf64e234ef54cb7267a94b879c55dc63b0d0"
+    },
+    {
+      "path": "q2-capacity-v2/rtx3070-feedforward-700/manifest.json",
+      "bytes": 5615,
+      "sha256": "c60828cd87ba86da23a2709f00576ff7bed220b32292369b9bfe3f5140ea59d9"
+    },
+    {
+      "path": "q2-capacity-v2/rtx3070-feedforward-700/result.json",
+      "bytes": 903,
+      "sha256": "fd94319417577299d57ad36d24be0fa54fa55d17a3ced6d95b928052dcb35a23"
+    },
+    {
+      "path": "q2-capacity-v2/rtx3070-feedforward-701/console.log",
+      "bytes": 884,
+      "sha256": "85ecc2a79dd6baf31e96aa58d5a28aac17958eda035244cd27816e6c4b217298"
+    },
+    {
+      "path": "q2-capacity-v2/rtx3070-feedforward-701/dataset.npz",
+      "bytes": 2048,
+      "sha256": "c7c19b545fc787d482a4109758e84926dfe6544f07ad04857b166182c0ecc535"
+    },
+    {
+      "path": "q2-capacity-v2/rtx3070-feedforward-701/generations.json",
+      "bytes": 126631,
+      "sha256": "d0006e59bed60f312c7b05537c84b47a10c1df60613b3e9f95106418c5385fe8"
+    },
+    {
+      "path": "q2-capacity-v2/rtx3070-feedforward-701/launcher.json",
+      "bytes": 4901,
+      "sha256": "ff12128737b23a5a9bf26dbf9aeb072e81ec566bdb6695c186d6f64236737f20"
+    },
+    {
+      "path": "q2-capacity-v2/rtx3070-feedforward-701/manifest.json",
+      "bytes": 5615,
+      "sha256": "0c0f35eec07e8b1659198aece3e108f11239837d95f5084b13498b51866b9a34"
+    },
+    {
+      "path": "q2-capacity-v2/rtx3070-feedforward-701/result.json",
+      "bytes": 903,
+      "sha256": "b26d977e4487c51d25feff9f376f18442d1703acc4ec395dc49d479a4b36f289"
+    },
+    {
+      "path": "q2-capacity-v2/rtx3070-feedforward-702/console.log",
+      "bytes": 884,
+      "sha256": "22d19c732e329bb1780ff9db127fd80eabbc83753b947a0f5d9d0f8f220727ad"
+    },
+    {
+      "path": "q2-capacity-v2/rtx3070-feedforward-702/dataset.npz",
+      "bytes": 2048,
+      "sha256": "c7c19b545fc787d482a4109758e84926dfe6544f07ad04857b166182c0ecc535"
+    },
+    {
+      "path": "q2-capacity-v2/rtx3070-feedforward-702/generations.json",
+      "bytes": 126167,
+      "sha256": "d776d7c0bdc5d3ab024109a3c5d64ffa22155a53e58b66dd85e7f6fa58d4f540"
+    },
+    {
+      "path": "q2-capacity-v2/rtx3070-feedforward-702/launcher.json",
+      "bytes": 4904,
+      "sha256": "3755e08e82a9218784d0890ab1ac0c39015de84e66db4e2f4d2918623be8b5f3"
+    },
+    {
+      "path": "q2-capacity-v2/rtx3070-feedforward-702/manifest.json",
+      "bytes": 5615,
+      "sha256": "7ccdf12064a3b00629c357d6fb146b831873bded26d37ee0e7f4b42f5a57a07d"
+    },
+    {
+      "path": "q2-capacity-v2/rtx3070-feedforward-702/result.json",
+      "bytes": 903,
+      "sha256": "0b7b51e37a24eff2e58092d9c8334ea497fcc951844724bc9bb0ee67644e087f"
+    },
+    {
+      "path": "q2-capacity-v2/rtx3070-recurrent-700/console.log",
+      "bytes": 1252,
+      "sha256": "a280613490ffcc42f3e6eb4bb1778fb9046eef719c39ab9398e6f01624b6744a"
+    },
+    {
+      "path": "q2-capacity-v2/rtx3070-recurrent-700/dataset.npz",
+      "bytes": 2048,
+      "sha256": "c7c19b545fc787d482a4109758e84926dfe6544f07ad04857b166182c0ecc535"
+    },
+    {
+      "path": "q2-capacity-v2/rtx3070-recurrent-700/generations.json",
+      "bytes": 131257,
+      "sha256": "55f2f9660af68e49ff44582ef6230fb9ebf094dde03ce229ecdc0aa855ed7cee"
+    },
+    {
+      "path": "q2-capacity-v2/rtx3070-recurrent-700/launcher.json",
+      "bytes": 6842,
+      "sha256": "66fb0f8b4152cfe00ead46e13504edaeed6d2106c226ed7a0121f4f65b11fdfc"
+    },
+    {
+      "path": "q2-capacity-v2/rtx3070-recurrent-700/manifest.json",
+      "bytes": 5613,
+      "sha256": "7307741a66c2f57fae7e0b9956665a7065a6bcea22cd1fdd2e02fb726b5c47cc"
+    },
+    {
+      "path": "q2-capacity-v2/rtx3070-recurrent-700/result.json",
+      "bytes": 905,
+      "sha256": "41386d3ad20e6f14e2ef0f03a52af416691de13a7e65a19ffdc0d65dcb1c91db"
+    },
+    {
+      "path": "q2-capacity-v2/rtx3070-recurrent-701/console.log",
+      "bytes": 1255,
+      "sha256": "641077ee0363cd64d05e13ba0d3fb5a7e789fc7778bd6691964e481cb8184372"
+    },
+    {
+      "path": "q2-capacity-v2/rtx3070-recurrent-701/dataset.npz",
+      "bytes": 2048,
+      "sha256": "c7c19b545fc787d482a4109758e84926dfe6544f07ad04857b166182c0ecc535"
+    },
+    {
+      "path": "q2-capacity-v2/rtx3070-recurrent-701/generations.json",
+      "bytes": 131474,
+      "sha256": "e4acdca47039409647ec2707d1f35b717ba2264257d175c17cfd5ccf53c2337b"
+    },
+    {
+      "path": "q2-capacity-v2/rtx3070-recurrent-701/launcher.json",
+      "bytes": 6664,
+      "sha256": "83dfd899c1f4bcff6850d925c1a364011e37b37d9c58a492e301fd06edf7bf88"
+    },
+    {
+      "path": "q2-capacity-v2/rtx3070-recurrent-701/manifest.json",
+      "bytes": 5613,
+      "sha256": "29fa172b15fed8d101e5a2194351068e2eb3d5fb372eacd8b0da2c73d8b1fecf"
+    },
+    {
+      "path": "q2-capacity-v2/rtx3070-recurrent-701/result.json",
+      "bytes": 906,
+      "sha256": "8f5cc046ec5e0f93f6a3f8f5a76eb69c569ffc060175afff883125ece6c83358"
+    },
+    {
+      "path": "q2-capacity-v2/rtx3070-recurrent-702/console.log",
+      "bytes": 1256,
+      "sha256": "d47d4abff58554f2b2e9b97f026c32224387dd04398fae1d3ffc3821e6e0b933"
+    },
+    {
+      "path": "q2-capacity-v2/rtx3070-recurrent-702/dataset.npz",
+      "bytes": 2048,
+      "sha256": "c7c19b545fc787d482a4109758e84926dfe6544f07ad04857b166182c0ecc535"
+    },
+    {
+      "path": "q2-capacity-v2/rtx3070-recurrent-702/generations.json",
+      "bytes": 130928,
+      "sha256": "f76008cc3d9fbc9b998cbbf002164633f39c5b3f3988e4e65acb9a67a1e41367"
+    },
+    {
+      "path": "q2-capacity-v2/rtx3070-recurrent-702/launcher.json",
+      "bytes": 6840,
+      "sha256": "a3ad8ab6da922e3f0998dc4c641206cc50fc825d610dd4f86275441f77676529"
+    },
+    {
+      "path": "q2-capacity-v2/rtx3070-recurrent-702/manifest.json",
+      "bytes": 5613,
+      "sha256": "79ba6b721c8427818cd47c023ba8d5f9f188817ddca85db7ab639e05402bf012"
+    },
+    {
+      "path": "q2-capacity-v2/rtx3070-recurrent-702/result.json",
+      "bytes": 905,
+      "sha256": "b655225bff304f950a1495664f9e707dbef8d5b40853adcbfdc10a7655b560cc"
+    },
+    {
+      "path": "q2-capacity-v2-smoke-20261112/dataset.npz",
+      "bytes": 2048,
+      "sha256": "c7c19b545fc787d482a4109758e84926dfe6544f07ad04857b166182c0ecc535"
+    },
+    {
+      "path": "q2-capacity-v2-smoke-20261112/generations.json",
+      "bytes": 10596,
+      "sha256": "15586b5eda6cf98eae5a789f84b85c2d73874230f916b1d51376ef21533b4858"
+    },
+    {
+      "path": "q2-capacity-v2-smoke-20261112/manifest.json",
+      "bytes": 5606,
+      "sha256": "6ff0dc0b11b25076104dcc4971a9d39db61a4f2722bd29fb314b3daf5c830c55"
+    },
+    {
+      "path": "q2-capacity-v2-smoke-20261112/result.json",
+      "bytes": 910,
+      "sha256": "ce48ff801665ef26210eabda1353b5ad102848779a9dbe435857d4f72e4b86b2"
     }
   ]
 }

@@ -1,0 +1,512 @@
+{
+  "schema": 1,
+  "status": "capacity-and-resource-screen-pass-stage-audit-open",
+  "manifest_sha256": "31361263e585d85720fd3c30022b1837d6c93d847bac1e6ddbfe34e8baafaa4d",
+  "stage_timing_status": "unsynchronized-upstream-dispatch-times; isolated-stage-probe-open",
+  "cells": [
+    {
+      "profile": "rtx3070",
+      "mode": "feedforward",
+      "seed": 700,
+      "status": "pass",
+      "errors": [],
+      "warm_median_seconds": 0.1521563709975453,
+      "cold_seconds": 48.82571555901086,
+      "peak_process_rss_bytes": 1735839744,
+      "peak_cgroup_memory_bytes": 1482719232,
+      "peak_device_pool_bytes": 274726912,
+      "peak_physical_GPU_used_mib": 435,
+      "population_distribution": {
+        "active_nodes": {
+          "min": 4,
+          "median": 4.0,
+          "max": 68
+        },
+        "input_edges": {
+          "min": 0,
+          "median": 16.0,
+          "max": 269
+        },
+        "output_edges": {
+          "min": 0,
+          "median": 8.0,
+          "max": 132
+        },
+        "recurrent_edges": {
+          "min": 0,
+          "median": 0.0,
+          "max": 0
+        },
+        "total_edges": {
+          "min": 0,
+          "median": 24.0,
+          "max": 401
+        }
+      },
+      "dataset_sha256": "c7c19b545fc787d482a4109758e84926dfe6544f07ad04857b166182c0ecc535",
+      "failure": null
+    },
+    {
+      "profile": "rtx3070",
+      "mode": "feedforward",
+      "seed": 701,
+      "status": "pass",
+      "errors": [],
+      "warm_median_seconds": 0.13860170849511633,
+      "cold_seconds": 48.1499948730052,
+      "peak_process_rss_bytes": 1735573504,
+      "peak_cgroup_memory_bytes": 1481658368,
+      "peak_device_pool_bytes": 274726912,
+      "peak_physical_GPU_used_mib": 435,
+      "population_distribution": {
+        "active_nodes": {
+          "min": 4,
+          "median": 4.0,
+          "max": 108
+        },
+        "input_edges": {
+          "min": 0,
+          "median": 16.0,
+          "max": 424
+        },
+        "output_edges": {
+          "min": 0,
+          "median": 8.0,
+          "max": 216
+        },
+        "recurrent_edges": {
+          "min": 0,
+          "median": 0.0,
+          "max": 0
+        },
+        "total_edges": {
+          "min": 0,
+          "median": 24.0,
+          "max": 640
+        }
+      },
+      "dataset_sha256": "c7c19b545fc787d482a4109758e84926dfe6544f07ad04857b166182c0ecc535",
+      "failure": null
+    },
+    {
+      "profile": "rtx3070",
+      "mode": "feedforward",
+      "seed": 702,
+      "status": "pass",
+      "errors": [],
+      "warm_median_seconds": 0.1504981329999282,
+      "cold_seconds": 47.82679884698882,
+      "peak_process_rss_bytes": 1734778880,
+      "peak_cgroup_memory_bytes": 1481125888,
+      "peak_device_pool_bytes": 274726912,
+      "peak_physical_GPU_used_mib": 435,
+      "population_distribution": {
+        "active_nodes": {
+          "min": 4,
+          "median": 4.0,
+          "max": 52
+        },
+        "input_edges": {
+          "min": 0,
+          "median": 16.0,
+          "max": 208
+        },
+        "output_edges": {
+          "min": 0,
+          "median": 8.0,
+          "max": 104
+        },
+        "recurrent_edges": {
+          "min": 0,
+          "median": 0.0,
+          "max": 0
+        },
+        "total_edges": {
+          "min": 0,
+          "median": 24.0,
+          "max": 312
+        }
+      },
+      "dataset_sha256": "c7c19b545fc787d482a4109758e84926dfe6544f07ad04857b166182c0ecc535",
+      "failure": null
+    },
+    {
+      "profile": "rtx3070",
+      "mode": "recurrent",
+      "seed": 700,
+      "status": "pass",
+      "errors": [],
+      "warm_median_seconds": 0.31790688449837035,
+      "cold_seconds": 68.66723858300247,
+      "peak_process_rss_bytes": 2172686336,
+      "peak_cgroup_memory_bytes": 1918722048,
+      "peak_device_pool_bytes": 1080033280,
+      "peak_physical_GPU_used_mib": 1207,
+      "population_distribution": {
+        "active_nodes": {
+          "min": 4,
+          "median": 4.0,
+          "max": 76
+        },
+        "input_edges": {
+          "min": 0,
+          "median": 16.0,
+          "max": 304
+        },
+        "output_edges": {
+          "min": 0,
+          "median": 8.0,
+          "max": 152
+        },
+        "recurrent_edges": {
+          "min": 0,
+          "median": 16.0,
+          "max": 5756
+        },
+        "total_edges": {
+          "min": 0,
+          "median": 40.0,
+          "max": 6212
+        }
+      },
+      "dataset_sha256": "c7c19b545fc787d482a4109758e84926dfe6544f07ad04857b166182c0ecc535",
+      "failure": null
+    },
+    {
+      "profile": "rtx3070",
+      "mode": "recurrent",
+      "seed": 701,
+      "status": "pass",
+      "errors": [],
+      "warm_median_seconds": 0.32929757450619945,
+      "cold_seconds": 63.774291687994264,
+      "peak_process_rss_bytes": 2092724224,
+      "peak_cgroup_memory_bytes": 1837756416,
+      "peak_device_pool_bytes": 1080033280,
+      "peak_physical_GPU_used_mib": 1207,
+      "population_distribution": {
+        "active_nodes": {
+          "min": 4,
+          "median": 4.0,
+          "max": 64
+        },
+        "input_edges": {
+          "min": 0,
+          "median": 16.0,
+          "max": 256
+        },
+        "output_edges": {
+          "min": 0,
+          "median": 8.0,
+          "max": 126
+        },
+        "recurrent_edges": {
+          "min": 0,
+          "median": 16.0,
+          "max": 4040
+        },
+        "total_edges": {
+          "min": 0,
+          "median": 40.0,
+          "max": 4422
+        }
+      },
+      "dataset_sha256": "c7c19b545fc787d482a4109758e84926dfe6544f07ad04857b166182c0ecc535",
+      "failure": null
+    },
+    {
+      "profile": "rtx3070",
+      "mode": "recurrent",
+      "seed": 702,
+      "status": "pass",
+      "errors": [],
+      "warm_median_seconds": 0.34313065899914363,
+      "cold_seconds": 68.46250590500131,
+      "peak_process_rss_bytes": 2172817408,
+      "peak_cgroup_memory_bytes": 1919008768,
+      "peak_device_pool_bytes": 1080033280,
+      "peak_physical_GPU_used_mib": 1207,
+      "population_distribution": {
+        "active_nodes": {
+          "min": 4,
+          "median": 4.0,
+          "max": 128
+        },
+        "input_edges": {
+          "min": 0,
+          "median": 16.0,
+          "max": 500
+        },
+        "output_edges": {
+          "min": 0,
+          "median": 8.0,
+          "max": 256
+        },
+        "recurrent_edges": {
+          "min": 0,
+          "median": 16.0,
+          "max": 15104
+        },
+        "total_edges": {
+          "min": 0,
+          "median": 40.0,
+          "max": 15860
+        }
+      },
+      "dataset_sha256": "c7c19b545fc787d482a4109758e84926dfe6544f07ad04857b166182c0ecc535",
+      "failure": null
+    },
+    {
+      "profile": "rtx3060",
+      "mode": "feedforward",
+      "seed": 700,
+      "status": "pass",
+      "errors": [],
+      "warm_median_seconds": 0.1683089385041967,
+      "cold_seconds": 47.67457090300741,
+      "peak_process_rss_bytes": 1722904576,
+      "peak_cgroup_memory_bytes": 1463390208,
+      "peak_device_pool_bytes": 274726912,
+      "peak_physical_GPU_used_mib": 1062,
+      "population_distribution": {
+        "active_nodes": {
+          "min": 4,
+          "median": 4.0,
+          "max": 68
+        },
+        "input_edges": {
+          "min": 0,
+          "median": 16.0,
+          "max": 269
+        },
+        "output_edges": {
+          "min": 0,
+          "median": 8.0,
+          "max": 132
+        },
+        "recurrent_edges": {
+          "min": 0,
+          "median": 0.0,
+          "max": 0
+        },
+        "total_edges": {
+          "min": 0,
+          "median": 24.0,
+          "max": 401
+        }
+      },
+      "dataset_sha256": "c7c19b545fc787d482a4109758e84926dfe6544f07ad04857b166182c0ecc535",
+      "failure": null
+    },
+    {
+      "profile": "rtx3060",
+      "mode": "feedforward",
+      "seed": 701,
+      "status": "pass",
+      "errors": [],
+      "warm_median_seconds": 0.16169551799976034,
+      "cold_seconds": 48.2672957169998,
+      "peak_process_rss_bytes": 1723072512,
+      "peak_cgroup_memory_bytes": 1464684544,
+      "peak_device_pool_bytes": 274726912,
+      "peak_physical_GPU_used_mib": 1063,
+      "population_distribution": {
+        "active_nodes": {
+          "min": 4,
+          "median": 4.0,
+          "max": 108
+        },
+        "input_edges": {
+          "min": 0,
+          "median": 16.0,
+          "max": 424
+        },
+        "output_edges": {
+          "min": 0,
+          "median": 8.0,
+          "max": 216
+        },
+        "recurrent_edges": {
+          "min": 0,
+          "median": 0.0,
+          "max": 0
+        },
+        "total_edges": {
+          "min": 0,
+          "median": 24.0,
+          "max": 640
+        }
+      },
+      "dataset_sha256": "c7c19b545fc787d482a4109758e84926dfe6544f07ad04857b166182c0ecc535",
+      "failure": null
+    },
+    {
+      "profile": "rtx3060",
+      "mode": "feedforward",
+      "seed": 702,
+      "status": "pass",
+      "errors": [],
+      "warm_median_seconds": 0.1617968229984399,
+      "cold_seconds": 47.25500048100366,
+      "peak_process_rss_bytes": 1721573376,
+      "peak_cgroup_memory_bytes": 1462747136,
+      "peak_device_pool_bytes": 274726912,
+      "peak_physical_GPU_used_mib": 1062,
+      "population_distribution": {
+        "active_nodes": {
+          "min": 4,
+          "median": 4.0,
+          "max": 52
+        },
+        "input_edges": {
+          "min": 0,
+          "median": 16.0,
+          "max": 208
+        },
+        "output_edges": {
+          "min": 0,
+          "median": 8.0,
+          "max": 104
+        },
+        "recurrent_edges": {
+          "min": 0,
+          "median": 0.0,
+          "max": 0
+        },
+        "total_edges": {
+          "min": 0,
+          "median": 24.0,
+          "max": 312
+        }
+      },
+      "dataset_sha256": "c7c19b545fc787d482a4109758e84926dfe6544f07ad04857b166182c0ecc535",
+      "failure": null
+    },
+    {
+      "profile": "rtx3060",
+      "mode": "recurrent",
+      "seed": 700,
+      "status": "pass",
+      "errors": [],
+      "warm_median_seconds": 0.5746168694968219,
+      "cold_seconds": 72.22744241000328,
+      "peak_process_rss_bytes": 2159185920,
+      "peak_cgroup_memory_bytes": 1898586112,
+      "peak_device_pool_bytes": 1080033280,
+      "peak_physical_GPU_used_mib": 1862,
+      "population_distribution": {
+        "active_nodes": {
+          "min": 4,
+          "median": 4.0,
+          "max": 76
+        },
+        "input_edges": {
+          "min": 0,
+          "median": 16.0,
+          "max": 304
+        },
+        "output_edges": {
+          "min": 0,
+          "median": 8.0,
+          "max": 152
+        },
+        "recurrent_edges": {
+          "min": 0,
+          "median": 16.0,
+          "max": 5756
+        },
+        "total_edges": {
+          "min": 0,
+          "median": 40.0,
+          "max": 6212
+        }
+      },
+      "dataset_sha256": "c7c19b545fc787d482a4109758e84926dfe6544f07ad04857b166182c0ecc535",
+      "failure": null
+    },
+    {
+      "profile": "rtx3060",
+      "mode": "recurrent",
+      "seed": 701,
+      "status": "pass",
+      "errors": [],
+      "warm_median_seconds": 0.3867681310075568,
+      "cold_seconds": 71.60567656399508,
+      "peak_process_rss_bytes": 2080940032,
+      "peak_cgroup_memory_bytes": 1820106752,
+      "peak_device_pool_bytes": 1080033280,
+      "peak_physical_GPU_used_mib": 1868,
+      "population_distribution": {
+        "active_nodes": {
+          "min": 4,
+          "median": 4.0,
+          "max": 64
+        },
+        "input_edges": {
+          "min": 0,
+          "median": 16.0,
+          "max": 256
+        },
+        "output_edges": {
+          "min": 0,
+          "median": 8.0,
+          "max": 126
+        },
+        "recurrent_edges": {
+          "min": 0,
+          "median": 16.0,
+          "max": 4040
+        },
+        "total_edges": {
+          "min": 0,
+          "median": 40.0,
+          "max": 4422
+        }
+      },
+      "dataset_sha256": "c7c19b545fc787d482a4109758e84926dfe6544f07ad04857b166182c0ecc535",
+      "failure": null
+    },
+    {
+      "profile": "rtx3060",
+      "mode": "recurrent",
+      "seed": 702,
+      "status": "pass",
+      "errors": [],
+      "warm_median_seconds": 0.4012157635006588,
+      "cold_seconds": 67.15166654500354,
+      "peak_process_rss_bytes": 2158747648,
+      "peak_cgroup_memory_bytes": 1899614208,
+      "peak_device_pool_bytes": 1080033280,
+      "peak_physical_GPU_used_mib": 1868,
+      "population_distribution": {
+        "active_nodes": {
+          "min": 4,
+          "median": 4.0,
+          "max": 128
+        },
+        "input_edges": {
+          "min": 0,
+          "median": 16.0,
+          "max": 500
+        },
+        "output_edges": {
+          "min": 0,
+          "median": 8.0,
+          "max": 256
+        },
+        "recurrent_edges": {
+          "min": 0,
+          "median": 16.0,
+          "max": 15104
+        },
+        "total_edges": {
+          "min": 0,
+          "median": 40.0,
+          "max": 15860
+        }
+      },
+      "dataset_sha256": "c7c19b545fc787d482a4109758e84926dfe6544f07ad04857b166182c0ecc535",
+      "failure": null
+    }
+  ]
+}

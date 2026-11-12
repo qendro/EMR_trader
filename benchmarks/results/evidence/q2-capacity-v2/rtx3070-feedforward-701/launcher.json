@@ -1,0 +1,215 @@
+{
+  "profile": "rtx3070",
+  "mode": "feedforward",
+  "seed": 701,
+  "manifest_sha256": "31361263e585d85720fd3c30022b1837d6c93d847bac1e6ddbfe34e8baafaa4d",
+  "image_digest": "sha256:03c1f0dcd1638ad0ccad2f0a7693ca5db190bc3827560be640f30aa38713f19a",
+  "container": "q2-capacity-v2-rtx3070-feedforward-701",
+  "output": "/results/q2-capacity-v2/rtx3070-feedforward-701",
+  "cache": "/cache/q2-capacity-v2/rtx3070-feedforward-701",
+  "exit_code": 0,
+  "oom_killed": false,
+  "cold_generations_observed": true,
+  "external_timeout": null,
+  "process_wall_seconds": 53.4271080000035,
+  "physical_gpu_memory_used_mib_baseline": 0,
+  "physical_gpu_memory_used_mib_peak": 435,
+  "physical_gpu_memory_samples": [
+    {
+      "unix_seconds": 1794507242.1312084,
+      "physical_used_mib": 0
+    },
+    {
+      "unix_seconds": 1794507243.206974,
+      "physical_used_mib": 159
+    },
+    {
+      "unix_seconds": 1794507244.2851195,
+      "physical_used_mib": 159
+    },
+    {
+      "unix_seconds": 1794507245.3662176,
+      "physical_used_mib": 159
+    },
+    {
+      "unix_seconds": 1794507246.4460008,
+      "physical_used_mib": 159
+    },
+    {
+      "unix_seconds": 1794507247.5243435,
+      "physical_used_mib": 159
+    },
+    {
+      "unix_seconds": 1794507248.5995927,
+      "physical_used_mib": 159
+    },
+    {
+      "unix_seconds": 1794507249.6737998,
+      "physical_used_mib": 163
+    },
+    {
+      "unix_seconds": 1794507250.7524097,
+      "physical_used_mib": 229
+    },
+    {
+      "unix_seconds": 1794507251.8311555,
+      "physical_used_mib": 229
+    },
+    {
+      "unix_seconds": 1794507252.9040425,
+      "physical_used_mib": 229
+    },
+    {
+      "unix_seconds": 1794507253.990048,
+      "physical_used_mib": 237
+    },
+    {
+      "unix_seconds": 1794507255.0662267,
+      "physical_used_mib": 301
+    },
+    {
+      "unix_seconds": 1794507256.141522,
+      "physical_used_mib": 301
+    },
+    {
+      "unix_seconds": 1794507257.3259351,
+      "physical_used_mib": 301
+    },
+    {
+      "unix_seconds": 1794507258.4007087,
+      "physical_used_mib": 301
+    },
+    {
+      "unix_seconds": 1794507259.477026,
+      "physical_used_mib": 301
+    },
+    {
+      "unix_seconds": 1794507260.5574794,
+      "physical_used_mib": 301
+    },
+    {
+      "unix_seconds": 1794507261.634117,
+      "physical_used_mib": 301
+    },
+    {
+      "unix_seconds": 1794507262.7143133,
+      "physical_used_mib": 301
+    },
+    {
+      "unix_seconds": 1794507263.792564,
+      "physical_used_mib": 301
+    },
+    {
+      "unix_seconds": 1794507264.8721087,
+      "physical_used_mib": 301
+    },
+    {
+      "unix_seconds": 1794507265.9547923,
+      "physical_used_mib": 301
+    },
+    {
+      "unix_seconds": 1794507267.028738,
+      "physical_used_mib": 301
+    },
+    {
+      "unix_seconds": 1794507268.108943,
+      "physical_used_mib": 301
+    },
+    {
+      "unix_seconds": 1794507269.1912017,
+      "physical_used_mib": 301
+    },
+    {
+      "unix_seconds": 1794507270.263051,
+      "physical_used_mib": 301
+    },
+    {
+      "unix_seconds": 1794507271.3512883,
+      "physical_used_mib": 303
+    },
+    {
+      "unix_seconds": 1794507272.4283712,
+      "physical_used_mib": 303
+    },
+    {
+      "unix_seconds": 1794507273.524175,
+      "physical_used_mib": 303
+    },
+    {
+      "unix_seconds": 1794507274.6021283,
+      "physical_used_mib": 303
+    },
+    {
+      "unix_seconds": 1794507275.6820233,
+      "physical_used_mib": 303
+    },
+    {
+      "unix_seconds": 1794507276.7579052,
+      "physical_used_mib": 303
+    },
+    {
+      "unix_seconds": 1794507277.8390677,
+      "physical_used_mib": 303
+    },
+    {
+      "unix_seconds": 1794507278.9203215,
+      "physical_used_mib": 303
+    },
+    {
+      "unix_seconds": 1794507280.0069191,
+      "physical_used_mib": 303
+    },
+    {
+      "unix_seconds": 1794507281.0794091,
+      "physical_used_mib": 303
+    },
+    {
+      "unix_seconds": 1794507282.155755,
+      "physical_used_mib": 303
+    },
+    {
+      "unix_seconds": 1794507283.2396886,
+      "physical_used_mib": 303
+    },
+    {
+      "unix_seconds": 1794507284.3240407,
+      "physical_used_mib": 303
+    },
+    {
+      "unix_seconds": 1794507285.4000406,
+      "physical_used_mib": 303
+    },
+    {
+      "unix_seconds": 1794507286.46964,
+      "physical_used_mib": 303
+    },
+    {
+      "unix_seconds": 1794507287.540918,
+      "physical_used_mib": 303
+    },
+    {
+      "unix_seconds": 1794507288.619012,
+      "physical_used_mib": 303
+    },
+    {
+      "unix_seconds": 1794507289.6909196,
+      "physical_used_mib": 303
+    },
+    {
+      "unix_seconds": 1794507290.76865,
+      "physical_used_mib": 303
+    },
+    {
+      "unix_seconds": 1794507291.8541656,
+      "physical_used_mib": 435
+    },
+    {
+      "unix_seconds": 1794507292.9362783,
+      "physical_used_mib": 435
+    },
+    {
+      "unix_seconds": 1794507294.024039,
+      "physical_used_mib": 163
+    }
+  ]
+}

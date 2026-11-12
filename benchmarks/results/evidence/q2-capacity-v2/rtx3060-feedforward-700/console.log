@@ -1,0 +1,14 @@
+initializing
+initializing finished
+{"Q2": "feedforward", "generation": 0, "seconds": 24.176057443008176}
+{"Q2": "feedforward", "generation": 1, "seconds": 18.371795250001014}
+{"Q2": "feedforward", "generation": 2, "seconds": 0.48022318400035147}
+{"Q2": "feedforward", "generation": 3, "seconds": 0.16963366800337099}
+{"Q2": "feedforward", "generation": 4, "seconds": 0.17245013700448908}
+{"Q2": "feedforward", "generation": 5, "seconds": 0.1863666700082831}
+{"Q2": "feedforward", "generation": 6, "seconds": 0.1497786779946182}
+{"Q2": "feedforward", "generation": 7, "seconds": 0.15838709300442133}
+{"Q2": "feedforward", "generation": 8, "seconds": 0.1650333919969853}
+{"Q2": "feedforward", "generation": 9, "seconds": 0.17041401399183087}
+{"Q2": "feedforward", "generation": 10, "seconds": 0.1591308380011469}
+{"Q2": "feedforward", "generation": 11, "seconds": 0.16698420900502242}

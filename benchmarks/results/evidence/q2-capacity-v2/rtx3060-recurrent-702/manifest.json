@@ -1,0 +1,213 @@
+{
+  "hardware": {
+    "allocator_fraction": 0.6,
+    "backend": "gpu",
+    "development_mount": false,
+    "devices": [
+      "cuda:0"
+    ],
+    "gpu": [
+      "GPU-d7c4073b-c643-21ed-3d64-35a73d3d7a72",
+      "NVIDIA GeForce RTX 3060",
+      "12288",
+      "610.88"
+    ],
+    "image_digest": "sha256:03c1f0dcd1638ad0ccad2f0a7693ca5db190bc3827560be640f30aa38713f19a",
+    "kernel": "6.6.87.2-microsoft-standard-WSL2",
+    "preallocate": false,
+    "precision": "float32",
+    "python": "3.11.14"
+  },
+  "label": "Q2-screening",
+  "manifest": {
+    "cold_boundary": "initialize-and-first-generation-from-fresh-process-with-cold-cache",
+    "cold_generations": 2,
+    "cppn": {
+      "activation_mutate_rate": 0.5,
+      "aggregation": "sum",
+      "bias_bounds": [
+        -30,
+        30
+      ],
+      "bias_init": [
+        0,
+        1
+      ],
+      "bias_mutate_power": 0.5,
+      "bias_mutate_rate": 0.7,
+      "bias_replace_rate": 0.1,
+      "default_activation": "tanh",
+      "edges": 100,
+      "hidden_activation_options": [
+        "tanh",
+        "sin",
+        "gauss"
+      ],
+      "initial_hidden": [],
+      "input_transform": "none",
+      "inputs": 5,
+      "mutation": {
+        "conn_add_prob": 0.5,
+        "conn_delete_prob": 0.5,
+        "node_add_prob": 0.2,
+        "node_delete_prob": 0.2
+      },
+      "nodes": 50,
+      "output_transform": "tanh",
+      "outputs": 1,
+      "selection": {
+        "genome_elitism": 15,
+        "survival_threshold": 0.2
+      },
+      "species": {
+        "compatibility_threshold": 3.0,
+        "max_stagnation": 20,
+        "species_elitism": 15
+      },
+      "weight_bounds": [
+        -30,
+        30
+      ],
+      "weight_init": [
+        0,
+        1
+      ],
+      "weight_mutate_power": 0.5,
+      "weight_mutate_rate": 0.8,
+      "weight_replace_rate": 0.1
+    },
+    "dataset": {
+      "generator": "numpy-PCG64-uniform-minus1-plus1-inputs-target=(input[:2]+1)/2",
+      "inputs": 4,
+      "outputs": 2,
+      "persist": "dataset.npz-before-timing",
+      "samples": 64,
+      "seed": 700
+    },
+    "dependency_lock": "locks/requirements.txt",
+    "discovery": {
+      "band_threshold": 0.3,
+      "execution_mode": "standard",
+      "initial_depth": 0,
+      "max_depth": 4,
+      "max_weight": 8.0,
+      "population_chunk_size": -1,
+      "variance_rule": "canonical",
+      "variance_threshold": 0.03,
+      "weight_threshold": 0.1
+    },
+    "free_vram_reserve_bytes": 1073741824,
+    "host_memory_budget_bytes": 6442450944,
+    "id": "q2-capacity-promotion-v2",
+    "input_coords": [
+      [
+        -1,
+        -1
+      ],
+      [
+        -0.3333333432674408,
+        -1
+      ],
+      [
+        0.3333333432674408,
+        -1
+      ],
+      [
+        1,
+        -1
+      ]
+    ],
+    "maximum_cold_seconds": 300,
+    "maximum_warm_median_seconds": 28,
+    "modes": [
+      "feedforward",
+      "recurrent"
+    ],
+    "not_a_rollout_budget": true,
+    "output_coords": [
+      [
+        -1,
+        1
+      ],
+      [
+        1,
+        1
+      ]
+    ],
+    "population": 128,
+    "precision": {
+      "dtype": "float32",
+      "matmul": "float32"
+    },
+    "protocol_status": "frozen-not-run",
+    "recurrence": {
+      "activate_time": 17,
+      "allow_backward": true,
+      "allow_hidden_to_hidden": true,
+      "allow_lateral": true,
+      "allow_self_loops": true,
+      "enabled": true,
+      "eval_chunk_size": null,
+      "hh_cache_enabled": false,
+      "hh_discovery_mode": "per_genome",
+      "hop_decay_factor": 0.8,
+      "iteration_level": 1,
+      "max_connections": 10000,
+      "max_sparse_conns": 32768,
+      "multi_hop_algorithm": "matrix_power",
+      "multi_hop_second_factor": "masked",
+      "sparse_cap_policy": "refuse",
+      "use_dense_discovery": false
+    },
+    "schema": 1,
+    "seeds": [
+      700,
+      701,
+      702
+    ],
+    "source_lock": "locks/sources.json",
+    "substrate": {
+      "aggregation": "sum",
+      "hidden_activation": "tanh",
+      "output_activation": "sigmoid",
+      "reset": "each-independent-sample",
+      "settling_steps": 17
+    },
+    "timing_boundary": "run_generation-through-completion-including-upstream-metrics-and-tell",
+    "upstream_internal_multi_hop_chunk_size": null,
+    "vram_fraction": 0.6,
+    "warm_generations": 10,
+    "workload": "W1-upstream"
+  },
+  "mode": "recurrent",
+  "provenance": {
+    "compatibility_lock_sha256": "a11a7696492404e642f411a817893b984511a7f0da0131318d44173b2741c4d9",
+    "engine_sha256": "c759c0027b19fccd63b3d775fbe2f572036a47fde02cd1356dac2b6249db07de",
+    "lock_sha256": "df89b8faeaefc2cf0a8ad1e723e7b000cbf48496a00b1e2ef0a3bac6fb33bdae",
+    "packages": {
+      "emr-hyperneat": "0.3.0",
+      "gymnax": "0.0.9",
+      "jax": "0.6.1",
+      "jaxlib": "0.6.1",
+      "numpy": "1.26.4",
+      "tensorneat": "0.1.0"
+    },
+    "sources": {
+      "base_image": "python:3.11.14-slim-bookworm@sha256:65a93d69fa75478d554f4ad27c85c1e69fa184956261b4301ebaf6dbb0a3543d",
+      "emr": {
+        "archive_sha256": "2e4e7ec552fd2fb6ebd59e44b8ea89057f9980ef296d4451e22ccb7915bfb59d",
+        "license": "GPL-3.0-or-later (bundled LICENSE)",
+        "sha": "306eb4e67687390bb88131ead6af8bebffa8cee9",
+        "url": "https://github.com/RomainClaret/emr-hyperneat.git"
+      },
+      "schema": 1,
+      "tensorneat": {
+        "archive_sha256": "6776462f279bc6fa2ff9c0bf4adc405732d25681424346c8f5d6f9d7469cda3f",
+        "license": "GPL-3.0-or-later (bundled LICENSE)",
+        "sha": "49c193d546447d5fe2cb4b26f60758d23fc24cb0",
+        "url": "https://github.com/RomainClaret/tensorneat.git"
+      }
+    }
+  },
+  "seed": 702
+}

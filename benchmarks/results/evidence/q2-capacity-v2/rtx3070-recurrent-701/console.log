@@ -1,0 +1,16 @@
+initializing
+initializing finished
+{"Q2": "recurrent", "generation": 0, "seconds": 37.43293610699766}
+{"Q2": "recurrent", "generation": 1, "seconds": 21.32746008101094}
+{"Q2": "recurrent", "generation": 2, "seconds": 1.6832208470004844}
+{"Q2": "recurrent", "generation": 3, "seconds": 0.2970542029943317}
+{"Q2": "recurrent", "generation": 4, "seconds": 0.3513298589969054}
+{"Q2": "recurrent", "generation": 5, "seconds": 0.32796768500702456}
+{"Q2": "recurrent", "generation": 6, "seconds": 0.3203684740001336}
+{"Q2": "recurrent", "generation": 7, "seconds": 1.2688493430032395}
+{"Q2": "recurrent", "generation": 8, "seconds": 0.33062746400537435}
+{"Q2": "recurrent", "generation": 9, "seconds": 0.29395833901071455}
+{"Q2": "recurrent", "generation": 10, "seconds": 0.28373929900408257}
+{"Q2": "recurrent", "generation": 11, "seconds": 0.34299223599373363}
+/usr/local/lib/python3.11/site-packages/neuroevo/upstream.py:121: UserWarning: recurrence.max_connections=10000 has no effect: the cap on each genome's hidden-to-hidden connections is recurrence.max_sparse_conns (a run that reproduces a run of the prototype's unified model sets max_sparse_conns to that run's max_connections)
+  state=algo.initialize(algo.create_config(config),Problem(),seed=seed)

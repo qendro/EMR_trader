@@ -24,8 +24,11 @@ resource limits, dataset hashes and recorded failures. It deliberately leaves
 the synchronized isolated-stage timing requirement open; upstream dispatch
 timers alone do not meet that requirement.
 
-No Q2 capacity measurement has been run. After M2 finishes, build an image
-from this source, then run the matrix and copy its evidence:
+The Q2 capacity matrix was measured on November 12, 2026, after the user
+stopped M2's fixed-time run at 17/20 measured seeds. Its
+[report](Q2-CAPACITY-REPORT.md) and [audit](q2-capacity-v2-audit.json) retain
+the result. To reproduce the matrix, build an image from this source, then run
+the cells and copy their evidence:
 
 ```powershell
 docker build -t neuroevo:q2-capacity-v2 .
@@ -33,7 +36,7 @@ python scripts/q2_capacity.py --dry-run
 python scripts/q2_capacity.py
 ```
 
-The measurements will land in `/results/q2-capacity-v2` in the
+The measurements landed in `/results/q2-capacity-v2` in the
 `neuroevo-results` Docker volume. Copy them through `scripts/collect_results.py`,
 then run `python scripts/q2_capacity_audit.py` against the copied evidence.
 Only measured capacity, resource and separately synchronized stage evidence
