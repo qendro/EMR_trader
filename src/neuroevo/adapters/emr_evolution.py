@@ -9,6 +9,7 @@ import numpy as np
 from neuroevo.adapters.emr import translate
 from neuroevo.adapters.emr_phenotype import extract_public
 from neuroevo.packing import BucketFamily
+from neuroevo.memory_schedule import estimate_population_storage, plan_bytes
 
 
 @dataclass(frozen=True)
@@ -20,6 +21,7 @@ class AdaptiveBatch:
     phenotypes: tuple
     plans: tuple
     padded_hidden: int
+    host_storage_bytes: int
 
 
 def pad_population(phenotypes, node_capacity, *, family=None):
@@ -39,12 +41,18 @@ def pad_population(phenotypes, node_capacity, *, family=None):
 class EMREvolution:
     """One A0-configured EMR population; TensorNEAT remains the sole evolver."""
 
-    def __init__(self, config, q2_manifest, problem, *, node_capacity, edge_capacity):
+    def __init__(self, config, q2_manifest, problem, *, node_capacity, edge_capacity,
+                 phenotype_storage_budget_bytes=None, discovery_microbatch=None):
         from emr_hyperneat import EMRHyperNEAT
 
         self.config = dict(config)
         self.node_capacity = node_capacity
         self.edge_capacity = edge_capacity
+        self.phenotype_storage_budget_bytes = phenotype_storage_budget_bytes
+        if discovery_microbatch is not None and (type(discovery_microbatch) is not int or
+                not 1 <= discovery_microbatch <= config['population']):
+            raise ValueError('Invalid adaptive discovery microbatch')
+        self.discovery_microbatch = discovery_microbatch
         self.bucket_family = BucketFamily.create(len(config['input_coords']),
                                                  len(config['output_coords']), node_capacity)
         self.problem = problem
@@ -70,20 +78,54 @@ class EMREvolution:
             raise ValueError('Previous adaptive population has not been scored')
         nodes, conns = (np.asarray(x).copy() for x in self.algo._compiled_ask(state)[:2])
         generation = int(state.generation)
-        substrate = self.algo.population_substrates(state)
-        if substrate.mask.shape[0] != len(nodes):
+        substrates = self._substrates(state)
+        if sum(s.mask.shape[0] for s in substrates) != len(nodes):
             raise RuntimeError('EMR substrate population does not match TensorNEAT ask')
+        active_counts=np.concatenate([np.asarray(s.mask).sum(axis=1) for s in substrates])
+        estimated=estimate_population_storage(active_counts,self.bucket_family)
+        if (self.phenotype_storage_budget_bytes is not None and
+                estimated > self.phenotype_storage_budget_bytes):
+            raise OverflowError('Adaptive phenotype storage estimate exceeds declared budget')
         phenotypes = tuple(extract_public(substrate, i, generation,
             node_capacity=self.node_capacity, edge_capacity=self.edge_capacity)
-            for i in range(len(nodes)))
+            for substrate in substrates for i in range(substrate.mask.shape[0]))
         plans, width = pad_population(phenotypes, self.node_capacity,
                                       family=self.bucket_family)
+        storage=sum(plan_bytes(p.plan)+plan_bytes(q)+p.grid_indices.nbytes+
+                    p.coordinates.nbytes for p,q in zip(phenotypes,plans))
+        if (self.phenotype_storage_budget_bytes is not None and
+                storage > self.phenotype_storage_budget_bytes):
+            raise OverflowError('Adaptive phenotype storage exceeds declared budget')
         ids = tuple(f'{run_id}:{generation}:{i}' for i in range(len(nodes)))
         digest = hashlib.sha256(nodes.tobytes()+conns.tobytes()).hexdigest()
         token = hashlib.sha256(('|'.join(ids)+digest).encode()).hexdigest()
         nodes.flags.writeable = conns.flags.writeable = False
         self.pending = (token, ids)
-        return AdaptiveBatch(token, ids, nodes, conns, phenotypes, plans, width)
+        return AdaptiveBatch(token, ids, nodes, conns, phenotypes, plans, width, storage)
+
+    def _substrates(self, state):
+        if self.discovery_microbatch is None:
+            return (self.algo.population_substrates(state),)
+        from emr_hyperneat.substrate import (build_substrate,
+            query_substrate,build_recurrent_substrate,query_recurrent_substrate)
+        config=self.algo.substrate_config()
+        population=self.algo._compiled_ask(state)
+        transformed=self.algo._compiled_transform_batch(state,population)
+        base=build_substrate(*query_substrate(self.algo._jitted_cppn_forward,
+                             state,transformed,config),config)
+        chunks=[]
+        for start in range(0,base.mask.shape[0],self.discovery_microbatch):
+            stop=min(start+self.discovery_microbatch,base.mask.shape[0])
+            fields={name:(getattr(base,name)[start:stop] if getattr(base,name) is not None
+                          else None) for name in ('mask','W1','W2','act_indices','agg_indices')}
+            part=base._replace(**fields)
+            if config.hidden_to_hidden:
+                genomes=tuple(array[start:stop] for array in transformed)
+                pairs=query_recurrent_substrate(self.algo._jitted_cppn_forward,
+                                                state,genomes,part)
+                part=build_recurrent_substrate(part,pairs)
+            chunks.append(part)
+        return tuple(chunks)
 
     def promote_node_capacity(self, new_capacity):
         if self.pending is not None:

@@ -1,0 +1,53 @@
+{
+  "device": "TFRT_CPU_0",
+  "cells": [
+    {
+      "layout": "edge",
+      "population": 8,
+      "hidden": 16,
+      "inputs": 4,
+      "episodes": 2,
+      "horizon": 8,
+      "microbatch": 4,
+      "active_nodes_per_graph": 21,
+      "min_active_edges": 64,
+      "max_active_edges": 64,
+      "compiled_signatures": 1,
+      "new_signatures_after_first_chunk": 0,
+      "first_chunk_seconds": 0.22664097099914216,
+      "warm_chunk_median_seconds": 0.0004719159915111959,
+      "total_chunk_seconds": 0.22711288699065335,
+      "memory": {
+        "process_peak_rss_bytes": 487407616,
+        "cgroup_peak_bytes": 203329536,
+        "cgroup_current_bytes": 203329536,
+        "cgroup_swap_bytes": 0,
+        "device_allocator": null
+      }
+    },
+    {
+      "layout": "dense",
+      "population": 8,
+      "hidden": 16,
+      "inputs": 400,
+      "episodes": 2,
+      "horizon": 8,
+      "microbatch": 4,
+      "active_nodes_per_graph": 417,
+      "min_active_edges": 6480,
+      "max_active_edges": 6480,
+      "compiled_signatures": 1,
+      "new_signatures_after_first_chunk": 0,
+      "first_chunk_seconds": 0.08436320601322223,
+      "warm_chunk_median_seconds": 0.00031681099790148437,
+      "total_chunk_seconds": 0.08468001701112371,
+      "memory": {
+        "process_peak_rss_bytes": 492257280,
+        "cgroup_peak_bytes": 207892480,
+        "cgroup_current_bytes": 207892480,
+        "cgroup_swap_bytes": 0,
+        "device_allocator": null
+      }
+    }
+  ]
+}

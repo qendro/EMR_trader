@@ -51,7 +51,17 @@ def memory_initial(plans, episodes):
                        jnp.zeros((p, episodes), jnp.int32), jnp.ones((p, episodes), bool))
 
 
-def make_cartpole_rollout(env, params, horizon=500, profile="dag"):
+def cartpole_observation(value, mode):
+    if mode == "position-angle":
+        return value * jnp.array([1., 0., 1., 0.], jnp.float32)
+    if mode == "full":
+        return value
+    raise ValueError("Unknown CartPole observation mode")
+
+
+def make_cartpole_rollout(env, params, horizon=500, profile="dag", observation_mode="full"):
+    if observation_mode not in ("full", "position-angle"):
+        raise ValueError("Unknown CartPole observation mode")
     # One compiled function per immutable workload signature, reused each generation.
     @jax.jit
     def evaluate(plans, episode_keys, shared_data):
@@ -64,7 +74,7 @@ def make_cartpole_rollout(env, params, horizon=500, profile="dag"):
                            jnp.bool_(True), jnp.float32(0), jnp.int32(0), jnp.bool_(True), jnp.bool_(False))
                 def body(c, time):
                     policy, es, obs, active, reward_sum, length, valid, terminated = c
-                    head, new_policy = step(p, policy, obs + shared_data[time], profile=profile)
+                    head, new_policy = step(p, policy, cartpole_observation(obs + shared_data[time], observation_mode), profile=profile)
                     finite = jnp.all(jnp.isfinite(new_policy))
                     action = jnp.argmax(head).astype(jnp.int32)  # first index wins ties
                     no, ns, reward, done, _ = env.step_env(jax.random.fold_in(rollout_key, time), es, action, params)

@@ -1,0 +1,66 @@
+{
+  "device": "TFRT_CPU_0",
+  "cells": [
+    {
+      "source": "synthetic",
+      "inputs": 4,
+      "hidden": 20,
+      "edges": 100,
+      "steps": 128,
+      "dense_host_bytes": 2729,
+      "sparse_host_bytes": 1909,
+      "dense_compile_seconds": 0.10632931398868095,
+      "sparse_compile_seconds": 0.13210546800110023,
+      "dense_warm_seconds": 0.00030170900572557,
+      "sparse_warm_seconds": 0.0002720079937716946,
+      "sparse_speedup": 1.1091916878693076,
+      "max_abs_output_error": 1.1641532182693481e-09
+    },
+    {
+      "source": "synthetic",
+      "inputs": 25,
+      "hidden": 128,
+      "edges": 1024,
+      "steps": 128,
+      "dense_host_bytes": 99950,
+      "sparse_host_bytes": 30622,
+      "dense_compile_seconds": 0.10798856199835427,
+      "sparse_compile_seconds": 0.09186889098782558,
+      "dense_warm_seconds": 0.00036061101127415895,
+      "sparse_warm_seconds": 0.0005079149996163324,
+      "sparse_speedup": 0.7099829923246143,
+      "max_abs_output_error": 2.2351741790771484e-08
+    },
+    {
+      "source": "synthetic",
+      "inputs": 400,
+      "hidden": 2048,
+      "edges": 32768,
+      "steps": 128,
+      "dense_host_bytes": 25099805,
+      "sparse_host_bytes": 4542869,
+      "dense_compile_seconds": 0.22522019599273335,
+      "sparse_compile_seconds": 0.1441441220085835,
+      "dense_warm_seconds": 0.1481378379976377,
+      "sparse_warm_seconds": 0.02154963099746965,
+      "sparse_speedup": 6.874263323350269,
+      "max_abs_output_error": 4.76837158203125e-07
+    },
+    {
+      "source": "archived-emr",
+      "artifact": "benchmarks/results/evidence/s0-development-v1/s0-memory-smoke-v1/seed-900/champion.npz",
+      "inputs": 2,
+      "hidden": 8,
+      "edges": 64,
+      "steps": 128,
+      "dense_host_bytes": 543,
+      "sparse_host_bytes": 999,
+      "dense_compile_seconds": 0.07363115600310266,
+      "sparse_compile_seconds": 0.08333714101172518,
+      "dense_warm_seconds": 4.4100990635342896e-05,
+      "sparse_warm_seconds": 0.00017700500029604882,
+      "sparse_speedup": 0.24915110059931644,
+      "max_abs_output_error": 0.0
+    }
+  ]
+}

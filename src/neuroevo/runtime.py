@@ -3,11 +3,16 @@ from functools import partial
 import jax
 import jax.numpy as jnp
 from .contracts import BlockPlan
+from .sparse_runtime import EdgeBlock, edge_step
 
 jax.config.update("jax_default_matmul_precision", "float32")
 
 
 def step(p, state, observation, *, profile):
+    if isinstance(p, EdgeBlock):
+        if profile != "layered":
+            raise ValueError("Edge blocks require the layered profile")
+        return edge_step(p, state, observation)
     if isinstance(p, BlockPlan):
         if profile != "layered":
             raise ValueError("Role blocks require the layered profile")

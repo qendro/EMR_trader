@@ -39,6 +39,15 @@ def test_a2_native_evolution_uses_persistent_adaptive_rollout():
     assert all(p.plan.w_in.shape[0] == 2 for p in batch.phenotypes)
     assert len(route(batch.plans)) <= len(adapter.bucket_family.widths)
     assert batch.padded_hidden >= max(len(p.grid_indices) for p in batch.phenotypes)
+    assert batch.host_storage_bytes > 0
+    adapter.pending = None
+    adapter.discovery_microbatch = 3
+    sliced = adapter.ask(state, 'a2-test')
+    for full, chunk in zip(batch.phenotypes, sliced.phenotypes):
+        np.testing.assert_array_equal(full.grid_indices,chunk.grid_indices)
+        for left,right in zip(full.plan,chunk.plan):
+            np.testing.assert_array_equal(left,right)
+    batch = sliced
 
     # Padding does not change a phenotype's persistent layered output or state.
     observation = jnp.array([.2, -.4], jnp.float32)
@@ -71,6 +80,10 @@ def test_a2_native_evolution_uses_persistent_adaptive_rollout():
     next_batch = adapter.ask(next_state, 'a2-test')
     assert next_batch.ids != batch.ids
     assert len(next_batch.phenotypes) == config['population']
+    adapter.pending = None
+    adapter.phenotype_storage_budget_bytes = 1
+    with pytest.raises(OverflowError, match='storage estimate'):
+        adapter.ask(next_state, 'a2-test')
 
 
 def test_a2_padding_rejects_insufficient_capacity():

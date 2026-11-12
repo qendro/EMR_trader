@@ -1,0 +1,174 @@
+[
+  {
+    "adaptive_graphs": [
+      {
+        "active_hidden_nodes": 4,
+        "expressed_edges": 28,
+        "graph_sha256": "edc97fd7d1e72a47756435822de31b2fd65ae83d5d8c1295fd5a4be24b76edcf",
+        "input_edges": 8,
+        "output_edges": 4,
+        "recurrent_edges": 16
+      },
+      {
+        "active_hidden_nodes": 8,
+        "expressed_edges": 88,
+        "graph_sha256": "2385a442dbd24de9a6d608dd269aaea01d49e86502f159ae68c9a5e2788694c0",
+        "input_edges": 16,
+        "output_edges": 8,
+        "recurrent_edges": 64
+      },
+      {
+        "active_hidden_nodes": 20,
+        "expressed_edges": 450,
+        "graph_sha256": "cdb40add09b3d9595de36f04b20e58ad782ed92a583440fc5bead08de5f6286c",
+        "input_edges": 40,
+        "output_edges": 20,
+        "recurrent_edges": 390
+      },
+      {
+        "active_hidden_nodes": 16,
+        "expressed_edges": 295,
+        "graph_sha256": "0ec3d8804fd303a32e928c87ba8f9947ecae377d62950ab6e000f802d9dfc3ad",
+        "input_edges": 32,
+        "output_edges": 16,
+        "recurrent_edges": 247
+      },
+      {
+        "active_hidden_nodes": 4,
+        "expressed_edges": 28,
+        "graph_sha256": "15cfffaf2a965891bbfa8e0a824f32f1b4bc0389f1dd8112f438ba6d71e66b49",
+        "input_edges": 8,
+        "output_edges": 4,
+        "recurrent_edges": 16
+      },
+      {
+        "active_hidden_nodes": 4,
+        "expressed_edges": 28,
+        "graph_sha256": "ab32ec0d026c3eea828ab04f3a269ddb02d9d6a56e95502a9c3893ce0e06ede8",
+        "input_edges": 8,
+        "output_edges": 4,
+        "recurrent_edges": 16
+      },
+      {
+        "active_hidden_nodes": 12,
+        "expressed_edges": 173,
+        "graph_sha256": "e97adccc99f49b3710b065a3f098dbb78652b998664bae6ccea265d1c35737fd",
+        "input_edges": 24,
+        "output_edges": 12,
+        "recurrent_edges": 137
+      },
+      {
+        "active_hidden_nodes": 4,
+        "expressed_edges": 28,
+        "graph_sha256": "a054d30d7a2ca48b5b150847bdd9033124285a20246387d898bf137fdf955b8d",
+        "input_edges": 8,
+        "output_edges": 4,
+        "recurrent_edges": 16
+      }
+    ],
+    "best": 1.0,
+    "bucket_signatures": [
+      {
+        "candidates": 4,
+        "hidden_width": 4,
+        "inputs": 2,
+        "outputs": 1
+      },
+      {
+        "candidates": 1,
+        "hidden_width": 8,
+        "inputs": 2,
+        "outputs": 1
+      },
+      {
+        "candidates": 2,
+        "hidden_width": 16,
+        "inputs": 2,
+        "outputs": 1
+      },
+      {
+        "candidates": 1,
+        "hidden_width": 21,
+        "inputs": 2,
+        "outputs": 1
+      }
+    ],
+    "cppn_queries_total": 1408,
+    "decode_errors": {},
+    "decode_plan_seconds": 4.04614093300188,
+    "device_memory": null,
+    "edges_max": 5,
+    "evolve_seconds": 6.899418977001915,
+    "generation": 0,
+    "mean": 0.6328125,
+    "nodes_max": 6,
+    "observer_signatures": 1,
+    "phenotype_edges_max": 450,
+    "phenotype_host_bytes_total": 6040,
+    "phenotype_nodes_max": 23,
+    "rollout_schedules": {
+      "generalization": {
+        "8": {
+          "budget_bytes": 600000,
+          "estimated_bytes": 478270,
+          "microbatch": 2
+        }
+      },
+      "interpolation": {
+        "8": {
+          "budget_bytes": 600000,
+          "estimated_bytes": 478270,
+          "microbatch": 2
+        }
+      },
+      "train": {
+        "16": {
+          "budget_bytes": 600000,
+          "estimated_bytes": 316920,
+          "microbatch": 8
+        },
+        "21": {
+          "budget_bytes": 600000,
+          "estimated_bytes": 366240,
+          "microbatch": 8
+        },
+        "4": {
+          "budget_bytes": 600000,
+          "estimated_bytes": 206712,
+          "microbatch": 8
+        },
+        "8": {
+          "budget_bytes": 600000,
+          "estimated_bytes": 242168,
+          "microbatch": 8
+        }
+      },
+      "validation": {
+        "16": {
+          "budget_bytes": 600000,
+          "estimated_bytes": 542809,
+          "microbatch": 7
+        },
+        "4": {
+          "budget_bytes": 600000,
+          "estimated_bytes": 411768,
+          "microbatch": 8
+        },
+        "8": {
+          "budget_bytes": 600000,
+          "estimated_bytes": 479992,
+          "microbatch": 8
+        }
+      }
+    },
+    "rollout_seconds": 1.4364447199914139,
+    "rollout_signatures": 8,
+    "rss_bytes": 1223278592,
+    "selection_seconds": 2.3402535509958398,
+    "species": 1,
+    "stagnation_removed": [],
+    "tell_signatures": 1,
+    "total_seconds": 14.82290765500511,
+    "valid": 8
+  }
+]

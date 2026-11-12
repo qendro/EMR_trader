@@ -4,6 +4,8 @@ import numpy as np
 import pytest
 
 from neuroevo.runtime import block_step
+from neuroevo.contracts import stack_plans
+from neuroevo.evaluation import memory_chunk, memory_initial
 from neuroevo.sparse_runtime import checked_edges, compiled_edge_step, from_blocks
 from neuroevo.substrate import blocks
 
@@ -38,3 +40,21 @@ def test_s1_duplicate_and_capacity_are_refused():
              np.eye(2,dtype=bool),np.ones((2,1),bool))
     with pytest.raises(OverflowError,match='capacity'):
         from_blocks(p,1)
+
+
+def test_edge_layout_runs_through_shared_population_evaluator():
+    wi=np.array([[1.], [0.]],np.float32)
+    wd=np.array([[.5]],np.float32)
+    wo=np.array([[1.]],np.float32)
+    dense=blocks(wi,wd,wo,wi!=0,wd!=0,wo!=0)
+    edge=from_blocks(dense,1)
+    obs=jnp.zeros((2,17,2),jnp.float32).at[:,0,0].set(jnp.array([-1.,1.]))
+    cues=jnp.array([-1,1],jnp.int32)
+    delays=jnp.array([4,4],jnp.int32)
+    times=jnp.arange(17)
+    p=stack_plans([dense,dense])
+    q=stack_plans([edge,edge])
+    a=memory_chunk(p,memory_initial(p,2),obs,cues,delays,times,profile='layered')
+    b=memory_chunk(q,memory_initial(q,2),obs,cues,delays,times,profile='layered')
+    np.testing.assert_array_equal(a.correct,b.correct)
+    np.testing.assert_allclose(a.policy,b.policy,atol=2e-5,rtol=2e-5)

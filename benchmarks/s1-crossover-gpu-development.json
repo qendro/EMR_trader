@@ -1,0 +1,47 @@
+{
+  "device": "cuda:0",
+  "cells": [
+    {
+      "inputs": 4,
+      "hidden": 20,
+      "edges": 100,
+      "steps": 128,
+      "dense_host_bytes": 2729,
+      "sparse_host_bytes": 1909,
+      "dense_compile_seconds": 0.25384699199639726,
+      "sparse_compile_seconds": 0.19140045999665745,
+      "dense_warm_seconds": 0.010312517988495529,
+      "sparse_warm_seconds": 0.005874238006072119,
+      "sparse_speedup": 1.7555499075515193,
+      "max_abs_output_error": 4.773028194904327e-09
+    },
+    {
+      "inputs": 25,
+      "hidden": 128,
+      "edges": 1024,
+      "steps": 128,
+      "dense_host_bytes": 99950,
+      "sparse_host_bytes": 30622,
+      "dense_compile_seconds": 0.25403599899436813,
+      "sparse_compile_seconds": 0.19385315899853595,
+      "dense_warm_seconds": 0.0054857220093254,
+      "sparse_warm_seconds": 0.005798334997962229,
+      "sparse_speedup": 0.9460857317235561,
+      "max_abs_output_error": 2.2351741790771484e-08
+    },
+    {
+      "inputs": 400,
+      "hidden": 2048,
+      "edges": 32768,
+      "steps": 128,
+      "dense_host_bytes": 25099805,
+      "sparse_host_bytes": 4542869,
+      "dense_compile_seconds": 0.3173184650077019,
+      "sparse_compile_seconds": 0.25296115600212943,
+      "dense_warm_seconds": 0.016188556008273736,
+      "sparse_warm_seconds": 0.009899800992570817,
+      "sparse_speedup": 1.6352405488173183,
+      "max_abs_output_error": 4.76837158203125e-07
+    }
+  ]
+}

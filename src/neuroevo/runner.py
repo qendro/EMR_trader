@@ -15,6 +15,8 @@ from .environments import cartpole, memory_scenarios
 from .evaluation import (make_cartpole_rollout, evaluate_population, memory_chunk, memory_initial, visual_chunk)
 from .contracts import stack_plans
 from .packing import route as route_buckets
+from .memory_schedule import choose_rollout_schedule
+from .sparse_runtime import from_blocks
 from .randomness import key
 
 
@@ -30,17 +32,32 @@ def provenance():
 
 def load_config(path):
     config = json.loads(Path(path).read_text())
-    if type(config.get("schema")) is not int or config["schema"] != 1 or config.get("task") not in ("cartpole", "memory", "visual"):
+    if type(config.get("schema")) is not int or config["schema"] != 1 or config.get("task") not in ("cartpole", "cartpole-partial", "memory", "visual"):
         raise ValueError("Unsupported experiment schema/task")
     if config.get("kind") not in ("acceptance","smoke","diagnostic"):
         raise ValueError("Unsupported experiment kind")
     if config.get('history_policy') not in (None,'jsonl'):
         raise ValueError('Unsupported history persistence policy')
+    memory_budget=config.get('rollout_memory_budget_bytes')
+    if memory_budget is not None and (type(memory_budget) is not int or memory_budget < 1):
+        raise ValueError('Invalid rollout memory budget')
+    storage_budget=config.get('phenotype_storage_budget_bytes')
+    if storage_budget is not None and (type(storage_budget) is not int or storage_budget < 1):
+        raise ValueError('Invalid phenotype storage budget')
+    discovery_microbatch=config.get('discovery_microbatch')
+    if discovery_microbatch is not None and (type(discovery_microbatch) is not int or
+            not 1 <= discovery_microbatch <= config['adapter']['population'] or
+            config['adapter'].get('kind')!='adaptive-emr-v1'):
+        raise ValueError('Invalid adaptive discovery microbatch')
+    if config.get('runtime_layout','dense') not in ('dense','edge'):
+        raise ValueError('Invalid runtime layout')
+    if config.get('runtime_layout') == 'edge' and config['adapter'].get('kind') != 'adaptive-emr-v1':
+        raise ValueError('Edge runtime requires the adaptive layered adapter')
     elapsed_stop=config.get('elapsed_stop_seconds')
     if elapsed_stop is not None and (type(elapsed_stop) not in (int,float) or
             not np.isfinite(elapsed_stop) or not 0 < elapsed_stop < config['budget_seconds_per_seed']):
         raise ValueError('Elapsed stop must be within the research budget')
-    expected={"cartpole":(4,2,"argmax-first-tie"),"memory":(2,1,"sign-positive-tie"),
+    expected={"cartpole":(4,2,"argmax-first-tie"),"cartpole-partial":(4,2,"argmax-first-tie"),"memory":(2,1,"sign-positive-tie"),
               "visual":(25,1,"sign-positive-tie")}[config["task"]]
     baseline=config['adapter'].get('kind')=='fixed-weight-v1'
     adaptive=config['adapter'].get('kind')=='adaptive-emr-v1'
@@ -141,7 +158,9 @@ def run(config, seed, directory, hardware, *, resume=False, stop_after=None, pil
                          np.ones(task_outputs,np.float32).tolist())]
         adapter=EMREvolution(config['adaptive'],
             json.loads(Path('configs/q2-capacity-v2.json').read_text()),Problem(),
-            node_capacity=config['adapter']['nodes'],edge_capacity=config['adapter']['edges'])
+            node_capacity=config['adapter']['nodes'],edge_capacity=config['adapter']['edges'],
+            phenotype_storage_budget_bytes=config.get('phenotype_storage_budget_bytes'),
+            discovery_microbatch=config.get('discovery_microbatch'))
     else:
         from .adapters.tensorneat import TensorNEATAdapter
         adapter=TensorNEATAdapter(config["adapter"])
@@ -186,22 +205,44 @@ def run(config, seed, directory, hardware, *, resume=False, stop_after=None, pil
         # A checkpoint is the committed state. Discard any later JSONL rows on resume.
         atomic_write(directory/'history.jsonl',b''.join(canonical(row)+b'\n' for row in history))
     profile = 'layered' if decoder is not None or adaptive else config["adapter"]["profile"]
+    rollout_schedules = {}
     def partitions(plans):
         if adaptive:
+            if config.get('runtime_layout')=='edge':
+                converted=[from_blocks(p,config['adapter']['edges']) for p in plans]
+                groups={}
+                for index,p in enumerate(converted):
+                    sig=(p.w_in.shape,p.w_out.shape,len(p.weight))
+                    groups.setdefault(sig,[]).append(index)
+                return [(tuple(indices),[converted[i] for i in indices])
+                        for _,indices in sorted(groups.items())]
             return [(indices,[plans[i] for i in indices])
                     for _,indices in route_buckets(plans)]
         return [(tuple(range(len(plans))),plans)]
-    if config["task"] == "cartpole":
+    def batch_size(group, namespace, episodes):
+        schedule=choose_rollout_schedule(group[0], episodes, config['microbatch'],
+            config['task'],config.get('rollout_memory_budget_bytes'))
+        signature=(str(group[0].w_in.shape[1]) if hasattr(group[0],'w_in')
+                   else f'graph-{len(group[0].node_mask)}')
+        if hasattr(group[0],'weight'):
+            signature+=f'-e{len(group[0].weight)}'
+        rollout_schedules.setdefault(namespace,{})[signature]={
+            'microbatch':schedule.microbatch,'estimated_bytes':schedule.estimated_bytes,
+            'budget_bytes':schedule.budget_bytes}
+        return schedule.microbatch
+    if config["task"] in ("cartpole", "cartpole-partial"):
         env, params = cartpole()
-        write_json(directory/"environment.json", {k:np.asarray(v).tolist() for k,v in vars(params).items()})
-        evaluator = make_cartpole_rollout(env, params, config["horizon"], profile)
+        observation_mode = 'position-angle' if config['task']=='cartpole-partial' else 'full'
+        write_json(directory/"environment.json", {**{k:np.asarray(v).tolist() for k,v in vars(params).items()},
+                    'observation_mode':observation_mode})
+        evaluator = make_cartpole_rollout(env, params, config["horizon"], profile, observation_mode)
         shared = jnp.zeros((config["horizon"], 4), jnp.float32)
         def evaluate(plans, namespace, generation, episodes):
             keys = jnp.stack([key(seed, namespace, generation, e) for e in range(episodes)])
             scores=np.empty((len(plans),episodes),np.float32)
             valid=np.empty(len(plans),bool)
             for indices,part in partitions(plans):
-                result=evaluate_population(part,evaluator,keys,shared,config["microbatch"])
+                result=evaluate_population(part,evaluator,keys,shared,batch_size(part,namespace,episodes))
                 scores[list(indices)]=result[0]
                 valid[list(indices)]=result[4].all(axis=1)
             return scores.mean(axis=1), valid, scores
@@ -212,9 +253,10 @@ def run(config, seed, directory, hardware, *, resume=False, stop_after=None, pil
             scores=np.empty((len(plans),episodes),np.float32)
             valid=np.empty(len(plans),bool)
             for indices,group in partitions(plans):
-                for start in range(0,len(group),config['microbatch']):
-                    part=group[start:start+config['microbatch']]
-                    packed=stack_plans(part+[part[0]]*(config['microbatch']-len(part)))
+                microbatch=batch_size(group,namespace,episodes)
+                for start in range(0,len(group),microbatch):
+                    part=group[start:start+microbatch]
+                    packed=stack_plans(part+[part[0]]*(microbatch-len(part)))
                     final=memory_chunk(packed,memory_initial(packed,episodes),obs,cues,ds,
                                        jnp.arange(17),profile=profile)
                     selected=list(indices[start:start+len(part)])
@@ -232,9 +274,10 @@ def run(config, seed, directory, hardware, *, resume=False, stop_after=None, pil
             scores=np.empty((len(plans),episodes),np.float32)
             validity=np.empty(len(plans),bool)
             for indices,group in partitions(plans):
-                for start in range(0,len(group),config['microbatch']):
-                    part=group[start:start+config['microbatch']]
-                    packed=stack_plans(part+[part[0]]*(config['microbatch']-len(part)))
+                microbatch=batch_size(group,namespace,episodes)
+                for start in range(0,len(group),microbatch):
+                    part=group[start:start+microbatch]
+                    packed=stack_plans(part+[part[0]]*(microbatch-len(part)))
                     correct,valid=visual_chunk(packed,obs,labels,profile=profile)
                     selected=list(indices[start:start+len(part)])
                     scores[selected]=np.asarray(correct[:len(part)])
@@ -243,6 +286,7 @@ def run(config, seed, directory, hardware, *, resume=False, stop_after=None, pil
     limit = min(config["generations"], stop_after or config["generations"])
     stopped_for_elapsed = False
     for generation in range(int(state.generation), limit):
+        rollout_schedules.clear()
         gen_start = time.perf_counter()
         batch = adapter.ask(state, f"seed-{seed}")
         plans, decode_valid, errors, decoded_stats = [], [], [], []
@@ -345,13 +389,15 @@ def run(config, seed, directory, hardware, *, resume=False, stop_after=None, pil
                "edges_max": sum(adapter.sizes[:3]) if baseline else int((~np.isnan(batch.conns[:, :, 0])).sum(axis=1).max()),
                "decode_plan_seconds": decode_seconds, "rollout_seconds": rollout_seconds,
                "evolve_seconds": evolve_seconds, "selection_seconds": selection_seconds,
-               "rollout_signatures": (evaluator._cache_size() if config["task"] == "cartpole" else
+               "rollout_signatures": (evaluator._cache_size() if config["task"] in ("cartpole", "cartpole-partial") else
                    memory_chunk._cache_size() if config["task"] == "memory" else visual_chunk._cache_size()),
                "tell_signatures": adapter._tell._cache_size(),
                "observer_signatures": None if baseline else adapter._observe._cache_size(),
                "rss_bytes": psutil.Process().memory_info().rss,
                "device_memory": jax.devices()[0].memory_stats(),
                "decode_errors": {str(i): e for i, e in enumerate(errors) if e}}
+        row['rollout_schedules']={name:dict(schedules)
+                                  for name,schedules in rollout_schedules.items()}
         if baseline:
             row.update(counts_kind='fixed-phenotype',genotype_parameters=adapter.parameters,
                        phenotype_nodes_max=adapter.i+adapter.h+adapter.o,
@@ -362,6 +408,7 @@ def run(config, seed, directory, hardware, *, resume=False, stop_after=None, pil
                        cppn_queries_total=sum(s['queries'] for s in decoded_stats),
                        phenotype_host_bytes_total=sum(s['host_array_bytes'] for s in decoded_stats))
         if adaptive:
+            row['phenotype_host_storage_bytes']=batch.host_storage_bytes
             row['adaptive_graphs']=[{k:s[k] for k in ('active_hidden_nodes','input_edges',
                 'output_edges','recurrent_edges','expressed_edges','graph_sha256')}
                 for s in decoded_stats]

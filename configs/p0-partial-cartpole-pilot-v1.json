@@ -1,0 +1,81 @@
+{
+  "schema": 1,
+  "id": "p0-partial-cartpole-pilot-v1",
+  "kind": "diagnostic",
+  "workload": "W3-generation",
+  "task": "cartpole-partial",
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "generations": 100,
+  "episodes": 8,
+  "horizon": 500,
+  "microbatch": 16,
+  "validation_episodes": 32,
+  "heldout_episodes": 100,
+  "finalists": 8,
+  "target": 120,
+  "required_seeds": 5,
+  "checkpoint_every": 10,
+  "budget_seconds_per_seed": 7200,
+  "budget_status": "requires-matching-integrated-G9-pilot",
+  "scenario_policy": "generation-specific",
+  "action": "argmax-first-tie",
+  "adapter": {
+    "kind": "adaptive-emr-v1",
+    "population": 128,
+    "inputs": 4,
+    "outputs": 2,
+    "nodes": 26,
+    "edges": 1024,
+    "profile": "layered"
+  },
+  "adaptive": {
+    "schema": 1,
+    "kind": "adaptive-emr-v1",
+    "population": 128,
+    "input_coords": [
+      [
+        -1,
+        -1
+      ],
+      [
+        -0.3333333432674408,
+        -1
+      ],
+      [
+        0.3333333432674408,
+        -1
+      ],
+      [
+        1,
+        -1
+      ]
+    ],
+    "output_coords": [
+      [
+        -1,
+        1
+      ],
+      [
+        1,
+        1
+      ]
+    ],
+    "max_depth": 1,
+    "variance_threshold": 0.03,
+    "weight_threshold": 0.1,
+    "max_weight": 8.0,
+    "recurrent": true,
+    "band_threshold": 0.3,
+    "max_sparse_conns": 512,
+    "settling_steps": 3
+  },
+  "method": "adaptive-EMR-partial-observation-persistent-layered",
+  "protocol_status": "pilot-before-freeze",
+  "rollout_memory_budget_bytes": 67108864
+}
