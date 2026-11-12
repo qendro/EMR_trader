@@ -4,7 +4,7 @@ import json
 from pathlib import Path
 
 
-def audit(paths):
+def audit(paths, pilots=None):
     cards=[]
     for path in paths:
         result=json.loads(Path(path).read_text())
@@ -36,12 +36,28 @@ def audit(paths):
             'passes':all(checks)})
     if len({card['cuda_visible_devices'] for card in cards})!=len(cards):
         raise ValueError('W6 cards were not distinct')
+    if pilots is not None:
+        if len(pilots)!=len(paths):
+            raise ValueError('W6 pilot count mismatch')
+        for card,pilot_path,full_path in zip(cards,pilots,paths):
+            pilot=json.loads(Path(pilot_path).read_text())
+            full=json.loads(Path(full_path).read_text())
+            valid=bool(pilot['visible_devices']==1 and
+                pilot['cuda_visible_devices']==full['cuda_visible_devices'] and
+                all(cell['population']==8 and cell['active_nodes_per_graph']==2048 and
+                    cell['microbatch']==full_cell['microbatch'] and
+                    cell['memory']['cgroup_swap_bytes']==0
+                    for cell,full_cell in zip(pilot['cells'],full['cells'])))
+            card['pilot_path']=str(pilot_path)
+            card['pilot_passes']=valid
+            card['passes']=card['passes'] and valid
     return {'cards':cards,'passes':all(card['passes'] for card in cards)}
 
 
 if __name__=='__main__':
     parser=argparse.ArgumentParser()
     parser.add_argument('--results',nargs=2,required=True)
+    parser.add_argument('--pilots',nargs=2)
     parser.add_argument('--output',required=True)
     args=parser.parse_args()
-    Path(args.output).write_text(json.dumps(audit(args.results),indent=2)+'\n')
+    Path(args.output).write_text(json.dumps(audit(args.results,args.pilots),indent=2)+'\n')

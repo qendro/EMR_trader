@@ -11,23 +11,45 @@ while (-not (Test-Path $log) -or -not (Select-String -Path $log -Pattern 'P0 com
     Start-Sleep -Seconds 30
 }
 $inventory = & nvidia-smi --query-gpu=uuid,name --format=csv,noheader
+$pilotPaths = @()
 foreach ($card in @(@{name='NVIDIA GeForce RTX 3070'; label='rtx3070'},
                     @{name='NVIDIA GeForce RTX 3060'; label='rtx3060'})) {
     $row = $inventory | Where-Object { $_.EndsWith($card.name) }
     if (@($row).Count -ne 1) { throw "GPU inventory mismatch: $($card.name)" }
     $uuid = ($row -split ',')[0].Trim()
     $output = "benchmarks/w6-$($card.label)-v1.json"
-    Write-Output "Running W6 on $($card.name)"
+    $chosen = $null
+    foreach ($candidate in @(4, 2, 1)) {
+        $pilotOutput = "benchmarks/w6-$($card.label)-pilot-p$candidate.json"
+        Write-Output "Piloting W6 on $($card.name) with microbatch $candidate"
+        & docker run --rm --gpus all --cpus=4 --memory=6g --shm-size=1g `
+            --entrypoint env -e "CUDA_VISIBLE_DEVICES=$uuid" -e JAX_PLATFORMS=cuda `
+            -e XLA_PYTHON_CLIENT_PREALLOCATE=false `
+            -v "${workspace}:/app" neuroevo:m4-p0-comparison-v1 `
+            python scripts/w6_fixture.py --output $pilotOutput `
+            --population 8 --microbatch $candidate
+        if ($LASTEXITCODE -eq 0) {
+            $pilot = Get-Content (Join-Path $workspace $pilotOutput) -Raw | ConvertFrom-Json
+            if (@($pilot.cells | Where-Object { $_.memory.cgroup_swap_bytes -gt 0 }).Count -eq 0) {
+                $chosen = $candidate
+                break
+            }
+        }
+    }
+    if ($null -eq $chosen) { throw "No W6 microbatch fits on $($card.name)" }
+    $pilotPaths += "benchmarks/w6-$($card.label)-pilot-p$chosen.json"
+    Write-Output "Running full W6 on $($card.name) with piloted microbatch $chosen"
     & docker run --rm --gpus all --cpus=4 --memory=6g --shm-size=1g `
         --entrypoint env -e "CUDA_VISIBLE_DEVICES=$uuid" -e JAX_PLATFORMS=cuda `
         -e XLA_PYTHON_CLIENT_PREALLOCATE=false `
         -v "${workspace}:/app" neuroevo:m4-p0-comparison-v1 `
-        python scripts/w6_fixture.py --output $output
+        python scripts/w6_fixture.py --output $output --microbatch $chosen
     if ($LASTEXITCODE -ne 0) { throw "W6 failed on $($card.name)" }
 }
 & docker run --rm --entrypoint env -e PYTHONPATH=/app/src -e JAX_PLATFORMS=cpu `
     -v "${workspace}:/app" neuroevo:m4-p0-comparison-v1 `
     python scripts/w6_audit.py --results benchmarks/w6-rtx3070-v1.json `
-    benchmarks/w6-rtx3060-v1.json --output benchmarks/w6-v1-audit.json
+    benchmarks/w6-rtx3060-v1.json --pilots $pilotPaths[0] $pilotPaths[1] `
+    --output benchmarks/w6-v1-audit.json
 if ($LASTEXITCODE -ne 0) { throw 'W6 audit failed' }
 Write-Output 'W6 per-card fixture queue completed.'
