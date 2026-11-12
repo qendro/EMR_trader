@@ -73,3 +73,24 @@ with driver 610.88.
 
 Calibration runs, failed cells, intermediate revisions and passing pilots
 are retained under [the hashed evidence index](results/evidence/index.json).
+
+## User-directed early stop, November 12, 2026
+
+The v5 comparison was stopped after 17 of 20 seeds so the independent Q2
+capacity screen could use the GPUs. The container was stopped during B0 memory
+seed 2; its completed checkpoints remain in the `neuroevo-results` volume.
+Restarting the controller can resume that seed from its last checkpoint.
+The stopped container's exit code 137 reflects the requested stop and was not
+reported as an out-of-memory event.
+
+| Method and task | Complete seeds | Held-out scores |
+| --- | ---: | --- |
+| Fixed CPPN CartPole | 5/5 | 500, 490.90, 487.95, 498.25, 500 |
+| B0 CartPole | 5/5 | 500, 500, 500, 500, 500 |
+| Fixed CPPN memory | 5/5 | 1.00, 1.00, 1.00, 1.00, 1.00 |
+| B0 memory | 2/5 | 1.00, 1.00; seeds 2–4 unknown |
+
+These are the measured values printed by the v5 controller. The two completed
+B0 memory seeds suggest a strong result but do not establish the required
+five-seed comparison. No score is assigned to an uncompleted seed, and M2
+remains open until the missing runs and final audit are complete.
