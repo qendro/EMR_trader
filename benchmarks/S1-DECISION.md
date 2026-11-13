@@ -27,6 +27,18 @@ smoke configuration. Generations 2–10 had equal best/mean scores in every
 generation. Median rollout time was 0.181 s dense versus 0.192 s edge;
 median complete generation was 0.574 s versus 0.589 s. Those runs also had
 both GPUs visible and are development evidence, not a G5 or G8 gate cell.
-The production default remains dense. A clean single-card crossover map at
-the evolved M4 envelope and the W6 fixture remains to be measured before
-adopting edge execution for a workload family.
+The [single-device crossover map](s1-map-v1-audit.json) has now measured 27
+cells per profile: hidden widths 20, 128 and 512; uniform, hub and local
+degree patterns; and one, four and 16 episodes. Maximum absolute output error
+was 5.96e-7. Median edge speedup by hidden width was:
+
+| Profile | 20 hidden | 128 hidden | 512 hidden |
+| --- | ---: | ---: | ---: |
+| CPU | 1.16x | 0.83x | 1.28x |
+| RTX 3070 | 0.97x | 1.01x | 1.19x |
+| RTX 3060 | 1.10x | 0.92x | 1.16x |
+
+These isolated stages do not establish a full-generation G8 gain on evolved
+graphs. The actual exported eight-hidden-node champion still favors dense;
+the production default therefore remains dense. The map and per-profile raw
+cells are retained for future density-based dispatch work.

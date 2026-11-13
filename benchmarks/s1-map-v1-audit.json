@@ -1,0 +1,37 @@
+{
+  "profiles": {
+    "cpu": {
+      "device_kind": "cpu",
+      "cells": 27
+    },
+    "rtx3070": {
+      "device_kind": "NVIDIA GeForce RTX 3070",
+      "cells": 27
+    },
+    "rtx3060": {
+      "device_kind": "NVIDIA GeForce RTX 3060",
+      "cells": 27
+    }
+  },
+  "median_edge_speedup_by_hidden": {
+    "cpu": {
+      "20": 1.1551290775199365,
+      "128": 0.8334719623013129,
+      "512": 1.2836469073540893
+    },
+    "rtx3070": {
+      "20": 0.9738682739400267,
+      "128": 1.0125346328028295,
+      "512": 1.1898943469922725
+    },
+    "rtx3060": {
+      "20": 1.1026729890344757,
+      "128": 0.9227610158864608,
+      "512": 1.1592670298400318
+    }
+  },
+  "max_abs_error": 5.960464477539062e-07,
+  "map_complete": true,
+  "production_default": "dense",
+  "decision": "large synthetic stage benefits do not establish large evolved-generation G8 adoption"
+}

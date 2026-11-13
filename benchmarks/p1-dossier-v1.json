@@ -1,0 +1,45 @@
+{
+  "gates": {
+    "a2_memory": true,
+    "a2_cartpole": true,
+    "p0_harder_task": true,
+    "w6_both_cards": true,
+    "w7_stability": true,
+    "m4_g5_both_cards": false,
+    "p1_crossbackend_replay_resume": true
+  },
+  "all_listed_gates_pass": false,
+  "p0_methods": [
+    {
+      "method": "adaptive",
+      "passes": false,
+      "raw_seed_passes": 0
+    },
+    {
+      "method": "direct",
+      "passes": false,
+      "raw_seed_passes": 0
+    },
+    {
+      "method": "fixed",
+      "passes": false,
+      "raw_seed_passes": 1
+    },
+    {
+      "method": "weight",
+      "passes": true,
+      "raw_seed_passes": 5
+    }
+  ],
+  "m4_gpu_speedups": {
+    "rtx3070": 1.0687316141324397,
+    "rtx3060": 1.0482237465726414
+  },
+  "m4_followup_gpu_speedups": {
+    "rtx3070": 1.0918108932430333,
+    "rtx3060": 1.1022799469720688
+  },
+  "m4_followup_both_cards_pass": false,
+  "w7_generations": 380,
+  "w7_wall_seconds": 966.9532423019991
+}

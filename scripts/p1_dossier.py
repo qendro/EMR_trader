@@ -14,6 +14,7 @@ def assemble(root):
     w6=load(root,'w6-v1-audit.json')
     w7=load(root,'w7-stability-v1-audit.json')
     g5=load(root,'m4-g5-evolved-v1-audit.json')
+    g5_followup=load(root,'m4-g5-evolved-v2-audit.json')
     p1=load(root,'p1-crossbackend-v1-audit.json')
     memory=load(root,'a2-memory-acceptance-v1-audit.json')
     cartpole=load(root,'a2-cartpole-acceptance-v1-audit.json')
@@ -30,6 +31,8 @@ def assemble(root):
             'p0_methods':[{k:row[k] for k in ('method','passes','raw_seed_passes')}
                           for row in p0['methods']],
             'm4_gpu_speedups':g5['gpu_speedup_over_cpu'],
+            'm4_followup_gpu_speedups':g5_followup['gpu_speedup_over_cpu'],
+            'm4_followup_both_cards_pass':all(g5_followup['passes'].values()),
             'w7_generations':w7['generations'],
             'w7_wall_seconds':w7['wall_seconds']}
 
@@ -59,9 +62,11 @@ def markdown(result):
                      f"{row['raw_seed_passes']}/5 |")
     lines.extend(['','The [P0 comparison](P0-COMPARISON-REPORT.md) contains '
         'paired scores and bootstrap intervals. The [W6](w6-v1-audit.json), '
-        '[W7](w7-stability-v1-audit.json), [G5](m4-g5-evolved-v1-audit.json) '
-        'and [P1](p1-crossbackend-v1-audit.json) audits retain measured limits.','',
-        f"All listed gates: {'pass' if result['all_listed_gates_pass'] else 'open'}. ",
+        '[W7](w7-stability-v1-audit.json), [G5 v1](m4-g5-evolved-v1-audit.json), '
+        '[G5 v2](m4-g5-evolved-v2-audit.json) and '
+        '[P1](p1-crossbackend-v1-audit.json) audits retain measured limits. '
+        'The [G5 report](M4-G5-REPORT.md) explains the versioned follow-up.','',
+        f"All listed gates: {'pass' if result['all_listed_gates_pass'] else 'open'}.",
         'M5 also depends on historical M2/M3 comparison and per-card gates '
         'tracked in the implementation record; this dossier does not close '
         'those by inheritance.',''])

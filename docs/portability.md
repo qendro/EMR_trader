@@ -18,6 +18,8 @@ metadata. Replay compares 128 carried steps against the float64 NumPy
 reference and checks that TensorNEAT/EMR are not imported. This tests the
 portable policy artifact independently of the native evolution checkpoint.
 
-The current [acceptance ledger](../benchmarks/PLATFORM-STATUS.md) distinguishes
-existing M1/A2 replay and resume checks from the outstanding M5
-container-replacement and both-GPU portability gate.
+The current [P1 audit](../benchmarks/p1-crossbackend-v1-audit.json) records
+identical replay actions on CPU and both GPUs, 117 passing tests per profile,
+and three generations of checkpoint continuation after container replacement.
+The [acceptance ledger](../benchmarks/PLATFORM-STATUS.md) separates this
+portability result from the still-open M4 G5 performance gate.

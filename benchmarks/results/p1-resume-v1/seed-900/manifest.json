@@ -1,0 +1,115 @@
+{
+  "config": {
+    "action": "sign-positive-tie",
+    "adapter": {
+      "edges": 512,
+      "inputs": 2,
+      "kind": "adaptive-emr-v1",
+      "nodes": 24,
+      "outputs": 1,
+      "population": 8,
+      "profile": "layered"
+    },
+    "adaptive": {
+      "band_threshold": 0.3,
+      "input_coords": [
+        [
+          -1,
+          -1
+        ],
+        [
+          1,
+          -1
+        ]
+      ],
+      "kind": "adaptive-emr-v1",
+      "max_depth": 1,
+      "max_sparse_conns": 512,
+      "max_weight": 8.0,
+      "output_coords": [
+        [
+          0,
+          1
+        ]
+      ],
+      "population": 8,
+      "recurrent": true,
+      "schema": 1,
+      "settling_steps": 3,
+      "variance_threshold": 0.03,
+      "weight_threshold": 0.1
+    },
+    "budget_seconds_per_seed": 7200,
+    "budget_status": "wiring-only-not-A2-acceptance",
+    "checkpoint_every": 1,
+    "discovery_microbatch": 2,
+    "episodes": 32,
+    "finalists": 4,
+    "generations": 3,
+    "heldout_episodes": 256,
+    "horizon": 17,
+    "id": "s2-adaptive-memory-smoke-v1",
+    "kind": "smoke",
+    "method": "S2-bounded-discovery-storage-rollout-development",
+    "microbatch": 8,
+    "phenotype_storage_budget_bytes": 100000,
+    "protocol_status": "development-smoke",
+    "required_seeds": 3,
+    "rollout_memory_budget_bytes": 600000,
+    "scenario_policy": "generation-specific",
+    "schema": 1,
+    "seeds": [
+      900
+    ],
+    "shared_protocol": "configs/memory-v1.json",
+    "target": 0.9,
+    "task": "memory",
+    "validation_episodes": 64,
+    "workload": "W4-memory"
+  },
+  "config_sha256": "1e4f8b90912dada1295aef9f11a2489c5dae85a84be805884172ba99ed2e9b86",
+  "hardware": {
+    "allocator_fraction": 0.0,
+    "backend": "cpu",
+    "development_mount": true,
+    "devices": [
+      "TFRT_CPU_0"
+    ],
+    "gpu": null,
+    "image_digest": "not-recorded-development-run",
+    "kernel": "6.6.87.2-microsoft-standard-WSL2",
+    "preallocate": false,
+    "precision": "float32",
+    "python": "3.11.14"
+  },
+  "provenance": {
+    "compatibility_lock_sha256": "a11a7696492404e642f411a817893b984511a7f0da0131318d44173b2741c4d9",
+    "engine_sha256": "9201dde901592929ee6eedf410bb37d4b49aaa96d07ce1c91420c80478582f67",
+    "lock_sha256": "df89b8faeaefc2cf0a8ad1e723e7b000cbf48496a00b1e2ef0a3bac6fb33bdae",
+    "packages": {
+      "emr-hyperneat": "0.3.0",
+      "gymnax": "0.0.9",
+      "jax": "0.6.1",
+      "jaxlib": "0.6.1",
+      "numpy": "1.26.4",
+      "tensorneat": "0.1.0"
+    },
+    "sources": {
+      "base_image": "python:3.11.14-slim-bookworm@sha256:65a93d69fa75478d554f4ad27c85c1e69fa184956261b4301ebaf6dbb0a3543d",
+      "emr": {
+        "archive_sha256": "2e4e7ec552fd2fb6ebd59e44b8ea89057f9980ef296d4451e22ccb7915bfb59d",
+        "license": "GPL-3.0-or-later (bundled LICENSE)",
+        "sha": "306eb4e67687390bb88131ead6af8bebffa8cee9",
+        "url": "https://github.com/RomainClaret/emr-hyperneat.git"
+      },
+      "schema": 1,
+      "tensorneat": {
+        "archive_sha256": "6776462f279bc6fa2ff9c0bf4adc405732d25681424346c8f5d6f9d7469cda3f",
+        "license": "GPL-3.0-or-later (bundled LICENSE)",
+        "sha": "49c193d546447d5fe2cb4b26f60758d23fc24cb0",
+        "url": "https://github.com/RomainClaret/tensorneat.git"
+      }
+    }
+  },
+  "seed": 900
+}
