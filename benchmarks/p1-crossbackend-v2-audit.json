@@ -1,0 +1,32 @@
+{
+  "replay_max_abs_error": {
+    "cpu": 2.530325559746416e-06,
+    "rtx3070": 1.430511474609375e-06,
+    "rtx3060": 1.430511474609375e-06
+  },
+  "regression_tests": {
+    "cpu": {
+      "tests": 117,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "rtx3070": {
+      "tests": 117,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "rtx3060": {
+      "tests": 117,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    }
+  },
+  "replay_actions_identical": true,
+  "engine_sha256": "20979af7d7b8087f166af226f236452c2c15f3a2ca42e652188dc2eecea16093",
+  "resume_generations": 3,
+  "resume_history_rows": 3,
+  "passes": true
+}

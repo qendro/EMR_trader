@@ -7,7 +7,8 @@ import numpy as np
 import pytest
 
 from neuroevo.adapters.emr_evolution import EMREvolution, pad_population
-from neuroevo.adapters.emr_phenotype import settled_reference
+from neuroevo.adapters.emr_phenotype import (extract_public,
+    extract_public_population, settled_reference)
 from neuroevo.contracts import stack_plans
 from neuroevo.environments import memory_scenarios
 from neuroevo.evaluation import memory_chunk, memory_initial
@@ -35,6 +36,16 @@ def test_a2_native_evolution_uses_persistent_adaptive_rollout():
     adapter = EMREvolution(config, base, Problem(), node_capacity=20, edge_capacity=512)
     state = adapter.initialize(19)
     batch = adapter.ask(state, 'a2-test')
+    substrate = adapter._substrates(state)[0]
+    bulk = extract_public_population(substrate, int(state.generation),
+                                     node_capacity=20, edge_capacity=512)
+    scalar = tuple(extract_public(substrate, i, int(state.generation),
+                                  node_capacity=20, edge_capacity=512)
+                   for i in range(config['population']))
+    for left, right in zip(bulk, scalar):
+        np.testing.assert_array_equal(left.grid_indices, right.grid_indices)
+        for left_value, right_value in zip(left.plan, right.plan):
+            np.testing.assert_array_equal(left_value, right_value)
     assert len(batch.plans) == len(batch.phenotypes) == config['population']
     assert all(p.plan.w_in.shape[0] == 2 for p in batch.phenotypes)
     assert len(route(batch.plans)) <= len(adapter.bucket_family.widths)

@@ -13,9 +13,10 @@ def assemble(root):
     p0=load(root,'p0-comparison-v1.json')
     w6=load(root,'w6-v1-audit.json')
     w7=load(root,'w7-stability-v1-audit.json')
-    g5=load(root,'m4-g5-evolved-v1-audit.json')
-    g5_followup=load(root,'m4-g5-evolved-v2-audit.json')
-    p1=load(root,'p1-crossbackend-v1-audit.json')
+    g5_versions={version:load(root,f'm4-g5-evolved-{version}-audit.json')
+                 for version in ('v1','v2','v3')}
+    g5=g5_versions['v3']
+    p1=load(root,'p1-crossbackend-v2-audit.json')
     memory=load(root,'a2-memory-acceptance-v1-audit.json')
     cartpole=load(root,'a2-cartpole-acceptance-v1-audit.json')
     gates={
@@ -31,8 +32,9 @@ def assemble(root):
             'p0_methods':[{k:row[k] for k in ('method','passes','raw_seed_passes')}
                           for row in p0['methods']],
             'm4_gpu_speedups':g5['gpu_speedup_over_cpu'],
-            'm4_followup_gpu_speedups':g5_followup['gpu_speedup_over_cpu'],
-            'm4_followup_both_cards_pass':all(g5_followup['passes'].values()),
+            'm4_gpu_speedups_by_version':{version:row['gpu_speedup_over_cpu']
+                                          for version,row in g5_versions.items()},
+            'm4_g5_version':'v3','p1_version':'v2',
             'w7_generations':w7['generations'],
             'w7_wall_seconds':w7['wall_seconds']}
 
@@ -63,8 +65,9 @@ def markdown(result):
     lines.extend(['','The [P0 comparison](P0-COMPARISON-REPORT.md) contains '
         'paired scores and bootstrap intervals. The [W6](w6-v1-audit.json), '
         '[W7](w7-stability-v1-audit.json), [G5 v1](m4-g5-evolved-v1-audit.json), '
-        '[G5 v2](m4-g5-evolved-v2-audit.json) and '
-        '[P1](p1-crossbackend-v1-audit.json) audits retain measured limits. '
+        '[G5 v2](m4-g5-evolved-v2-audit.json), '
+        '[G5 v3](m4-g5-evolved-v3-audit.json) and '
+        '[P1 v2](p1-crossbackend-v2-audit.json) audits retain measured limits. '
         'The [G5 report](M4-G5-REPORT.md) explains the versioned follow-up.','',
         f"All listed gates: {'pass' if result['all_listed_gates_pass'] else 'open'}.",
         'M5 also depends on historical M2/M3 comparison and per-card gates '

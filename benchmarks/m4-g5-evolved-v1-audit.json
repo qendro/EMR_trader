@@ -27,6 +27,10 @@
     "rtx3070": 1.0687316141324397,
     "rtx3060": 1.0482237465726414
   },
+  "replicate_ranges_separated": {
+    "rtx3070": true,
+    "rtx3060": true
+  },
   "passes": {
     "rtx3070": false,
     "rtx3060": false

@@ -7,7 +7,7 @@ import jax.numpy as jnp
 import numpy as np
 
 from neuroevo.adapters.emr import translate
-from neuroevo.adapters.emr_phenotype import extract_public
+from neuroevo.adapters.emr_phenotype import extract_public_population
 from neuroevo.packing import BucketFamily
 from neuroevo.memory_schedule import estimate_population_storage, plan_bytes
 
@@ -86,9 +86,10 @@ class EMREvolution:
         if (self.phenotype_storage_budget_bytes is not None and
                 estimated > self.phenotype_storage_budget_bytes):
             raise OverflowError('Adaptive phenotype storage estimate exceeds declared budget')
-        phenotypes = tuple(extract_public(substrate, i, generation,
-            node_capacity=self.node_capacity, edge_capacity=self.edge_capacity)
-            for substrate in substrates for i in range(substrate.mask.shape[0]))
+        phenotypes = tuple(phenotype for substrate in substrates
+                           for phenotype in extract_public_population(
+                               substrate, generation, node_capacity=self.node_capacity,
+                               edge_capacity=self.edge_capacity))
         plans, width = pad_population(phenotypes, self.node_capacity,
                                       family=self.bucket_family)
         storage=sum(plan_bytes(p.plan)+plan_bytes(q)+p.grid_indices.nbytes+

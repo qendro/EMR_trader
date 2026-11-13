@@ -27,13 +27,18 @@ def audit(root,prefix='m4-g5'):
     medians={name:float(statistics.median(row['warm_generation_seconds'] for row in runs))
              for name,runs in rows.items()}
     speedup={name:medians['cpu']/medians[name] for name in ('rtx3070','rtx3060')}
+    separated={name:max(row['warm_generation_seconds'] for row in rows[name]) <
+               min(row['warm_generation_seconds'] for row in rows['cpu'])
+               for name in ('rtx3070','rtx3060')}
     return {'config_sha256':all_rows[0]['config_sha256'],
         'engine_sha256':all_rows[0]['provenance']['engine_sha256'],
         'warm_generation_replicates_seconds':{
             name:[row['warm_generation_seconds'] for row in runs]
             for name,runs in rows.items()},
         'median_seconds':medians,'gpu_speedup_over_cpu':speedup,
-        'passes':{name:ratio>=1.2 for name,ratio in speedup.items()}}
+        'replicate_ranges_separated':separated,
+        'passes':{name:ratio>=1.2 and separated[name]
+                  for name,ratio in speedup.items()}}
 
 
 if __name__=='__main__':

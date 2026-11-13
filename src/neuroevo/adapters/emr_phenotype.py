@@ -7,6 +7,7 @@ represent the population whose fitness was just recorded.
 from dataclasses import dataclass
 from types import SimpleNamespace
 
+import jax
 import numpy as np
 
 from neuroevo.contracts import BlockPlan
@@ -89,6 +90,17 @@ def extract_public(substrate, index, generation, *, node_capacity, edge_capacity
                     sparse, c.hidden_to_hidden, len(c.input_coords), len(c.output_coords),
                     int(c.activate_time) if c.hidden_to_hidden else 1,
                     generation, node_capacity, edge_capacity)
+
+
+def extract_public_population(substrate, generation, *, node_capacity, edge_capacity):
+    """Transfer public substrate fields once, then extract each candidate on host."""
+    names = ('positions', 'mask', 'W1', 'W2', 'hh_from', 'hh_to',
+             'hh_weights', 'hh_valid')
+    values = jax.device_get(tuple(getattr(substrate, name) for name in names))
+    host = SimpleNamespace(config=substrate.config, **dict(zip(names, values)))
+    return tuple(extract_public(host, i, generation,
+                 node_capacity=node_capacity, edge_capacity=edge_capacity)
+                 for i in range(host.mask.shape[0]))
 
 
 def _extract(index, positions, masks, w1, w2, sparse, recurrent, inputs, outputs,
