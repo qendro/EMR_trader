@@ -1,12 +1,14 @@
 # Implementation record — November 10, 2026
 
 The [November 12 acceptance ledger](../benchmarks/PLATFORM-STATUS.md) tracks
-the current source and open M4/M5 gates. A2's later immutable-image memory
+the current source and remaining milestone work. A2's immutable-image memory
 and CartPole acceptance passed their RTX 3070 learning targets; see the
-[A2 update](../benchmarks/A2-ACCEPTANCE-UPDATE.md). S0–S2 code and the P0
-partially observed control protocol were added after the historical records
-below. Current capability and portability boundaries are in
-[capabilities.md](capabilities.md) and [portability.md](portability.md).
+[A2 update](../benchmarks/A2-ACCEPTANCE-UPDATE.md). S0–S2, P0 and P1 have
+measured evidence in the [current dossier](../benchmarks/P1-DOSSIER.md).
+The evolved-generation G5 cell passed on both GPUs after the versioned
+[bulk-transfer change](../benchmarks/M4-G5-REPORT.md). M2 fixed-time comparison
+and historical M3 dependencies remain open. Current capability and portability
+boundaries are in [capabilities.md](capabilities.md) and [portability.md](portability.md).
 
 This file tracks implementation evidence; the blueprint documents define gates.
 M1's accepted source is retained separately. H0/H1 and B0 are implemented and verified; see [h1.md](h1.md), the [H1 report](../benchmarks/H1-REPORT.md), and the [B0 report](../benchmarks/B0-REPORT.md). H2's small-substrate learning and direct-memory system cell are measured in the [H2 report](../benchmarks/H2-REPORT.md). Q2's declared capacity/resource and synchronized stage screens now pass; see the [Q2 decision](decisions.md). M2 acceptance and M3–M5 remain open. No adaptive-platform acceptance is implied by a dependency or wiring smoke test.
